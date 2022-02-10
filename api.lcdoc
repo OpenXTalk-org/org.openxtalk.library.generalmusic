@@ -1,0 +1,28 @@
+Library: org.openxtalk.library.playsentence
+
+Type: library
+
+Title: Play Sentence Library
+
+Version: 1.0.0
+
+Author: OpenXTalk.org
+
+Description: This script library implements...
+
+
+Name: playSentenceVersion
+
+Type: function
+
+Syntax: playSentenceVersion()
+
+Summary: The MIME version this implemented in the library
+
+Example: put "MIME-Version:" && mimeTheMIMEVersion() & crlf after tHeaders
+
+Description: Use the <mimeTheMIMEVersion> function create a `MIME-Version` header.
+
+
+
+
