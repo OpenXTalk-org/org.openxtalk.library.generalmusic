@@ -3,9 +3,6 @@
 OpenXTalk.org GPL v3
 */
 
-metadata SVGIcon="M183.02,94.85h-42.89c-1.25-6.3-5.02-8.74-11.32-9.1c-0.24-2.77,0.07-5.48-0.81-7.71c-0.89-2.25-2.6-4.7-4.63-5.8 c-1.96-1.07-2.76-1.91-3.07-4.08c-1.48-10.39-5.4-9.46-12.77-10.21c-0.13-0.01-0.27-0.09-0.51-0.19c-0.88-3.23-1.4-6.69-2.78-9.76 c-1.43-3.19-3.7-6-5.67-9.09c6.25-8.21,6.23-15.21,0.45-23.67c-2.74-4-6.09-4.65-10.04-3.17c-2.81,1.06-5.32,2.93-7.82,4.35 c-2.14-2.33-3.82-5.51-6.44-6.77C67.2,6.01,59.52,1.36,51.5,0.41C38.72-1.11,25.92,1.71,14.1,7.36 C7.05,10.73,1.75,16.05,0.18,23.88c-0.65,3.22,0.68,6.8,0.72,10.22c0.04,2.68-1.23,14.53,0.41,17.8c2.04,4.08,3.96,4.96,7.32,5.73 c3.86,0.88,8.18-2.94,8.18-6.97c0-10.94-10.05-14.18-11.67-15.87c2.56-2.44,4.72-9.34,4.72-9.34L22,26.57c0,0-1.24,6.93,5.11,8.37 c1.35,2.49,3.71,13.6,3.99,14.93c0.97,4.77,4.53,8.18,8.24,11.53c-10.42,5.78-11.22,10.28-2.82,19.04 c6.35,6.62,11.76,8.72,20.62-1.8c2.98,4.77,6.51,8.79,12.77,8.22c1.93-0.18,3.85-0.49,5.77-0.72c4.61-0.53,8.18,0.62,10.09,5.41 c0.52,1.3,1.81,2.55,3.11,3.3c0,0-7.1,0.39-11.44,0.96c-4.34,0.57-21.14,7.79-21.3,14.75c-0.75,33.18-1.24,68.68-1.77,101.87 c-0.04,2.66,0.49,5.34,0.83,8c0.58,4.47,2.63,6.57,7.68,6.6c27.21,0.17,54.42,0.86,81.63,1.07c10.75,0.08,21.5-0.74,32.25-0.94 c1.79-0.03,2.97-0.49,3.75-1.3l0,0.55l16.11-16.26c0,0,1.1-110.71,0-113.17S183.02,94.85,183.02,94.85z M122.59,81.24 c1.2,2.82-2.61,12.18-4.38,13.61s-8.21,6.95-12.09,7.25c-0.97,0.08-8.17,0.04-8.34,0.01c-0.56-0.09-0.67-0.86-0.67-1.95 s2.27-4.14,3.35-5.31c0.45-0.61,0.91-1.19,1.42-1.74c3.56-3.8,7.8-6.96,11.46-10.68C116.17,79.57,121.39,78.42,122.59,81.24z M76.19,81.61c-7.46,1.48-13.1-1.01-17.7-6.72c-1.12-1.39-2.4-2.64-4.02-4.39c-2.07,4.27-2.22,10.76-7.94,9.57 c-3.94-0.82-9.1-4.51-10.2-8.02c-1.34-4.28,3.6-7.15,8.3-8.32c-2.21-3.89-4.43-7.48-6.33-11.24c-2.54-5.04-1.93-10.08,1.71-14.24 c7.85-8.97,17.65-15.04,29.15-18.26c2.69-0.75,4.79-0.14,6.67,2.23c1.47,1.85,3.69,3.11,5.76,4.77c1.45-2.56,2.16-4.62,3.53-6.03 c1.6-1.64,3.78-3.79,5.73-3.8c4.28-0.04,5.48,4.11,6.88,7.31c1.19,2.73,1.96,5.75-1.05,8.15c-4.8,3.81-4.97,4.15-1.26,9.06 c4.9,6.48,6.72,13.51,4.89,21.46C97.75,74.28,91.32,78.6,76.19,81.61z M87.79,84.94c2.89-1.49,5.26-2.97,7.81-3.98 c4.65-1.84,7.52-4.92,8.78-9.87c1.16-4.54,2.21-9.65,9.04-9.12c1.32,5.38,1.39,10.32-2.96,14.77c-4.16,4.25-7.66,9.15-11.85,13.38 c-2.66,2.69-5.46,0.39-7.81-1.21C89.77,88.2,89.19,86.82,87.79,84.94z M177.84,220.47c-2.7,1.92-112.97,2.65-115.62,0 c-3.69-3.69-1.42-108.05,1.33-110.81c2.75-2.75,114.75-1.09,116.96,0C182.81,110.79,182.84,216.91,177.84,220.47z M133.27,98.89c1.3-1.3,1.69-2.67,1.21-4.04c-0.12-0.35-0.3-0.7-0.54-1.05c-0.02-0.03-0.04-0.06-0.06-0.09 c-0.15-0.22-0.33-0.44-0.53-0.66c-1.91-2.05-4.04-1.7-5.93-0.1c-0.74,0.63-1.47,1.27-2.19,1.91c-2.8,2.47-5.55,5-8.33,7.5 C122.79,102.41,129.81,102.35,133.27,98.89z M110.84,162.53c5.75,1.97,11.38,1.96,17.1-0.04c12.67-4.43,25.37-8.77,38.05-13.17c1.23-0.43,2.4-1,4.43-1.86 c-15.47-5.03-30.04-9.86-44.69-14.44c-2.48-0.77-5.52-1.18-7.93-0.49c-15.98,4.58-31.85,9.5-47.76,14.31 c0.04,0.67,0.09,1.35,0.13,2.02C83.72,153.41,97.3,157.9,110.84,162.53z M125.77,174.07c14.39-4.46,28.6-9.46,43.69-14.54c-7.56-3.98-7.56-4-14.35-1.78c-7.66,2.51-15.38,4.87-22.95,7.63 c-8.68,3.16-17.15,3.11-25.82-0.06c-7.99-2.92-16.12-5.43-24.2-8.1c-5.26-1.74-7.69-1.22-12.85,2.93c15.19,4.91,30,9.95,45,14.35 C117.81,175.53,122.21,175.17,125.77,174.07z M127.98,184.94c12.67-4,25.16-8.57,37.7-12.94c0.97-0.34,1.86-0.92,2.99-1.49c-4.68-3.2-9.01-3.48-13.89-1.56 c-6.8,2.68-13.86,4.68-20.72,7.24c-9.81,3.66-19.5,3.66-29.32,0.05c-7.01-2.58-14.2-4.66-21.14-7.4c-4.76-1.88-8.92-1.4-14.09,2.01 c15.83,5.38,30.67,10.8,45.78,15.31C119.1,187.28,123.98,186.21,127.98,184.94z M156.11,179.31c-7.37,2.86-14.98,5.06-22.41,7.78c-9.96,3.65-19.79,3.63-29.75-0.04c-7.28-2.68-14.76-4.83-21.98-7.66 c-4.62-1.81-8.29-0.32-12.46,1.87c0.67,0.45,0.96,0.74,1.31,0.86c13.94,4.89,27.8,10.02,41.87,14.49 c3.63,1.15,8.22,1.24,11.84,0.11c14.66-4.55,29.11-9.77,44.21-14.94C164.4,179.22,160.82,177.48,156.11,179.31z M76.66,49.91c-0.15-4.72-5.02-8.97-10.11-8.84c-3.94,0.1-7.78,4.25-7.74,8.36c0.04,4.45,4.59,8.58,9.33,8.48 C72.92,57.81,76.79,54.17,76.66,49.91z M83.66,55.29c-0.46,7.77-2.59,9.63-10.5,10.24c-1.16,0.09-2.32,0.3-3.74,0.48c0,1.87,0,3.57,0,5.74 c6.3-0.85,13.32,2.52,18.11-3.67c3.98-5.13,3.39-11.23,2.35-17.21C86.15,50.7,83.9,51.26,83.66,55.29z M50.3,40.56c-3.25-0.8-4.54,5.87-4.54,5.87s0.62,6.34,1.58,7.65c0.96,1.3,3.4,2.35,3.84,1.73 c1.78-2.52,3.03-5.42,4.88-8.95C53.94,44.4,52.46,41.09,50.3,40.56z M63.6,35.37c0.99,0.75,10.96-0.78,11.41-1.86c0.4-0.98-0.71-2.99-1.69-4.05c-2.6-2.8-6.02-4.12-9.68-2.72 c-1.43,0.55-3.21,2.68-3.15,4.01C60.57,32.38,62.15,34.27,63.6,35.37z"
-
-
 on extensionInitialize
    if the target is not me then
       pass extensionInitialize
@@ -908,7 +905,6 @@ function num2Hex aNum, nDigit
 end num2Hex
 
 --
-
 function getCopyrightBin notes
   put offset( "//c ", notes ) into aOfs
   if aOfs = 0 then return ""
@@ -954,3 +950,887 @@ function getTimeSignBin notes
 end getTimeSignBin
 
 ----------------end of makeSMF-------------
+
+
+
+
+function evaluateStatusByte theHex
+   switch theHex
+      case "ff"
+         return "Meta Event" --- Meta Event Message in MIDI files
+         exit evaluateStatusByte --  OR System Reset Request for System Real-Time messages (which should not be in a MIDI File)
+         break
+      case "f0"
+         return "SysEx"    -- f0 System Exclusive Message (VLQ any # of data bytes)
+         exit evaluateStatusByte
+         break
+      case "f7"
+         return "end_SysEx" --- 247 f7 1111,0111 EOX (End of System Exclusive marker)
+         exit evaluateStatusByte
+         break
+      case "f8"
+         return "Timing Clock" --- Timing Clock <- System Real-Time messages should not really be in a MIDI File!
+         exit evaluateStatusByte
+         break
+      case "fa"
+         return "Timing Clock Start" --- Timing Clock Start <- System Real-Time messages should not really be in a MIDI File!
+         exit evaluateStatusByte
+         break
+      case "fb"
+         return "Timing Clock Continue" --- Timing Clock Continue <- System Real-Time messages should not really be in a MIDI File!
+         exit evaluateStatusByte
+         break
+      case "fc"
+         return "Timing Clock Stop" --- Timing Clock Stop <- System Real-Time messages should not really be in a MIDI File!
+         exit evaluateStatusByte
+         break
+      case "fe"
+         return "Active Sensing" --- A "keep alive" message <- System Real-Time messages should not really be in a MIDI File!
+         exit evaluateStatusByte
+         break
+      case "f1"   ---f1 MIDI Time Code Quarter Frame
+         return "MTC Quarter Frame"
+         exit evaluateStatusByte
+         break
+      case "f2"   ---f2 Song Position Pointer
+         return "Song Position Pointer"
+         exit evaluateStatusByte
+         break
+      case "f3"   --- f3 Song Select
+         return "Song Select"
+         exit evaluateStatusByte
+         break
+      case "f6"   --- f6 Tune Request
+         return "Tune Request"
+         exit evaluateStatusByte
+         break
+      default
+         --244 f4 1111,0100 Undefined
+         --245 f5 1111,0101 Undefined
+         --249 f9 1111,1001 Undefined
+         --253 fd 1111,1101 Undefined
+
+         -- channel messages---
+         get itemOffset ( theHex,"90,91,92,93,94,95,96,97,98,99,9a,9b,9c,9d,9e,9f")
+         if it <> 0 then
+            return "noteon ch"& it
+            exit evaluateStatusByte
+            break
+         end if
+         get itemOffset (theHex,"e0,e1,e2,e3,e4,e5,e6,e7,e8,e9,ea,eb,ec,ed,ee,ef")
+         if it <> 0 then
+            return "pitchbend ch"& it
+            exit evaluateStatusByte
+            break
+         end if
+         get itemOffset (theHex,"80,81,82,83,84,85,86,87,88,89,8a,8b,8c,8d,8e,8f")
+         if it <> 0 then
+            return "noteoff ch"& it
+            exit evaluateStatusByte
+            break
+         end if
+         get itemOffset (theHex,"c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,ca,cb,cc,cd,ce,cf")
+         if it <> 0 then
+            return "programchange ch"& it
+            exit evaluateStatusByte
+            break
+         end if
+         get itemOffset (theHex,"b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,ba,bb,bc,bd,be,bf")
+         if it <> 0 then
+            return "controller ch"& it
+            exit evaluateStatusByte
+            break
+         end if
+         get itemOffset (theHex,"d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,da,db,dc,dd,de,df")
+         if it <> 0 then
+            return "pressure ch"& it
+            exit evaluateStatusByte
+            break
+         end if
+         get itemOffset (theHex,"a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,aa,ab,ac,ad,ae,af")
+         if it <> 0 then
+            return "aftertouch ch"& it
+            exit evaluateStatusByte
+            break
+         end if
+         break
+   end switch
+   return empty
+end evaluateStatusByte
+
+function evaluateMetaEventTypeByte theHex
+   switch theHex
+      case "51"
+         return "set tempo"
+         exit evaluateMetaEventTypeByte
+         break
+      case "58"
+         return "time signature"
+         exit evaluateMetaEventTypeByte
+         break
+      case "59"
+         return "key signature"
+         exit evaluateMetaEventTypeByte
+         break
+      case "54"
+         return "SMPTE offset"
+         exit evaluateMetaEventTypeByte
+         break
+      case "2f"
+         return "end MTrk"
+         exit evaluateMetaEventTypeByte
+         break
+      case "20"-- Also Known as MIDI Channel Prefix
+         return "system channel"
+         exit evaluateMetaEventTypeByte
+         break
+      case "21"
+         return "MIDI port" -- Considered obsolete but still found in some old MIDI Files on the net
+         exit evaluateMetaEventTypeByte
+         break
+      case "01"
+         return "ascii text"
+         exit evaluateMetaEventTypeByte
+         break
+      case "02"
+         return "copyright text"
+         exit evaluateMetaEventTypeByte
+         break
+      case "03"
+         return "track_name text"
+         exit evaluateMetaEventTypeByte
+         break
+      case "04"
+         return "instrument_name text"
+         exit evaluateMetaEventTypeByte
+         break
+      case "05"
+         return "lyric text"
+         exit evaluateMetaEventTypeByte
+         break
+      case "06"
+         return "marker text"
+         exit evaluateMetaEventTypeByte
+         break
+      case "07"
+         return "cue text"
+         exit evaluateMetaEventTypeByte
+         break
+      case "08"
+         return "prorgam_name text"
+         exit evaluateMetaEventTypeByte
+         break
+      case "09"
+         return "device_name text"
+         exit evaluateMetaEventTypeByte
+         break
+      case "7f"
+         return "proprietary data"
+         exit evaluateMetaEventTypeByte
+         break
+      default
+         return empty
+         exit evaluateMetaEventTypeByte
+         break
+   end switch
+end evaluateMetaEventTypeByte
+
+function controllerNumToName ccNum
+   return item ccNum+1 of ("Bank Select (coarse),Modulation Wheel (coarse),Breath controller (coarse),Foot Pedal (coarse),Undefined,"&\
+   "Portamento Time (coarse),Data Entry (coarse),Volume (coarse),Balance (coarse),Undefined,Pan position (coarse),Expression (coarse),"&\
+   "Effect Control 1 (coarse),Effect Control 2 (coarse),Undefined,Undefined,General Purpose Slider 1,General Purpose Slider 2,"&\
+   "General Purpose Slider 3,General Purpose Slider 4,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,"&\
+   "Undefined,Undefined,Undefined,Undefined,Bank Select (fine),Modulation Wheel (fine),Breath controller (fine),Undefined,Foot Pedal (fine),"&\
+   "Portamento Time (fine),Data Entry (fine),Volume (fine),Balance (fine),Undefined,Pan position (fine),Expression (fine),Effect Control 1 (fine),"&\
+   "Effect Control 2 (fine),Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,"&\
+   "Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Hold Pedal (on/off),Portamento (on/off),Sustenuto Pedal (on/off),"&\
+   "Soft Pedal (on/off),Legato Pedal (on/off),Hold 2 Pedal (on/off),Sound Variation,Sound Timbre,Sound Release Time,Sound Attack Time,"&\
+   "Sound Brightness,Sound Control 6,Sound Control 7,Sound Control 8,Sound Control 9,Sound Control 10,General Purpose Button 1 (on/off),"&\
+   "General Purpose Button 2 (on/off),General Purpose Button 3 (on/off),General Purpose Button 4 (on/off),Undefined,Undefined,Undefined,Undefined,"&\
+   "Undefined,Undefined,Undefined,Effects Level,Tremulo Level,Chorus Level,Celeste Level,Phaser Level,Data Button increment,Data Button decrement,"&\
+   "Non-registered Parameter (fine),Non-registered Parameter (coarse),Registered Parameter (fine),Registered Parameter (coarse),Undefined,Undefined,"&\
+   "Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,"&\
+   "Undefined,Undefined,Undefined,All Sound Off,All Controllers Off,Local Keyboard (on/off),All Notes Off,Omni Mode Off,Omni Mode On,"&\
+   "Mono Operation,Poly Operation")
+end controllerNumToName
+
+function midiNoteNumToName midiNoteNum, theChannel
+   if theChannel <> "ch10" then
+      return item midiNoteNum+1 of ("C-1,C#-1,D-1,D#-1,E-1,F-1,F#-1,G-1,G#-1,A-1,A#-1,B-1,C0,C#0,D0,D#0,E0,F0,F#0,G0,G#0,A0,A#0,B0,"& \
+            "C1,C#1,D1,D#1,E1,F1,F#1,G1,G#1,A1,A#1,B1,C2,C#2,D2,D#2,E2,F2,F#2,G2,G#2,A2,A#2,B2,C3,C#3,D3,D#3,E3,F3,F#3,G3,G#3,A3,A#3,B3,"& \
+            "C4,C#4,D4,D#4,E4,F4,F#4,G4,G#4,A4,A#4,B4,C5,C#5,D5,D#5,E5,F5,F#5,G5,G#5,A5,A#5,B5,C6,C#6,D6,D#6,E6,F6,F#6,G6,G#6,A6,A#6,B6,"& \
+            "C7,C#7,D7,D#7,E7,F7,F#7,G7,G#7,A7,A#7,B7,C8,C#8,D8,D#8,E8,F8,F#8,G8,G#8,A8,A#8,B8,C9,C#9,D9,D#9,E9,F9,F#9,G9")
+   else -- theChannel = "ch10" -- drum channel
+      return item midiNoteNum+1 of ("1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,"&\
+            "Bass Drum 2,Bass Drum 1,Side Stick,Snare Drum 1,Hand Clap,Snare Drum 2,Low Tom 2,Closed Hi-hat,Low Tom 1,Pedal Hi-hat,Mid Tom 2,"&\
+            "Open Hi-hat,Mid Tom 1,High Tom 2,Crash Cymbal 1,High Tom 1,Ride Cymbal 1,Chinese Cymbal,Ride Bell,Tambourine,Splash Cymbal,"&\
+            "Cowbell,Crash Cymbal 2,Vibra Slap,Ride Cymbal 2,High Bongo,Low Bongo,Mute High Conga,Open High Conga,Low Conga,High Timbale,"&\
+            "Low Timbale,High Agogo,Low Agogo,Cabasa,Maracas,Short Whistle,Long Whistle,Short Guiro,Long Guiro,Claves,High Wood Block,"&\
+            "Low Wood Block,Mute Cuica,Open Cuica,Mute Triangle,Open Triangle,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,"&\
+            "101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128")
+   end if
+end midiNoteNumToName
+
+function midiNoteNameToNum midiNoteName
+
+   get itemOffset(midiNoteName,"C-1,C#-1,D-1,D#-1,E-1,F-1,F#-1,G-1,G#-1,A-1,A#-1,B-1,C0,C#0,D0,D#0,E0,F0,F#0,G0,G#0,A0,A#0,B0,"& \
+         "C1,C#1,D1,D#1,E1,F1,F#1,G1,G#1,A1,A#1,B1,C2,C#2,D2,D#2,E2,F2,F#2,G2,G#2,A2,A#2,B2,C3,C#3,D3,D#3,E3,F3,F#3,G3,G#3,A3,A#3,B3,"& \
+         "C4,C#4,D4,D#4,E4,F4,F#4,G4,G#4,A4,A#4,B4,C5,C#5,D5,D#5,E5,F5,F#5,G5,G#5,A5,A#5,B5,C6,C#6,D6,D#6,E6,F6,F#6,G6,G#6,A6,A#6,B6,"& \
+         "C7,C#7,D7,D#7,E7,F7,F#7,G7,G#7,A7,A#7,B7,C8,C#8,D8,D#8,E8,F8,F#8,G8,G#8,A8,A#8,B8,C9,C#9,D9,D#9,E9,F9,F#9,G9")
+   if it is 0 then
+      get itemOffset(midiNoteName, "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,"&\
+            "Bass Drum 2,Bass Drum 1,Side Stick,Snare Drum 1,Hand Clap,Snare Drum 2,Low Tom 2,Closed Hi-hat,Low Tom 1,Pedal Hi-hat,Mid Tom 2,"&\
+            "Open Hi-hat,Mid Tom 1,High Tom 2,Crash Cymbal 1,High Tom 1,Ride Cymbal 1,Chinese Cymbal,Ride Bell,Tambourine,Splash Cymbal,"&\
+            "Cowbell,Crash Cymbal 2,Vibra Slap,Ride Cymbal 2,High Bongo,Low Bongo,Mute High Conga,Open High Conga,Low Conga,High Timbale,"&\
+            "Low Timbale,High Agogo,Low Agogo,Cabasa,Maracas,Short Whistle,Long Whistle,Short Guiro,Long Guiro,Claves,High Wood Block,"&\
+            "Low Wood Block,Mute Cuica,Open Cuica,Mute Triangle,Open Triangle,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,"&\
+            "101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128")
+   end if
+   return it
+end midiNoteNameToNum
+
+function gsPatchNumToName gmPatchNum, theChannel
+   if theChannel <> "ch10" then -- "ch10" is reserved for drums (& "ch11" additionally in GM2 spec) -- and theChannel <> "ch11"
+      return item (gmPatchNum+1) of ("Acoustic Grand Piano,Bright Acoustic Piano,Electric Grand Piano,Honky-tonk Piano,Rhodes Piano,Chorused Piano,"&\
+      "Harpsichord,Clavinet,Celesta,Glockenspiel,Music Box,Vibraphone,Marimba,Xylophone,Tubular Bells,Dulcimer,Hammond Organ,Percussive Organ,"&\
+      "Rock Organ,Church Organ,Reed Organ,Accordion,Harmonica,Tango Accordion,Acoustic Guitar (nylon),Acoustic Guitar (steel),Electric Guitar (jazz),"&\
+      "Electric Guitar (clean),Electric Guitar (muted),Overdriven Guitar,Distortion Guitar,Guitar Harmonics,Acoustic Bass,Electric Bass (finger),"&\
+      "Electric Bass (pick),Fretless Bass,Slap Bass1,Slap Bass2,Synth Bass1,Synth Bass2,Violin,Viola,Cello,Contrabass,Tremolo Strings,Pizzicato Strings,"&\
+      "Orchestral Harp,Timpani,String Ensemble1,String Ensemble2,SynthStrings1,SynthStrings2,Choir Aahs,Voice Oohs,Synth Voice,Orchestra Hit,"&\
+      "Trumpet,Trombone,Tuba,Muted Trumpet,French Horn,Brass Section,Synth Brass1,Synth Brass2,Soprano Sax,Alto Sax,Tenor Sax,Baritone Sax,Oboe,"&\
+      "English Horn,Bassoon,Clarinet,Piccolo,Flute,Recorder,Pan Flute,Bottle Blow,Shakuhachi,Whistle,Ocarina,Lead1 (square),Lead2 (sawtooth),"&\
+      "Lead3 (calliope lead),Lead 4 (chiff lead),Lead 5 (charang),Lead 6 (voice),Lead 7 (fifths),Lead 8 (bass + lead),Pad1 (new age),Pad2 (warm),"&\
+      "Pad3 (polysynth),Pad 4 (choir),Pad 5 (bowed),Pad 6 (metallic),Pad 7 (halo),Pad 8 (sweep),FX1 (rain),FX2 (soundtrack),FX3 (crystal),"&\
+      "FX 4 (atmosphere),FX 5 (brightness),FX 6 (goblins),FX 7 (echoes),FX 8 (sci-fi),Sitar,Banjo,Shamisen,Koto,Kalimba,Bagpipe,Fiddle,Shanai,Tinkle Bell,Agogo,"&\
+      "Steel Drums,Woodblock,Taiko Drum,Melodic Tom,Synth Drum,Reverse Cymbal,Guitar Fret Noise,Breath Noise,Seashore,Bird Tweet,Telephone Ring,Helicopter,Applause,Gunshot")
+   else -- theChannel is a drum kit channel (10)
+      return item (gmPatchNum+1) of ("Standard Kit,2,3,4,5,6,7,8,Room Kit,10,11,12,13,14,15,16,Power Kit,18,19,20,21,22,23,24,25,Electronic Kit,"&\
+      "TR-808 Kit,27,28,29,30,31,32,Jazz Kit,34,35,36,37,38,39,40,Brush Kit,42,43,44,45,46,47,48,Orchestra Kit,50,51,52,53,54,55,56,SoundFX Kit,"&\
+      "58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,"&\
+      "100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,MT-32 Kit")
+   end if
+end gsPatchNumToName
+
+function BPMppbDurationToMillisecs pBPM, pPulsesPerBeat, pDur
+   -- There are 60,000 milliseconds in a minute
+   set the numberformat to "00.000"
+   if pPulsesPerBeat is empty then
+      if there is a fld "Ticks Per Beat" then
+         put fld "Ticks Per Beat" into pPulsesPerBeat
+      else
+         put 96 into pPulsesPerBeat
+      end if
+   end if
+   put 60000 / pBPM into tQuarterNoteMillisecs
+   put 60000 / (pBPM * pPulsesPerBeat) into tMIDIPulsePerMillisec
+   -- round(9734.22,-3) -- yields 10000
+   -- set the numberformat to "00.0"
+   set the numberformat to "00.00"
+   put round(tQuarterNoteMillisecs * 4,-2) into tWholeNoteMillisecs
+   put round(tQuarterNoteMillisecs * 2,-1) into tHalfNoteMillisecs
+   put round(tQuarterNoteMillisecs * 0.667,2) into tQuarterNoteTrip
+   put round(tQuarterNoteMillisecs / 2,2) into tEigthNoteMillisecs
+   put round(tQuarterNoteMillisecs * 0.333,2) into tEigthNoteTrip
+   put round(tQuarterNoteMillisecs / 4,2) into tSixteenthNoteMillisecs
+   put round(tQuarterNoteMillisecs * 0.1667,2) into tSixteenthNoteTrip
+   put round(tQuarterNoteMillisecs / 8,2) into tThirtySecondNoteMillisecs
+   put round(tQuarterNoteMillisecs * 0.0833,2) into tThirtySecondNoteTrip
+   put round(tQuarterNoteMillisecs / 16,2) into tSixtyFourthNoteMillisecs
+   put round(tQuarterNoteMillisecs * 0.04166,2) into tSixtyFourthNoteTrip
+   put round(tQuarterNoteMillisecs / 32,2) into tOneTwentyEigthNoteMillisecs
+   put round(tQuarterNoteMillisecs / 64,2) into tTwoFiftySixthNoteMillisecs
+   if pDur is empty then
+      put  tMIDIPulsePerMillisec & " ms=MIDI Tick" & cr into tDurCalculations
+      set the numberformat to "0000.0"
+      put trunc(tWholeNoteMillisecs) & " ms=4=w" & cr &\
+            trunc(tWholeNoteMillisecs + tHalfNoteMillisecs ) & " ms=6=w." & cr &\
+            trunc(tWholeNoteMillisecs + tHalfNoteMillisecs + tQuarterNoteMillisecs ) & " ms=6.25=w.." & cr &\
+            trunc(tHalfNoteMillisecs ) & " ms=2=h" & cr &\
+            trunc(tHalfNoteMillisecs + tQuarterNoteMillisecs ) & " ms=2.25=h." & cr &\
+            trunc(tHalfNoteMillisecs + tQuarterNoteMillisecs + tEigthNoteMillisecs ) & " ms=2.375=h.." & cr \
+            after tDurCalculations
+      set the numberformat to "0000.00"
+      put   round (tQuarterNoteMillisecs,1) & " ms=1=q" & cr &\
+            round (tQuarterNoteTrip,1) & " ms=0.666=q3" & cr &\
+            round (tQuarterNoteMillisecs + tEigthNoteMillisecs,1) & " ms=1.5=q." & cr &\
+            round (tQuarterNoteMillisecs + tEigthNoteMillisecs + tSixteenthNoteMillisecs,1) & " ms=1.625=q.." & cr & \
+            round (tEigthNoteMillisecs,1) & " ms=0.5=e" & cr &\
+            round (tEigthNoteTrip,1) & " ms=0.333=e3" & cr &\
+            round (tEigthNoteMillisecs + tSixteenthNoteMillisecs,1) & " ms=0.75=e." &  cr &\
+            round (tEigthNoteMillisecs + tSixteenthNoteMillisecs + tThirtySecondNoteMillisecs,1) & " ms=0.875=e.." &  cr &\
+            round (tSixteenthNoteTrip, 1) & " ms=0.166=s3" & cr &\
+            round (tSixteenthNoteMillisecs, 1)& " ms=0.25=s" & cr &\
+            round (tSixteenthNoteMillisecs + tThirtySecondNoteMillisecs,1)& " ms=0.375=s." & cr &\
+            round (tSixteenthNoteMillisecs + tThirtySecondNoteMillisecs + tSixtyFourthNoteMillisecs,1) & " ms=0.4375=s.." & cr &\
+            round (tThirtySecondNoteMillisecs,1) & " ms=0.125=t" & cr &\
+            round (tThirtySecondNoteTrip,1) & " ms=0.083=t3" & cr &\
+            round (tThirtySecondNoteMillisecs + tSixtyFourthNoteMillisecs,1) & " ms=0.1875=t." & cr &\
+            round (tThirtySecondNoteMillisecs + tSixtyFourthNoteMillisecs + tTwoFiftySixthNoteMillisecs, 1) & " ms=0.21875=t.." & cr &\
+            round (tSixtyFourthNoteTrip,1) & " ms=0.041=x3" & cr &\
+            round (tSixtyFourthNoteMillisecs,1) & " ms=0.0625=x" & cr &\
+            round (tSixtyFourthNoteMillisecs + tOneTwentyEigthNoteMillisecs,1) & " ms=0.09375=x." & cr &\
+            round (tSixtyFourthNoteMillisecs + tOneTwentyEigthNoteMillisecs + tTwoFiftySixthNoteMillisecs,1) & " ms=0.109375=x.." \
+            after tDurCalculations
+      sort lines of tDurCalculations numeric
+      -- recalc timestamps
+      return tDurCalculations
+   else
+      switch char 1 of pDur
+         case "w"
+            set the numberformat to "0000.0"
+            if char 2 to 3 of pDur is ".." then
+               return trunc(tWholeNoteMillisecs + tHalfNoteMillisecs + tQuarterNoteMillisecs )
+            else if char 2 of pDur is "." then
+               return trunc(tWholeNoteMillisecs + tHalfNoteMillisecs )
+            else
+               return tWholeNoteMillisecs
+            end if
+            break
+         case "h"
+            if char 2 to 3 of pDur is ".." then
+               return trunc(tHalfNoteMillisecs + tQuarterNoteMillisecs + tEigthNoteMillisecs )
+            else if char 2 of pDur is "." then
+               return trunc(tHalfNoteMillisecs + tQuarterNoteMillisecs )
+            else
+               return tHalfNoteMillisecs
+            end if
+            break
+         case "q"
+            set the numberformat to "0000.00"
+            if char 2 to 3 of pDur is ".." then
+               return round (tQuarterNoteMillisecs + tEigthNoteMillisecs + tSixteenthNoteMillisecs,1)
+            else if char 2 of pDur is "." then
+               return round (tQuarterNoteMillisecs + tEigthNoteMillisecs,1)
+            else if char 2 of pDur is "3" then
+               return tQuarterNoteTrip
+            else
+               return tQuarterNoteMillisecs
+            end if
+            break
+         case "e"
+            set the numberformat to "0000.00"
+            if char 2 to 3 of pDur is ".." then
+               return round(tEigthNoteMillisecs + tSixteenthNoteMillisecs + tThirtySecondNoteMillisecs,1)
+            else if char 2 of pDur is "." then
+               return round(tEigthNoteMillisecs + tSixteenthNoteMillisecs,1)
+            else if char 2 of pDur is "3" then
+               return tQuarterNoteTrip
+            else
+               return tEigthNoteMillisecs
+            end if
+            break
+         case "s"
+            set the numberformat to "0000.00"
+
+            if char 2 to 3 of pDur is ".." then
+               return round (tSixteenthNoteMillisecs + tThirtySecondNoteMillisecs + tSixtyFourthNoteMillisecs,1)
+            else if char 2 of pDur is "." then
+               return round (tSixteenthNoteMillisecs + tThirtySecondNoteMillisecs,1)
+            else if char 2 of pDur is "3" then
+               return tSixteenthNoteTrip
+            else
+               return tSixteenthNoteMillisecs
+            end if
+            break
+         case "t"
+            set the numberformat to "0000.00"
+
+            if char 2 to 3 of pDur is ".." then
+               return round (tThirtySecondNoteMillisecs + tSixtyFourthNoteMillisecs + tTwoFiftySixthNoteMillisecs, 1)
+            else if char 2 of pDur is "." then
+               round (tThirtySecondNoteMillisecs + tSixtyFourthNoteMillisecs, 1)
+            else if char 2 of pDur is "3" then
+               return tSixteenthNoteTrip
+            else if char 2 of pDur is "3" then
+               return tThirtySecondNoteTrip
+            else
+               return tThirtySecondNoteMillisecs
+            end if
+            break
+         case "x"
+            set the numberformat to "0000.00"
+            if char 2 to 3 of pDur is ".." then
+               return round(tSixtyFourthNoteMillisecs + tOneTwentyEigthNoteMillisecs + tTwoFiftySixthNoteMillisecs,1)
+            else if char 2 of pDur is "." then
+               return round(tSixtyFourthNoteMillisecs + tOneTwentyEigthNoteMillisecs,1)
+            else if char 2 of pDur is "3" then
+               return tSixtyFourthNoteTrip
+            else
+               return tSixtyFourthNoteTrip
+            end if
+            break
+         default
+            break
+      end switch
+   end if
+end BPMppbDurationToMillisecs
+
+   -- BPM to ms Formula
+   -- There are 60,000 milliseconds in a minute
+   -- so if you want to work out how long a beat is in milliseconds for any tempo, simply follow the below formula:
+   -- 60,000 / BPM = one beat in milliseconds
+
+   -- Example 1: 60,000 / 100 bpm = 600ms
+   -- This means that if you want to set your delay pedal for a one beat delay and the tempo is 100 bpm,
+   -- you should set your pedal to 600ms. What if you want to set your delay to repeat eighth notes?
+   -- Simply halve the time for one beat. So an eighth note at 100 bpm is 300ms (600 / 2).
+
+   -- Example 2: 60,000 / 85 bpm = 705.88ms
+   -- This means that if you want to set your delay pedal for a half-beat delay and the tempo is 85 bpm,
+   -- you should set your pedal to 353ms (705.88ms / 2 = half a beat).
+
+   -- In this example the exact time of a beat is 705.88ms, so it’s important not to round it off to 706 before calculating the length of different notes.
+   -- Depending on what you’re calculating, rounding off before the calculation can throw your answer out quite a bit.
+
+   -- Always remember that this simple formula works out what one beat is in milliseconds,
+   -- so if you want to set it to 8th notes, 16th notes or anything else,
+   -- you will need to work out the difference as shown later.
+
+--------------------------------------------------------------
+
+function setMIDItrack tempoBPM, theMIDIMsgList, InstumentNum
+   put empty into theMIDItrack
+   -------------- SET SMPTE FPS & OFFSET
+   put "25" into theFPS
+   get itemOffset (25, "24,25,29.97,30")
+   put item it of "00,01,10,11" into theFPS
+   put 0 into theHr
+   put baseConvert(theHr,10,2) into theHr
+   if the number of chars in theHr < 6 then
+      repeat 6 - the number of chars in theHr
+         put 0 before theHr
+      end repeat
+   end if
+   put theFPS & theHr into theFPSnTheHr
+   put baseConvert(theFPSnTheHr,2,10) into theFPSnTheHr
+   put 0 into theMin
+   put 0 into theSec
+   put 0 into theFrames
+   put 0 into theFrameTicks
+   put  binaryEncode("C",0) & binaryEncode("H2H2H2","FF","54","05")  after theMIDItrack -- deltaTime=0 & metaEvent & smpteOffset & lengthByte
+   put binaryEncode("C",theFPSnTheHr) & binaryEncode("C",theMin) & binaryEncode("C",theSec) & binaryEncode("C",theFrames) & binaryEncode("C",theFrameTicks) after theMIDItrack
+   --------     END "SMPTE offset" -- SMPTE Offset 05 FP-hh mm ss fr ff
+   --------------- SET TEMPO--------------
+   if (tempoBPM is empty) or (tempoBPM is not a number) or (tempoBPM<1) or (tempoBPM>240) then
+      put 120 into tempoBPM -- 120 is default MIDI tempo
+   else
+      --      put the round of tempoBPM into tempoBPM
+   end if
+   put round ((60000000/tempoBPM), 0 ) into microSecsPerQrtNtBeat
+   --   MICROSECONDS_PER_MINUTE = 60,000,000 -- BPM = MICROSECONDS_PER_MINUTE / MPQN -- MPQN = MICROSECONDS_PER_MINUTE / BPM
+   -- answer microSecsPerQrtNtBeat
+   get baseConvert(microSecsPerQrtNtBeat,10,16)
+   if the number of chars in it <6 then
+      repeat 6-(the number of chars in it)
+         put "0" before it
+      end repeat
+   end if
+   --put it && microSecsPerQrtNtBeat
+   put  binaryEncode("C",0) & binaryEncode("H2H2H2","FF","51","03") & binaryEncode("H6",it) after theMIDItrack  -- set tempo
+   ------[deltaTime=0] & [MetaEvent = 255 (0xFF)] & [eventType=81 (0x51)] & [length=3] & [microSecsPerQrtNtBeat 0-8355711]
+   --------------- END SET TEMPO--------------
+
+   --------------- SET TIME SIGNATURE------------
+   put 4 into TimeSigNumerator -- Numerator is a literal value
+   --- the denominator is specified as the value to which the power of 2 must be raised to equal the number of subdivisions per whole note.
+   --  For example, a value of 0 means a whole note because 2 to the power of 0 is 1 (whole note), a value of 1 means a half-note
+   -- because 2 to the power of 1 is 2 (half-note), and so on. 0=1, 1=2, 2=4, 3=8, 4=16, 5=32, 6=64, 7=128, etc. --  4=2^4 = 16 and 4/16 = 4
+   put 2 into TimeSigDenominator  --  4=2^4 = 16 and Num=4/Denom=16 = 4 = beats per measure
+
+   put 24 into TimeSigMetroClicksPerQtrNt
+   put 8 into TimeSigThtySndsPerQrtNt  --- when would this not be 8 ??? ---
+   put  binaryEncode("C",0) & binaryEncode("H2H2H2","FF","58","04") & \
+         binaryEncode("C",TimeSigNumerator) & binaryEncode("C",TimeSigDenominator) & \
+         binaryEncode("C",TimeSigMetroClicksPerQtrNt) & binaryEncode("C",TimeSigThtySndsPerQrtNt) after theMIDItrack
+   ------[deltaTime=0] & [MetaEvent = 255 (0xFF)] & [eventType=88 (0x58)] & [length=4] & ...
+   --------------- END SET TIME SIGNATURE------------
+
+   --- SET INSTRUMENT PROGRAM NUM
+   put binaryEncode("H2","C9") into msgTypeByte --
+   put binaryEncode("C",25) into instrumentProgramNum -- 25=GS Electronic Drum Kit
+   get wholeNumToVLQ(0) -- pack delta time
+   put binaryEncode("H"&length(it),it) after theMIDItrack
+   put msgTypeByte & instrumentProgramNum after theMIDItrack
+
+   --Delta Time msgTypeByte & theVelocityByte after theMIDItrack  -- note & velocity
+   --    put abstT2Str( 2 ) & "," & "C" & partHex & num2Hex( aNum -1, 2 ) & return after resultHex -- program change( CN#12 )
+
+   -- END SET INSTRUMENT
+
+   put 0 into timeSinceLastEvent
+   put 0 into tLastTimeStamp
+   repeat with lineCnt = 1 to the number of lines in theMIDIMsgList
+      put word 1 of line lineCnt of theMIDIMsgList into tTimeStamp
+      delete word 1 of line lineCnt of theMIDIMsgList
+      get word 1 of line lineCnt of theMIDIMsgList
+      switch it
+         case empty
+            exit repeat
+         case "noteon"
+            delete word 1 of line lineCnt of theMIDIMsgList
+            put word 1 of line lineCnt of theMIDIMsgList into tChannel
+            delete word 1 of line lineCnt of theMIDIMsgList
+            -- put tChannel
+            replace "note=" with "" in line lineCnt of theMIDIMsgList
+            put binaryEncode("H2","90") into msgTypeByte --Hex 90 (=ch1) to 9F (= ch16)
+            put binaryEncode("C",127) into theVelocityByte
+            -- put line lineCnt of theMIDIMsgList
+            if tTimeStamp is not empty then
+               put tTimeStamp - tLastTimeStamp into timeSinceLastEvent
+               put tTimeStamp into tLastTimeStamp
+               --put timeSinceLastEvent
+            end if
+            put wholeNumToVLQ(timeSinceLastEvent) into bTimeSinceLastEvent -- pack delta time-- pack delta time
+            put binaryEncode("H"&length(bTimeSinceLastEvent),bTimeSinceLastEvent) into bTimeSinceLastEvent
+            repeat with z = 1 to the number of words in item 1 of line lineCnt of theMIDIMsgList
+               if z>1 then
+                  put binaryEncode("C",0) into bTimeSinceLastEvent -- 0 change to Delta Time (chord)
+               end if
+               put bTimeSinceLastEvent & msgTypeByte after theMIDItrack --Delta Time & Message Type w/chan
+               get word z of line lineCnt of theMIDIMsgList
+               -- put it after msg
+               put binaryEncode("C",item 1 of it) & theVelocityByte after theMIDItrack  -- note & velocity
+            end repeat
+            break
+         case "noteoff"
+            delete word 1 of line lineCnt of theMIDIMsgList
+            put word 1 of line lineCnt of theMIDIMsgList into tChannel
+            delete word 1 of line lineCnt of theMIDIMsgList
+            replace "note=" with "" in line lineCnt of theMIDIMsgList
+            put binaryEncode("H2","80") into msgTypeByte --Hex 80 (=ch1) to 8F (= ch16)
+            put binaryEncode("C",0) into theVelocityByte
+            if tTimeStamp is not empty then
+               put tTimeStamp - tLastTimeStamp into timeSinceLastEvent
+               put tTimeStamp into tLastTimeStamp
+               --put timeSinceLastEvent
+            end if
+            put wholeNumToVLQ(timeSinceLastEvent) into bTimeSinceLastEvent -- pack delta time-- pack delta time
+            put binaryEncode("H"&length(bTimeSinceLastEvent),bTimeSinceLastEvent) into bTimeSinceLastEvent
+            repeat with z = 1 to the number of items in word 1 of line lineCnt of theMIDIMsgList
+               if z>1 then
+                  put binaryEncode("C",0) into bTimeSinceLastEvent -- 0 change to Delta Time (chord)
+               end if
+               put bTimeSinceLastEvent & msgTypeByte after theMIDItrack --Delta Time & Message Type w/chan
+               get word z of line lineCnt of theMIDIMsgList
+               put it after msg
+               put binaryEncode("C",item 1 of it) & binaryEncode("C",item 2 of it) after theMIDItrack  -- note & velocity
+            end repeat
+            break
+      end switch
+   end repeat
+   -- answer theMIDIMsgList
+   --------------- END OF TRACK ---------------
+   get wholeNumToVLQ(10) -- pack delta time
+   put binaryEncode("H"&length(it),it) after theMIDItrack --Delta Time
+   put binaryEncode("H6","FF2F00") after theMIDItrack  -- end of track
+
+   --------------- INSERT BEGINNING OF TRACK w/Length ---------------
+   put "MTrk" & binaryEncode("M",length(theMIDItrack)) before theMIDItrack -- add begining of track + 4 byte chunk length
+   ---------------
+   return theMIDItrack
+end setMIDItrack
+
+function setMIDIHeader formatType, numOfTracks, timeDivision
+   put "MThd" into theMIDIheader
+   put binaryEncode("M",6) after theMIDIheader -- 4 byte chunk length (always=6 in decimal) - Network byte order
+   ---------------
+   if (formatType <>0) and (formatType<>1) and (formatType<>2) then
+      return "An Error Has Occured: Invalid Format Type"
+      exit setMIDIHeader
+   end if
+   put binaryEncode("m",formatType) after theMIDIheader -- 2 byte MIDI file type 0,1,or 2 - Network byte order
+   ---------------
+   if (numOfTracks is empty) or (numOfTracks is not a number) or (numOfTracks contains ".") or (numOfTracks > 65535) or (numOfTracks <1) then
+      return "An Error Has Occured: Invalid Number of Tracks"
+      exit setMIDIHeader
+   end if
+   put binaryEncode("m",numOfTracks) after theMIDIheader -- 2 byte number of tracks 1 - 65,535 - Network byte order
+   ---------------
+   put item 1 of timeDivision into timeDivType
+   put item 2 of timeDivision into timeDivValue
+   if timeDivValue is empty or timeDivValue is not a number then
+      return "An Error Has Occured: Invalid Time Division Value"
+      exit setMIDIHeader
+   end if
+   switch timeDivType
+      case "TicksPerBeat"
+         put "0" into timeDivType
+         put baseConvert(timeDivValue,10,2) into timeDivValue
+         if the number of chars in timeDivValue<15 then
+            repeat (15-the number of chars in timeDivValue)
+               put "0" before timeDivValue
+            end repeat
+         end if
+         answer timeDivType && timeDivValue
+         put binaryEncode("B16", timeDivType & timeDivValue) after theMIDIheader -- 16 bits time division (1bit type & 15bits value)
+         break
+      case "SMPTE"
+         put "1" into timeDivType
+         put baseConvert(timeDivValue,10,2) into timeDivValue
+         if the number of chars in timeDivValue<7 then
+            repeat (7-the number of chars in timeDivValue)
+               put "0" before timeDivValue
+            end repeat
+         end if
+         put item 3 of timeDivision into ticksPerFrame
+         if ticksPerFrame is empty or ticksPerFrame >255 or ticksPerFrame is not a number then
+            return "An Error Has Occured: Invalid Time Division Value: Ticks Per Frame"
+            exit setMIDIHeader
+         end if
+         put baseConvert(ticksPerFrame,10,16) into ticksPerFrame
+         if the number of chars in ticksPerFrame<2 then
+            put "0" before ticksPerFrame
+         end if
+         -- put baseConvert((timeDivType & timeDivValue),2,16) into TimeDivValueH
+         -- answer "timeDivType: "& timeDivType &cr& "TimeDivValueH: "& TimeDivValueH &cr& "ticksPerFrame: "& ticksPerFrame
+         -- put binaryEncode("H2", TimeDivValueH) after theMIDIheader -- 16 bits time division (1bit type & 7 bits value followed by 1 byte value bellow)
+         put binaryEncode("B16", timeDivType & timeDivValue) after theMIDIheader -- 16 bits time division (1bit type & 7 bits value followed by 1 byte value bellow)
+         put binaryEncode("H2", ticksPerFrame) after theMIDIheader -- 16 bits time division (1bit type & 7 bits value followed by 1 byte value bellow)
+         break
+      default
+         return "An Error Has Occured: Invalid Time Division Value"
+         exit setMIDIHeader
+         break
+   end switch
+   ---------------
+   return theMIDIheader
+end setMIDIHeader
+
+--Offset	Length	Type	Description	Value
+--0x00	4	char[4]	chunk ID	"MThd" (0x4D546864)
+--0x04	4	dword	chunk size	6 (0x00000006)
+--0x08	2	word	format type	0 - 2
+--0x10	2	word	number of tracks	1 - 65,535
+--0x12	2	word	time division see below
+--Time Division
+--The third and final word in the MIDI header chunk is a bit more complicated than the first two.
+--It contains the time division used to decode the track event delta times into "real" time.
+--This value is represents either ticks per beat or frames per second.
+-- If the top bit of the word (bit mask 0x8000) is 0, the following 15 bits describe the time division in ticks per beat.
+--Otherwise the following 15 bits (bit mask 0x7FFF) describe the time division in frames per second.
+
+----Ticks per beat translate to the number of clock ticks or track delta positions (described in the Track Chunk section)
+-- in every quarter note of music. Common values range from 48 to 960, although newer sequencers go far beyond
+-- this range to ease working with MIDI and digital audio together.
+
+----Frames per second is defined by breaking the remaining 15 bytes into two values. The top 7 bits (bit mask 0x7F00)
+-- define a value for the number of SMPTE frames and can be 24, 25, 29 (for 29.97 fps) or 30.
+-- The remaining byte (bit mask 0x00FF) defines how many clock ticks or track delta positions there are per frame.
+-- So a time division example of 0x9978 could be broken down into it's three parts: the top bit is one,
+-- so it is in SMPTE frames per second format, the following 7 bits have a value of 25 (0x19) and the bottom byte has a value of 120 (0x78).
+-- This means the example plays at 24 frames per second SMPTE time and has 120 ticks per frame.
+
+function getMIDIHeader theMIDIFile
+   if there is not a file theMIDIFile then
+      return "Error opening file " & cr & theMIDIFile
+      exit getMIDIHeader
+   end if
+   open file theMIDIFile for binary read
+   read from file theMIDIFile for 4 bytes
+   if it is not "MThd" then
+      read from file theMIDIFile until "MThd"
+      put "NOT a Standard Midi file but! MIDI Header Chunk Not at Beginning of file!" & cr \
+            & "Header found at offset " & (length(it)-4) & cr into theMIDIheaderInfo
+      --      close file theMIDIFile
+      --      return "Not a Valid MIDI File"
+      --      exit getMIDIHeader
+   else
+      put "MIDI Header Info:" & cr into theMIDIheaderInfo
+   end if
+   --------------
+   read from file theMIDIFile for 4 bytes
+   put binaryDecode("M",it, headerChunkLength) into readStatus
+   put "headerChunkLength=" & headerChunkLength & cr after theMIDIheaderInfo -- 4 byte chunk length (always 6?) - Network byte order
+   ---------------
+   read from file theMIDIFile for 2 bytes
+   put binaryDecode("m",it,formatType) into readStatus -- 2 byte MIDI file type 0,1,or 2 - Network byte order
+   put "formatType=" & formatType & cr after theMIDIheaderInfo -- 4 byte chunk length (always 6?) - Network byte order
+   ---------------
+   read from file theMIDIFile for 2 bytes
+   put binaryDecode("m",it,numOfTracks) into readStatus -- 2 byte number of tracks 1 - 65,535 - Network byte order
+   put "numOfTracks=" & numOfTracks & cr after theMIDIheaderInfo -- 4 byte chunk length (always 6?) - Network byte order
+   ---------------
+   read from file theMIDIFile for 2 bytes
+   put binaryDecode("B16",it,timeDivision) into readStatus
+   if char 1 of timeDivision = 0 then
+      put "TicksPerBeat"into timeDivType
+      delete char 1 of timeDivision
+      put baseConvert(timeDivision,2,10) into timeDivValue
+      put "timeDivType=" & timeDivType & cr & "timeDivValue "& timeDivValue & cr after theMIDIheaderInfo
+   end if
+   if char 1 of timeDivision = 1 then
+      put "SMPTE"into timeDivType
+      delete char 1 of timeDivision
+      put baseConvert(char 1 to 7 of timeDivision, 2, 10) into timeDivValue
+      delete char 1 to 7 of timeDivision
+      put baseConvert(timeDivision, 2, 10) into ticksPerFrame
+      put "timeDivType=" & timeDivType & cr & "timeDivValue="& timeDivValue &&  "ticksPerFrame="& ticksPerFrame & cr after theMIDIheaderInfo
+   end if
+   ---------------
+   close file theMIDIFile
+   return theMIDIheaderInfo
+end getMIDIHeader
+
+
+function wholeNumToVLQ theWholeNum
+   -- baseConvert(number,originalBase,destinationBase)
+   if theWholeNum < 127 then -- its a single byte value and theres no need to process it
+      put baseConvert(theWholeNum,10,16) into VQLinHex
+      if the number of chars in VQLinHex=1 then put "0" before VQLinHex
+      return VQLinHex
+      exit wholeNumToVLQ
+   end if
+   put baseConvert(theWholeNum,10,2) into theBits
+   --put theBits
+   --put baseConvert(theBits,2,10)
+   put number of chars in theBits into x
+   put 0 into bitCounter
+   put empty into the7bitBytes
+   repeat
+      if char x of theBits is not empty then
+         put char x theBits before the7bitBytes
+         delete char x of theBits
+         if theBits is empty then exit repeat
+         put number of chars in theBits into x
+         add 1 to bitCounter
+         if bitCounter=7 then
+            put "," before the7bitBytes
+            put 0 into bitCounter
+            next repeat
+         end if
+      else
+         exit repeat
+      end if
+   end repeat
+   -- put cr & the7bitBytes after msg
+   get the number of chars in item 1 of the7bitBytes
+   if it<7 then
+      put 7 - it into x
+      repeat x
+         put "0" before item 1 of the7bitBytes
+      end repeat
+   end if
+   put the number of items in the7bitBytes into y
+   repeat with x = 1 to y
+      if x is not y then
+         put "1" before item x of the7bitBytes
+      else
+         put "0" before item x of the7bitBytes
+      end if
+      put baseConvert(item x of the7bitBytes,2,16) into item x of the7bitBytes
+      if the number of chars in item x of the7bitBytes<2 then put "0" before item x of the7bitBytes
+      put item x of the7bitBytes after VQLinHex
+   end repeat
+   -- return the7bitBytes
+   return VQLinHex
+end wholeNumToVLQ
+
+function isWholeNumString theString
+   put the number of chars in theString into y
+   repeat with x = 1 to y
+      if char x of theString is not in "0123456789" then
+         return false
+         exit isWholeNumString
+      end if
+   end repeat
+   return true
+end isWholeNumString
+
+function VLQtoWholeNum theHexVLQ
+   -- The number must be an integer between zero and 4,294,967,295
+   -- or baseConvert fails to produce accurate results
+   ----------------------------even still this function is broken!!!----
+   put baseConvert(theHexVLQ,16,2) into theBits
+   put 0 into bitCounter
+   put empty into the8bitBytes
+   repeat
+      if char 1 of theBits is not empty then
+         put char 1 theBits after the8bitBytes
+         delete char 1 of theBits
+         if theBits is empty then exit repeat
+         add 1 to bitCounter
+         if bitCounter=8 then
+            put "," after the8bitBytes
+            put 0 into bitCounter
+            next repeat
+         end if
+      else
+         exit repeat
+      end if
+   end repeat
+   -- put the8bitBytes
+   put the number of items in the8bitBytes into y
+   repeat with x = 1 to y
+      put char 1 of item x of the8bitBytes into lengthCntrlBit
+      delete char 1 of item x of the8bitBytes
+      if the number of chars in item x of the8bitBytes < 7 then
+         repeat 7 - (the number of chars in item x of the8bitBytes)
+            put "0" before item x of the8bitBytes
+         end repeat
+      end if
+      put item x of the8bitBytes after WholeNumInBinary
+      switch lengthCntrlBit
+         case "1"
+            next repeat
+            break
+         case "0"
+            exit repeat
+            break
+      end switch
+   end repeat
+   return baseConvert(WholeNumInBinary,2,10)
+end VLQtoWholeNum
+
+function isHexString theString
+   if char 1 to 2 of theString is "0x" then delete char 1 to 2 of theString
+   put the number of chars in theString into y
+   repeat with x = 1 to y
+      if char x of theString is not in "abcdefABCDEF0123456789" then
+         return false
+      end if
+   end repeat
+end isHexString
+
+--Offset	Length	Type	Description	Value
+--0x00	4	char[4]	chunk ID	"MThd" (0x4D546864)
+--0x04	4	dword	chunk size	6 (0x00000006)
+--0x08	2	word	format type	0 - 2
+--0x10	2	word	number of tracks	1 - 65,535
+--0x12	2	word	time division see below
+--Time Division
+--The third and final word in the MIDI header chunk is a bit more complicated than the first two.
+--It contains the time division used to decode the track event delta times into "real" time.
+--This value is represents either ticks per beat or frames per second.
+-- If the top bit of the word (bit mask 0x8000) is 0, the following 15 bits describe the time division in ticks per beat.
+--Otherwise the following 15 bits (bit mask 0x7FFF) describe the time division in frames per second.
+
+----Ticks per beat translate to the number of clock ticks or track delta positions (described in the Track Chunk section)
+-- in every quarter note of music. Common values range from 48 to 960, although newer sequencers go far beyond
+-- this range to ease working with MIDI and digital audio together.
+
+----Frames per second is defined by breaking the remaining 15 bytes into two values. The top 7 bits (bit mask 0x7F00)
+-- define a value for the number of SMPTE frames and can be 24, 25, 29 (for 29.97 fps) or 30.
+-- The remaining byte (bit mask 0x00FF) defines how many clock ticks or track delta positions there are per frame.
+-- So a time division example of 0x9978 could be broken down into it's three parts: the top bit is one,
+-- so it is in SMPTE frames per second format, the following 7 bits have a value of 25 (0x19) and the bottom byte has a value of 120 (0x78).
+-- This means the example plays at 24 frames per second SMPTE time and has 120 ticks per frame.
+
+--x: output amount null characters
+--a: encode amount characters as characters, padding with nulls
+--A: encode amount characters as characters, padding with spaces
+--b: encode amount groups of 4 1s and 0s as bits
+--B: encode amount groups of 4 1s and 0s as bits, starting at the high end of each byte
+--h: encode amount groups of 2 characters as hexadecimal numbers
+--H: encode amount groups of 2 characters as hexadecimal, starting at the high end of each byte
+--c: encode amount numbers as signed 1-byte integers
+--C: encode amount numbers as unsigned 1-byte integers
+--s: encode amount numbers as signed 2-byte integers in host byte order
+--S: encode amount numbers as unsigned 2-byte integers in host byte order
+--i: encode amount numbers as signed 4-byte integers in host byte order
+--I: encode amount numbers as unsigned 4-byte integers in host byte order
+--n: encode amount numbers as signed 2-byte integers in network byte order
+--N: encode amount numbers as signed 4-byte integers in network byte order
+--m: encode amount numbers as unsigned 2-byte integers in network byte order
+--M: encode amount numbers as unsigned 4-byte integers in network byte order
+--f: encode amount numbers as single-precision floating-point numbers
+--d: encode amount numbers as double-precision floating-point numbers
