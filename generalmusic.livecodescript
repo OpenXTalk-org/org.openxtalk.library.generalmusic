@@ -1912,8 +1912,7 @@ function checkStdSoundBankDirectories
    -- set the PathList of me to tPathList
    return tPathList
    -- put the PathList of me
-end checkForSoundBanks
-
+end checkStdSoundBankDirectories
 
 function SF2orDLSmagicNumCheck pFile
    open file pFile for binary read
