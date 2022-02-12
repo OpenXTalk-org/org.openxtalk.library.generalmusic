@@ -1834,3 +1834,331 @@ end isHexString
 --M: encode amount numbers as unsigned 4-byte integers in network byte order
 --f: encode amount numbers as single-precision floating-point numbers
 --d: encode amount numbers as double-precision floating-point numbers
+
+
+------------ SOUNDFONT2 / DLS Utils --------------------------------
+
+-- getRIFFHeaderInfo() returns RIFF four-char OStype code, comma, and the RIFF Length
+-- put getRIFFHeaderInfo(tRIFFfile) into tRIFFInfo
+-- put item 1 of tRIFFInfo into pRIFFtype
+-- check that it is a Sound Bank RIFF format (SF2 or DLS file)------
+-- if tRIFFtype <> "DLS " and tRIFFtype <> "sfbk" then ...
+function getRIFFHeaderInfo pRIFFFile
+   if there is a file pRIFFFile then
+      -------- check file has a RIFF header --------
+      open file tRIFFfile for binary read
+      read from file tRIFFfile for 4 bytes
+      if it <> "RIFF" then
+         close file tRIFFfile
+         return "ERROR: File is not RIFF, SIG= " & it
+         exit to top
+      end if
+      --- get RIFF Length ------
+      read from file pRIFFFile for 4 bytes
+      get binaryDecode("I",it,tLength)
+      put "," & tLength into tRIFFLength
+      --- get RIFF Type ------
+      read from file pRIFFFile for 4 bytes
+      put it into tRIFFtype
+      return tRIFFtype,tRIFFLength
+   else
+      return "ERROR: file does not exist"
+   end if
+end getRIFFHeaderInfo
+
+function checkStdSoundBankDirectories
+   put "gs_instruments.dls" into tSoundBankFileNames
+   put "/System/Library/Components/CoreAudio.component/Contents/Resources/gs_instruments.dls" into tPathList
+   set the folder to "/Library/Audio/Sounds/Banks/"
+   put the files into tFileNames
+   filter lines of tFileNames with "*.sf2" into tSF2Names
+   filter lines of tFileNames with "*.dls" into tDLSNames
+   put tSF2Names &cr& tDLSNames into tFileNames
+   if tFileNames<> empty then
+      put cr & tFileNames after tSoundBankFileNames
+      repeat for each line theLine in tFileNames
+         set cursor to busy
+
+         if theLine <> empty then
+            put cr& "/Library/Audio/Sounds/Banks/" & theLine after tPathList
+         end if
+      end repeat
+   end if
+
+   put empty into tFileNames
+   put specialFolderPath("Home") & "/Library/Audio/Sounds/Banks/" into tWrkDir
+   --put tWrkDir
+   set the folder to tWrkDir
+   put the files into tFileNames
+   filter lines of tFileNames with "*.sf2" into tSF2Names
+   filter lines of tFileNames with "*.dls" into tDLSNames
+   if (tSF2Names & tDLSNames) <> empty then
+      --put cr after tPathList
+      put cr after tSoundBankFileNames
+   end if
+   put tSF2Names &cr& tDLSNames into tFileNames
+   if tFileNames<> empty then
+      put tFileNames after tSoundBankFileNames
+      repeat for each line theLine in tFileNames
+         set cursor to busy
+         if theLine <> empty then
+            put cr& tWrkDir & theLine after tPathList
+         end if
+      end repeat
+      -- put tPathList after msg
+   end if
+   filter lines of tSoundBankFileNames without empty
+   -- put tSoundBankFileNames into me
+   -- set the PathList of me to tPathList
+   return tPathList
+   -- put the PathList of me
+end checkForSoundBanks
+
+
+function SF2orDLSmagicNumCheck pFile
+   open file pFile for binary read
+   read from file pFile for 16 bytes
+   close file pFile
+   if it contains "RIFF" then
+      if it contains "sfbk" or it contains "DLS" then
+         return true
+      else
+         put it
+         return false
+      end if
+   else
+      put it
+      return false
+   end if
+end SF2orDLSmagicNumCheck
+
+function getDLSBanks tRIFFfile
+   set cursor to busy
+   lock screen
+   open file tRIFFfile for binary read
+   read from file tRIFFfile until "colh" -- collection header
+   put "Collection Header Found : " &  byte -4 to -1 of it & cr after tDump
+   read from file tRIFFfile for 4 bytes
+   get binaryDecode("I",it,tChunkLength)
+   put "Chunk Length=" & tChunkLength & cr after tDump
+   read from file tRIFFfile for 4 bytes
+   get binaryDecode("I",it,tColCnt)
+   put "Instruments in collection: " & tColCnt & cr after tDump
+   --   if tChunkLength > 4 then
+   --      read from file tRIFFfile for tChunkLength - 4 bytes
+   --      put "Extra Data= " & it & cr after tDump
+   --   end if
+   read from file tRIFFfile for 4 bytes
+   put it into tChunkType
+   put "Chunk Type 4CC = " & tChunkType & cr after tDump
+   if tChunkType = "LIST" then
+      read from file tRIFFfile for 4 bytes
+      get binaryDecode("I",it,t4bytes)
+      put "List Chunk Size: " & t4bytes & cr after tDump
+      read from file tRIFFfile for 4 bytes
+      put "List type: " & it & cr after tDump
+   end if
+   lock screen
+   put empty into tSoundBanksPrograms
+   -- put empty
+   repeat tColCnt
+      set cursor to busy
+      -- put tColCnt
+      read from file tRIFFfile until "ins "
+      put "Instrument Found: " & byte -4 to -1 of it & cr after tDump
+
+      read from file tRIFFfile until "insh"
+      put "Instrument Header Found: " & byte -4 to -1 of it & cr after tDump
+      read from file tRIFFfile for 4 bytes
+      get binaryDecode("I",it,tSize)
+      put "Chunk Size = " & tSize & cr after tDump
+
+      read from file tRIFFfile for 4 bytes
+      get binaryDecode("I",it,tRegions)
+      put "Regions = " & tRegions & cr after tDump
+
+      read from file tRIFFfile for 4 bytes
+      get binaryDecode("CCxb8",it,tBankCC0_MSB,tBankCC32_LSB,tSkippedByte,tIsDrumBank)
+      -- get binaryDecode("CCxC",it,tBankCC0_MSB,tBankCC32_LSB,tSkippedByte,tIsDrumBank)
+
+      if the last char of tIsDrumBank is "1" then
+         put 128 into tBankCC32_LSB
+         put empty into tIsDrumBank
+      else
+         put empty into tIsDrumBank
+      end if
+      -- if tIsDrumBank = "128"
+      -- put "Bank = " & tBankCC0_LSB && tBankCC32_MSB && cr after tDump
+
+      read from file tRIFFfile for 4 bytes
+      get binaryDecode("I",it,tInstrumentNum)
+      -- put "Instrument Number = " & tInstrumentNum & cr after tDump
+
+      read from file tRIFFfile until "INAM"
+      put "Instrument Name Found: " & byte -4 to -1 of it & cr after tDump
+      read from file tRIFFfile for 4 bytes
+      get binaryDecode("I",it,tSize)
+      put "Chunk Size = " & tSize & cr after tDump
+      read from file tRIFFfile for tSize bytes
+      put it into tPresetName
+      put "Instrument Name = " & tPresetName & cr after tDump
+      put tBankCC0_MSB &"(MSB) "& tBankCC32_LSB &" " & tIsDrumBank & tInstrumentNum && tPresetName & cr after tSoundBanksPrograms -- MSB and LSB Messages (controllers 0 and 32, respectively)
+   end repeat
+   --   read from file tRIFFfile until EOF
+   --   put "Remainder of data: " & it & cr after tDump
+   close file tRIFFfile
+
+   --      filter each word in tSoundBanksPrograms not matching "0(MSB)" into tSoundBanksPrograms
+   repeat with x = 1 to the number of lines in tSoundBanksPrograms
+      set cursor to busy
+      if word 1 of line x of tSoundBanksPrograms = "0(MSB)" then
+         delete word 1 of line x of tSoundBanksPrograms
+      end if
+      if word 1 of line x of tSoundBanksPrograms = "0(LSB)" then
+         delete word 1 of line x of tSoundBanksPrograms
+      end if
+   end repeat
+   filter lines of tSoundBanksPrograms without empty
+   sort lines of tSoundBanksPrograms numeric by word 4 of each
+   sort lines of tSoundBanksPrograms numeric by word 3 of each
+   sort lines of tSoundBanksPrograms numeric by word 2 of each
+   sort lines of tSoundBanksPrograms numeric by word 1 of each
+
+   repeat with x = 1 to the number of lines in tSoundBanksPrograms
+      set cursor to busy
+      if word 1 of line x of tSoundBanksPrograms is an integer and word 2 of line x of tSoundBanksPrograms is an integer then
+         put word 1 of line x of tSoundBanksPrograms &"-" & word 2 of line x of tSoundBanksPrograms into word 1 to 2 of line x of tSoundBanksPrograms
+      end if
+   end repeat
+
+   if there is a fld "Dump" then put tDump into fld "Dump"
+   return tSoundBanksPrograms
+
+end getDLSBanks
+
+function getSF2Banks tRIFFfile
+   lock screen
+   open file tRIFFfile for binary read
+
+   read from file tRIFFfile for 4 bytes
+   --   if it <> "RIFF" then
+   --      put "ERROR File is not RIFF, SIG= " & it & cr after tDump
+   --   else
+   --      put "FILE IS RIFF, Sig4CC = " & it & cr after tDump
+   --   end if
+   read from file tRIFFfile for 4 bytes
+   get binaryDecode("I",it,tLength)
+   put "RIFF Byte Length=" & tLength & cr after tDump
+
+   read from file tRIFFfile for 4 bytes
+
+   if it <> "sfbk" then
+      put "ERROR File is not a SoundFont File, FormType 4CC = " & it & cr into tDump
+   else
+      put "FILE IS SoundFont, Sig4CC = " & it & cr into tDump
+   end if
+
+   read from file tRIFFfile for 4 bytes
+   put it into tChunkType
+   put "Chunk Type 4CC = " & tChunkType & cr after tDump
+   read from file tRIFFfile for 4 bytes
+   get binaryDecode("I",it,tChunkLength)
+   put "Chunk Length=" & tChunkLength & cr after tDump
+   if tChunkType = "colh" then
+      read from file tRIFFfile for 4 bytes
+      get binaryDecode("I",it,tColCnt)
+      put "Instruments in collection: " & tColCnt & cr after tDump
+      if tChunkLength > 4 then
+         read from file tRIFFfile for tChunkLength - 4 bytes
+         put "Extra Data= " & it & cr after tDump
+      end if
+   end if
+
+   read from file tRIFFfile for 4 bytes
+   put it into tChunkType
+   put "Chunk Type 4CC = " & tChunkType & cr after tDump
+   if tChunkType = "LIST" then
+      read from file tRIFFfile for 4 bytes
+      get binaryDecode("I",it,t4bytes)
+      put "List Chunk Size: " & t4bytes & cr after tDump
+
+      read from file tRIFFfile for 4 bytes
+      put "List type: " & it & cr after tDump
+      read from file tRIFFfile for 4 bytes
+      put "Next 4 bytes: " & it & cr after tDump
+   end if
+
+   put empty into tSoundBanksPrograms
+   read from file tRIFFfile until "pdta"
+   read from file tRIFFfile for 4 bytes
+   if it = "phdr" then
+      put "phdr: " & it & cr after tDump
+
+      read from file tRIFFfile for 4 bytes
+      get binaryDecode("I",it,t4bytes)
+      put "length = " & t4bytes & cr after tDump
+
+      repeat 1000
+         set cursor to busy
+         read from file tRIFFfile for 20 bytes
+         put it into tSoundPresetName
+         if tSoundPresetName contains "EOP" then
+            exit repeat
+         else
+            put empty into tTemp
+            put "0123456789abcdefghijklmnopqrstuvwxyz" into tAlpha
+            repeat for each char tChar in tSoundPresetName
+               set cursor to busy
+               if tchar is in tAlpha then put tchar after tTemp
+            end repeat
+            put tTemp into tSoundPresetName
+         end if
+
+         Put word 1 of tTemp && word 2 of tTemp && word 3 of tTemp && word 4 of tTemp into tSoundPresetName
+
+         read from file tRIFFfile for 2 bytes
+         get binaryDecode("S",it,tInstrumentNum)
+
+         read from file tRIFFfile for 2 bytes
+         get binaryDecode("CC",it,tBankCC32_LSB,tBankCC0_MSB)
+         if tBankCC32_MSB = 128 then
+            put "DrumBank " into tIsDrumBank
+         else
+            put empty into tIsDrumBank
+         end if
+
+         put  tBankCC0_MSB &"(MSB) "& tBankCC32_LSB &" " & tIsDrumBank & tInstrumentNum && tSoundPresetName & cr after tSoundBanksPrograms
+
+         read from file tRIFFfile for 14 bytes -- skips rest of record
+
+      end repeat
+   end if
+   --   read from file tRIFFfile for 1024 --- until EOF
+   --   put "Next 1024 bytes of data: " & it & cr after tDump
+   close file tRIFFfile
+
+   --      filter each word in tSoundBanksPrograms not matching "0(MSB)" into tSoundBanksPrograms
+   repeat with x = 1 to the number of lines in tSoundBanksPrograms
+      set cursor to busy
+      if word 1 of line x of tSoundBanksPrograms = "0(MSB)" then
+         delete word 1 of line x of tSoundBanksPrograms
+      end if
+      if word 1 of line x of tSoundBanksPrograms = "0(LSB)" then
+         delete word 1 of line x of tSoundBanksPrograms
+      end if
+   end repeat
+   filter lines of tSoundBanksPrograms without empty
+   sort lines of tSoundBanksPrograms numeric by word 4 of each
+   sort lines of tSoundBanksPrograms numeric by word 3 of each
+   sort lines of tSoundBanksPrograms numeric by word 2 of each
+   sort lines of tSoundBanksPrograms numeric by word 1 of each
+
+   repeat with x = 1 to the number of lines in tSoundBanksPrograms
+      set cursor to busy
+      if word 1 of line x of tSoundBanksPrograms is an integer and word 2 of line x of tSoundBanksPrograms is an integer then
+         put word 1 of line x of tSoundBanksPrograms &"-" & word 2 of line x of tSoundBanksPrograms into word 1 to 2 of line x of tSoundBanksPrograms
+      end if
+   end repeat
+   if there is a fld "Dump" then put tDump into fld "Dump"
+   return tSoundBanksPrograms
+end getSF2Banks
