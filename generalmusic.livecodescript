@@ -26,7 +26,9 @@ on extensionFinalize
 end extensionFinalize
 
 /**
-Title: General Music Library
+Library: General Music Library
+
+type: library
 
 Version: 1.0.0
 
@@ -48,22 +50,35 @@ SVG-Icon family which would include icons such as note-duration symbols
 for use in creating GUIs for musical stacks.
 The intention is that this library will grow to include many
 more useful music and sound composition related scripts.
-*/
+**/
 
-local sMIDIFileData
 
 /**
+Name: generalMusicLibVersion
 
-The General Music Library version.
+Type: function -- command or library or module
+
+Syntax: generalMusicLibVersion()
+
+Summary: Get the General Music Library version number.
+
+Introduced: 1.0
+
+OS: mac,win,linux,ios,android
+
+Platforms: desktop,mobile
 
 Example:
 put "Version:" && generalMusicLibVersion()
 
+Returns: The version number of the General Music Library.
+
 Description:
-Use the <generalMusicLibVersion> function get the version number of this library.
+Use the <generalMusicLibVersion> function get the version number of the library.
 
-*/
+Tags: Music, MIDI, audioClip
 
+**/
 function generalMusicLibVersion
    return "1.0"
 end generalMusicLibVersion
@@ -94,24 +109,58 @@ end __Initialize
 -- 2002.12.06 tempFile in TemporaryFolder
 -----------------------------------------------------
 
-/*
-Summary: playPMD_AVMIDIPlayer notes, playTempo, instNum
+/**
 Name: playPMD_AVMIDIPlayer
-plays the PlaySentenceMusicData (PMD) starting at the specified beats per minute, with the given patch number
+
+Type: command
+
+Syntax: playPMD_AVMIDIPlayer pPlaySentenceMusicalData, pTempoBPM,[pProgramNumber,[<pSoundBankFile>]
+
+Summary: plays the Playsentence Musical Data (PMD) starting at the specified beats per minute,
+with the given sound patch number using Apple's AVMIDIPlayer API.
+
+Introduced: 1.0
+
+OS: mac,ios
+
+Platforms: desktop,mobile
+
+Parameters:
+
+pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
+
+pTempoBPM: Intitial playback tenmpo in Beats Per Minute, this may be overridden
+
+pProgramNumber: number in range 0-127 is the sound patch to use as the initial
+or default instrument sound. This nay be overridden by patchchange messages within
+the playSentence string.
+
+pSoundBankFile: An optional filePath to a soundBank (.sf2 or .dls) file to use for playback.
 
 Example:
 playPMD_AVMIDIPlayer ("C4q Ee. Gs..",120,1)
 
 Description:
-plays the PlaySentenceMusicData (PMD) starting at the specified beats per minute, with the given patch number.
+Attempts to play the Playsentence Music Data (PMD), optionally starting at the specified tempo
+in beats per minute, optionally with a given MIDI patch number (need to add 'bank-patch' suport),
+with the optionally provided Soubdbank (.sf2 or .dls) file. The default values are 120(BPM)
+and sound patch 1 (GM "Piano 1"),loading the first SoundBankFile found in default locations.
+On macOS this should load  the default Roland GS Soundbank (which is the same small Soundbank
+from the 1990s that came with QuickTime v2.5+), on iOS no default soundbank is provided
+by the OS and so one must be provided.
+PLEASE NOTE that this command will do nothing (fail silently) if the AVMIDIPLayer
+builder extension is not loaded therefore scripts should check for the presence of
+the AVMIDIPLayer libray before calling this command directly, or use the platform aware
+version, PlayPMD which should try to use the best musical playback engine currenlty availble.
 
-*/
-on playPMD_AVMIDIPlayer notes, playTempo, instNum
+Tags: Music, MIDI, audioClip
+**/
+on playPMD_AVMIDIPlayer notes, playTempo, instNum, bankNum, soundBankFile
    -- set dontUseQT to false -- long time Deprecated now -- PM 2/10/22
    put specialFolderPath( "Temporary" ) & "/playPmdTemp.mid" into tempFilePath
    if ( notes is "stop" ) or ( notes is "clear" ) then
       try
-         -- play stop vc tempFilePath
+         -- play stop vc tempFilePath -- 'videoClip' playback can be used for MIDI on most Android v2+
          AVMIDIplayerStop
       end try
       if notes is "clear" then
@@ -124,20 +173,26 @@ on playPMD_AVMIDIPlayer notes, playTempo, instNum
          -- stop playing vc tempFilePath
       end try
       makeSMF notes, playTempo, instNum, tempFilePath
-      -- play vc tempFilePath
-      put tempFilePath into cd fld "MIDIfilePath"
-      put FilePathToFileURL(tempFilePath) into cd fld "MIDIfileURL"
-      AVMIDIPlayerLoad tempFilePath, cd fld "SoundFontFilePath"
-      set the thumbPosition of scrollbar "ScrubberBar" to 0
-      set the endValue of scrollbar "ScrubberBar" to AVMIDIPlayerDuration()
-      put SecsToHrsMinSecs(0) into fld "FileCurrentPosition"
-      put SecsToHrsMinSecs(AVMIDIPlayerDuration()) into fld "FileDuration"
-      -- AVMIDIPlayerSetRate(the thumbPosition of scrollbar "Playback Rate")
-      AVMIDIPlayerSetRate 1.0
-      lock screen
-      AVMIDIPlayerPlay
-      -- AVMIDIPlayerPlayWithCallback
-      -- playPositionCheck
+      -- play vc tempFilePath -- videoClip playback can be used for MIDI on most Android v2+
+      -- put tempFilePath into cd fld "MIDIfilePath"
+      -- put FilePathToFileURL(tempFilePath) into cd fld "MIDIfileURL
+      get checkStdSoundBankDirectories()
+      if it is not empty then
+         put line 1 of it into tSoundBank
+         try
+            AVMIDIPlayerLoad tempFilePath, tSoundBank
+            -- set the thumbPosition of scrollbar "ScrubberBar" to 0
+            -- set the endValue of scrollbar "ScrubberBar" to AVMIDIPlayerDuration()
+            -- put SecsToHrsMinSecs(0) into fld "FileCurrentPosition"
+            -- put SecsToHrsMinSecs(AVMIDIPlayerDuration()) -- into fld "FileDuration"
+            -- AVMIDIPlayerSetRate(the thumbPosition of scrollbar "Playback Rate")
+            AVMIDIPlayerSetRate 1.0
+            -- lock screen
+            AVMIDIPlayerPlay
+         -- AVMIDIPlayerPlayWithCallback
+         -- playPositionCheck
+         end try
+      end if
    end if
 end playPMD_AVMIDIPlayer
 
@@ -160,9 +215,7 @@ local makeSmfAbsT, makeSmfChannel, makeSmfAbsPart
 local makeSmfOctave, makeSmfDur, makeSmfVelocity, makeSmfGRate
 local makeSmfModuration, makeSmfExp, makeSmfHoldd, makeSmfAltArry, makeSmfKeyShift
 
-
-
-/*
+/**
 Name: makeSMF
 Summary: creates a Standard MIDI File from the given PlaySentenceMusicData,
 starting at the specified beats per minute, with the given patch number,
@@ -174,8 +227,7 @@ makeSMF ("C4q Ee. Gs..",120,1,"~/testSMF.mid")
 Description:
 makeSMF creates a Standard MIDI Fike (SMF) from the given PlaySentenceMusicData (PMD)
 starting at the specified beats per minute, with the given patch number, to the provided file path.
-*/
-
+**/
 on makeSMF notes, playTempo, defInst, savePath
   put playSentenceToMIDIData( notes, playTempo, defInst ) into midiEvents
   set the cursor to watch
@@ -192,20 +244,35 @@ on makeSMF notes, playTempo, defInst, savePath
   close file savePath
 end makeSMF
 
-/*
-Name: playSentenceToMIDIData
+/**
+Syntax:
+playSentenceToMIDIData <playSentence>,[<playTempo>],[<soundPatchNum>]
+
 Summary: playSentenceToMIDIData retruns Standard MIDI File Binary Data,
 converted from the given PlaySentenceMusicData,
 starting at the specified beats per minute, with the given patch number,
 
+Parameters:
+playSentence: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
+playTempo; Intitial playback tenmpo in Beats Per Minute, this may be overridden
+by tempo messages within the playSentence string.
+soundPatchNum: a number in range 0-127 is the sound patch to use as the initial
+or default instrument sound. This nay be overridden by patchchange messages within
+the playSentence string.
+
 Example:
-makeSMF ("C4q Ee. Gs..",120,1)
+playSentenceToMIDIData "C4q Ee. Gs..",120,0 -- get MIDI data at 120BPM plays on "Piano 1"
+
+Returns:
+Standard MIDI file format binary data
 
 Description:
-playSentenceToMIDIData retruns Standard MIDI File Binary Data)
-converted from the given PlaySentenceMusicData (PMD)
-starting at the specified beats per minute, with the given patch number.
-*/
+playSentenceToMIDIData
+converted from the given Playsentence Music Data (PMD)
+starting at the specified tempo, with the given sound patch set.
+The binary data returned may be written directly to a standard MIDI file or
+passed along to some MIDI playback handler.
+**/
 function playSentenceToMIDIData notes, playTempo, defInst
   set the cursor to watch
   --
@@ -239,7 +306,6 @@ function playSentenceToMIDIData notes, playTempo, defInst
   --
   return midiEvents
 end playSentenceToMIDIData
-
 
 function notes2EvList notes, defInst, playTempo
   put notes into makeSmfNotes
@@ -979,9 +1045,7 @@ function getTimeSignBin notes
 end getTimeSignBin
 
 ----------------end of makeSMF-------------
-
-
-
+--------  begin Paul's MIDI tools ---------
 
 function evaluateStatusByte theHex
    switch theHex

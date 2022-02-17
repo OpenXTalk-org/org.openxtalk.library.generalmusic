@@ -1,0 +1,42 @@
+Library: openxtalk.library.generalmusic
+
+Type: library
+
+Title: General Music Library
+
+Version: 1.0.0
+
+Author: OpenXTalk.org
+
+Description:
+The General Music script library contains handlers for various musicality
+related tasks. Currently this incorporates a slightly modified version of UDI's
+makeSMF library for creating MIDI data from xTalk 'ABC' style text music notation,
+handlers for reading patch information from SoundFont2 and Douwnloadable Sounds
+files (.sf2 / .dls), handlers for coverting MIDI numeric values to and from
+human readable names (for example a MIDI note number to/from an
+actual note name/octave), functions for reading and  writing MIDI files to and from
+human readable timestampled event lists, handlers for converting time measurements
+(such as Beats Per Minute to Milliseconds), and more!
+
+The plan is to add a few more soon as well, such as incorporate music related
+SVG-Icon family which would include icons such as note-duration symbols
+for use in creating GUIs for musical stacks.
+The intention is that this library will grow to include many
+more useful music and sound composition related scripts.
+
+Name: generalMusicLibVersion
+
+Type: function
+
+Syntax: generalMusicLibVersion()
+
+Summary: The General Music Library version.
+
+Example: put "Version:" && generalMusicLibVersion()
+
+Description: Use the <generalMusicLibVersion> function get the version number of this library.
+
+
+
+
