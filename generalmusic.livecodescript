@@ -1247,6 +1247,57 @@ function controllerNumToName ccNum
    "Mono Operation,Poly Operation")
 end controllerNumToName
 
+function controllerNumToName ccNum
+   split ("Bank Select (coarse),Modulation Wheel (coarse),Breath controller (coarse),Foot Pedal (coarse),Undefined,"&\
+   "Portamento Time (coarse),Data Entry (coarse),Volume (coarse),Balance (coarse),Undefined,Pan position (coarse),Expression (coarse),"&\
+   "Effect Control 1 (coarse),Effect Control 2 (coarse),Undefined,Undefined,General Purpose Slider 1,General Purpose Slider 2,"&\
+   "General Purpose Slider 3,General Purpose Slider 4,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,"&\
+   "Undefined,Undefined,Undefined,Undefined,Bank Select (fine),Modulation Wheel (fine),Breath controller (fine),Undefined,Foot Pedal (fine),"&\
+   "Portamento Time (fine),Data Entry (fine),Volume (fine),Balance (fine),Undefined,Pan position (fine),Expression (fine),Effect Control 1 (fine),"&\
+   "Effect Control 2 (fine),Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,"&\
+   "Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Hold Pedal (on/off),Portamento (on/off),Sustenuto Pedal (on/off),"&\
+   "Soft Pedal (on/off),Legato Pedal (on/off),Hold 2 Pedal (on/off),Sound Variation,Sound Timbre,Sound Release Time,Sound Attack Time,"&\
+   "Sound Brightness,Sound Control 6,Sound Control 7,Sound Control 8,Sound Control 9,Sound Control 10,General Purpose Button 1 (on/off),"&\
+   "General Purpose Button 2 (on/off),General Purpose Button 3 (on/off),General Purpose Button 4 (on/off),Undefined,Undefined,Undefined,Undefined,"&\
+   "Undefined,Undefined,Undefined,Effects Level,Tremulo Level,Chorus Level,Celeste Level,Phaser Level,Data Button increment,Data Button decrement,"&\
+   "Non-registered Parameter (fine),Non-registered Parameter (coarse),Registered Parameter (fine),Registered Parameter (coarse),Undefined,Undefined,"&\
+   "Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,"&\
+   "Undefined,Undefined,Undefined,All Sound Off,All Controllers Off,Local Keyboard (on/off),All Notes Off,Omni Mode Off,Omni Mode On,"&\
+   "Mono Operation,Poly Operation") into tNameArray
+   return combine (tNameArray) with cr
+end controllerNumToName
+
+/**
+Name: midiNoteNumToName
+
+Type: function
+
+Syntax: midiNoteNumToName(<pNoteNumber>)
+
+Summary:  Get the pitch name corrisponding to the given MIDI note number.
+
+Introduced: 1.0
+
+OS: mac,win,linux,ios,android
+
+Platforms: desktop, mobile
+
+Example:
+put midiNoteNumToName(60) -- returns "C4", aka middle C
+
+Parameters:
+pNoteNumber: The MIDI note number to get the pitchname of.
+
+Returns: String containing a pitchname such as "C#4","Db5" or "Bass Drum 1"
+
+Description:
+use midiNoteNumToName to translate MIDI Note Numbers to a more humaan readable format.
+For eaxmples "C#5" is easier to recognize as C sharp on octave 5 than the '61' is, and
+"Bass Drum 1" is more recognizable than it's general MIDI number '36' is.
+
+Tags: Music, MIDI, Sound, PlayPMD, playSentence
+**/
+
 function midiNoteNumToName midiNoteNum, theChannel
    if theChannel <> "ch10" then
       return item midiNoteNum+1 of ("C-1,C#-1,D-1,D#-1,E-1,F-1,F#-1,G-1,G#-1,A-1,A#-1,B-1,C0,C#0,D0,D#0,E0,F0,F#0,G0,G#0,A0,A#0,B0,"& \
