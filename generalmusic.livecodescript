@@ -26,33 +26,47 @@ on extensionFinalize
 end extensionFinalize
 
 /**
-Title: Play Sentence Library
+Title: General Music Library
 
 Version: 1.0.0
 
 Author: OpenXTalk.org
 
 Description:
-This script library implements...
+The General Music script library contains handlers for various musicality
+related tasks. Currently this incorporates a slightly modified version of UDI's
+makeSMF library for creating MIDI data from xTalk 'ABC' style text music notation,
+handlers for reading patch information from SoundFont2 and Douwnloadable Sounds
+files (.sf2 / .dls), handlers for coverting MIDI numeric values to and from
+human readable names (for example a MIDI note number to/from an
+actual note name/octave), functions for reading and  writing MIDI files to and from
+human readable timestampled event lists, handlers for converting time measurements
+(such as Beats Per Minute to Milliseconds), and more!
+
+The plan is to add a few more soon as well, such as incorporate music related
+SVG-Icon family which would include icons such as note-duration symbols
+for use in creating GUIs for musical stacks.
+The intention is that this library will grow to include many
+more useful music and sound composition related scripts.
 */
 
 local sMIDIFileData
 
 /**
 
-The MIME version this implemented in the library
+The General Music Library version.
 
 Example:
-put "MIME-Version:" && mimeTheMIMEVersion() & crlf after tHeaders
+put "Version:" && generalMusicLibVersion()
 
 Description:
-Use the <mimeTheMIMEVersion> function create a `MIME-Version` header.
+Use the <generalMusicLibVersion> function get the version number of this library.
 
 */
 
-function playSentenceVersion
+function generalMusicLibVersion
    return "1.0"
-end playSentenceVersion
+end generalMusicLibVersion
 
 
 private command __Initialize
@@ -62,10 +76,6 @@ end __Initialize
 
 ---- makeSMF (PM modded version) ---
 -- originally by UDI --
-
-
--- This is a library of the makeSMF.
--- This script was inserted in frontScript at openStack ( see stack script )
 
 --on closeCard
 --  playPmd "Clear" -- stop music & delete temporary mid file
@@ -84,6 +94,18 @@ end __Initialize
 -- 2002.12.06 tempFile in TemporaryFolder
 -----------------------------------------------------
 
+/*
+Summary: playPMD_AVMIDIPlayer notes, playTempo, instNum
+Name: playPMD_AVMIDIPlayer
+plays the PlaySentenceMusicData (PMD) starting at the specified beats per minute, with the given patch number
+
+Example:
+playPMD_AVMIDIPlayer ("C4q Ee. Gs..",120,1)
+
+Description:
+plays the PlaySentenceMusicData (PMD) starting at the specified beats per minute, with the given patch number.
+
+*/
 on playPMD_AVMIDIPlayer notes, playTempo, instNum
    -- set dontUseQT to false -- long time Deprecated now -- PM 2/10/22
    put specialFolderPath( "Temporary" ) & "/playPmdTemp.mid" into tempFilePath
@@ -110,32 +132,14 @@ on playPMD_AVMIDIPlayer notes, playTempo, instNum
       set the endValue of scrollbar "ScrubberBar" to AVMIDIPlayerDuration()
       put SecsToHrsMinSecs(0) into fld "FileCurrentPosition"
       put SecsToHrsMinSecs(AVMIDIPlayerDuration()) into fld "FileDuration"
-      AVMIDIPlayerSetRate(the thumbPosition of scrollbar "Playback Rate")
+      -- AVMIDIPlayerSetRate(the thumbPosition of scrollbar "Playback Rate")
+      AVMIDIPlayerSetRate 1.0
       lock screen
-      -- AVMIDIPlayerPlay
-      AVMIDIPlayerPlayWithCallback
-      playPositionCheck
+      AVMIDIPlayerPlay
+      -- AVMIDIPlayerPlayWithCallback
+      -- playPositionCheck
    end if
 end playPMD_AVMIDIPlayer
-
-on checkPlayEnd
-  if movie() is "done" then
-    setPlayBtn false
-  else
-    send "checkPlayEnd" to me in 30 ticks
-  end if
-end checkPlayEnd
-
-on setPlayBtn toPlay
-  try
-    set the enabled of btn "Play" to ( not toPlay )
-  end try
-  try
-    set the enabled of btn "Stop" to ( toPlay )
-  end try
-end setPlayBtn
-----------------end of playPmd-------------
-
 
 ----------------makeSMF script by UDI 2002.12.06-------------
 -- makeSMF notes, [ playTempo ], [ defInst ], savePath
@@ -157,6 +161,21 @@ local makeSmfOctave, makeSmfDur, makeSmfVelocity, makeSmfGRate
 local makeSmfModuration, makeSmfExp, makeSmfHoldd, makeSmfAltArry, makeSmfKeyShift
 
 
+
+/*
+Name: makeSMF
+Summary: creates a Standard MIDI File from the given PlaySentenceMusicData,
+starting at the specified beats per minute, with the given patch number,
+writing it to the provided file path.
+
+Example:
+makeSMF ("C4q Ee. Gs..",120,1,"~/testSMF.mid")
+
+Description:
+makeSMF creates a Standard MIDI Fike (SMF) from the given PlaySentenceMusicData (PMD)
+starting at the specified beats per minute, with the given patch number, to the provided file path.
+*/
+
 on makeSMF notes, playTempo, defInst, savePath
   put playSentenceToMIDIData( notes, playTempo, defInst ) into midiEvents
   set the cursor to watch
@@ -173,9 +192,19 @@ on makeSMF notes, playTempo, defInst, savePath
   close file savePath
 end makeSMF
 
-/**
+/*
+Name: playSentenceToMIDIData
+Summary: playSentenceToMIDIData retruns Standard MIDI File Binary Data,
+converted from the given PlaySentenceMusicData,
+starting at the specified beats per minute, with the given patch number,
 
+Example:
+makeSMF ("C4q Ee. Gs..",120,1)
 
+Description:
+playSentenceToMIDIData retruns Standard MIDI File Binary Data)
+converted from the given PlaySentenceMusicData (PMD)
+starting at the specified beats per minute, with the given patch number.
 */
 function playSentenceToMIDIData notes, playTempo, defInst
   set the cursor to watch
@@ -851,20 +880,20 @@ function getInitHex aPart, instNum
   return resultHex
 end getInitHex
 
-function getInitHex aPart, instNum
-  put "" into resultHex
+-- function getInitHex aPart, instNum
+  --put "" into resultHex
   --
-  put num2Hex( aPart, 1 ) into partHex
-  put abstT2Str( 0 ) & "," & "B" & partHex & "0000"  & return after resultHex -- bank select MSB( CC#0 = 0 )
-  put abstT2Str( 1 ) & "," & "B" & partHex & "2000" & return after resultHex -- bank select LSB( CC#32 = 0 )
-  put abstT2Str( 2 ) & "," & "C" & partHex & num2Hex( instNum -1, 2 ) & return after resultHex -- program change( CN#12 )
+ -- put num2Hex( aPart, 1 ) into partHex
+--  put abstT2Str( 0 ) & "," & "B" & partHex & "0000"  & return after resultHex -- bank select MSB( CC#0 = 0 )
+ -- put abstT2Str( 1 ) & "," & "B" & partHex & "2000" & return after resultHex -- bank select LSB( CC#32 = 0 )
+  -- put abstT2Str( 2 ) & "," & "C" & partHex & num2Hex( instNum -1, 2 ) & return after resultHex -- program change( CN#12 )
+ -- --
+--  put abstT2Str( 3 ) & "," & "B" & partHex & "5B00" & return after resultHex -- Reverb( CC#91 = 0 )
+--  put abstT2Str( 3 ) & "," & "B" & partHex & "0B7F" & return after resultHex -- Expression( CC#11 = 0x7F )
+ -- put abstT2Str( 3 ) & "," & "B" & partHex & "0A40" & return after resultHex -- Panpot( CC#10 = 0x40 )
   --
-  put abstT2Str( 3 ) & "," & "B" & partHex & "5B00" & return after resultHex -- Reverb( CC#91 = 0 )
-  put abstT2Str( 3 ) & "," & "B" & partHex & "0B7F" & return after resultHex -- Expression( CC#11 = 0x7F )
-  put abstT2Str( 3 ) & "," & "B" & partHex & "0A40" & return after resultHex -- Panpot( CC#10 = 0x40 )
-  --
-  return resultHex
-end getInitHex
+  -- return resultHex
+-- end getInitHex
 
 function getMidiHeader trackSize
   put "" into aResult
@@ -1866,6 +1895,21 @@ function getRIFFHeaderInfo pRIFFFile
    end if
 end getRIFFHeaderInfo
 
+/*
+Summary: Use checkStdSoundBankDirectories to scan filesysten directories where
+soundbank files are normally found. On macOS and Windows this should return the
+path to the standard Roland GS Soundbank.
+
+Name: SF2orDLSmagicNumCheck
+
+Example:
+if checkStdSoundBankDirectories() into fld "Soundbank Files"
+
+Description:
+Use checkStdSoundBankDirectories to scan filesysten directories where
+soundbank files are normally found. On macOS and Windows this should return the
+path to the standard Roland GS Soundbank.
+*/
 function checkStdSoundBankDirectories
    put "gs_instruments.dls" into tSoundBankFileNames
    put "/System/Library/Components/CoreAudio.component/Contents/Resources/gs_instruments.dls" into tPathList
@@ -1914,6 +1958,18 @@ function checkStdSoundBankDirectories
    -- put the PathList of me
 end checkStdSoundBankDirectories
 
+/*
+Summary: Use SF2orDLSmagicNumCheck to ensure that the fiven file contains a RIFF
+header and conatains a type signature of either an SF2 or DLS Soundbank.
+Name: SF2orDLSmagicNumCheck
+
+Example:
+if SF2orDLSmagicNumCheck("~/Path/To/ASoundbank.exs") is false then exit to top
+
+Description:
+SF2orDLSmagicNumCheck returns true if the given file contains a RIFF
+header and also conatains a type signature for either an SF2 or DLS Soundbank.
+*/
 function SF2orDLSmagicNumCheck pFile
    open file pFile for binary read
    read from file pFile for 16 bytes
@@ -1931,6 +1987,19 @@ function SF2orDLSmagicNumCheck pFile
    end if
 end SF2orDLSmagicNumCheck
 
+/*
+Summary: getDLSBanks returns a line delimited list of sound patches from a DownLoadableSoundbank(.dls) file.
+Name: getDLSBanks
+
+Example:
+put getDLSBanks("/System/Library/Components/CoreAudio.component/Contents/Resources/gs_instruments.dls") into btn "Select Sound Patch >"
+
+Description:
+getDLSBanks returns a line delimited list of sound patches from a
+DownLoadableSoundbank(.dls) file. Each list line is in the format:
+banknumber-patchnumber patchname, and so for a general midi soundbank
+the first line would be "0-1 Piano 1"
+*/
 function getDLSBanks tRIFFfile
    set cursor to busy
    lock screen
@@ -2035,6 +2104,18 @@ function getDLSBanks tRIFFfile
 
 end getDLSBanks
 
+/*
+Summary: getSF2Banks returns a line delimited list of sound patches from a SoundFont(.sf2) file.
+Name: getSF2Banks
+
+Example:
+put getSF2Banks("/Path/To/ASoundFont.sf2") into btn "Select Sound Patch >"
+
+Description:
+getSF2Banks returns a line delimited list of sound patches from a SoundFont(.sf2) file.
+The each list line is in the format: banknumber-patchnumber patchname,
+so for a general midi soundbank the first line would be "0-1 Piano 1"
+*/
 function getSF2Banks tRIFFfile
    lock screen
    open file tRIFFfile for binary read
