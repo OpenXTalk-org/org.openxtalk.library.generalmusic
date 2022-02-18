@@ -274,7 +274,7 @@ on checkPlayEnd_videoClip
    if movie() is "done" then
       setPlayBtn false
    else
-      send "checkPlayEndVC" to me in 30 ticks
+      send "checkPlayEnd_videoClip" to me in 30 ticks
    end if
 end checkPlayEnd_videoClip
 
@@ -353,7 +353,7 @@ on playPMD_Shell notes, playTempo, instNum, midiAppName
       put "echo '" & playPmdMidiApp &&quote& tempFilePath &quote& "' | at now" into shellCmd --Lx
       get shell( shellCmd )
       setPlayBtn true
-      send "checkPlayEndShell" to me in 3sec
+      send "checkPlayEnd_Shell" to me in 3sec
    end if
 end playPMD_Shell
 
@@ -362,7 +362,7 @@ on checkPlayEnd_Shell
    if ( shell( "killall -0" && playPmdMidiApp ) contains "found" ) then -- 1.3.5
       setPlayBtn false
    else
-      send "checkPlayEndShell" to me in 30 ticks
+      send "checkPlayEnd_Shell" to me in 30 ticks
    end if
 end checkPlayEnd_Shell
 
@@ -2331,11 +2331,30 @@ function scanStdSoundBankDirectories
    put "gs_instruments.dls" into tSoundBankFileNames
    if the platform is "MacOS" then
       put "/System/Library/Components/CoreAudio.component/Contents/Resources/gs_instruments.dls" into tPathList
+      set the folder to "/Library/Audio/Sounds/Banks/"
    else if the platform is "Win32" then
-      put "/Windows/Win21//gs_instruments.dls" into tPathList
+      if there is a file "C:\windows\system32\drivers\gm.dls" then
+         put  "C:\windows\system32\drivers\gm.dls" into tPathList
+         set the folder to "C:\Windows\system32\drivers\"
+      else if there is a file "C:\Windows\SysWOW64\drivers\gm.dls" then
+         put  "C:\windows\SysWOW64\drivers\gm.dls" into tPathList
+         set the folder to "C:\Windows\SysWOW64\drivers\"
+      end if
+   else if the platform is "Linux" then
+      /usr/share/sounds/sf2/FluidR3_GM.sf2
+      if there is a file "/usr/share/sounds/sf2/" then
+         put  "/usr/share/sounds/sf2/FluidR3_GM.sf2" into tPathList
+         -- Maybe also check for "GeneralUser.sf2"
+         set the folder to "/usr/share/sounds/sf2/"
+      else if there is a file "/usr/share/soundfonts/default.sf2" then
+         put  "/usr/share/soundfonts/default.sf2" into tPathList
+         set the folder to "/usr/share/soundfonts/"
+      end if
    end if
+   -- MuseSCrore
+   -- Windows: %HOMEPATH%\Documents\MuseScore3\Soundfonts
+   -- macOS and Linux: ~/Documents/MuseScore3/Soundfonts
 
-   set the folder to "/Library/Audio/Sounds/Banks/"
    put the files into tFileNames
    filter lines of tFileNames with "*.sf2" into tSF2Names
    filter lines of tFileNames with "*.dls" into tDLSNames
@@ -2350,7 +2369,6 @@ function scanStdSoundBankDirectories
          end if
       end repeat
    end if
-
    put empty into tFileNames
    put specialFolderPath("Home") & "/Library/Audio/Sounds/Banks/" into tWrkDir
    --put tWrkDir
