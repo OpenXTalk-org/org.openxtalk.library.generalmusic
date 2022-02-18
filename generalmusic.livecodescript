@@ -434,7 +434,7 @@ on playPMD_AVMIDIPlayer notes, playTempo, instNum, bankNum, soundBankFile
       -- play vc tempFilePath -- videoClip playback can be used for MIDI on most Android v2+
       -- put tempFilePath into cd fld "MIDIfilePath"
       -- put FilePathToFileURL(tempFilePath) into cd fld "MIDIfileURL
-      get checkStdSoundBankDirectories()
+      get scanStdSoundBankDirectories()
       if it is not empty then
          put line 1 of it into tSoundBank
          try
@@ -2313,23 +2313,28 @@ function getRIFFHeaderInfo pRIFFFile
 end getRIFFHeaderInfo
 
 /*
-Summary: Use checkStdSoundBankDirectories to scan filesysten directories where
+Summary: Use scanStdSoundBankDirectories to scan filesysten directories where
 soundbank files are normally found. On macOS and Windows this should return the
 path to the standard Roland GS Soundbank.
 
 Name: SF2orDLSmagicNumCheck
 
 Example:
-if checkStdSoundBankDirectories() into fld "Soundbank Files"
+if scanStdSoundBankDirectories() into fld "Soundbank Files"
 
 Description:
-Use checkStdSoundBankDirectories to scan filesysten directories where
+Use scanStdSoundBankDirectories to scan filesysten directories where
 soundbank files are normally found. On macOS and Windows this should return the
 path to the standard Roland GS Soundbank.
 */
-function checkStdSoundBankDirectories
+function scanStdSoundBankDirectories
    put "gs_instruments.dls" into tSoundBankFileNames
-   put "/System/Library/Components/CoreAudio.component/Contents/Resources/gs_instruments.dls" into tPathList
+   if the platform is "MacOS" then
+      put "/System/Library/Components/CoreAudio.component/Contents/Resources/gs_instruments.dls" into tPathList
+   else if the platform is "Win32" then
+      put "/Windows/Win21//gs_instruments.dls" into tPathList
+   end if
+
    set the folder to "/Library/Audio/Sounds/Banks/"
    put the files into tFileNames
    filter lines of tFileNames with "*.sf2" into tSF2Names
@@ -2373,7 +2378,7 @@ function checkStdSoundBankDirectories
    -- set the PathList of me to tPathList
    return tPathList
    -- put the PathList of me
-end checkStdSoundBankDirectories
+end scanStdSoundBankDirectories
 
 /*
 Summary: Use SF2orDLSmagicNumCheck to ensure that the fiven file contains a RIFF
