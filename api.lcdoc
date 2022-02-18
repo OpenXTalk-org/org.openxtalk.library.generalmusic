@@ -2,7 +2,7 @@ Library: openxtalk.library.generalmusic
 
 Type: library
 
-Title: General Music Library
+Library: General Music Library
 
 Version: 1.0.0
 
@@ -27,16 +27,171 @@ more useful music and sound composition related scripts.
 
 Name: generalMusicLibVersion
 
-Type: function
+Type: function -- command or library or module
 
 Syntax: generalMusicLibVersion()
 
-Summary: The General Music Library version.
+Summary: Get the General Music Library version number.
+
+Introduced: 1.0
+
+OS: mac,win,linux,ios,android
+
+Platforms: desktop,mobile
 
 Example: put "Version:" && generalMusicLibVersion()
 
-Description: Use the <generalMusicLibVersion> function get the version number of this library.
+Returns: The version number of the General Music Library.
+
+Description: Use the <generalMusicLibVersion> function get the version number of the library.
+
+Tags: Music, MIDI, audioClip
 
 
 
 
+Name: midiNoteNumToName
+
+Type: function
+
+Syntax: midiNoteNumToName(<pNoteNumber>)
+
+Summary: Get the pitch name corrisponding to the given MIDI note number.
+
+Introduced: 1.0
+
+OS: mac,win,linux,ios,android
+
+Platforms: desktop, mobile
+
+Example: put midiNoteNumToName(60) -- returns "C4", aka middle C
+
+Parameters:
+
+pNoteNumber: The MIDI note number to get the pitchname of.
+
+Returns: String containing a pitchname such as "C#4","Db5" or "Bass Drum 1"
+
+Description:
+use midiNoteNumToName to translate MIDI Note Numbers to a more humaan readable format.
+For eaxmples "C#5" is easier to recognize as C sharp on octave 5 than the '61' is, and
+"Bass Drum 1" is more recognizable than it's general MIDI number '36' is.
+
+Tags: Music, MIDI, Sound, PlayPMD, playSentence
+
+
+
+
+Name: makeSMF
+
+Type: command
+
+Syntax: makeSMF <notes>,<playTempo>,<defInst>,<savePath>
+
+Summary:
+creates a Standard MIDI File from the given PlaySentenceMusicData,
+starting at the specified beats per minute, with the given patch number,
+writing it to the provided file path.
+
+Example: makeSMF ("C4q Ee. Gs..",120,1,"~/testSMF.mid")
+
+Description:
+makeSMF creates a Standard MIDI Fike (SMF) from the given PlaySentenceMusicData (PMD)
+starting at the specified beats per minute, with the given patch number, to the provided file path.
+
+Parameters:
+:
+
+
+:
+
+
+:
+
+
+:
+
+
+
+
+Name: playSentenceToMIDIData
+
+Type: function
+
+Syntax: playSentenceToMIDIData <playSentence>,[<playTempo>],[<soundPatchNum>]
+
+Summary:
+playSentenceToMIDIData retruns Standard MIDI File Binary Data,
+converted from the given PlaySentenceMusicData,
+starting at the specified beats per minute, with the given patch number,
+
+Parameters:
+
+playSentence:
+string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
+playTempo; Intitial playback tenmpo in Beats Per Minute, this may be overridden
+by tempo messages within the playSentence string.
+
+soundPatchNum:
+a number in range 0-127 is the sound patch to use as the initial
+or default instrument sound. This nay be overridden by patchchange messages within
+the playSentence string.
+
+Example: playSentenceToMIDIData "C4q Ee. Gs..",120,0 -- get MIDI data at 120BPM plays on "Piano 1"
+
+Returns: Standard MIDI file format binary data
+
+Description:
+playSentenceToMIDIData
+converted from the given Playsentence Music Data (PMD)
+starting at the specified tempo, with the given sound patch set.
+The binary data returned may be written directly to a standard MIDI file or
+passed along to some MIDI playback handler.
+
+
+
+Name: playPMD_AVMIDIPlayer
+
+Type: command
+
+Syntax: playPMD_AVMIDIPlayer pPlaySentenceMusicalData, pTempoBPM,[pProgramNumber,[<pSoundBankFile>]
+
+Summary:
+plays the Playsentence Musical Data (PMD) starting at the specified beats per minute,
+with the given sound patch number using Apple's AVMIDIPlayer API.
+
+Introduced: 1.0
+
+OS: mac,ios
+
+Platforms: desktop,mobile
+
+Parameters:
+
+pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
+
+pTempoBPM: Intitial playback tenmpo in Beats Per Minute, this may be overridden
+
+pProgramNumber:
+number in range 0-127 is the sound patch to use as the initial
+or default instrument sound. This nay be overridden by patchchange messages within
+the playSentence string.
+
+pSoundBankFile: An optional filePath to a soundBank (.sf2 or .dls) file to use for playback.
+
+Example: playPMD_AVMIDIPlayer ("C4q Ee. Gs..",120,1)
+
+Description:
+Attempts to play the Playsentence Music Data (PMD), optionally starting at the specified tempo
+in beats per minute, optionally with a given MIDI patch number (need to add 'bank-patch' suport),
+with the optionally provided Soubdbank (.sf2 or .dls) file. The default values are 120(BPM)
+and sound patch 1 (GM "Piano 1"),loading the first SoundBankFile found in default locations.
+On macOS this should load  the default Roland GS Soundbank (which is the same small Soundbank
+from the 1990s that came with QuickTime v2.5+), on iOS no default soundbank is provided
+by the OS and so one must be provided.
+PLEASE NOTE that this command will do nothing (fail silently) if the AVMIDIPLayer
+builder extension is not loaded therefore scripts should check for the presence of
+the AVMIDIPLayer libray before calling this command directly, or use the platform aware
+version, PlayPMD which should try to use the best musical playback engine currenlty availble.
+
+Tags: Music, MIDI, audioClip

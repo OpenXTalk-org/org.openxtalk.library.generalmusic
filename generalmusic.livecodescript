@@ -56,7 +56,7 @@ more useful music and sound composition related scripts.
 /**
 Name: generalMusicLibVersion
 
-Type: function -- command or library or module
+Type: function
 
 Syntax: generalMusicLibVersion()
 
@@ -108,7 +108,258 @@ end __Initialize
 -- 2002.10.03 idle -> send-in
 -- 2002.12.06 tempFile in TemporaryFolder
 -----------------------------------------------------
+-- 1.3.4 2018.09 patch for command-line MIDI Player  / 4th param added to MIDI app name
+-- 1.3.5 2018.10 bug fixed: playPmd shell( killall )
+-----------------------------------------------------
 
+------------------------------ playPMD as a videoClip (works on Android 2+) ---------------------------------------------
+
+/**
+Name: playPMD
+
+Type: command
+
+Syntax: playPMD pPlaySentenceMusicalData,[<pTempoBPM>],[<pProgramNumber>],[<pShellpAppPath>]
+
+Summary: plays the Playsentence Musical Data (PMD) starting at the specified tempo
+in beats per minute, with the given sound patch number, using the current best
+playback available on the current platform.
+
+Introduced: 1.0
+
+OS: mac,ios,android,linux,windows
+
+Platforms: desktop, mobile
+
+Parameters:
+
+pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
+
+pTempoBPM: Intitial playback tenmpo in Beats Per Minute, this may be overridden
+
+pProgramNumber: number in range 0-127 is the sound patch to use as the initial
+or default instrument sound. This nay be overridden by patchchange messages within
+the playSentence string.
+
+Example:
+playPMD "C4q Ee. Gs..",120,1
+
+Description:
+plays the Playsentence Musical Data (PMD) starting at the specified tempo
+in beats per minute, with the given sound patch number, using the current best
+playback available on the current platform.
+
+Tags: Music, MIDI, audioClip
+**/
+on playPMD notes, playTempo, instNum, midiAppName
+   if ( midiAppName is NOT empty ) then
+      playPmdShell notes, playTempo, instNum, midiAppName
+      exit playPmd
+   end if
+   -- put the platform into myOS
+   switch platform()
+      case "mac" -- or ( myOS contains "win" ) then
+         -- set the itemDel to "."
+         -- if ( item 1 of qtVersion() < 10 )  then  -- QuickTime MIDI is dead
+         get the loadedExtensions
+         if it contains "AVMIDIPlayer" then
+            playPMD_AVMIDIPlayer notes, playTempo, instNum, midiAppName
+         else if it contains "FluidSynth" then
+            playPMD_FluidSynth notes, playTempo, instNum, midiAppName
+         end if
+         break
+      case "ios"
+         get the loadedExtensions
+         if it contains "AVMIDIPlayer" then
+            playPMD_AVMIDIPlayer notes, playTempo, instNum, midiAppName
+         end if
+         break
+      case "andoid"
+         playPMD_videoClip notes, playTempo, instNum
+         break
+      case "linux"
+         get the loadedExtensions
+         if it contains "FluidSynth" then
+            playPMD_FluidSynth notes, playTempo, instNum, midiAppName
+         else
+            playPMD_Shell notes, playTempo, instNum, midiAppName
+         end if
+         break
+      case "win"
+         get the loadedExtensions
+         if it contains "FluidSynth" then
+            playPMD_FluidSynth notes, playTempo, instNum, midiAppName
+         else
+            playPMD_videoClip notes, playTempo, instNum, midiAppName
+            -- Maybe replace with MCI play?
+         end if
+         break
+      default
+         break
+   end switch
+end playPmd
+
+
+/**
+Name: playPMD_videoClip
+
+Type: command
+
+Syntax: playPMD_videoClip pPlaySentenceMusicalData,[<pTempoBPM>],[<pProgramNumber>]
+
+Summary: plays the Playsentence Musical Data (PMD) starting at the specified tempo
+in beats per minute, with the given sound patch number, using the current operating
+system's media play APIs, which must support MIDI in order for playback to be heard.
+
+Introduced: 1.0
+
+OS: android,linux,windows
+
+Platforms: desktop, mobile
+
+Parameters:
+
+pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
+
+pTempoBPM: Intitial playback tenmpo in Beats Per Minute, this may be overridden
+
+pProgramNumber: number in range 0-127 is the sound patch to use as the initial
+or default instrument sound. This nay be overridden by patchchange messages within
+the playSentence string.
+
+Example:
+playPMD_videoClip ("C4q Ee. Gs..",120,1)
+
+Description:
+plays the Playsentence Musical Data (PMD) starting at the specified tempo
+in beats per minute, with the given sound patch number, using the current operating
+system's media play APIs, which must support MIDI in order for playback to be heard.
+
+Tags: Music, MIDI, audioClip
+**/
+on playPMD_videoClip notes, playTempo, instNum
+   put specialFolderPath( "Temporary" ) & "/playPmdTemp.mid" into tempFilePath
+   if ( notes is "stop" ) or ( notes is "clear" ) then
+      try
+         play stop vc tempFilePath
+      end try
+      if notes is "clear" then
+         delete file tempFilePath
+      end if
+      setPlayBtn false
+   else
+      try
+         stop playing vc tempFilePath
+      end try
+      makeSMF notes, playTempo, instNum, tempFilePath
+      play vc tempFilePath
+      if the result contains "no" then
+         answer the result
+         playPmd "clear"
+         exit playPmdVC
+      end if
+      setPlayBtn true
+      checkPlayEndVC
+   end if
+end playPMD_videoClip
+
+on checkPlayEnd_videoClip
+   if movie() is "done" then
+      setPlayBtn false
+   else
+      send "checkPlayEndVC" to me in 30 ticks
+   end if
+end checkPlayEnd_videoClip
+
+------------------------------------------------ playPMD using a shell app ------------------------------------------
+
+/**
+Name: playPMD_Shell
+
+Type: command
+
+Syntax: playPMD_Shell pPlaySentenceMusicalData,[<pTempoBPM>],[<pProgramNumber>],[<pShellpAppPath>]
+
+Summary: Plays the Playsentence Musical Data (PMD) starting at the specified tempo
+in beats per minute, with the given sound initial patch number, using the shell app at a provided path.
+
+Introduced: 1.0
+
+OS: mac,ios,android,linux,windows
+
+Platforms: desktop, mobile
+
+Parameters:
+
+pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
+
+pTempoBPM: Intitial playback tenmpo in Beats Per Minute, this may be overridden
+
+pProgramNumber: number in range 0-127 is the sound patch to use as the initial
+or default instrument sound. This nay be overridden by patchchange messages within
+the playSentence string.
+
+pShellpAppPath: the path to a player shell app to pass a generated MIDI file to for playback.
+
+Example:
+playPMD_Shell "C4q Ee. Gs..",120,1,"/Path/To/WildMIDI"
+
+Description:
+Plays the Playsentence Musical Data (PMD) starting at the specified tempo
+in beats per minute, with the given sound initial patch number, using the shell app at a provided path.
+
+Tags: Music, MIDI, audioClip
+**/
+local playPmdMidiApp
+on playPMD_Shell notes, playTempo, instNum, midiAppName
+   if ( midiAppName is not empty ) then
+      put midiAppName into playPmdMidiApp
+   else
+      try
+         if ( first char of shell( "which wildmidi" ) is "/" ) then
+            put "wildmidi" into playPmdMidiApp
+         else
+            if ( first char of shell( "which timidity" ) is "/" ) then
+               put "timidity" into playPmdMidiApp
+            end if
+         end if
+      end try
+   end if
+   --
+   put specialFolderPath( "Temporary" ) & "/playPmdTemp.mid" into tempFilePath
+   if ( notes is "stop" ) or ( notes is "clear" ) then
+      try
+         get shell( "killall" && playPmdMidiApp )
+      end try
+      if notes is "clear" then
+         delete file tempFilePath
+      end if
+      setPlayBtn false
+   else
+      if ( playPmdMidiApp is empty ) then
+         answer "Not found MIDI player"
+         playPmd "clear"
+         exit playPmdShell
+      end if
+      get shell( "killall" && playPmdMidiApp )
+      makeSMF notes, playTempo, instNum, tempFilePath
+      put "echo '" & playPmdMidiApp &&quote& tempFilePath &quote& "' | at now" into shellCmd --Lx
+      get shell( shellCmd )
+      setPlayBtn true
+      send "checkPlayEndShell" to me in 3sec
+   end if
+end playPMD_Shell
+
+on checkPlayEnd_Shell
+   --1.3.5 if ( shell( "killall -0" && playPmdMidiApp ) is NOT empty ) then
+   if ( shell( "killall -0" && playPmdMidiApp ) contains "found" ) then -- 1.3.5
+      setPlayBtn false
+   else
+      send "checkPlayEndShell" to me in 30 ticks
+   end if
+end checkPlayEnd_Shell
+
+-------------------------------------- playPMD using a AVMIDIPLayer (macOS & iOS) ------------------------------------------
 /**
 Name: playPMD_AVMIDIPlayer
 
@@ -196,6 +447,82 @@ on playPMD_AVMIDIPlayer notes, playTempo, instNum, bankNum, soundBankFile
    end if
 end playPMD_AVMIDIPlayer
 
+on setPlayBtn toPlay
+   try
+      set the enabled of btn "Play" to ( not toPlay )
+   end try
+   try
+      set the enabled of btn "Stop" to ( toPlay )
+   end try
+end setPlayBtn
+
+------------------------ No-playback PMD to Standard MIDI Data (crossplatform) ----------------------------------------
+/**
+Name: playSentenceToMIDIData
+
+Type: cmmand
+
+Syntax:
+playSentenceToMIDIData <playSentence>,[<playTempo>],[<soundPatchNum>]
+
+Summary: playSentenceToMIDIData retruns Standard MIDI File Binary Data,
+converted from the given PlaySentenceMusicData,
+starting at the specified beats per minute, with the given patch number,
+
+Parameters:
+playSentence: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
+playTempo; Intitial playback tenmpo in Beats Per Minute, this may be overridden
+by tempo messages within the playSentence string.
+soundPatchNum: a number in range 0-127 is the sound patch to use as the initial
+or default instrument sound. This nay be overridden by patchchange messages within
+the playSentence string.
+
+Example:
+PUT playSentenceToMIDIData("C4q Ee. Gs..",120,0) -- get MIDI data at 120BPM plays on "Piano 1"
+
+Returns:
+Standard MIDI file format binary data
+
+Description:
+Converts PlaySentence Musical Data (PMD) starting at the specified tempo,
+with the given sound patch number. The binary data returned may be written directly to a standard MIDI file or
+passed along to some MIDI playback handler.
+**/
+function playSentenceToMIDIData notes, playTempo, defInst
+  set the cursor to watch
+  --
+  if line 1 of notes contains "//pmd" then
+    -- exist header
+    put line 1 of notes into pmdHeader
+    if item 3 of pmdHeader > 0 then
+      put item 3 of pmdHeader into playTempo
+    end if
+    if item 4 of pmdHeader > 0 then
+      put item 4 of pmdHeader into defInst
+    end if
+  end if
+  if playTempo is "" then put 100 into playTempo
+  if defInst is "" then put 1 into defInst
+  --
+  put getCopyrightBin( notes ) into midiEvents
+  put getInfoBin( notes ) after midiEvents
+  put getTimeSignBin( notes ) after midiEvents
+  --
+  put binaryEncode( "H*", "00FF54054000000000" ) after midiEvents -- SMTPE offset
+  put binaryEncode( "H*", "00FF5103" ) & num2Bin( 590000 *100 div playTempo, 3) after midiEvents
+  put binaryEncode( "H*", "00B07900" ) after midiEvents -- reset all controler( CC#121 = 0 )
+  --
+  put notes2EvList( notes, defInst, playTempo ) into evList
+  set the cursor to watch
+  sort lines of evList
+  put evList2Midi( evList ) after midiEvents
+  --
+  put getMidiHeader( length( midiEvents ) ) before midiEvents
+  --
+  return midiEvents
+end playSentenceToMIDIData
+
+------------------------------------------------ MakeSMF ---------------------------------------------
 ----------------makeSMF script by UDI 2002.12.06-------------
 -- makeSMF notes, [ playTempo ], [ defInst ], savePath
 -- param 1 notes = Score string to play or make SMF.
@@ -243,69 +570,6 @@ on makeSMF notes, playTempo, defInst, savePath
   write midiEvents to file savePath
   close file savePath
 end makeSMF
-
-/**
-Syntax:
-playSentenceToMIDIData <playSentence>,[<playTempo>],[<soundPatchNum>]
-
-Summary: playSentenceToMIDIData retruns Standard MIDI File Binary Data,
-converted from the given PlaySentenceMusicData,
-starting at the specified beats per minute, with the given patch number,
-
-Parameters:
-playSentence: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
-playTempo; Intitial playback tenmpo in Beats Per Minute, this may be overridden
-by tempo messages within the playSentence string.
-soundPatchNum: a number in range 0-127 is the sound patch to use as the initial
-or default instrument sound. This nay be overridden by patchchange messages within
-the playSentence string.
-
-Example:
-playSentenceToMIDIData "C4q Ee. Gs..",120,0 -- get MIDI data at 120BPM plays on "Piano 1"
-
-Returns:
-Standard MIDI file format binary data
-
-Description:
-playSentenceToMIDIData
-converted from the given Playsentence Music Data (PMD)
-starting at the specified tempo, with the given sound patch set.
-The binary data returned may be written directly to a standard MIDI file or
-passed along to some MIDI playback handler.
-**/
-function playSentenceToMIDIData notes, playTempo, defInst
-  set the cursor to watch
-  --
-  if line 1 of notes contains "//pmd" then
-    -- exist header
-    put line 1 of notes into pmdHeader
-    if item 3 of pmdHeader > 0 then
-      put item 3 of pmdHeader into playTempo
-    end if
-    if item 4 of pmdHeader > 0 then
-      put item 4 of pmdHeader into defInst
-    end if
-  end if
-  if playTempo is "" then put 100 into playTempo
-  if defInst is "" then put 1 into defInst
-  --
-  put getCopyrightBin( notes ) into midiEvents
-  put getInfoBin( notes ) after midiEvents
-  put getTimeSignBin( notes ) after midiEvents
-  --
-  put binaryEncode( "H*", "00FF54054000000000" ) after midiEvents -- SMTPE offset
-  put binaryEncode( "H*", "00FF5103" ) & num2Bin( 590000 *100 div playTempo, 3) after midiEvents
-  put binaryEncode( "H*", "00B07900" ) after midiEvents -- reset all controler( CC#121 = 0 )
-  --
-  put notes2EvList( notes, defInst, playTempo ) into evList
-  set the cursor to watch
-  sort lines of evList
-  put evList2Midi( evList ) after midiEvents
-  --
-  put getMidiHeader( length( midiEvents ) ) before midiEvents
-  --
-  return midiEvents
-end playSentenceToMIDIData
 
 function notes2EvList notes, defInst, playTempo
   put notes into makeSmfNotes
@@ -596,8 +860,6 @@ function notes2EvList notes, defInst, playTempo
   return evList
 end notes2EvList
 
---
-
 on initPart
   put 4 into makeSmfOctave
   put name2Dur( "q" ) into makeSmfDur
@@ -713,8 +975,6 @@ on setAltShift aWord, altShift --2002.12.06
   end repeat
 end setAltShift
 
---
-
 on setPanEvent
   put makeSmfAbsT into absT
   delete first char of makeSmfWord
@@ -823,8 +1083,6 @@ on doSetCtrl topT, eDur, curV, tgV, minGap, ctrlN -- env
   put abstT2Str( topT + eDur *100 -1 ) & "," & ctrl2Hex( makeSmfChannel, ctrlN, tgVal ) & return after makeSmfEvList
 end doSetCtrl
 
---
---##
 function note2Hex pPart, aPitch, aVelocity -- note on/off  $90+pPart
   return bin2Hex( numToByte( 144 + pPart ) & numToByte( aPitch ) & numToByte( aVelocity ) )
 end note2Hex
@@ -840,8 +1098,6 @@ end pc2Hex
 function name2Dur aChar
   return 960 div 2^( offset( aChar, "whqestx" ) -1 )
 end name2Dur
-
---
 
 function getPitch
   put first char of makeSmfWord into aChar
@@ -897,8 +1153,6 @@ function abstT2Str absT
   return char 1 to ( 10- length( absT ) ) of "0000000000" & absT
 end abstT2Str
 
---
-
 function evList2Midi evList -- 2002.12.06
   put "" into midiEvents
   put 0 into oldT
@@ -920,8 +1174,6 @@ function evList2Midi evList -- 2002.12.06
   put binaryEncode( "H*", "00FF2F00" ) after midiEvents
   return midiEvents
 end evList2Midi
-
---
 
 function getInitHex aPart, instNum
   put "" into resultHex
@@ -1043,10 +1295,9 @@ function getTimeSignBin notes
   --
   return binaryEncode( "H*", "00FF5804" ) & elimBin & denomiBin & binaryEncode( "H*", "1808" )
 end getTimeSignBin
+--------------------------------------------------------------  end of makeSMF  -------------------------------------------------------------------
 
-----------------end of makeSMF-------------
---------  begin Paul's MIDI tools ---------
-
+--------------------------------------------------------------  begin Paul's MIDI tools -----------------------------------------------------------
 function evaluateStatusByte theHex
    switch theHex
       case "ff"
@@ -1102,7 +1353,6 @@ function evaluateStatusByte theHex
          --245 f5 1111,0101 Undefined
          --249 f9 1111,1001 Undefined
          --253 fd 1111,1101 Undefined
-
          -- channel messages---
          get itemOffset ( theHex,"90,91,92,93,94,95,96,97,98,99,9a,9b,9c,9d,9e,9f")
          if it <> 0 then
@@ -1247,7 +1497,7 @@ function controllerNumToName ccNum
    "Mono Operation,Poly Operation")
 end controllerNumToName
 
-function controllerNumToName ccNum
+function midiControllerNames
    split ("Bank Select (coarse),Modulation Wheel (coarse),Breath controller (coarse),Foot Pedal (coarse),Undefined,"&\
    "Portamento Time (coarse),Data Entry (coarse),Volume (coarse),Balance (coarse),Undefined,Pan position (coarse),Expression (coarse),"&\
    "Effect Control 1 (coarse),Effect Control 2 (coarse),Undefined,Undefined,General Purpose Slider 1,General Purpose Slider 2,"&\
@@ -1265,7 +1515,7 @@ function controllerNumToName ccNum
    "Undefined,Undefined,Undefined,All Sound Off,All Controllers Off,Local Keyboard (on/off),All Notes Off,Omni Mode Off,Omni Mode On,"&\
    "Mono Operation,Poly Operation") into tNameArray
    return combine (tNameArray) with cr
-end controllerNumToName
+end midiControllerNames
 
 /**
 Name: midiNoteNumToName
