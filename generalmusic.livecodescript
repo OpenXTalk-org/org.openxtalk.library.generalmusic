@@ -154,30 +154,37 @@ Tags: Music, MIDI, audioClip
 on playPMD notes, playTempo, instNum, midiAppName
    if ( midiAppName is NOT empty ) then
       playPmdShell notes, playTempo, instNum, midiAppName
-      exit playPmd
+      exit playPMD
    end if
    -- put the platform into myOS
    switch platform()
-      case "mac" -- or ( myOS contains "win" ) then
+   -- The possible values returned by the platform function are:
+   -- "Win32" on any version of Windows
+   -- "Linux" on all Linux distributions
+   -- "MacOS" on any version of Mac OS X
+   -- "iphone" on iPhones, iPads and other iOS devices
+   -- "android" on smartphones, tablets and other Android devices
+   -- "HTML5" when running in a web browser
+   case "MacOS" -- or ( myOS contains "win" ) then
          -- set the itemDel to "."
          -- if ( item 1 of qtVersion() < 10 )  then  -- QuickTime MIDI is dead
          get the loadedExtensions
-         if it contains "AVMIDIPlayer" then
-            playPMD_AVMIDIPlayer notes, playTempo, instNum, midiAppName
+         if it contains "avmidiplay" then
+            playPMD_AVMIDIPlayer notes, playTempo, instNum
          else if it contains "FluidSynth" then
-            playPMD_FluidSynth notes, playTempo, instNum, midiAppName
+            playPMD_FluidSynth notes, playTempo, instNum
          end if
          break
-      case "ios"
+      case "iphone"
          get the loadedExtensions
-         if it contains "AVMIDIPlayer" then
+         if it contains "avmidiplay" then
             playPMD_AVMIDIPlayer notes, playTempo, instNum, midiAppName
          end if
          break
-      case "andoid"
+      case "android"
          playPMD_videoClip notes, playTempo, instNum
          break
-      case "linux"
+      case "Linux"
          get the loadedExtensions
          if it contains "FluidSynth" then
             playPMD_FluidSynth notes, playTempo, instNum, midiAppName
@@ -185,7 +192,7 @@ on playPMD notes, playTempo, instNum, midiAppName
             playPMD_Shell notes, playTempo, instNum, midiAppName
          end if
          break
-      case "win"
+      case "Win32"
          get the loadedExtensions
          if it contains "FluidSynth" then
             playPMD_FluidSynth notes, playTempo, instNum, midiAppName
@@ -256,7 +263,7 @@ on playPMD_videoClip notes, playTempo, instNum
       if the result contains "no" then
          answer the result
          playPmd "clear"
-         exit playPmdVC
+         exit playPMD_videoClip
       end if
       setPlayBtn true
       checkPlayEndVC
@@ -339,7 +346,7 @@ on playPMD_Shell notes, playTempo, instNum, midiAppName
       if ( playPmdMidiApp is empty ) then
          answer "Not found MIDI player"
          playPmd "clear"
-         exit playPmdShell
+         exit playPMD_Shell
       end if
       get shell( "killall" && playPmdMidiApp )
       makeSMF notes, playTempo, instNum, tempFilePath
@@ -432,6 +439,7 @@ on playPMD_AVMIDIPlayer notes, playTempo, instNum, bankNum, soundBankFile
          put line 1 of it into tSoundBank
          try
             AVMIDIPlayerLoad tempFilePath, tSoundBank
+            put tSoundBank
             -- set the thumbPosition of scrollbar "ScrubberBar" to 0
             -- set the endValue of scrollbar "ScrubberBar" to AVMIDIPlayerDuration()
             -- put SecsToHrsMinSecs(0) into fld "FileCurrentPosition"
@@ -1498,23 +1506,25 @@ function controllerNumToName ccNum
 end controllerNumToName
 
 function midiControllerNames
-   split ("Bank Select (coarse),Modulation Wheel (coarse),Breath controller (coarse),Foot Pedal (coarse),Undefined,"&\
-   "Portamento Time (coarse),Data Entry (coarse),Volume (coarse),Balance (coarse),Undefined,Pan position (coarse),Expression (coarse),"&\
-   "Effect Control 1 (coarse),Effect Control 2 (coarse),Undefined,Undefined,General Purpose Slider 1,General Purpose Slider 2,"&\
-   "General Purpose Slider 3,General Purpose Slider 4,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,"&\
-   "Undefined,Undefined,Undefined,Undefined,Bank Select (fine),Modulation Wheel (fine),Breath controller (fine),Undefined,Foot Pedal (fine),"&\
-   "Portamento Time (fine),Data Entry (fine),Volume (fine),Balance (fine),Undefined,Pan position (fine),Expression (fine),Effect Control 1 (fine),"&\
-   "Effect Control 2 (fine),Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,"&\
-   "Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Hold Pedal (on/off),Portamento (on/off),Sustenuto Pedal (on/off),"&\
-   "Soft Pedal (on/off),Legato Pedal (on/off),Hold 2 Pedal (on/off),Sound Variation,Sound Timbre,Sound Release Time,Sound Attack Time,"&\
-   "Sound Brightness,Sound Control 6,Sound Control 7,Sound Control 8,Sound Control 9,Sound Control 10,General Purpose Button 1 (on/off),"&\
-   "General Purpose Button 2 (on/off),General Purpose Button 3 (on/off),General Purpose Button 4 (on/off),Undefined,Undefined,Undefined,Undefined,"&\
-   "Undefined,Undefined,Undefined,Effects Level,Tremulo Level,Chorus Level,Celeste Level,Phaser Level,Data Button increment,Data Button decrement,"&\
-   "Non-registered Parameter (fine),Non-registered Parameter (coarse),Registered Parameter (fine),Registered Parameter (coarse),Undefined,Undefined,"&\
-   "Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,"&\
-   "Undefined,Undefined,Undefined,All Sound Off,All Controllers Off,Local Keyboard (on/off),All Notes Off,Omni Mode Off,Omni Mode On,"&\
-   "Mono Operation,Poly Operation") into tNameArray
-   return combine (tNameArray) with cr
+   put "Bank Select (coarse),Modulation Wheel (coarse),Breath controller (coarse),Foot Pedal (coarse),Undefined,"&\
+         "Portamento Time (coarse),Data Entry (coarse),Volume (coarse),Balance (coarse),Undefined,Pan position (coarse),Expression (coarse),"&\
+         "Effect Control 1 (coarse),Effect Control 2 (coarse),Undefined,Undefined,General Purpose Slider 1,General Purpose Slider 2,"&\
+         "General Purpose Slider 3,General Purpose Slider 4,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,"&\
+         "Undefined,Undefined,Undefined,Undefined,Bank Select (fine),Modulation Wheel (fine),Breath controller (fine),Undefined,Foot Pedal (fine),"&\
+         "Portamento Time (fine),Data Entry (fine),Volume (fine),Balance (fine),Undefined,Pan position (fine),Expression (fine),Effect Control 1 (fine),"&\
+         "Effect Control 2 (fine),Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,"&\
+         "Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Hold Pedal (on/off),Portamento (on/off),Sustenuto Pedal (on/off),"&\
+         "Soft Pedal (on/off),Legato Pedal (on/off),Hold 2 Pedal (on/off),Sound Variation,Sound Timbre,Sound Release Time,Sound Attack Time,"&\
+         "Sound Brightness,Sound Control 6,Sound Control 7,Sound Control 8,Sound Control 9,Sound Control 10,General Purpose Button 1 (on/off),"&\
+         "General Purpose Button 2 (on/off),General Purpose Button 3 (on/off),General Purpose Button 4 (on/off),Undefined,Undefined,Undefined,Undefined,"&\
+         "Undefined,Undefined,Undefined,Effects Level,Tremulo Level,Chorus Level,Celeste Level,Phaser Level,Data Button increment,Data Button decrement,"&\
+         "Non-registered Parameter (fine),Non-registered Parameter (coarse),Registered Parameter (fine),Registered Parameter (coarse),Undefined,Undefined,"&\
+         "Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,"&\
+         "Undefined,Undefined,Undefined,All Sound Off,All Controllers Off,Local Keyboard (on/off),All Notes Off,Omni Mode Off,Omni Mode On,"&\
+         "Mono Operation,Poly Operation" into tNameArray
+   split tNameArray by comma
+   combine tNameArray with cr
+   return tNameArray
 end midiControllerNames
 
 /**
@@ -1548,13 +1558,18 @@ For eaxmples "C#5" is easier to recognize as C sharp on octave 5 than the '61' i
 Tags: Music, MIDI, Sound, PlayPMD, playSentence
 **/
 
-function midiNoteNumToName midiNoteNum, theChannel
-   if theChannel <> "ch10" then
+function midiNoteNumToName midiNoteNum, pOption
+   if pOption <> "ch10" and pOption <> "drums" and pOption <> "flats" then
       return item midiNoteNum+1 of ("C-1,C#-1,D-1,D#-1,E-1,F-1,F#-1,G-1,G#-1,A-1,A#-1,B-1,C0,C#0,D0,D#0,E0,F0,F#0,G0,G#0,A0,A#0,B0,"& \
             "C1,C#1,D1,D#1,E1,F1,F#1,G1,G#1,A1,A#1,B1,C2,C#2,D2,D#2,E2,F2,F#2,G2,G#2,A2,A#2,B2,C3,C#3,D3,D#3,E3,F3,F#3,G3,G#3,A3,A#3,B3,"& \
             "C4,C#4,D4,D#4,E4,F4,F#4,G4,G#4,A4,A#4,B4,C5,C#5,D5,D#5,E5,F5,F#5,G5,G#5,A5,A#5,B5,C6,C#6,D6,D#6,E6,F6,F#6,G6,G#6,A6,A#6,B6,"& \
             "C7,C#7,D7,D#7,E7,F7,F#7,G7,G#7,A7,A#7,B7,C8,C#8,D8,D#8,E8,F8,F#8,G8,G#8,A8,A#8,B8,C9,C#9,D9,D#9,E9,F9,F#9,G9")
-   else -- theChannel = "ch10" -- drum channel
+   else if pOption is "flats" then
+      return item midiNoteNum+1 of ("C-1,Db-1,D-1,Eb-1,E-1,F-1,Gb-1,G-1,Ab-1,A-1,Bb-1,B-1,C0,Db0,D0,Eb0,E0,F0,Gb0,G0,Ab0,A0,Bb0,B0,"& \
+            "C1,Db1,D1,Eb1,E1,F1,Gb1,G1,Ab1,A1,Bb1,B1,C2,Db2,D2,Eb2,E2,F2,Gb2,G2,Ab2,A2,Bb2,B2,C3,Db3,D3,Eb3,E3,F3,Gb3,G3,Ab3,A3,Bb3,B3,"& \
+            "C4,Db4,D4,Eb4,E4,F4,Gb4,G4,Ab4,A4,Bb4,B4,C5,Db5,D5,Eb5,E5,F5,Gb5,G5,Ab5,A5,Bb5,B5,C6,Db6,D6,Eb6,E6,F6,Gb6,G6,Ab6,A6,Bb6,B6,"& \
+            "C7,Db7,D7,Eb7,E7,F7,Gb7,G7,Ab7,A7,Bb7,B7,C8,Db8,D8,Eb8,E8,F8,Gb8,G8,Ab8,A8,Bb8,B8,C9,Db9,D9,Eb9,E9,F9,Gb9,G9")
+   else -- pOption = "ch10" or "drum"-- drum channel
       return item midiNoteNum+1 of ("1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,"&\
             "Bass Drum 2,Bass Drum 1,Side Stick,Snare Drum 1,Hand Clap,Snare Drum 2,Low Tom 2,Closed Hi-hat,Low Tom 1,Pedal Hi-hat,Mid Tom 2,"&\
             "Open Hi-hat,Mid Tom 1,High Tom 2,Crash Cymbal 1,High Tom 1,Ride Cymbal 1,Chinese Cymbal,Ride Bell,Tambourine,Splash Cymbal,"&\
@@ -1566,7 +1581,6 @@ function midiNoteNumToName midiNoteNum, theChannel
 end midiNoteNumToName
 
 function midiNoteNameToNum midiNoteName
-
    get itemOffset(midiNoteName,"C-1,C#-1,D-1,D#-1,E-1,F-1,F#-1,G-1,G#-1,A-1,A#-1,B-1,C0,C#0,D0,D#0,E0,F0,F#0,G0,G#0,A0,A#0,B0,"& \
          "C1,C#1,D1,D#1,E1,F1,F#1,G1,G#1,A1,A#1,B1,C2,C#2,D2,D#2,E2,F2,F#2,G2,G#2,A2,A#2,B2,C3,C#3,D3,D#3,E3,F3,F#3,G3,G#3,A3,A#3,B3,"& \
          "C4,C#4,D4,D#4,E4,F4,F#4,G4,G#4,A4,A#4,B4,C5,C#5,D5,D#5,E5,F5,F#5,G5,G#5,A5,A#5,B5,C6,C#6,D6,D#6,E6,F6,F#6,G6,G#6,A6,A#6,B6,"& \
@@ -1583,27 +1597,65 @@ function midiNoteNameToNum midiNoteName
    return it
 end midiNoteNameToNum
 
-function gsPatchNumToName gmPatchNum, theChannel
-   if theChannel <> "ch10" then -- "ch10" is reserved for drums (& "ch11" additionally in GM2 spec) -- and theChannel <> "ch11"
+function gsPatchNumToName gmPatchNum, drumChannel
+   if drumChannel <> "ch10" and drumChannel <> "drums" and drumChannel <> true then -- "ch10" is reserved for drums ("ch11" additionally in GM2 spec) -- and theChannel <> "ch11"
       return item (gmPatchNum+1) of ("Acoustic Grand Piano,Bright Acoustic Piano,Electric Grand Piano,Honky-tonk Piano,Rhodes Piano,Chorused Piano,"&\
-      "Harpsichord,Clavinet,Celesta,Glockenspiel,Music Box,Vibraphone,Marimba,Xylophone,Tubular Bells,Dulcimer,Hammond Organ,Percussive Organ,"&\
-      "Rock Organ,Church Organ,Reed Organ,Accordion,Harmonica,Tango Accordion,Acoustic Guitar (nylon),Acoustic Guitar (steel),Electric Guitar (jazz),"&\
-      "Electric Guitar (clean),Electric Guitar (muted),Overdriven Guitar,Distortion Guitar,Guitar Harmonics,Acoustic Bass,Electric Bass (finger),"&\
-      "Electric Bass (pick),Fretless Bass,Slap Bass1,Slap Bass2,Synth Bass1,Synth Bass2,Violin,Viola,Cello,Contrabass,Tremolo Strings,Pizzicato Strings,"&\
-      "Orchestral Harp,Timpani,String Ensemble1,String Ensemble2,SynthStrings1,SynthStrings2,Choir Aahs,Voice Oohs,Synth Voice,Orchestra Hit,"&\
-      "Trumpet,Trombone,Tuba,Muted Trumpet,French Horn,Brass Section,Synth Brass1,Synth Brass2,Soprano Sax,Alto Sax,Tenor Sax,Baritone Sax,Oboe,"&\
-      "English Horn,Bassoon,Clarinet,Piccolo,Flute,Recorder,Pan Flute,Bottle Blow,Shakuhachi,Whistle,Ocarina,Lead1 (square),Lead2 (sawtooth),"&\
-      "Lead3 (calliope lead),Lead 4 (chiff lead),Lead 5 (charang),Lead 6 (voice),Lead 7 (fifths),Lead 8 (bass + lead),Pad1 (new age),Pad2 (warm),"&\
-      "Pad3 (polysynth),Pad 4 (choir),Pad 5 (bowed),Pad 6 (metallic),Pad 7 (halo),Pad 8 (sweep),FX1 (rain),FX2 (soundtrack),FX3 (crystal),"&\
-      "FX 4 (atmosphere),FX 5 (brightness),FX 6 (goblins),FX 7 (echoes),FX 8 (sci-fi),Sitar,Banjo,Shamisen,Koto,Kalimba,Bagpipe,Fiddle,Shanai,Tinkle Bell,Agogo,"&\
-      "Steel Drums,Woodblock,Taiko Drum,Melodic Tom,Synth Drum,Reverse Cymbal,Guitar Fret Noise,Breath Noise,Seashore,Bird Tweet,Telephone Ring,Helicopter,Applause,Gunshot")
+            "Harpsichord,Clavinet,Celesta,Glockenspiel,Music Box,Vibraphone,Marimba,Xylophone,Tubular Bells,Dulcimer,Hammond Organ,Percussive Organ,"&\
+            "Rock Organ,Church Organ,Reed Organ,Accordion,Harmonica,Tango Accordion,Acoustic Guitar (nylon),Acoustic Guitar (steel),Electric Guitar (jazz),"&\
+            "Electric Guitar (clean),Electric Guitar (muted),Overdriven Guitar,Distortion Guitar,Guitar Harmonics,Acoustic Bass,Electric Bass (finger),"&\
+            "Electric Bass (pick),Fretless Bass,Slap Bass1,Slap Bass2,Synth Bass1,Synth Bass2,Violin,Viola,Cello,Contrabass,Tremolo Strings,Pizzicato Strings,"&\
+            "Orchestral Harp,Timpani,String Ensemble1,String Ensemble2,SynthStrings1,SynthStrings2,Choir Aahs,Voice Oohs,Synth Voice,Orchestra Hit,"&\
+            "Trumpet,Trombone,Tuba,Muted Trumpet,French Horn,Brass Section,Synth Brass1,Synth Brass2,Soprano Sax,Alto Sax,Tenor Sax,Baritone Sax,Oboe,"&\
+            "English Horn,Bassoon,Clarinet,Piccolo,Flute,Recorder,Pan Flute,Bottle Blow,Shakuhachi,Whistle,Ocarina,Lead1 (square),Lead2 (sawtooth),"&\
+            "Lead3 (calliope lead),Lead 4 (chiff lead),Lead 5 (charang),Lead 6 (voice),Lead 7 (fifths),Lead 8 (bass + lead),Pad1 (new age),Pad2 (warm),"&\
+            "Pad3 (polysynth),Pad 4 (choir),Pad 5 (bowed),Pad 6 (metallic),Pad 7 (halo),Pad 8 (sweep),FX1 (rain),FX2 (soundtrack),FX3 (crystal),"&\
+            "FX 4 (atmosphere),FX 5 (brightness),FX 6 (goblins),FX 7 (echoes),FX 8 (sci-fi),Sitar,Banjo,Shamisen,Koto,Kalimba,Bagpipe,Fiddle,Shanai,Tinkle Bell,Agogo,"&\
+            "Steel Drums,Woodblock,Taiko Drum,Melodic Tom,Synth Drum,Reverse Cymbal,Guitar Fret Noise,Breath Noise,Seashore,Bird Tweet,Telephone Ring,Helicopter,Applause,Gunshot")
    else -- theChannel is a drum kit channel (10)
       return item (gmPatchNum+1) of ("Standard Kit,2,3,4,5,6,7,8,Room Kit,10,11,12,13,14,15,16,Power Kit,18,19,20,21,22,23,24,25,Electronic Kit,"&\
-      "TR-808 Kit,27,28,29,30,31,32,Jazz Kit,34,35,36,37,38,39,40,Brush Kit,42,43,44,45,46,47,48,Orchestra Kit,50,51,52,53,54,55,56,SoundFX Kit,"&\
-      "58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,"&\
-      "100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,MT-32 Kit")
+            "TR-808 Kit,27,28,29,30,31,32,Jazz Kit,34,35,36,37,38,39,40,Brush Kit,42,43,44,45,46,47,48,Orchestra Kit,50,51,52,53,54,55,56,SoundFX Kit,"&\
+            "58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,"&\
+            "100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,MT-32 Kit")
    end if
 end gsPatchNumToName
+
+function gsPatchNames pDrumPatches, pReturnType
+   if pDrumPatches <> "ch10" and pDrumPatches <> "drums" and pDrumPatches <> true then -- "ch10" is reserved for drums ("ch11" additionally in GM2 spec) -- and theChannel <> "ch11"
+      put "Acoustic Grand Piano,Bright Acoustic Piano,Electric Grand Piano,Honky-tonk Piano,Rhodes Piano,Chorused Piano,"&\
+            "Harpsichord,Clavinet,Celesta,Glockenspiel,Music Box,Vibraphone,Marimba,Xylophone,Tubular Bells,Dulcimer,Hammond Organ,Percussive Organ,"&\
+            "Rock Organ,Church Organ,Reed Organ,Accordion,Harmonica,Tango Accordion,Acoustic Guitar (nylon),Acoustic Guitar (steel),Electric Guitar (jazz),"&\
+            "Electric Guitar (clean),Electric Guitar (muted),Overdriven Guitar,Distortion Guitar,Guitar Harmonics,Acoustic Bass,Electric Bass (finger),"&\
+            "Electric Bass (pick),Fretless Bass,Slap Bass1,Slap Bass2,Synth Bass1,Synth Bass2,Violin,Viola,Cello,Contrabass,Tremolo Strings,Pizzicato Strings,"&\
+            "Orchestral Harp,Timpani,String Ensemble1,String Ensemble2,SynthStrings1,SynthStrings2,Choir Aahs,Voice Oohs,Synth Voice,Orchestra Hit,"&\
+            "Trumpet,Trombone,Tuba,Muted Trumpet,French Horn,Brass Section,Synth Brass1,Synth Brass2,Soprano Sax,Alto Sax,Tenor Sax,Baritone Sax,Oboe,"&\
+            "English Horn,Bassoon,Clarinet,Piccolo,Flute,Recorder,Pan Flute,Bottle Blow,Shakuhachi,Whistle,Ocarina,Lead1 (square),Lead2 (sawtooth),"&\
+            "Lead3 (calliope lead),Lead 4 (chiff lead),Lead 5 (charang),Lead 6 (voice),Lead 7 (fifths),Lead 8 (bass + lead),Pad1 (new age),Pad2 (warm),"&\
+            "Pad3 (polysynth),Pad 4 (choir),Pad 5 (bowed),Pad 6 (metallic),Pad 7 (halo),Pad 8 (sweep),FX1 (rain),FX2 (soundtrack),FX3 (crystal),"&\
+            "FX 4 (atmosphere),FX 5 (brightness),FX 6 (goblins),FX 7 (echoes),FX 8 (sci-fi),Sitar,Banjo,Shamisen,Koto,Kalimba,Bagpipe,Fiddle,Shanai,Tinkle Bell,Agogo,"&\
+            "Steel Drums,Woodblock,Taiko Drum,Melodic Tom,Synth Drum,Reverse Cymbal,Guitar Fret Noise,Breath Noise,Seashore,Bird Tweet,Telephone Ring,Helicopter,Applause,Gunshot" into tList
+   else -- theChannel is a drum kit channel (10)
+       put "Standard Kit,2,3,4,5,6,7,8,Room Kit,10,11,12,13,14,15,16,Power Kit,18,19,20,21,22,23,24,25,Electronic Kit,"&\
+            "TR-808 Kit,27,28,29,30,31,32,Jazz Kit,34,35,36,37,38,39,40,Brush Kit,42,43,44,45,46,47,48,Orchestra Kit,50,51,52,53,54,55,56,SoundFX Kit,"&\
+            "58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,"&\
+            "100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,MT-32 Kit" into tList
+   end if
+   switch pReturnType
+      case "csv"
+         return tList
+         break
+      case "array"
+         split tList by comma
+         return tList
+         break
+      case "list"
+      case ""
+      default
+         split tList by comma
+         combine tList with cr
+         return tList
+         break
+   end switch
+end gsPatchNames
 
 function BPMppbDurationToMillisecs pBPM, pPulsesPerBeat, pDur
    -- There are 60,000 milliseconds in a minute
