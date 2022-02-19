@@ -200,6 +200,7 @@ on playPMD notes, playTempo, instNum, midiAppName
             playPMD_videoClip notes, playTempo, instNum, midiAppName
             -- Maybe replace with MCI play?
          end if
+         -- nother method to play MIDI on Win32 is using MCISendString(MCICommand)
          break
       default
          break
@@ -2327,6 +2328,7 @@ Use scanStdSoundBankDirectories to scan filesysten directories where
 soundbank files are normally found. On macOS and Windows this should return the
 path to the standard Roland GS Soundbank.
 */
+-- global TheSoundBanks; put scanStdSoundBankDirectories() into TheSoundBanks; put TheSoundBanks;
 function scanStdSoundBankDirectories
    put "gs_instruments.dls" into tSoundBankFileNames
    if the platform is "MacOS" then
@@ -2341,8 +2343,7 @@ function scanStdSoundBankDirectories
          set the folder to "C:\Windows\SysWOW64\drivers\"
       end if
    else if the platform is "Linux" then
-      /usr/share/sounds/sf2/FluidR3_GM.sf2
-      if there is a file "/usr/share/sounds/sf2/" then
+      if there is a file "/usr/share/sounds/sf2/FluidR3_GM.sf2" then
          put  "/usr/share/sounds/sf2/FluidR3_GM.sf2" into tPathList
          -- Maybe also check for "GeneralUser.sf2"
          set the folder to "/usr/share/sounds/sf2/"
@@ -2351,10 +2352,6 @@ function scanStdSoundBankDirectories
          set the folder to "/usr/share/soundfonts/"
       end if
    end if
-   -- MuseSCrore
-   -- Windows: %HOMEPATH%\Documents\MuseScore3\Soundfonts
-   -- macOS and Linux: ~/Documents/MuseScore3/Soundfonts
-
    put the files into tFileNames
    filter lines of tFileNames with "*.sf2" into tSF2Names
    filter lines of tFileNames with "*.dls" into tDLSNames
@@ -2373,7 +2370,7 @@ function scanStdSoundBankDirectories
    put specialFolderPath("Home") & "/Library/Audio/Sounds/Banks/" into tWrkDir
    --put tWrkDir
    set the folder to tWrkDir
-   put the files into tFileNames
+   put the files into tFileNamess
    filter lines of tFileNames with "*.sf2" into tSF2Names
    filter lines of tFileNames with "*.dls" into tDLSNames
    if (tSF2Names & tDLSNames) <> empty then
