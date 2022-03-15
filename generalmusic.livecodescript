@@ -152,28 +152,39 @@ playback available on the current platform.
 Tags: Music, MIDI, audioClip
 **/
 on playPMD notes, playTempo, instNum, midiAppName
+   if the paramCount > 1 then
+      put the params & cr & the paramCount
+      put param(1) into tTemp
+      if tTemp is "Piano" then 
+         put 1 into instNum
+         put lineoffset("Piano", gsPatchNames(),0) after msg
+         -- put line 20 of gsPatchNames()
+         exit to top
+      end if
+   end if
    if ( midiAppName is NOT empty ) then
       playPmdShell notes, playTempo, instNum, midiAppName
       exit playPMD
    end if
    -- put the platform into myOS
    switch platform()
-   -- The possible values returned by the platform function are:
-   -- "Win32" on any version of Windows
-   -- "Linux" on all Linux distributions
-   -- "MacOS" on any version of Mac OS X
-   -- "iphone" on iPhones, iPads and other iOS devices
-   -- "android" on smartphones, tablets and other Android devices
-   -- "HTML5" when running in a web browser
-   case "MacOS" -- or ( myOS contains "win" ) then
+      -- The possible values returned by the platform function are:
+      -- "Win32" on any version of Windows
+      -- "Linux" on all Linux distributions
+      -- "MacOS" on any version of Mac OS X
+      -- "iphone" on iPhones, iPads and other iOS devices
+      -- "android" on smartphones, tablets and other Android devices
+      -- "HTML5" when running in a web browser
+      case "MacOS" -- or ( myOS contains "win" ) then
          -- set the itemDel to "."
          -- if ( item 1 of qtVersion() < 10 )  then  -- QuickTime MIDI is dead
          get the loadedExtensions
          if it contains "avmidiplay" then
             playPMD_AVMIDIPlayer notes, playTempo, instNum
-         else if it contains "FluidSynth" then
-            playPMD_FluidSynth notes, playTempo, instNum
-         end if
+            
+            -- else if it contains "FluidSynth" then
+            -- playPMD_FluidSynth notes, playTempo, instNum
+         else put "avmidi not available"
          break
       case "iphone"
          get the loadedExtensions
@@ -449,8 +460,8 @@ on playPMD_AVMIDIPlayer notes, playTempo, instNum, bankNum, soundBankFile
             AVMIDIPlayerSetRate 1.0
             -- lock screen
             AVMIDIPlayerPlay
-         -- AVMIDIPlayerPlayWithCallback
-         -- playPositionCheck
+            -- AVMIDIPlayerPlayWithCallback
+            -- playPositionCheck
          end try
       end if
    end if
@@ -464,6 +475,98 @@ on setPlayBtn toPlay
       set the enabled of btn "Stop" to ( toPlay )
    end try
 end setPlayBtn
+
+
+-------------------------------------- playPMD using FluidSynth (macOS, Windows, Linux, Android) ------------------------------------------
+/**
+Name: playPMD_FluidSynth
+
+Type: command
+
+Syntax: playPMD_AVMIDIPlayer pPlaySentenceMusicalData, pTempoBPM,[pProgramNumber,[<pSoundBankFile>]
+
+Summary: plays the Playsentence Musical Data (PMD) starting at the specified beats per minute,
+with the given sound patch number using Apple's AVMIDIPlayer API.
+
+Introduced: 1.0
+
+OS: mac,ios
+
+Platforms: desktop,mobile
+
+Parameters:
+
+pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
+
+pTempoBPM: Intitial playback tenmpo in Beats Per Minute, this may be overridden
+
+pProgramNumber: number in range 0-127 is the sound patch to use as the initial
+or default instrument sound. This nay be overridden by patchchange messages within
+the playSentence string.
+
+pSoundBankFile: An optional filePath to a soundBank (.sf2 or .dls) file to use for playback.
+
+Example:
+playPMD_FluidSynth ("C4q Ee. Gs..",120,1)
+
+Description:
+Attempts to play the Playsentence Music Data (PMD), optionally starting at the specified tempo
+in beats per minute, optionally with a given MIDI patch number (need to add 'bank-patch' suport),
+with the optionally provided Soubdbank (.sf2 or .dls) file. The default values are 120(BPM)
+and sound patch 1 (GM "Piano 1"),loading the first SoundBankFile found in default locations.
+On macOS this should load  the default Roland GS Soundbank (which is the same small Soundbank
+   from the 1990s that came with QuickTime v2.5+), on iOS no default soundbank is provided
+   by the OS and so one must be provided.
+   PLEASE NOTE that this command will do nothing (fail silently) if the AVMIDIPLayer
+   builder extension is not loaded therefore scripts should check for the presence of
+   the AVMIDIPLayer libray before calling this command directly, or use the platform aware
+   version, PlayPMD which should try to use the best musical playback engine currenlty availble.
+   
+   Tags: Music, MIDI, audioClip
+   **/
+on playPMD_FluidSynth notes, playTempo, instNum, bankNum, soundBankFile
+   if "fluidsynth" is in the loadedExtensions then
+      -- fsEnsureInitialize
+      fsMIDIPlayerInit
+      -- set dontUseQT to false -- long time Deprecated now -- PM 2/10/22
+      put specialFolderPath( "Temporary" ) & "/playPmdTemp.mid" into tempFilePath
+      if ( notes is "stop" ) or ( notes is "clear" ) then
+         try
+            fsMIDIplayerStop
+         end try
+         if notes is "clear" then
+            delete file tempFilePath
+         end if
+      else
+         try
+            fsMIDIplayerStop
+         end try
+         makeSMF notes, playTempo, instNum, tempFilePath
+         get scanStdSoundBankDirectories()
+         if it is not empty then
+            put line 1 of it into tSoundBank
+            try
+               fsLoadMIDIFile tempFilePath -- , tSoundBank
+               put tSoundBank
+               -- AVMIDIPlayerSetRate 1.0
+               fsMIDIPlayerPlay
+               -- playPositionCheck
+            end try
+         end if
+      end if
+   else 
+      Throw "Fluid Synth API Not Loaded"
+   end if
+end playPMD_FluidSynth
+
+on setPlayBtnFS toPlay
+   try
+      set the enabled of btn "Play" to ( not toPlay )
+   end try
+   try
+      set the enabled of btn "Stop" to ( toPlay )
+   end try
+end setPlayBtnFS
 
 ------------------------ No-playback PMD to Standard MIDI Data (crossplatform) ----------------------------------------
 /**
