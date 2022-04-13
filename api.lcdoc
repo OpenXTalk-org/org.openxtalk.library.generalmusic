@@ -82,6 +82,55 @@ Tags: Music, MIDI, Sound, PlayPMD, playSentence
 
 
 
+Name: playPMD_FluidSynth
+
+Type: command
+
+Syntax: playPMD_AVMIDIPlayer pPlaySentenceMusicalData, pTempoBPM,[pProgramNumber,[<pSoundBankFile>]
+
+Summary:
+plays the Playsentence Musical Data (PMD) starting at the specified beats per minute,
+with the given sound patch number using Apple's AVMIDIPlayer API.
+
+Introduced: 1.0
+
+OS: mac,ios
+
+Platforms: desktop,mobile
+
+Parameters: 
+
+pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
+
+pTempoBPM: Intitial playback tenmpo in Beats Per Minute, this may be overridden
+
+pProgramNumber:
+number in range 0-127 is the sound patch to use as the initial
+or default instrument sound. This nay be overridden by patchchange messages within
+the playSentence string.
+
+pSoundBankFile: An optional filePath to a soundBank (.sf2 or .dls) file to use for playback.
+
+Example: playPMD_FluidSynth ("C4q Ee. Gs..",120,1)
+
+Description:
+Attempts to play the Playsentence Music Data (PMD), optionally starting at the specified tempo
+in beats per minute, optionally with a given MIDI patch number (need to add 'bank-patch' suport),
+with the optionally provided Soubdbank (.sf2 or .dls) file. The default values are 120(BPM)
+and sound patch 1 (GM "Piano 1"),loading the first SoundBankFile found in default locations.
+On macOS this should load  the default Roland GS Soundbank (which is the same small Soundbank
+   from the 1990s that came with QuickTime v2.5+), on iOS no default soundbank is provided
+   by the OS and so one must be provided.
+   PLEASE NOTE that this command will do nothing (fail silently) if the AVMIDIPLayer
+   builder extension is not loaded therefore scripts should check for the presence of
+   the AVMIDIPLayer libray before calling this command directly, or use the platform aware
+   version, PlayPMD which should try to use the best musical playback engine currenlty availble.
+
+Tags: Music, MIDI, audioClip
+
+
+
+
 Name: playSentenceToMIDIData
 
 Type: cmmand
