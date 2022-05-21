@@ -2,7 +2,6 @@
 /*
 OpenXTalk.org GPL v3
 */
-
 on extensionInitialize
    if the target is not me then
       pass extensionInitialize
@@ -111,6 +110,7 @@ command checkPMDPlaybackEngines
             else
                put "fluidSynth" into playSentencePlayEngines
             end if
+         end if
          if tExtensionsList contains "AVAudioSampler" then put "AVAudioSampler" into item 3 of playSentencePlayEngines
          break
       case "iphone"
@@ -124,19 +124,19 @@ command checkPMDPlaybackEngines
          break
       case "Linux"
          if tExtensionsList contains "fluidSynth" then
-               put "fluidSynth" into item 1 of playSentencePlayEngines
-               put "shell" into item 2 of playSentencePlayEngines
-            else
-               put "shell" into item 1 of playSentencePlayEngines
+            put "fluidSynth" into item 1 of playSentencePlayEngines
+            put "shell" into item 2 of playSentencePlayEngines
+         else
+            put "shell" into item 1 of playSentencePlayEngines
          end if
          break
       case "Win32"
          if tExtensionsList contains "fluidSynth" then
-               put "fluidSynth" into item 1 of playSentencePlayEngines
-               put "shell" into item 2 of playSentencePlayEngines
-            else
-               -- Maybe replace with "MCI string play"? another method to play MIDI on Win32APIs using MCISendString(MCICommand)
-               put "shell" into item 1 of playSentencePlayEngines
+            put "fluidSynth" into item 1 of playSentencePlayEngines
+            put "shell" into item 2 of playSentencePlayEngines
+         else
+            -- Maybe replace with "MCI string play"? another method to play MIDI on Win32APIs using MCISendString(MCICommand)
+            put "shell" into item 1 of playSentencePlayEngines
          end if
          break
       default
@@ -2434,17 +2434,17 @@ end isHexString
 ------------ SOUNDFONT2 / DLS Utils --------------------------------
 
 -- getRIFFHeaderInfo() returns RIFF four-char OStype code, comma, and the RIFF Length
--- put getRIFFHeaderInfo(tRIFFfile) into tRIFFInfo
+-- put getRIFFHeaderInfo(pRIFFfile) into tRIFFInfo
 -- put item 1 of tRIFFInfo into pRIFFtype
 -- check that it is a Sound Bank RIFF format (SF2 or DLS file)------
 -- if tRIFFtype <> "DLS " and tRIFFtype <> "sfbk" then ...
 function getRIFFHeaderInfo pRIFFFile
    if there is a file pRIFFFile then
       -------- check file has a RIFF header --------
-      open file tRIFFfile for binary read
-      read from file tRIFFfile for 4 bytes
+      open file pRIFFFile for binary read
+      read from file pRIFFFile for 4 bytes
       if it <> "RIFF" then
-         close file tRIFFfile
+         close file pRIFFFile
          return "ERROR: File is not RIFF, SIG= " & it
          exit to top
       end if
@@ -2585,30 +2585,30 @@ DownLoadableSoundbank(.dls) file. Each list line is in the format:
 banknumber-patchnumber patchname, and so for a general midi soundbank
 the first line would be "0-1 Piano 1"
 */
-function getDLSBanks tRIFFfile
+function getDLSBanks pRIFFfile
    set cursor to busy
    lock screen
-   open file tRIFFfile for binary read
-   read from file tRIFFfile until "colh" -- collection header
+   open file pRIFFfile for binary read
+   read from file pRIFFfile until "colh" -- collection header
    put "Collection Header Found : " &  byte -4 to -1 of it & cr after tDump
-   read from file tRIFFfile for 4 bytes
+   read from file pRIFFfile for 4 bytes
    get binaryDecode("I",it,tChunkLength)
    put "Chunk Length=" & tChunkLength & cr after tDump
-   read from file tRIFFfile for 4 bytes
+   read from file pRIFFfile for 4 bytes
    get binaryDecode("I",it,tColCnt)
    put "Instruments in collection: " & tColCnt & cr after tDump
    --   if tChunkLength > 4 then
-   --      read from file tRIFFfile for tChunkLength - 4 bytes
+   --      read from file pRIFFfile for tChunkLength - 4 bytes
    --      put "Extra Data= " & it & cr after tDump
    --   end if
-   read from file tRIFFfile for 4 bytes
+   read from file pRIFFfile for 4 bytes
    put it into tChunkType
    put "Chunk Type 4CC = " & tChunkType & cr after tDump
    if tChunkType = "LIST" then
-      read from file tRIFFfile for 4 bytes
+      read from file pRIFFfile for 4 bytes
       get binaryDecode("I",it,t4bytes)
       put "List Chunk Size: " & t4bytes & cr after tDump
-      read from file tRIFFfile for 4 bytes
+      read from file pRIFFfile for 4 bytes
       put "List type: " & it & cr after tDump
    end if
    lock screen
@@ -2617,20 +2617,20 @@ function getDLSBanks tRIFFfile
    repeat tColCnt
       set cursor to busy
       -- put tColCnt
-      read from file tRIFFfile until "ins "
+      read from file pRIFFfile until "ins "
       put "Instrument Found: " & byte -4 to -1 of it & cr after tDump
 
-      read from file tRIFFfile until "insh"
+      read from file pRIFFfile until "insh"
       put "Instrument Header Found: " & byte -4 to -1 of it & cr after tDump
-      read from file tRIFFfile for 4 bytes
+      read from file pRIFFfile for 4 bytes
       get binaryDecode("I",it,tSize)
       put "Chunk Size = " & tSize & cr after tDump
 
-      read from file tRIFFfile for 4 bytes
+      read from file pRIFFfile for 4 bytes
       get binaryDecode("I",it,tRegions)
       put "Regions = " & tRegions & cr after tDump
 
-      read from file tRIFFfile for 4 bytes
+      read from file pRIFFfile for 4 bytes
       get binaryDecode("CCxb8",it,tBankCC0_MSB,tBankCC32_LSB,tSkippedByte,tIsDrumBank)
       -- get binaryDecode("CCxC",it,tBankCC0_MSB,tBankCC32_LSB,tSkippedByte,tIsDrumBank)
 
@@ -2643,23 +2643,23 @@ function getDLSBanks tRIFFfile
       -- if tIsDrumBank = "128"
       -- put "Bank = " & tBankCC0_LSB && tBankCC32_MSB && cr after tDump
 
-      read from file tRIFFfile for 4 bytes
+      read from file pRIFFfile for 4 bytes
       get binaryDecode("I",it,tInstrumentNum)
       -- put "Instrument Number = " & tInstrumentNum & cr after tDump
 
-      read from file tRIFFfile until "INAM"
+      read from file pRIFFfile until "INAM"
       put "Instrument Name Found: " & byte -4 to -1 of it & cr after tDump
-      read from file tRIFFfile for 4 bytes
+      read from file pRIFFfile for 4 bytes
       get binaryDecode("I",it,tSize)
       put "Chunk Size = " & tSize & cr after tDump
-      read from file tRIFFfile for tSize bytes
+      read from file pRIFFfile for tSize bytes
       put it into tPresetName
       put "Instrument Name = " & tPresetName & cr after tDump
       put tBankCC0_MSB &"(MSB) "& tBankCC32_LSB &" " & tIsDrumBank & tInstrumentNum && tPresetName & cr after tSoundBanksPrograms -- MSB and LSB Messages (controllers 0 and 32, respectively)
    end repeat
-   --   read from file tRIFFfile until EOF
+   --   read from file pRIFFfile until EOF
    --   put "Remainder of data: " & it & cr after tDump
-   close file tRIFFfile
+   close file pRIFFfile
 
    --      filter each word in tSoundBanksPrograms not matching "0(MSB)" into tSoundBanksPrograms
    repeat with x = 1 to the number of lines in tSoundBanksPrograms
@@ -2701,21 +2701,21 @@ getSF2Banks returns a line delimited list of sound patches from a SoundFont(.sf2
 The each list line is in the format: banknumber-patchnumber patchname,
 so for a general midi soundbank the first line would be "0-1 Piano 1"
 */
-function getSF2Banks tRIFFfile
+function getSF2Banks pRIFFfile
    lock screen
-   open file tRIFFfile for binary read
+   open file pRIFFfile for binary read
 
-   read from file tRIFFfile for 4 bytes
+   read from file pRIFFfile for 4 bytes
    --   if it <> "RIFF" then
    --      put "ERROR File is not RIFF, SIG= " & it & cr after tDump
    --   else
    --      put "FILE IS RIFF, Sig4CC = " & it & cr after tDump
    --   end if
-   read from file tRIFFfile for 4 bytes
+   read from file pRIFFfile for 4 bytes
    get binaryDecode("I",it,tLength)
    put "RIFF Byte Length=" & tLength & cr after tDump
 
-   read from file tRIFFfile for 4 bytes
+   read from file pRIFFfile for 4 bytes
 
    if it <> "sfbk" then
       put "ERROR File is not a SoundFont File, FormType 4CC = " & it & cr into tDump
@@ -2723,49 +2723,49 @@ function getSF2Banks tRIFFfile
       put "FILE IS SoundFont, Sig4CC = " & it & cr into tDump
    end if
 
-   read from file tRIFFfile for 4 bytes
+   read from file pRIFFfile for 4 bytes
    put it into tChunkType
    put "Chunk Type 4CC = " & tChunkType & cr after tDump
-   read from file tRIFFfile for 4 bytes
+   read from file pRIFFfile for 4 bytes
    get binaryDecode("I",it,tChunkLength)
    put "Chunk Length=" & tChunkLength & cr after tDump
    if tChunkType = "colh" then
-      read from file tRIFFfile for 4 bytes
+      read from file pRIFFfile for 4 bytes
       get binaryDecode("I",it,tColCnt)
       put "Instruments in collection: " & tColCnt & cr after tDump
       if tChunkLength > 4 then
-         read from file tRIFFfile for tChunkLength - 4 bytes
+         read from file pRIFFfile for tChunkLength - 4 bytes
          put "Extra Data= " & it & cr after tDump
       end if
    end if
 
-   read from file tRIFFfile for 4 bytes
+   read from file pRIFFfile for 4 bytes
    put it into tChunkType
    put "Chunk Type 4CC = " & tChunkType & cr after tDump
    if tChunkType = "LIST" then
-      read from file tRIFFfile for 4 bytes
+      read from file pRIFFfile for 4 bytes
       get binaryDecode("I",it,t4bytes)
       put "List Chunk Size: " & t4bytes & cr after tDump
 
-      read from file tRIFFfile for 4 bytes
+      read from file pRIFFfile for 4 bytes
       put "List type: " & it & cr after tDump
-      read from file tRIFFfile for 4 bytes
+      read from file pRIFFfile for 4 bytes
       put "Next 4 bytes: " & it & cr after tDump
    end if
 
    put empty into tSoundBanksPrograms
-   read from file tRIFFfile until "pdta"
-   read from file tRIFFfile for 4 bytes
+   read from file pRIFFfile until "pdta"
+   read from file pRIFFfile for 4 bytes
    if it = "phdr" then
       put "phdr: " & it & cr after tDump
 
-      read from file tRIFFfile for 4 bytes
+      read from file pRIFFfile for 4 bytes
       get binaryDecode("I",it,t4bytes)
       put "length = " & t4bytes & cr after tDump
 
       repeat 1000
          set cursor to busy
-         read from file tRIFFfile for 20 bytes
+         read from file pRIFFfile for 20 bytes
          put it into tSoundPresetName
          if tSoundPresetName contains "EOP" then
             exit repeat
@@ -2781,10 +2781,10 @@ function getSF2Banks tRIFFfile
 
          Put word 1 of tTemp && word 2 of tTemp && word 3 of tTemp && word 4 of tTemp into tSoundPresetName
 
-         read from file tRIFFfile for 2 bytes
+         read from file pRIFFfile for 2 bytes
          get binaryDecode("S",it,tInstrumentNum)
 
-         read from file tRIFFfile for 2 bytes
+         read from file pRIFFfile for 2 bytes
          get binaryDecode("CC",it,tBankCC32_LSB,tBankCC0_MSB)
          if tBankCC32_MSB = 128 then
             put "DrumBank " into tIsDrumBank
@@ -2794,13 +2794,13 @@ function getSF2Banks tRIFFfile
 
          put  tBankCC0_MSB &"(MSB) "& tBankCC32_LSB &" " & tIsDrumBank & tInstrumentNum && tSoundPresetName & cr after tSoundBanksPrograms
 
-         read from file tRIFFfile for 14 bytes -- skips rest of record
+         read from file pRIFFfile for 14 bytes -- skips rest of record
 
       end repeat
    end if
-   --   read from file tRIFFfile for 1024 --- until EOF
+   --   read from file pRIFFfile for 1024 --- until EOF
    --   put "Next 1024 bytes of data: " & it & cr after tDump
-   close file tRIFFfile
+   close file pRIFFfile
 
    --      filter each word in tSoundBanksPrograms not matching "0(MSB)" into tSoundBanksPrograms
    repeat with x = 1 to the number of lines in tSoundBanksPrograms
