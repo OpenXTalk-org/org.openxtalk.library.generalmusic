@@ -2553,6 +2553,182 @@ function SF2orDLSmagicNumCheck pFile
    end if
 end SF2orDLSmagicNumCheck
 
+
+
+
+function getSF2Info pRIFFfile
+   if there is not a file pRIFFfile then 
+      return "ERROR not a valid file path"
+      exit getSF2Info
+   end if
+   open file pRIFFfile for binary read
+   read from file pRIFFfile for 4 bytes
+   if it <> "RIFF" then 
+      put "ERROR file is not RIFF! SIG= " & it & cr after tDump
+      close file pRIFFfile
+      return tDump
+      exit getSF2Info
+   else 
+      -- put "FILE IS RIFF, Sig4CC = " & it & cr after tDump
+      repeat 3
+         read from file pRIFFfile until "LIST"
+         read from file pRIFFfile for 4 bytes
+         get binaryDecode("I",it,tLength)
+         read from file pRIFFfile for 4 bytes
+         put it into tListType
+         if tListType = "INFO" then 
+            -- put "LIST Byte Length=" & tLength & cr after tDump
+            put "LIST Type=" & tListType & cr after tDump
+            read from file pRIFFfile for tLength bytes
+            put it into tInfoChunk
+            repeat
+               if tInfoChunk is empty then exit repeat --- or tSubType is "LIST" 
+               put byte 1 to 4 of tInfoChunk into tSubType
+               -- put "SubChunkType=" & tSubType & cr after tDump
+               delete byte 1 to 4 of tInfoChunk
+               switch tSubType
+                  case "ifil"
+                     get byte 1 to 4 of tInfoChunk
+                     get binaryDecode("I",it,tLength)
+                     -- if tLength > 4 then exit to top -- extra error check
+                     -- put "ifil length=" & tLength & cr after tDump
+                     delete byte 1 to 4 of tInfoChunk
+                     -- The ifil sub-chunk is a mandatory sub-chunk identifying the SoundFont specification version
+                     -- level to which the file complies. It is always four bytes in length, and contains data a structure: WORD wMajor; WORD wMinor;
+                     get byte 1 to 2 of tInfoChunk
+                     get binaryDecode("S",it,tMaj)
+                     delete byte 1 to 2 of tInfoChunk
+                     get byte 1 to 2 of tInfoChunk
+                     get binaryDecode("S",it,tMin)
+                     delete byte 1 to 2 of tInfoChunk
+                     put "Target Soundfont Version:" & tMaj &".0" & tMin & cr after tDump
+                     next repeat
+                     break
+                  case "INAM"
+                     get byte 1 to 4 of tInfoChunk
+                     get binaryDecode("I",it,tLength)
+                     -- put "INAM length=" & tLength & cr after tDump
+                     delete byte 1 to 4 of tInfoChunk
+                     get byte 1 to tLength of tInfoChunk 
+                     if it <> empty then 
+                        put "Name:" & it & cr after tDump
+                        delete byte 1 to tLength of tInfoChunk 
+                     end if
+                     next repeat
+                     break
+                  case "isng" -- default isng field is the eight bytes representing “EMU8000”
+                     get byte 1 to 4 of tInfoChunk
+                     get binaryDecode("I",it,tLength)
+                     -- put "isng length=" & tLength & cr after tDumps
+                     delete byte 1 to 4 of tInfoChunk
+                     get byte 1 to tLength of tInfoChunk 
+                     if it <> empty then 
+                        put "Target Wavetable Engine:" & it & cr after tDump
+                        delete byte 1 to tLength of tInfoChunk 
+                     end if
+                     next repeat
+                     break
+                  case "IENG"
+                     get byte 1 to 4 of tInfoChunk
+                     get binaryDecode("I",it,tLength)
+                     -- put tSubType & " length=" & tLength & cr after tDump
+                     delete byte 1 to 4 of tInfoChunk
+                     get byte 1 to tLength of tInfoChunk 
+                     if it <> empty then 
+                        put "Sound Engineering by:" & it & cr after tDump
+                        delete byte 1 to tLength of tInfoChunk 
+                     end if
+                     next repeat
+                     break
+                  case "ICRD"
+                     get byte 1 to 4 of tInfoChunk
+                     get binaryDecode("I",it,tLength)
+                     -- put tSubType & " length=" & tLength & cr after tDump
+                     delete byte 1 to 4 of tInfoChunk
+                     get byte 1 to tLength of tInfoChunk 
+                     if it <> empty then 
+                        put "Creation Date:" & it & cr after tDump
+                        delete byte 1 to tLength of tInfoChunk
+                     end if
+                     next repeat
+                     break
+                  case "IPRD"
+                     get byte 1 to 4 of tInfoChunk
+                     get binaryDecode("I",it,tLength)
+                     -- put tSubType & " length=" & tLength & cr after tDump
+                     delete byte 1 to 4 of tInfoChunk
+                     get byte 1 to tLength of tInfoChunk 
+                     if it <> empty then 
+                        put "Target Products:" & it & cr after tDump
+                        delete byte 1 to tLength of tInfoChunk 
+                     end if
+                     next repeat
+                     break
+                     break
+                  case "ICOP"
+                     get byte 1 to 4 of tInfoChunk
+                     get binaryDecode("I",it,tLength)
+                     -- put tSubType & " length=" & tLength & cr after tDump
+                     delete byte 1 to 4 of tInfoChunk
+                     get byte 1 to tLength of tInfoChunk 
+                     if it <> empty then 
+                        put "Copyright=" & it & cr after tDump
+                        delete byte 1 to tLength of tInfoChunk 
+                     end if
+                     next repeat
+                     break
+                     break
+                  case "ISFT"
+                     get byte 1 to 4 of tInfoChunk
+                     get binaryDecode("I",it,tLength)
+                     -- put tSubType & " length=" & tLength & cr after tDump
+                     delete byte 1 to 4 of tInfoChunk
+                     get byte 1 to tLength of tInfoChunk 
+                     if it <> empty then 
+                        put "Origin Software:" & it & cr after tDump
+                        delete byte 1 to tLength of tInfoChunk 
+                     end if
+                     next repeat
+                     break
+                     break
+                  case "ICMT"
+                     get byte 1 to 4 of tInfoChunk
+                     get binaryDecode("I",it,tLength)
+                     -- put tSubType & " length=" & tLength & cr after tDump
+                     delete byte 1 to 4 of tInfoChunk
+                     get byte 1 to tLength of tInfoChunk 
+                     if it <> empty then 
+                        put "Comments:" & it & cr after tDump
+                        delete byte 1 to tLength of tInfoChunk 
+                     end if
+                     next repeat
+                     break
+                  case "LIST"
+                     -- if the last line of fld Dump is "SubChunkType=LIST" then delete the last line of fld Dump
+                     put true into tLoopBreak
+                     exit repeat
+                     break
+                  default 
+                     exit repeat
+                     break
+               end switch
+            end repeat
+            if tBreak then 
+               -- close file pRIFFfile
+               exit repeat
+            end if
+         else 
+            next repeat
+         end if
+         
+      end repeat
+      close file pRIFFfile
+   end if
+   return tDump 
+end getSF2Info
+
+
+
 /*
 Summary: getDLSBanks returns a line delimited list of sound patches from a DownLoadableSoundbank(.dls) file.
 Name: getDLSBanks
@@ -2683,128 +2859,123 @@ The each list line is in the format: banknumber-patchnumber patchname,
 so for a general midi soundbank the first line would be "0-1 Piano 1"
 */
 function getSF2Banks tRIFFfile
-   lock screen
-   open file tRIFFfile for binary read
-
-   read from file tRIFFfile for 4 bytes
-   --   if it <> "RIFF" then
-   --      put "ERROR File is not RIFF, SIG= " & it & cr after tDump
-   --   else
-   --      put "FILE IS RIFF, Sig4CC = " & it & cr after tDump
-   --   end if
-   read from file tRIFFfile for 4 bytes
-   get binaryDecode("I",it,tLength)
-   put "RIFF Byte Length=" & tLength & cr after tDump
-
-   read from file tRIFFfile for 4 bytes
-
-   if it <> "sfbk" then
-      put "ERROR File is not a SoundFont File, FormType 4CC = " & it & cr into tDump
-   else
-      put "FILE IS SoundFont, Sig4CC = " & it & cr into tDump
-   end if
-
-   read from file tRIFFfile for 4 bytes
-   put it into tChunkType
-   put "Chunk Type 4CC = " & tChunkType & cr after tDump
-   read from file tRIFFfile for 4 bytes
-   get binaryDecode("I",it,tChunkLength)
-   put "Chunk Length=" & tChunkLength & cr after tDump
-   if tChunkType = "colh" then
+   if there is a file tRIFFfile then
+      lock screen
+      open file tRIFFfile for binary read
       read from file tRIFFfile for 4 bytes
-      get binaryDecode("I",it,tColCnt)
-      put "Instruments in collection: " & tColCnt & cr after tDump
-      if tChunkLength > 4 then
-         read from file tRIFFfile for tChunkLength - 4 bytes
-         put "Extra Data= " & it & cr after tDump
+      if it <> "RIFF" then 
+         put "ERROR File is not RIFF, SIG= " & it & cr after tDump 
+      else
+         put "FILE IS RIFF, Sig4CC = " & it & cr after tDump 
       end if
-   end if
-
-   read from file tRIFFfile for 4 bytes
-   put it into tChunkType
-   put "Chunk Type 4CC = " & tChunkType & cr after tDump
-   if tChunkType = "LIST" then
       read from file tRIFFfile for 4 bytes
-      get binaryDecode("I",it,t4bytes)
-      put "List Chunk Size: " & t4bytes & cr after tDump
-
+      get binaryDecode("I",it,tRIFFLength)
+      -- put "RIFF Byte Length=" & tLength & cr after tDump 
       read from file tRIFFfile for 4 bytes
-      put "List type: " & it & cr after tDump
+      
+      if it <> "sfbk" then 
+         put "ERROR File is not a SoundFont File, FormType 4CC = " & it & cr into tDump 
+      else
+         put "FILE IS SoundFont, Sig4CC = " & it & cr into tDump 
+      end if
+      
       read from file tRIFFfile for 4 bytes
-      put "Next 4 bytes: " & it & cr after tDump
-   end if
-
-   put empty into tSoundBanksPrograms
-   read from file tRIFFfile until "pdta"
-   read from file tRIFFfile for 4 bytes
-   if it = "phdr" then
-      put "phdr: " & it & cr after tDump
-
+      put it into tChunkType
+      put "LIST 4CC = " & tLISTType & cr after tDump 
       read from file tRIFFfile for 4 bytes
-      get binaryDecode("I",it,t4bytes)
-      put "length = " & t4bytes & cr after tDump
-
-      repeat 1000
-         set cursor to busy
-         read from file tRIFFfile for 20 bytes
-         put it into tSoundPresetName
-         if tSoundPresetName contains "EOP" then
-            exit repeat
-         else
-            put empty into tTemp
-            put "0123456789abcdefghijklmnopqrstuvwxyz" into tAlpha
-            repeat for each char tChar in tSoundPresetName
-               set cursor to busy
-               if tchar is in tAlpha then put tchar after tTemp
-            end repeat
-            put tTemp into tSoundPresetName
+      get binaryDecode("I",it,tLISTLength)
+      put "LIST Length=" & tLISTLength & cr after tDump 
+      read from file tRIFFfile for 4 bytes
+      put it into tChunkType
+      put "LIST Type 4CC = " & tChunkType & cr after tDump 
+      if tChunkType <> "phdr" then
+         read from file tRIFFfile until "LIST"
+         read from file tRIFFfile for 4 bytes
+         get binaryDecode("I",it,tLISTLength)
+         put "LIST Length=" & tLISTLength & cr after tDump 
+         read from file tRIFFfile for 4 bytes
+         put it into tChunkType
+         put "LIST Type 4CC = " & tChunkType & cr after tDump 
+         if tChunkType <> "phdr" then
+            read from file tRIFFfile until "LIST"
+            read from file tRIFFfile for 4 bytes
+            get binaryDecode("I",it,tLISTLength)
+            put "LIST Length=" & tLISTLength & cr after tDump 
+            read from file tRIFFfile for 4 bytes
+            put it into tChunkType
+            put "LIST Type 4CC = " & tChunkType & cr after tDump 
          end if
-
-         Put word 1 of tTemp && word 2 of tTemp && word 3 of tTemp && word 4 of tTemp into tSoundPresetName
-
-         read from file tRIFFfile for 2 bytes
-         get binaryDecode("S",it,tInstrumentNum)
-
-         read from file tRIFFfile for 2 bytes
-         get binaryDecode("CC",it,tBankCC32_LSB,tBankCC0_MSB)
-         if tBankCC32_MSB = 128 then
-            put "DrumBank " into tIsDrumBank
-         else
-            put empty into tIsDrumBank
+         
+      end if
+      put empty into tSoundPresets
+      read from file tRIFFfile for 4 bytes
+      if it = "phdr" then
+         put "phdr: " & it & cr after tDump 
+         
+         read from file tRIFFfile for 4 bytes
+         get binaryDecode("I",it,t4bytes)
+         put "length = " & t4bytes & cr after tDump 
+         
+         repeat 1000
+            read from file tRIFFfile for 20 bytes
+            put it into tSoundPresetName
+            if tSoundPresetName contains "EOP" then 
+               exit repeat
+            else
+               put empty into tTemp
+               put "0123456789abcdefghijklmnopqrstuvwxyz -" into tAlpha
+               repeat for each char tChar in tSoundPresetName
+                  if tchar is null then exit repeat
+                  if tchar is in tAlpha then put tchar after tTemp
+               end repeat
+               put tTemp into tSoundPresetName
+            end if
+            
+            Put word 1 of tTemp && word 2 of tTemp && word 3 of tTemp && word 4 of tTemp into tSoundPresetName
+            
+            read from file tRIFFfile for 2 bytes
+            get binaryDecode("S",it,tInstrumentNum)
+            
+            read from file tRIFFfile for 2 bytes
+            get binaryDecode("CC",it,tBankCC32_LSB,tBankCC0_MSB)
+            if tBankCC32_MSB = 128 then 
+               put "DrumBank " into tIsDrumBank
+            else 
+               put empty into tIsDrumBank
+            end if
+            
+            put  tBankCC0_MSB &"(MSB) "& tBankCC32_LSB &" " & tIsDrumBank & tInstrumentNum && tSoundPresetName & cr after tSoundPresets
+            
+            read from file tRIFFfile for 14 bytes -- skips rest of record
+            
+         end repeat
+      end if
+      close file tRIFFfile
+      --      filter each word in tSoundPresets not matching "0(MSB)" into tSoundPresets
+      repeat with x = 1 to the number of lines in tSoundPresets
+         if word 1 of line x of tSoundPresets = "0(MSB)" then 
+            delete word 1 of line x of tSoundPresets
          end if
-
-         put  tBankCC0_MSB &"(MSB) "& tBankCC32_LSB &" " & tIsDrumBank & tInstrumentNum && tSoundPresetName & cr after tSoundBanksPrograms
-
-         read from file tRIFFfile for 14 bytes -- skips rest of record
-
+         if word 1 of line x of tSoundPresets = "0(LSB)" then 
+            delete word 1 of line x of tSoundPresets
+         end if
+      end repeat 
+      filter lines of tSoundPresets without empty
+      sort lines of tSoundPresets numeric by word 4 of each
+      sort lines of tSoundPresets numeric by word 3 of each
+      sort lines of tSoundPresets numeric by word 2 of each
+      sort lines of tSoundPresets numeric by word 1 of each
+      
+      repeat with x = 1 to the number of lines in tSoundPresets
+         if word 1 of line x of tSoundPresets is an integer and word 2 of line x of tSoundPresets is an integer then
+            put word 1 of line x of tSoundPresets &"-" & word 2 of line x of tSoundPresets into word 1 to 2 of line x of tSoundPresets
+         end if
       end repeat
-   end if
-   --   read from file tRIFFfile for 1024 --- until EOF
-   --   put "Next 1024 bytes of data: " & it & cr after tDump
-   close file tRIFFfile
-
-   --      filter each word in tSoundBanksPrograms not matching "0(MSB)" into tSoundBanksPrograms
-   repeat with x = 1 to the number of lines in tSoundBanksPrograms
-      set cursor to busy
-      if word 1 of line x of tSoundBanksPrograms = "0(MSB)" then
-         delete word 1 of line x of tSoundBanksPrograms
-      end if
-      if word 1 of line x of tSoundBanksPrograms = "0(LSB)" then
-         delete word 1 of line x of tSoundBanksPrograms
-      end if
-   end repeat
-   filter lines of tSoundBanksPrograms without empty
-   sort lines of tSoundBanksPrograms numeric by word 4 of each
-   sort lines of tSoundBanksPrograms numeric by word 3 of each
-   sort lines of tSoundBanksPrograms numeric by word 2 of each
-   sort lines of tSoundBanksPrograms numeric by word 1 of each
-
-   repeat with x = 1 to the number of lines in tSoundBanksPrograms
-      set cursor to busy
-      if word 1 of line x of tSoundBanksPrograms is an integer and word 2 of line x of tSoundBanksPrograms is an integer then
-         put word 1 of line x of tSoundBanksPrograms &"-" & word 2 of line x of tSoundBanksPrograms into word 1 to 2 of line x of tSoundBanksPrograms
-      end if
-   end repeat
-   if there is a fld "Dump" then put tDump into fld "Dump"
-   return tSoundBanksPrograms
+      if there is a fld "Dump" then put tDump after fld "Dump"
+      unlock screen
+      return tSoundPresets
+   else
+      return "ERROR: Invalid File Path Paramater"
+   end if 
 end getSF2Banks
+
