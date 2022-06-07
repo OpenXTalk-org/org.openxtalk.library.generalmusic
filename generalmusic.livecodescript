@@ -4,13 +4,10 @@ on extensionInitialize
    if the target is not me then
       pass extensionInitialize
    end if
-
    insert the script of me into back
-
    if the environment contains "development" then
       set the _ideoverride of me to true
    end if
-
    __Initialize
 end extensionInitialize
 
@@ -18,7 +15,6 @@ on extensionFinalize
    if the target is not me then
       pass extensionFinalize
    end if
-
    remove the script of me from back
 end extensionFinalize
 
@@ -79,10 +75,26 @@ function generalMusicLibVersion
 end generalMusicLibVersion
 
 
+global defaultSoundBank, selectedSoundBank, instrumentNames
 private command __Initialize
-
+   get line 1 of scanStdSoundBankDirectories()
+   if it <> empty then 
+      put it into defaultSoundBank
+      if the platform is "Linux" then
+         if "fluidsynth" is in the loadedExtensions then
+            try
+               if fsEnsureInitialize() then
+                  fsMIDIPlayerInit
+                  put "FluidSynth Initialized"
+                  get fsLoadSoundFont(defaultSoundBank)
+                  put defaultSoundBank into selectedSoundBank
+               end if
+            end try
+         end if
+      end if
+   end if
+   put gsInstrumentNames(false,"list") into instrumentNames
 end __Initialize
-
 
 ---- makeSMF (PM modded version) ---
 -- originally by UDI --
@@ -114,7 +126,7 @@ Name: playPMD
 
 Type: command
 
-Syntax: playPMD pPlaySentenceMusicalData,[<pTempoBPM>],[<pProgramNumber>],[<pShellpAppPath>]
+Syntax: playPMD [<pInstrumentName>],pPlaySentenceMusicalData,[<pTempoBPM>],[<pProgramNumber>],[<pShellpAppPath>]
 
 Summary: plays the Playsentence Musical Data (PMD) starting at the specified tempo
 in beats per minute, with the given sound patch number, using the current best
@@ -146,22 +158,52 @@ playback available on the current platform.
 
 Tags: Music, MIDI, audioClip
 **/
-on playPMD notes, playTempo, instNum, midiAppName
+on playPMD pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
+   put 0 into instNum
+   put 120 into playTempo
    if the paramCount > 1 then
-      put the params & cr & the paramCount
-      put param(1) into tTemp
-      if tTemp is "Piano" then
-         put 1 into instNum
-         put lineoffset("Piano", gsPatchNames(),0) after msg
-         -- put line 20 of gsPatchNames()
-         exit to top
+      repeat with x = 1 to the paramCount
+         get param(x)
+         if it is in instrumentNames then
+            get lineoffset(it,instrumentNames,0)
+            if it <> 0 then put it - 1  into instNum
+            next repeat
+         end if
+         if word 1 of it is "tempo" or word 1 of it is "Tempo" then
+            get word 2 of it
+            if it > 0 and it < 481 then
+               put it into playTempo
+               -- put playTempo
+            end if
+            next repeat
+         end if
+         if it contains "/" then
+            if char -1 to -4 of it = ".sf2" or char -1 to -4 of it = ".dls" then
+               put it into soundBankFile
+            else
+               put it into midiAppName
+            end if
+            next repeat
+         end if
+         put it into notes
+      end repeat
+   else
+      if param(1) is not empty then
+         put param(1) into notes
+      else
+         put "C4q" into notes
       end if
    end if
    if ( midiAppName is NOT empty ) then
-      playPmdShell notes, playTempo, instNum, midiAppName
+      playPmd_Shell notes, playTempo, instNum, midiAppName
       exit playPMD
    end if
-   -- put the platform into myOS
+   -- if soundBankFile is empty then put defaultSoundBank into soundBankFile
+   if soundBankFile is empty then 
+      if defaultSoundBank is not empty then
+         put defaultSoundBank into soundBankFile
+      end if
+   end if
    switch platform()
       -- The possible values returned by the platform function are:
       -- "Win32" on any version of Windows
@@ -175,15 +217,15 @@ on playPMD notes, playTempo, instNum, midiAppName
          -- if ( item 1 of qtVersion() < 10 )  then  -- QuickTime MIDI is dead
          get the loadedExtensions
          if it contains "avmidiplay" then
-            playPMD_AVMIDIPlayer notes, playTempo, instNum
+            playPMD_AVMIDIPlayer notes, playTempo,instNum,bankNum,soundBankFile
          else if it contains "FluidSynth" then
-            playPMD_FluidSynth notes, playTempo, instNum
+            playPMD_FluidSynth notes, playTempo,instNum,bankNum, soundBankFile
          end if
          break
       case "iphone"
          get the loadedExtensions
          if it contains "avmidiplay" then
-            playPMD_AVMIDIPlayer notes, playTempo, instNum, midiAppName
+            playPMD_AVMIDIPlayer notes, playTempo, instNum, soundBankFile
          end if
          break
       case "android"
@@ -191,19 +233,18 @@ on playPMD notes, playTempo, instNum, midiAppName
          break
       case "Linux"
          get the loadedExtensions
-         if it contains "FluidSynth" then
-            playPMD_FluidSynth notes, playTempo, instNum, midiAppName
+         if it contains "fluidsynth" then
+            playPMD_FluidSynth notes, playTempo, instNum, bankNum, soundBankFile
          else
             playPMD_Shell notes, playTempo, instNum, midiAppName
          end if
          break
       case "Win32"
          get the loadedExtensions
-         if it contains "FluidSynth" then
-            playPMD_FluidSynth notes, playTempo, instNum, midiAppName
+         if it contains "fluidsynth" then
+            playPMD_FluidSynth notes, playTempo, instNum, bankNum, soundBankFile
          else
             playPMD_videoClip notes, playTempo, instNum, midiAppName
-            -- Maybe replace with MCI play?
          end if
          -- another method to play MIDI on Win32 is using MCISendString(MCICommand)
          break
@@ -282,7 +323,7 @@ on checkPlayEnd_videoClip
       send "checkPlayEndVC" to me in 30 ticks
    end if
 
-      
+
    end checkPlayEnd_videoClip
 
 ------------------------------------------------ playPMD using a shell app ------------------------------------------
@@ -425,7 +466,6 @@ on playPMD_AVMIDIPlayer notes, playTempo, instNum, bankNum, soundBankFile
    put specialFolderPath( "Temporary" ) & "/playPmdTemp.mid" into tempFilePath
    if ( notes is "stop" ) or ( notes is "clear" ) then
       try
-         -- play stop vc tempFilePath -- 'videoClip' playback can be used for MIDI on most Android v2+
          AVMIDIplayerStop
       end try
       if notes is "clear" then
@@ -435,18 +475,14 @@ on playPMD_AVMIDIPlayer notes, playTempo, instNum, bankNum, soundBankFile
    else
       try
          AVMIDIplayerStop
-         -- stop playing vc tempFilePath
       end try
       makeSMF notes, playTempo, instNum, tempFilePath
-      -- play vc tempFilePath -- videoClip playback can be used for MIDI on most Android v2+
-      -- put tempFilePath into cd fld "MIDIfilePath"
-      -- put FilePathToFileURL(tempFilePath) into cd fld "MIDIfileURL
       get scanStdSoundBankDirectories()
       if it is not empty then
          put line 1 of it into tSoundBank
          try
             AVMIDIPlayerLoad tempFilePath, tSoundBank
-            put tSoundBank
+            -- put tSoundBank
             -- set the thumbPosition of scrollbar "ScrubberBar" to 0
             -- set the endValue of scrollbar "ScrubberBar" to AVMIDIPlayerDuration()
             -- put SecsToHrsMinSecs(0) into fld "FileCurrentPosition"
@@ -477,7 +513,7 @@ Name: playPMD_FluidSynth
 
 Type: command
 
-Syntax: playPMD_AVMIDIPlayer pPlaySentenceMusicalData, pTempoBPM,[pProgramNumber,[<pSoundBankFile>]
+Syntax: playPMD_FluidSynth pPlaySentenceMusicalData,[<pTempoBPM>],[<pProgramNumber>],[<pSoundBankFile>]
 
 Summary: plays the Playsentence Musical Data (PMD) starting at the specified beats per minute,
 with the given sound patch number using the FluidSynth engine.
@@ -508,51 +544,47 @@ Attempts to play the Playsentence Music Data (PMD), optionally starting at the s
 in beats per minute, optionally with a given MIDI patch number (need to add 'bank-patch' suport),
 with the optionally provided Soubdbank (.sf2 or .dls) file. The default values are 120(BPM)
 and sound patch 1 (GM "Piano 1"),loading the first SoundBankFile found in default locations
-On macOS this should load  the default Roland GS Soundbank (which is the same small Soundbank 
+On macOS this should load  the default Roland GS Soundbank (which is the same small Soundbank
    from the 1990s that came with QuickTime v2.5+), on iOS no default soundbank is provided
    by the OS and so one must be provided.
    PLEASE NOTE that this command will do nothing (fail silently) if the AVMIDIPLayer
    builder extension is not loaded therefore scripts should check for the presence of
    the AVMIDIPLayer libray before calling this command directly, or use the platform aware
    version, PlayPMD which should try to use the best musical playback engine currenlty availble. \Tags: Music, MIDI, audioClip
-         
+
 **/
 on playPMD_FluidSynth notes, playTempo, instNum, bankNum, soundBankFile
-   
-   if "fluidsynth" is in the loadedExtensions then
-      -- fsEnsureInitialize
-      fsMIDIPlayerInit
-      -- set dontUseQT to false -- long time Deprecated now -- PM 2/10/22
-      put specialFolderPath( "Temporary" ) & "/playPmdTemp.mid" into tempFilePath
-      if ( notes is "stop" ) or ( notes is "clear" ) then
-         try
-            fsMIDIplayerStop
-         end try
-         if notes is "clear" then
-            delete file tempFilePath
-         end if
-      else
-         try
-            fsMIDIplayerStop
-         end try
-         makeSMF notes, playTempo, instNum, tempFilePath
-         get scanStdSoundBankDirectories()
-         if it is not empty then
-            put line 1 of it into tSoundBank
-            try
-               fsLoadMIDIFile tempFilePath -- , tSoundBank
-               put tSoundBank
-               -- AVMIDIPlayerSetRate 1.0
-               fsMIDIPlayerPlay
-               -- playPositionCheck
-            end try
-         end if
+   -- set dontUseQT to false -- long time Deprecated now -- PM 2/10/22
+   put specialFolderPath( "Temporary" ) & "/playPmdTemp.mid" into tempFilePath
+   if ( notes is "stop" ) or ( notes is "clear" ) then
+      try
+         fsMIDIplayerStop
+      end try
+      if notes is "clear" then
+         delete file tempFilePath
       end if
    else
-      Throw "Fluid Synth API Not Loaded"
+      makeSMF notes, playTempo, instNum, tempFilePath
+      try
+         fsMIDIplayerStop
+      end try
+      -- get scanStdSoundBankDirectories()
+      -- if it is not empty then
+      --    put line 1 of it into tSoundBank
+      -- if soundBankFile is empty then put defaultSoundBank into soundBankFile
+      try
+         fsMIDIPlayerInit
+         if soundBankFile <> defaultSoundBank then
+            get fsLoadSoundFont(soundBankFile)
+            --  put it
+         end if
+         fsLoadMIDIFile tempFilePath -- , soundBankFile
+         fsMIDIPlayerPlay
+         -- playPositionCheck
+      end try
+      --  Throw "Fluid Synth API Not Loaded"
    end if
 end playPMD_FluidSynth
-
 
 on setPlayBtnFS toPlay
    try
@@ -562,71 +594,71 @@ on setPlayBtnFS toPlay
       set the enabled of btn "Stop" to ( toPlay )
    end try
 end setPlayBtnFS
-   
-   ------------------------ No-playback PMD to Standard MIDI Data (crossplatform) ----------------------------------------
-   /**
-   Name: playSentenceToMIDIData
-   
-   Type: function
-   
-   Syntax:
-   playSentenceToMIDIData <playSentence>,[<playTempo>],[<soundPatchNum>]
-   
-   Summary: playSentenceToMIDIData retruns Standard MIDI File Binary Data,
-   converted from the given PlaySentenceMusicData,
-   starting at the specified beats per minute, with the given patch number,
-   
-   Parameters:
-   playSentence: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
-   playTempo; Intitial playback tenmpo in Beats Per Minute, this may be overridden
-   by tempo messages within the playSentence string.
-   soundPatchNum: a number in range 0-127 is the sound patch to use as the initial
-   or default instrument sound. This nay be overridden by patchchange messages within
-   the playSentence string.
-   
-   Example:
-   PUT playSentenceToMIDIData("C4q Ee. Gs..",120,0) -- get MIDI data at 120BPM plays on "Piano 1"
-   
-   Returns:
-   MIDI formated binary data suitable for playback or writing to a standard midi file.
-   
-   Description:
-   Converts PlaySentence Musical Data (PMD) starting at the specified tempo,
-   with the given sound patch number. The binary data returned may be written directly to a standard MIDI file or
-   passed along to some MIDI playback handler.
-   **/
-   function playSentenceToMIDIData notes, playTempo, defInst
-  set the cursor to watch
-  --
-  if line 1 of notes contains "//pmd" then
-    -- exist header
-    put line 1 of notes into pmdHeader
-    if item 3 of pmdHeader > 0 then
-      put item 3 of pmdHeader into playTempo
-    end if
-    if item 4 of pmdHeader > 0 then
-      put item 4 of pmdHeader into defInst
-    end if
-  end if
-  if playTempo is "" then put 100 into playTempo
-  if defInst is "" then put 1 into defInst
-  --
-  put getCopyrightBin( notes ) into midiEvents
-  put getInfoBin( notes ) after midiEvents
-  put getTimeSignBin( notes ) after midiEvents
-  --
-  put binaryEncode( "H*", "00FF54054000000000" ) after midiEvents -- SMTPE offset
-  put binaryEncode( "H*", "00FF5103" ) & num2Bin( 590000 *100 div playTempo, 3) after midiEvents
-  put binaryEncode( "H*", "00B07900" ) after midiEvents -- reset all controler( CC#121 = 0 )
-  --
-  put notes2EvList( notes, defInst, playTempo ) into evList
-  set the cursor to watch
-  sort lines of evList
-  put evList2Midi( evList ) after midiEvents
-  --
-  put getMidiHeader( length( midiEvents ) ) before midiEvents
-  --
-  return midiEvents
+
+------------------------ No-playback PMD to Standard MIDI Data (crossplatform) ----------------------------------------
+/**
+Name: playSentenceToMIDIData
+
+Type: function
+
+Syntax:
+playSentenceToMIDIData <playSentence>,[<playTempo>],[<soundPatchNum>]
+
+Summary: playSentenceToMIDIData retruns Standard MIDI File Binary Data,
+converted from the given PlaySentenceMusicData,
+starting at the specified beats per minute, with the given patch number,
+
+Parameters:
+playSentence: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
+playTempo; Intitial playback tenmpo in Beats Per Minute, this may be overridden
+by tempo messages within the playSentence string.
+soundPatchNum: a number in range 0-127 is the sound patch to use as the initial
+or default instrument sound. This nay be overridden by patchchange messages within
+the playSentence string.
+
+Example:
+PUT playSentenceToMIDIData("C4q Ee. Gs..",120,0) -- get MIDI data at 120BPM plays on "Piano 1"
+
+Returns:
+MIDI formated binary data suitable for playback or writing to a standard midi file.
+
+Description:
+Converts PlaySentence Musical Data (PMD) starting at the specified tempo,
+with the given sound patch number. The binary data returned may be written directly to a standard MIDI file or
+passed along to some MIDI playback handler.
+**/
+function playSentenceToMIDIData notes, playTempo, defInst
+   set the cursor to watch
+   --
+   if line 1 of notes contains "//pmd" then
+      -- exist header
+      put line 1 of notes into pmdHeader
+      if item 3 of pmdHeader > 0 then
+         put item 3 of pmdHeader into playTempo
+      end if
+      if item 4 of pmdHeader > 0 then
+         put item 4 of pmdHeader into defInst
+      end if
+   end if
+   if playTempo is "" then put 100 into playTempo
+   if defInst is "" then put 1 into defInst
+   --
+   put getCopyrightBin( notes ) into midiEvents
+   put getInfoBin( notes ) after midiEvents
+   put getTimeSignBin( notes ) after midiEvents
+   --
+   put binaryEncode( "H*", "00FF54054000000000" ) after midiEvents -- SMTPE offset
+   put binaryEncode( "H*", "00FF5103" ) & num2Bin( 590000 *100 div playTempo, 3) after midiEvents
+   put binaryEncode( "H*", "00B07900" ) after midiEvents -- reset all controler( CC#121 = 0 )
+   --
+   put notes2EvList( notes, defInst, playTempo ) into evList
+   set the cursor to watch
+   sort lines of evList
+   put evList2Midi( evList ) after midiEvents
+   --
+   put getMidiHeader( length( midiEvents ) ) before midiEvents
+   --
+   return midiEvents
 end playSentenceToMIDIData
 
 ------------------------------------------------ MakeSMF ---------------------------------------------
@@ -1747,7 +1779,7 @@ function gsPatchNumToName gmPatchNum, drumChannel
    end if
 end gsPatchNumToName
 
-function gsPatchNames pDrumPatches, pReturnType
+function gsInstrumentNames pDrumPatches, pReturnType
    if pDrumPatches <> "ch10" and pDrumPatches <> "drums" and pDrumPatches <> true then -- "ch10" is reserved for drums ("ch11" additionally in GM2 spec) -- and theChannel <> "ch11"
       put "Acoustic Grand Piano,Bright Acoustic Piano,Electric Grand Piano,Honky-tonk Piano,Rhodes Piano,Chorused Piano,"&\
             "Harpsichord,Clavinet,Celesta,Glockenspiel,Music Box,Vibraphone,Marimba,Xylophone,Tubular Bells,Dulcimer,Hammond Organ,Percussive Organ,"&\
@@ -1762,7 +1794,7 @@ function gsPatchNames pDrumPatches, pReturnType
             "FX 4 (atmosphere),FX 5 (brightness),FX 6 (goblins),FX 7 (echoes),FX 8 (sci-fi),Sitar,Banjo,Shamisen,Koto,Kalimba,Bagpipe,Fiddle,Shanai,Tinkle Bell,Agogo,"&\
             "Steel Drums,Woodblock,Taiko Drum,Melodic Tom,Synth Drum,Reverse Cymbal,Guitar Fret Noise,Breath Noise,Seashore,Bird Tweet,Telephone Ring,Helicopter,Applause,Gunshot" into tList
    else -- theChannel is a drum kit channel (10)
-       put "Standard Kit,2,3,4,5,6,7,8,Room Kit,10,11,12,13,14,15,16,Power Kit,18,19,20,21,22,23,24,25,Electronic Kit,"&\
+      put "Standard Kit,2,3,4,5,6,7,8,Room Kit,10,11,12,13,14,15,16,Power Kit,18,19,20,21,22,23,24,25,Electronic Kit,"&\
             "TR-808 Kit,27,28,29,30,31,32,Jazz Kit,34,35,36,37,38,39,40,Brush Kit,42,43,44,45,46,47,48,Orchestra Kit,50,51,52,53,54,55,56,SoundFX Kit,"&\
             "58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,"&\
             "100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,MT-32 Kit" into tList
@@ -1778,12 +1810,13 @@ function gsPatchNames pDrumPatches, pReturnType
       case "list"
       case ""
       default
-         split tList by comma
-         combine tList with cr
+         --split tList by comma
+         -- combine tList with cr
+         replace comma with return in tList
          return tList
          break
    end switch
-end gsPatchNames
+end gsInstrumentNames
 
 function BPMppbDurationToMillisecs pBPM, pPulsesPerBeat, pDur
    -- There are 60,000 milliseconds in a minute
@@ -2553,22 +2586,19 @@ function SF2orDLSmagicNumCheck pFile
    end if
 end SF2orDLSmagicNumCheck
 
-
-
-
 function getSF2Info pRIFFfile
-   if there is not a file pRIFFfile then 
+   if there is not a file pRIFFfile then
       return "ERROR not a valid file path"
       exit getSF2Info
    end if
    open file pRIFFfile for binary read
    read from file pRIFFfile for 4 bytes
-   if it <> "RIFF" then 
+   if it <> "RIFF" then
       put "ERROR file is not RIFF! SIG= " & it & cr after tDump
       close file pRIFFfile
       return tDump
       exit getSF2Info
-   else 
+   else
       -- put "FILE IS RIFF, Sig4CC = " & it & cr after tDump
       repeat 3
          read from file pRIFFfile until "LIST"
@@ -2576,13 +2606,13 @@ function getSF2Info pRIFFfile
          get binaryDecode("I",it,tLength)
          read from file pRIFFfile for 4 bytes
          put it into tListType
-         if tListType = "INFO" then 
+         if tListType = "INFO" then
             -- put "LIST Byte Length=" & tLength & cr after tDump
             put "LIST Type=" & tListType & cr after tDump
             read from file pRIFFfile for tLength bytes
             put it into tInfoChunk
             repeat
-               if tInfoChunk is empty then exit repeat --- or tSubType is "LIST" 
+               if tInfoChunk is empty then exit repeat --- or tSubType is "LIST"
                put byte 1 to 4 of tInfoChunk into tSubType
                -- put "SubChunkType=" & tSubType & cr after tDump
                delete byte 1 to 4 of tInfoChunk
@@ -2609,10 +2639,10 @@ function getSF2Info pRIFFfile
                      get binaryDecode("I",it,tLength)
                      -- put "INAM length=" & tLength & cr after tDump
                      delete byte 1 to 4 of tInfoChunk
-                     get byte 1 to tLength of tInfoChunk 
-                     if it <> empty then 
+                     get byte 1 to tLength of tInfoChunk
+                     if it <> empty then
                         put "Name:" & it & cr after tDump
-                        delete byte 1 to tLength of tInfoChunk 
+                        delete byte 1 to tLength of tInfoChunk
                      end if
                      next repeat
                      break
@@ -2621,10 +2651,10 @@ function getSF2Info pRIFFfile
                      get binaryDecode("I",it,tLength)
                      -- put "isng length=" & tLength & cr after tDumps
                      delete byte 1 to 4 of tInfoChunk
-                     get byte 1 to tLength of tInfoChunk 
-                     if it <> empty then 
+                     get byte 1 to tLength of tInfoChunk
+                     if it <> empty then
                         put "Target Wavetable Engine:" & it & cr after tDump
-                        delete byte 1 to tLength of tInfoChunk 
+                        delete byte 1 to tLength of tInfoChunk
                      end if
                      next repeat
                      break
@@ -2633,10 +2663,10 @@ function getSF2Info pRIFFfile
                      get binaryDecode("I",it,tLength)
                      -- put tSubType & " length=" & tLength & cr after tDump
                      delete byte 1 to 4 of tInfoChunk
-                     get byte 1 to tLength of tInfoChunk 
-                     if it <> empty then 
+                     get byte 1 to tLength of tInfoChunk
+                     if it <> empty then
                         put "Sound Engineering by:" & it & cr after tDump
-                        delete byte 1 to tLength of tInfoChunk 
+                        delete byte 1 to tLength of tInfoChunk
                      end if
                      next repeat
                      break
@@ -2645,8 +2675,8 @@ function getSF2Info pRIFFfile
                      get binaryDecode("I",it,tLength)
                      -- put tSubType & " length=" & tLength & cr after tDump
                      delete byte 1 to 4 of tInfoChunk
-                     get byte 1 to tLength of tInfoChunk 
-                     if it <> empty then 
+                     get byte 1 to tLength of tInfoChunk
+                     if it <> empty then
                         put "Creation Date:" & it & cr after tDump
                         delete byte 1 to tLength of tInfoChunk
                      end if
@@ -2657,10 +2687,10 @@ function getSF2Info pRIFFfile
                      get binaryDecode("I",it,tLength)
                      -- put tSubType & " length=" & tLength & cr after tDump
                      delete byte 1 to 4 of tInfoChunk
-                     get byte 1 to tLength of tInfoChunk 
-                     if it <> empty then 
+                     get byte 1 to tLength of tInfoChunk
+                     if it <> empty then
                         put "Target Products:" & it & cr after tDump
-                        delete byte 1 to tLength of tInfoChunk 
+                        delete byte 1 to tLength of tInfoChunk
                      end if
                      next repeat
                      break
@@ -2670,10 +2700,10 @@ function getSF2Info pRIFFfile
                      get binaryDecode("I",it,tLength)
                      -- put tSubType & " length=" & tLength & cr after tDump
                      delete byte 1 to 4 of tInfoChunk
-                     get byte 1 to tLength of tInfoChunk 
-                     if it <> empty then 
+                     get byte 1 to tLength of tInfoChunk
+                     if it <> empty then
                         put "Copyright=" & it & cr after tDump
-                        delete byte 1 to tLength of tInfoChunk 
+                        delete byte 1 to tLength of tInfoChunk
                      end if
                      next repeat
                      break
@@ -2683,10 +2713,10 @@ function getSF2Info pRIFFfile
                      get binaryDecode("I",it,tLength)
                      -- put tSubType & " length=" & tLength & cr after tDump
                      delete byte 1 to 4 of tInfoChunk
-                     get byte 1 to tLength of tInfoChunk 
-                     if it <> empty then 
+                     get byte 1 to tLength of tInfoChunk
+                     if it <> empty then
                         put "Origin Software:" & it & cr after tDump
-                        delete byte 1 to tLength of tInfoChunk 
+                        delete byte 1 to tLength of tInfoChunk
                      end if
                      next repeat
                      break
@@ -2696,10 +2726,10 @@ function getSF2Info pRIFFfile
                      get binaryDecode("I",it,tLength)
                      -- put tSubType & " length=" & tLength & cr after tDump
                      delete byte 1 to 4 of tInfoChunk
-                     get byte 1 to tLength of tInfoChunk 
-                     if it <> empty then 
+                     get byte 1 to tLength of tInfoChunk
+                     if it <> empty then
                         put "Comments:" & it & cr after tDump
-                        delete byte 1 to tLength of tInfoChunk 
+                        delete byte 1 to tLength of tInfoChunk
                      end if
                      next repeat
                      break
@@ -2708,41 +2738,39 @@ function getSF2Info pRIFFfile
                      put true into tLoopBreak
                      exit repeat
                      break
-                  default 
+                  default
                      exit repeat
                      break
                end switch
             end repeat
-            if tBreak then 
+            if tBreak then
                -- close file pRIFFfile
                exit repeat
             end if
-         else 
+         else
             next repeat
          end if
-         
+
       end repeat
       close file pRIFFfile
    end if
-   return tDump 
+   return tDump
 end getSF2Info
 
-
-
 /*
-Summary: getDLSBanks returns a line delimited list of sound patches from a DownLoadableSoundbank(.dls) file.
-Name: getDLSBanks
+Summary: getDLSInstruments returns a line delimited list of sound patches from a DownLoadableSoundbank(.dls) file.
+Name: getDLSInstruments
 
 Example:
-put getDLSBanks("/System/Library/Components/CoreAudio.component/Contents/Resources/gs_instruments.dls") into btn "Select Sound Patch >"
+put getDLSInstruments("/System/Library/Components/CoreAudio.component/Contents/Resources/gs_instruments.dls") into btn "Select Sound Patch >"
 
 Description:
-getDLSBanks returns a line delimited list of sound patches from a
+getDLSInstruments returns a line delimited list of sound patches from a
 DownLoadableSoundbank(.dls) file. Each list line is in the format:
 banknumber-patchnumber patchname, and so for a general midi soundbank
 the first line would be "0-1 Piano 1"
 */
-function getDLSBanks tRIFFfile
+function getDLSInstruments tRIFFfile
    set cursor to busy
    lock screen
    open file tRIFFfile for binary read
@@ -2776,21 +2804,17 @@ function getDLSBanks tRIFFfile
       -- put tColCnt
       read from file tRIFFfile until "ins "
       put "Instrument Found: " & byte -4 to -1 of it & cr after tDump
-
       read from file tRIFFfile until "insh"
       put "Instrument Header Found: " & byte -4 to -1 of it & cr after tDump
       read from file tRIFFfile for 4 bytes
       get binaryDecode("I",it,tSize)
       put "Chunk Size = " & tSize & cr after tDump
-
       read from file tRIFFfile for 4 bytes
       get binaryDecode("I",it,tRegions)
       put "Regions = " & tRegions & cr after tDump
-
       read from file tRIFFfile for 4 bytes
       get binaryDecode("CCxb8",it,tBankCC0_MSB,tBankCC32_LSB,tSkippedByte,tIsDrumBank)
       -- get binaryDecode("CCxC",it,tBankCC0_MSB,tBankCC32_LSB,tSkippedByte,tIsDrumBank)
-
       if the last char of tIsDrumBank is "1" then
          put 128 into tBankCC32_LSB
          put empty into tIsDrumBank
@@ -2799,11 +2823,9 @@ function getDLSBanks tRIFFfile
       end if
       -- if tIsDrumBank = "128"
       -- put "Bank = " & tBankCC0_LSB && tBankCC32_MSB && cr after tDump
-
       read from file tRIFFfile for 4 bytes
       get binaryDecode("I",it,tInstrumentNum)
       -- put "Instrument Number = " & tInstrumentNum & cr after tDump
-
       read from file tRIFFfile until "INAM"
       put "Instrument Name Found: " & byte -4 to -1 of it & cr after tDump
       read from file tRIFFfile for 4 bytes
@@ -2814,11 +2836,7 @@ function getDLSBanks tRIFFfile
       put "Instrument Name = " & tPresetName & cr after tDump
       put tBankCC0_MSB &"(MSB) "& tBankCC32_LSB &" " & tIsDrumBank & tInstrumentNum && tPresetName & cr after tSoundBanksPrograms -- MSB and LSB Messages (controllers 0 and 32, respectively)
    end repeat
-   --   read from file tRIFFfile until EOF
-   --   put "Remainder of data: " & it & cr after tDump
    close file tRIFFfile
-
-   --      filter each word in tSoundBanksPrograms not matching "0(MSB)" into tSoundBanksPrograms
    repeat with x = 1 to the number of lines in tSoundBanksPrograms
       set cursor to busy
       if word 1 of line x of tSoundBanksPrograms = "0(MSB)" then
@@ -2833,149 +2851,139 @@ function getDLSBanks tRIFFfile
    sort lines of tSoundBanksPrograms numeric by word 3 of each
    sort lines of tSoundBanksPrograms numeric by word 2 of each
    sort lines of tSoundBanksPrograms numeric by word 1 of each
-
    repeat with x = 1 to the number of lines in tSoundBanksPrograms
       set cursor to busy
       if word 1 of line x of tSoundBanksPrograms is an integer and word 2 of line x of tSoundBanksPrograms is an integer then
          put word 1 of line x of tSoundBanksPrograms &"-" & word 2 of line x of tSoundBanksPrograms into word 1 to 2 of line x of tSoundBanksPrograms
       end if
    end repeat
-
    if there is a fld "Dump" then put tDump into fld "Dump"
    return tSoundBanksPrograms
-
-end getDLSBanks
+end getDLSInstruments
 
 /*
-Summary: getSF2Banks returns a line delimited list of sound patches from a SoundFont(.sf2) file.
-Name: getSF2Banks
+Summary: getSF2Instruments returns a line delimited list of sound patches from a SoundFont(.sf2) file.
+Name: getSF2Instruments
 
 Example:
-put getSF2Banks("/Path/To/ASoundFont.sf2") into btn "Select Sound Patch >"
+put getSF2Instruments("/Path/To/ASoundFont.sf2") into btn "Select Sound Patch >"
 
 Description:
-getSF2Banks returns a line delimited list of sound patches from a SoundFont(.sf2) file.
+getSF2Instruments returns a line delimited list of sound patches from a SoundFont(.sf2) file.
 The each list line is in the format: banknumber-patchnumber patchname,
 so for a general midi soundbank the first line would be "0-1 Piano 1"
 */
-function getSF2Banks tRIFFfile
-   if there is a file tRIFFfile then
-      lock screen
-      open file tRIFFfile for binary read
-      read from file tRIFFfile for 4 bytes
-      if it <> "RIFF" then 
-         put "ERROR File is not RIFF, SIG= " & it & cr after tDump 
-      else
-         put "FILE IS RIFF, Sig4CC = " & it & cr after tDump 
-      end if
-      read from file tRIFFfile for 4 bytes
-      get binaryDecode("I",it,tRIFFLength)
-      -- put "RIFF Byte Length=" & tLength & cr after tDump 
-      read from file tRIFFfile for 4 bytes
-      
-      if it <> "sfbk" then 
-         put "ERROR File is not a SoundFont File, FormType 4CC = " & it & cr into tDump 
-      else
-         put "FILE IS SoundFont, Sig4CC = " & it & cr into tDump 
-      end if
-      
-      read from file tRIFFfile for 4 bytes
-      put it into tChunkType
-      put "LIST 4CC = " & tLISTType & cr after tDump 
+function getSF2Instruments tRIFFfile
+   if there is not a file tRIFFfile then
+      return "ERROR: Invalid file path"
+      exit getSF2Instruments
+   end if
+   lock screen
+   open file tRIFFfile for binary read
+   read from file tRIFFfile for 4 bytes
+   --  if it <> "RIFF" then
+   --      put "ERROR File is not RIFF, SIG= " & it & cr after tDump
+   --   else
+   --      put "FILE IS RIFF, Sig4CC = " & it & cr after tDump
+   --   end if
+   read from file tRIFFfile for 4 bytes
+   get binaryDecode("I",it,tRIFFLength)
+   -- put "RIFF Byte Length=" & tLength & cr after tDump
+   read from file tRIFFfile for 4 bytes
+
+   if it <> "sfbk" then
+      put "ERROR File is not a SoundFont File, FormType 4CC = " & it & cr into tDump
+   else
+      put "FILE IS SoundFont, Sig4CC = " & it & cr into tDump
+   end if
+
+   read from file tRIFFfile for 4 bytes
+   put it into tChunkType
+   put "LIST 4CC = " & tLISTType & cr after tDump
+   read from file tRIFFfile for 4 bytes
+   get binaryDecode("I",it,tLISTLength)
+   put "LIST Length=" & tLISTLength & cr after tDump
+   read from file tRIFFfile for 4 bytes
+   put it into tChunkType
+   put "LIST Type 4CC = " & tChunkType & cr after tDump
+   if tChunkType <> "phdr" then
+      read from file tRIFFfile until "LIST"
       read from file tRIFFfile for 4 bytes
       get binaryDecode("I",it,tLISTLength)
-      put "LIST Length=" & tLISTLength & cr after tDump 
+      put "LIST Length=" & tLISTLength & cr after tDump
       read from file tRIFFfile for 4 bytes
       put it into tChunkType
-      put "LIST Type 4CC = " & tChunkType & cr after tDump 
+      put "LIST Type 4CC = " & tChunkType & cr after tDump
       if tChunkType <> "phdr" then
          read from file tRIFFfile until "LIST"
          read from file tRIFFfile for 4 bytes
          get binaryDecode("I",it,tLISTLength)
-         put "LIST Length=" & tLISTLength & cr after tDump 
+         put "LIST Length=" & tLISTLength & cr after tDump
          read from file tRIFFfile for 4 bytes
          put it into tChunkType
-         put "LIST Type 4CC = " & tChunkType & cr after tDump 
-         if tChunkType <> "phdr" then
-            read from file tRIFFfile until "LIST"
-            read from file tRIFFfile for 4 bytes
-            get binaryDecode("I",it,tLISTLength)
-            put "LIST Length=" & tLISTLength & cr after tDump 
-            read from file tRIFFfile for 4 bytes
-            put it into tChunkType
-            put "LIST Type 4CC = " & tChunkType & cr after tDump 
-         end if
-         
+         put "LIST Type 4CC = " & tChunkType & cr after tDump
       end if
-      put empty into tSoundPresets
-      read from file tRIFFfile for 4 bytes
-      if it = "phdr" then
-         put "phdr: " & it & cr after tDump 
-         
-         read from file tRIFFfile for 4 bytes
-         get binaryDecode("I",it,t4bytes)
-         put "length = " & t4bytes & cr after tDump 
-         
-         repeat 1000
-            read from file tRIFFfile for 20 bytes
-            put it into tSoundPresetName
-            if tSoundPresetName contains "EOP" then 
-               exit repeat
-            else
-               put empty into tTemp
-               put "0123456789abcdefghijklmnopqrstuvwxyz -" into tAlpha
-               repeat for each char tChar in tSoundPresetName
-                  if tchar is null then exit repeat
-                  if tchar is in tAlpha then put tchar after tTemp
-               end repeat
-               put tTemp into tSoundPresetName
-            end if
-            
-            Put word 1 of tTemp && word 2 of tTemp && word 3 of tTemp && word 4 of tTemp into tSoundPresetName
-            
-            read from file tRIFFfile for 2 bytes
-            get binaryDecode("S",it,tInstrumentNum)
-            
-            read from file tRIFFfile for 2 bytes
-            get binaryDecode("CC",it,tBankCC32_LSB,tBankCC0_MSB)
-            if tBankCC32_MSB = 128 then 
-               put "DrumBank " into tIsDrumBank
-            else 
-               put empty into tIsDrumBank
-            end if
-            
-            put  tBankCC0_MSB &"(MSB) "& tBankCC32_LSB &" " & tIsDrumBank & tInstrumentNum && tSoundPresetName & cr after tSoundPresets
-            
-            read from file tRIFFfile for 14 bytes -- skips rest of record
-            
-         end repeat
-      end if
-      close file tRIFFfile
-      --      filter each word in tSoundPresets not matching "0(MSB)" into tSoundPresets
-      repeat with x = 1 to the number of lines in tSoundPresets
-         if word 1 of line x of tSoundPresets = "0(MSB)" then 
-            delete word 1 of line x of tSoundPresets
-         end if
-         if word 1 of line x of tSoundPresets = "0(LSB)" then 
-            delete word 1 of line x of tSoundPresets
-         end if
-      end repeat 
-      filter lines of tSoundPresets without empty
-      sort lines of tSoundPresets numeric by word 4 of each
-      sort lines of tSoundPresets numeric by word 3 of each
-      sort lines of tSoundPresets numeric by word 2 of each
-      sort lines of tSoundPresets numeric by word 1 of each
-      
-      repeat with x = 1 to the number of lines in tSoundPresets
-         if word 1 of line x of tSoundPresets is an integer and word 2 of line x of tSoundPresets is an integer then
-            put word 1 of line x of tSoundPresets &"-" & word 2 of line x of tSoundPresets into word 1 to 2 of line x of tSoundPresets
-         end if
-      end repeat
-      if there is a fld "Dump" then put tDump after fld "Dump"
-      unlock screen
-      return tSoundPresets
-   else
-      return "ERROR: Invalid File Path Paramater"
-   end if 
-end getSF2Banks
 
+   end if
+
+   put empty into tSoundPresets
+
+   read from file tRIFFfile for 4 bytes
+   if it = "phdr" then
+      put "phdr: " & it & cr after tDump
+
+      read from file tRIFFfile for 4 bytes
+      get binaryDecode("I",it,t4bytes)
+      put "length = " & t4bytes & cr after tDump
+
+      repeat 500
+         read from file tRIFFfile for 20 bytes
+         put it into tSoundPresetName
+         if tSoundPresetName contains "EOP" then
+            exit repeat
+         else
+            put empty into tTemp
+            put "0123456789abcdefghijklmnopqrstuvwxyz" into tAlpha
+            repeat for each char tChar in tSoundPresetName
+               if tchar is in tAlpha then put tchar after tTemp
+            end repeat
+            put tTemp into tSoundPresetName
+         end if
+         Put word 1 of tTemp && word 2 of tTemp && word 3 of tTemp && word 4 of tTemp into tSoundPresetName
+         read from file tRIFFfile for 2 bytes
+         get binaryDecode("S",it,tInstrumentNum)
+         read from file tRIFFfile for 2 bytes
+         get binaryDecode("CC",it,tBankCC32_LSB,tBankCC0_MSB)
+         if tBankCC32_MSB = 128 then
+            put "DrumBank " into tIsDrumBank
+         else
+            put empty into tIsDrumBank
+         end if
+         put  tBankCC0_MSB &"(MSB) "& tBankCC32_LSB &" " & tIsDrumBank & tInstrumentNum && tSoundPresetName & cr after tSoundPresets
+         read from file tRIFFfile for 14 bytes -- skips rest of record
+      end repeat
+   end if
+   close file tRIFFfile
+   --      filter each word in tSoundPresets not matching "0(MSB)" into tSoundPresets
+   repeat with x = 1 to the number of lines in tSoundPresets
+      if word 1 of line x of tSoundPresets = "0(MSB)" then
+         delete word 1 of line x of tSoundPresets
+      end if
+      if word 1 of line x of tSoundPresets = "0(LSB)" then
+         delete word 1 of line x of tSoundPresets
+      end if
+   end repeat
+   filter lines of tSoundPresets without empty
+   sort lines of tSoundPresets numeric by word 4 of each
+   sort lines of tSoundPresets numeric by word 3 of each
+   sort lines of tSoundPresets numeric by word 2 of each
+   sort lines of tSoundPresets numeric by word 1 of each
+   repeat with x = 1 to the number of lines in tSoundPresets
+      if word 1 of line x of tSoundPresets is an integer and word 2 of line x of tSoundPresets is an integer then
+         put word 1 of line x of tSoundPresets &"-" & word 2 of line x of tSoundPresets into word 1 to 2 of line x of tSoundPresets
+      end if
+   end repeat
+   if there is a fld "Dump" then put tDump into fld "Dump"
+   unlock screen
+   return tSoundPresets
+end getSF2Instruments

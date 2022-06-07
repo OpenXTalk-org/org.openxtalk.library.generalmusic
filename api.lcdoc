@@ -86,7 +86,7 @@ Name: playPMD_FluidSynth
 
 Type: command
 
-Syntax: playPMD_AVMIDIPlayer pPlaySentenceMusicalData, pTempoBPM,[pProgramNumber,[<pSoundBankFile>]
+Syntax: playPMD_FluidSynth pPlaySentenceMusicalData,[<pTempoBPM>],[<pProgramNumber>],[<pSoundBankFile>]
 
 Summary:
 plays the Playsentence Musical Data (PMD) starting at the specified beats per minute,
@@ -118,7 +118,7 @@ Attempts to play the Playsentence Music Data (PMD), optionally starting at the s
 in beats per minute, optionally with a given MIDI patch number (need to add 'bank-patch' suport),
 with the optionally provided Soubdbank (.sf2 or .dls) file. The default values are 120(BPM)
 and sound patch 1 (GM "Piano 1"),loading the first SoundBankFile found in default locations
-On macOS this should load  the default Roland GS Soundbank (which is the same small Soundbank 
+On macOS this should load  the default Roland GS Soundbank (which is the same small Soundbank
    from the 1990s that came with QuickTime v2.5+), on iOS no default soundbank is provided
    by the OS and so one must be provided.
    PLEASE NOTE that this command will do nothing (fail silently) if the AVMIDIPLayer
@@ -164,33 +164,33 @@ Name: playSentenceToMIDIData
 
 Type: function
 
-Syntax:    playSentenceToMIDIData <playSentence>,[<playTempo>],[<soundPatchNum>]
+Syntax: playSentenceToMIDIData <playSentence>,[<playTempo>],[<soundPatchNum>]
 
 Summary:
 playSentenceToMIDIData retruns Standard MIDI File Binary Data,
-   converted from the given PlaySentenceMusicData,
-   starting at the specified beats per minute, with the given patch number,
+converted from the given PlaySentenceMusicData,
+starting at the specified beats per minute, with the given patch number,
 
 Parameters: 
 
 playSentence:
 string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
-   playTempo; Intitial playback tenmpo in Beats Per Minute, this may be overridden
-   by tempo messages within the playSentence string.
+playTempo; Intitial playback tenmpo in Beats Per Minute, this may be overridden
+by tempo messages within the playSentence string.
 
 soundPatchNum:
 a number in range 0-127 is the sound patch to use as the initial
-   or default instrument sound. This nay be overridden by patchchange messages within
-   the playSentence string.
+or default instrument sound. This nay be overridden by patchchange messages within
+the playSentence string.
 
-Example:    PUT playSentenceToMIDIData("C4q Ee. Gs..",120,0) -- get MIDI data at 120BPM plays on "Piano 1"
+Example: PUT playSentenceToMIDIData("C4q Ee. Gs..",120,0) -- get MIDI data at 120BPM plays on "Piano 1"
 
-Returns:    MIDI formated binary data suitable for playback or writing to a standard midi file.
+Returns: MIDI formated binary data suitable for playback or writing to a standard midi file.
 
 Description:
-   Converts PlaySentence Musical Data (PMD) starting at the specified tempo,
-   with the given sound patch number. The binary data returned may be written directly to a standard MIDI file or
-   passed along to some MIDI playback handler.
+Converts PlaySentence Musical Data (PMD) starting at the specified tempo,
+with the given sound patch number. The binary data returned may be written directly to a standard MIDI file or
+passed along to some MIDI playback handler.
 
 
 
@@ -319,7 +319,7 @@ Name: playPMD
 
 Type: command
 
-Syntax: playPMD pPlaySentenceMusicalData,[<pTempoBPM>],[<pProgramNumber>],[<pShellpAppPath>]
+Syntax: playPMD [<pInstrumentName>],pPlaySentenceMusicalData,[<pTempoBPM>],[<pProgramNumber>],[<pShellpAppPath>]
 
 Summary:
 plays the Playsentence Musical Data (PMD) starting at the specified tempo
