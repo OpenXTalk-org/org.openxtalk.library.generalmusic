@@ -1761,17 +1761,17 @@ end midiNoteNameToNum
 
 function gsPatchNumToName gmPatchNum, drumChannel
    if drumChannel <> "ch10" and drumChannel <> "drums" and drumChannel <> true then -- "ch10" is reserved for drums ("ch11" additionally in GM2 spec) -- and theChannel <> "ch11"
-      return item (gmPatchNum+1) of ("Acoustic Grand Piano,Bright Acoustic Piano,Electric Grand Piano,Honky-tonk Piano,Rhodes Piano,Chorused Piano,"&\
+      return item (gmPatchNum+1) of ("Acoustic Grand Piano,Bright Acoustic Piano,Electric Grand Piano,Honkytonk Piano,Rhodes Piano,Chorused Piano,"&\
             "Harpsichord,Clavinet,Celesta,Glockenspiel,Music Box,Vibraphone,Marimba,Xylophone,Tubular Bells,Dulcimer,Hammond Organ,Percussive Organ,"&\
-            "Rock Organ,Church Organ,Reed Organ,Accordion,Harmonica,Tango Accordion,Acoustic Guitar (nylon),Acoustic Guitar (steel),Electric Guitar (jazz),"&\
-            "Electric Guitar (clean),Electric Guitar (muted),Overdriven Guitar,Distortion Guitar,Guitar Harmonics,Acoustic Bass,Electric Bass (finger),"&\
-            "Electric Bass (pick),Fretless Bass,Slap Bass1,Slap Bass2,Synth Bass1,Synth Bass2,Violin,Viola,Cello,Contrabass,Tremolo Strings,Pizzicato Strings,"&\
-            "Orchestral Harp,Timpani,String Ensemble1,String Ensemble2,SynthStrings1,SynthStrings2,Choir Aahs,Voice Oohs,Synth Voice,Orchestra Hit,"&\
-            "Trumpet,Trombone,Tuba,Muted Trumpet,French Horn,Brass Section,Synth Brass1,Synth Brass2,Soprano Sax,Alto Sax,Tenor Sax,Baritone Sax,Oboe,"&\
-            "English Horn,Bassoon,Clarinet,Piccolo,Flute,Recorder,Pan Flute,Bottle Blow,Shakuhachi,Whistle,Ocarina,Lead1 (square),Lead2 (sawtooth),"&\
-            "Lead3 (calliope lead),Lead 4 (chiff lead),Lead 5 (charang),Lead 6 (voice),Lead 7 (fifths),Lead 8 (bass + lead),Pad1 (new age),Pad2 (warm),"&\
-            "Pad3 (polysynth),Pad 4 (choir),Pad 5 (bowed),Pad 6 (metallic),Pad 7 (halo),Pad 8 (sweep),FX1 (rain),FX2 (soundtrack),FX3 (crystal),"&\
-            "FX 4 (atmosphere),FX 5 (brightness),FX 6 (goblins),FX 7 (echoes),FX 8 (sci-fi),Sitar,Banjo,Shamisen,Koto,Kalimba,Bagpipe,Fiddle,Shanai,Tinkle Bell,Agogo,"&\
+            "Rock Organ,Church Organ,Reed Organ,Accordion,Harmonica,Tango Accordion,Nylon Guitar,Steel Guitar,Jazz Guitar,"&\
+            "Clean Electric Guitar,Muted Electric Guitar,Overdrive Guitar,Distorted Guitar,Guitar Harmonics,Acoustic Bass,Fingered Bass,"&\
+            "Picked Bass,Fretless Bass,Slap Bass 1,Slap Bass 2,Synth Bass 1,Synth Bass 2,Violin,Viola,Cello,Contrabass,Tremolo Strings,Pizzicato Strings,"&\
+            "Orchestral Harp,Timpani,String Ensemble1,String Ensemble2,Synth Strings 1,Synth Strings 2,Choir Aahs,Voice Oohs,Synth Voice,Orchestra Hit,"&\
+            "Trumpet,Trombone,Tuba,Muted Trumpet,French Horn,Brass Section,Synth Brass 1,Synth Brass 2,Soprano Sax,Alto Sax,Tenor Sax,Baritone Sax,Oboe,"&\
+            "English Horn,Bassoon,Clarinet,Piccolo,Flute,Recorder,Pan Flute,Bottle Blow,Shakuhachi,Whistle,Ocarina,Lead 1 Square,Lead 2 Sawtooth,"&\
+            "Lead 3 Calliope,Lead 4 Chiff,Lead 5 Charang,Lead 6 Voice,Lead 7 Fifths,Lead 8 Bass+Lead,Pad 1 New Age,Pad 2 Warm,"&\
+            "Pad 3 Polysynth,Pad 4 Choir,Pad 5 Bowed,Pad 6 Metallic,Pad 7 Halo,Pad 8 Sweep,FX 1 Rain,FX 2 Soundtrack,FX 3 Crystal,"&\
+            "FX 4 Atmosphere,FX 5 Brightness,FX 6 Goblins,FX 7 Echoes,FX 8 Sci-Fi,Sitar,Banjo,Shamisen,Koto,Kalimba,Bagpipe,Fiddle,Shanai,Tinkle Bell,Agogo,"&\
             "Steel Drums,Woodblock,Taiko Drum,Melodic Tom,Synth Drum,Reverse Cymbal,Guitar Fret Noise,Breath Noise,Seashore,Bird Tweet,Telephone Ring,Helicopter,Applause,Gunshot")
    else -- theChannel is a drum kit channel (10)
       return item (gmPatchNum+1) of ("Standard Kit,2,3,4,5,6,7,8,Room Kit,10,11,12,13,14,15,16,Power Kit,18,19,20,21,22,23,24,25,Electronic Kit,"&\
