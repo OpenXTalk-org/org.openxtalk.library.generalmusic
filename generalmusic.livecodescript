@@ -221,6 +221,12 @@ on playPMD pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
          if it contains "avmidiplay" then
             playPMD_AVMIDIPlayer notes, playTempo,instNum,bankNum,soundBankFile
          else if it contains "FluidSynth" then
+            
+            if fsEnsureInitialize() then
+               fsMIDIPlayerInit
+               put "FluidSynth Initialized"
+            end if
+            
             playPMD_FluidSynth notes, playTempo,instNum,bankNum, soundBankFile
          end if
          break
@@ -479,24 +485,24 @@ on playPMD_AVMIDIPlayer notes, playTempo, instNum, bankNum, soundBankFile
          AVMIDIplayerStop
       end try
       makeSMF notes, playTempo, instNum, tempFilePath
-      get scanStdSoundBankDirectories()
-      if it is not empty then
-         put line 1 of it into tSoundBank
-         try
-            AVMIDIPlayerLoad tempFilePath, tSoundBank
-            -- put tSoundBank
-            -- set the thumbPosition of scrollbar "ScrubberBar" to 0
-            -- set the endValue of scrollbar "ScrubberBar" to AVMIDIPlayerDuration()
-            -- put SecsToHrsMinSecs(0) into fld "FileCurrentPosition"
-            -- put SecsToHrsMinSecs(AVMIDIPlayerDuration()) -- into fld "FileDuration"
-            -- AVMIDIPlayerSetRate(the thumbPosition of scrollbar "Playback Rate")
-            AVMIDIPlayerSetRate 1.0
-            -- lock screen
-            AVMIDIPlayerPlay
+      -- get scanStdSoundBankDirectories()
+      -- if it is not empty then
+      --  put line 1 of it into tSoundBank
+      if soundBankFile is empty then put defaultSoundBank into soundBankFile
+      try
+         AVMIDIPlayerLoad tempFilePath,soundBankFile
+         -- put tSoundBank
+         -- set the thumbPosition of scrollbar "ScrubberBar" to 0
+         -- set the endValue of scrollbar "ScrubberBar" to AVMIDIPlayerDuration()
+         -- put SecsToHrsMinSecs(0) into fld "FileCurrentPosition"
+         -- put SecsToHrsMinSecs(AVMIDIPlayerDuration()) -- into fld "FileDuration"
+         -- AVMIDIPlayerSetRate(the thumbPosition of scrollbar "Playback Rate")
+         AVMIDIPlayerSetRate 1.0
+         -- lock screen
+         AVMIDIPlayerPlay
          -- AVMIDIPlayerPlayWithCallback
          -- playPositionCheck
-         end try
-      end if
+      end try
    end if
 end playPMD_AVMIDIPlayer
 
