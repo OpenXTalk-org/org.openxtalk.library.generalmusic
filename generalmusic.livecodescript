@@ -161,6 +161,7 @@ playback available on the current platform.
 Tags: Music, MIDI, audioClip
 **/
 
+-- Synonym for PlayPMD
 on PerformMusicData pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
    playPMD pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
 end PerformMusicData
@@ -170,31 +171,38 @@ on playPMD pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
    put 0 into bankNum
    put 0 into instNum
    put 120 into playTempo
+   PUT empty into tNotes
    if the paramCount > 1 then
       repeat with x = 1 to the paramCount
+         -- put empty into tParam
          put param(x) into tParam
          if tParam is in instrumentNames then
             get lineoffset(tParam,instrumentNames,0)
-            if it <> 0 then put it - 1  into instNum
-            next repeat
+            if it <> 0 then 
+               put it - 1  into instNum
+               next repeat
+            else
+               -- put 0 into instNum
+               next repeat
+            end if
          end if
          if word 1 of tParam is "tempo" or word 1 of tParam is "Tempo" then
             get word 2 of tParam
             if it > 0 and it < 481 then
                put it into playTempo
-               next repeat
             end if
+            next repeat
          end if
          if tParam contains "/" then
             if char -1 to -4 of tParam = ".sf2" or char -1 to -4 of tParam = ".dls" then
                put tParam into soundBankFile
-               next repeat
             else
                put tParam into midiAppName
-               next repeat
             end if
+            next repeat
          end if
-         if tParam <> empty then
+         -- if tParam <> empty then
+          if tParam <> empty and tNotes is "" then
             put tParam into tNotes
             next repeat
          end if
@@ -206,6 +214,7 @@ on playPMD pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
          put "C4q" into tNotes
       end if
    end if
+   if tNotes="" then put "C4q" into tNotes
    if ( midiAppName is NOT empty ) then
       playPmd_Shell tNotes, playTempo, instNum, midiAppName
       exit playPMD
@@ -216,7 +225,7 @@ on playPMD pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
          put defaultSoundBank into soundBankFile
       end if
    end if
-   -- put tNotes, playTempo,instNum,bankNum, soundBankFile
+   put tNotes, playTempo,instNum,bankNum, soundBankFile
    switch platform()
       -- The possible values returned by the platform function are:
       -- "Win32" on any version of Windows
