@@ -88,7 +88,7 @@ private command __Initialize
          try
             if fsEnsureInitialize() then
                fsMIDIPlayerInit
-               put "FluidSynth Initialized"
+               -- put "FluidSynth Initialized"
                get fsLoadSoundFont(defaultSoundBank)
             end if
          end try
@@ -107,7 +107,7 @@ end __Initialize
 
 ----------------playPmd script by UDI 2002.12.08-------------
 -- playPmd notes, playTempo, defInst
--- param 1 notes = Score string to play or make SMF.
+-- param notes = Score string to play or make SMF.
 ---- if "stop" is passed then stop current music, and enable "play" btn, disable "stop" btn.
 ---- if "clear" is passed then do "stop" job, and delete temporary mid file.
 -- param 2 playTempo = makeSMF's 2nd param.
@@ -160,44 +160,54 @@ playback available on the current platform.
 
 Tags: Music, MIDI, audioClip
 **/
+
+on PerformMusicData pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
+   playPMD pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
+end PerformMusicData
+
 on playPMD pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
+   -- put pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
+   put 0 into bankNum
    put 0 into instNum
    put 120 into playTempo
    if the paramCount > 1 then
       repeat with x = 1 to the paramCount
-         get param(x)
-         if it is in instrumentNames then
-            get lineoffset(it,instrumentNames,0)
+         put param(x) into tParam
+         if tParam is in instrumentNames then
+            get lineoffset(tParam,instrumentNames,0)
             if it <> 0 then put it - 1  into instNum
             next repeat
          end if
-         if word 1 of it is "tempo" or word 1 of it is "Tempo" then
-            get word 2 of it
+         if word 1 of tParam is "tempo" or word 1 of tParam is "Tempo" then
+            get word 2 of tParam
             if it > 0 and it < 481 then
                put it into playTempo
-               -- put playTempo
+               next repeat
             end if
-            next repeat
          end if
-         if it contains "/" then
-            if char -1 to -4 of it = ".sf2" or char -1 to -4 of it = ".dls" then
-               put it into soundBankFile
+         if tParam contains "/" then
+            if char -1 to -4 of tParam = ".sf2" or char -1 to -4 of tParam = ".dls" then
+               put tParam into soundBankFile
+               next repeat
             else
-               put it into midiAppName
+               put tParam into midiAppName
+               next repeat
             end if
+         end if
+         if tParam <> empty then
+            put tParam into tNotes
             next repeat
          end if
-         put it into notes
       end repeat
    else
       if param(1) is not empty then
-         put param(1) into notes
+         put param(1) into tNotes
       else
-         put "C4q" into notes
+         put "C4q" into tNotes
       end if
    end if
    if ( midiAppName is NOT empty ) then
-      playPmd_Shell notes, playTempo, instNum, midiAppName
+      playPmd_Shell tNotes, playTempo, instNum, midiAppName
       exit playPMD
    end if
    -- if soundBankFile is empty then put defaultSoundBank into soundBankFile
@@ -206,6 +216,7 @@ on playPMD pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
          put defaultSoundBank into soundBankFile
       end if
    end if
+   -- put tNotes, playTempo,instNum,bankNum, soundBankFile
    switch platform()
       -- The possible values returned by the platform function are:
       -- "Win32" on any version of Windows
@@ -219,40 +230,38 @@ on playPMD pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
          -- if ( item 1 of qtVersion() < 10 )  then  -- QuickTime MIDI is dead
          get the loadedExtensions
          if it contains "avmidiplay" then
-            playPMD_AVMIDIPlayer notes, playTempo,instNum,bankNum,soundBankFile
-         else if it contains "FluidSynth" then
-            
+            playPMD_AVMIDIPlayer tNotes,playTempo,instNum,bankNum,soundBankFile
+         else if it contains "fluidSynth" then
             if fsEnsureInitialize() then
                fsMIDIPlayerInit
-               put "FluidSynth Initialized"
+               -- put "FluidSynth Initialized"
             end if
-            
-            playPMD_FluidSynth notes, playTempo,instNum,bankNum, soundBankFile
+            playPMD_FluidSynth tNotes, playTempo,instNum,bankNum, soundBankFile
          end if
          break
       case "iphone"
          get the loadedExtensions
          if it contains "avmidiplay" then
-            playPMD_AVMIDIPlayer notes, playTempo, instNum, soundBankFile
+            playPMD_AVMIDIPlayer tNotes, playTempo, instNum, soundBankFile
          end if
          break
       case "android"
-         playPMD_videoClip notes, playTempo, instNum
+         playPMD_videoClip tNotes, playTempo, instNum
          break
       case "Linux"
          get the loadedExtensions
          if it contains "fluidsynth" then
-            playPMD_FluidSynth notes, playTempo, instNum, bankNum, soundBankFile
+            playPMD_FluidSynth tNotes, playTempo, instNum, bankNum, soundBankFile
          else
-            playPMD_Shell notes, playTempo, instNum, midiAppName
+            playPMD_Shell tNotes, playTempo, instNum, midiAppName
          end if
          break
       case "Win32"
          get the loadedExtensions
          if it contains "fluidsynth" then
-            playPMD_FluidSynth notes, playTempo, instNum, bankNum, soundBankFile
+            playPMD_FluidSynth tNotes, playTempo, instNum, bankNum, soundBankFile
          else
-            playPMD_videoClip notes, playTempo, instNum, midiAppName
+            playPMD_videoClip tNotes, playTempo, instNum, midiAppName
          end if
          -- another method to play MIDI on Win32 is using MCISendString(MCICommand)
          break
@@ -298,13 +307,13 @@ system's media play APIs, which must support MIDI in order for playback to be he
 
 Tags: Music, MIDI, audioClip
 **/
-on playPMD_videoClip notes, playTempo, instNum
+on playPMD_videoClip tNotes, playTempo, instNum
    put specialFolderPath( "Temporary" ) & "/playPmdTemp.mid" into tempFilePath
-   if ( notes is "stop" ) or ( notes is "clear" ) then
+   if ( tNotes is "stop" ) or ( tNotes is "clear" ) then
       try
          play stop vc tempFilePath
       end try
-      if notes is "clear" then
+      if tNotes is "clear" then
          delete file tempFilePath
       end if
       setPlayBtn false
@@ -312,7 +321,7 @@ on playPMD_videoClip notes, playTempo, instNum
       try
          stop playing vc tempFilePath
       end try
-      makeSMF notes, playTempo, instNum, tempFilePath
+      makeSMF tNotes, playTempo, instNum, tempFilePath
       play vc tempFilePath
       if the result contains "no" then
          answer the result
@@ -374,7 +383,7 @@ in beats per minute, with the given sound initial patch number, using the shell 
 Tags: Music, MIDI, audioClip
 **/
 local playPmdMidiApp
-on playPMD_Shell notes, playTempo, instNum, midiAppName
+on playPMD_Shell tNotes, playTempo, instNum, midiAppName
    if ( midiAppName is not empty ) then
       put midiAppName into playPmdMidiApp
    else
@@ -390,11 +399,11 @@ on playPMD_Shell notes, playTempo, instNum, midiAppName
    end if
    --
    put specialFolderPath( "Temporary" ) & "/playPmdTemp.mid" into tempFilePath
-   if ( notes is "stop" ) or ( notes is "clear" ) then
+   if ( tNotes is "stop" ) or ( tNotes is "clear" ) then
       try
          get shell( "killall" && playPmdMidiApp )
       end try
-      if notes is "clear" then
+      if tNotes is "clear" then
          delete file tempFilePath
       end if
       setPlayBtn false
@@ -405,7 +414,7 @@ on playPMD_Shell notes, playTempo, instNum, midiAppName
          exit playPMD_Shell
       end if
       get shell( "killall" && playPmdMidiApp )
-      makeSMF notes, playTempo, instNum, tempFilePath
+      makeSMF tNotes, playTempo, instNum, tempFilePath
       put "echo '" & playPmdMidiApp &&quote& tempFilePath &quote& "' | at now" into shellCmd --Lx
       get shell( shellCmd )
       setPlayBtn true
@@ -469,14 +478,15 @@ version, PlayPMD which should try to use the best musical playback engine curren
 
 Tags: Music, MIDI, audioClip
 **/
-on playPMD_AVMIDIPlayer notes, playTempo, instNum, bankNum, soundBankFile
+on playPMD_AVMIDIPlayer tNotes, playTempo, instNum, bankNum, soundBankFile
+   -- put tNotes, playTempo, instNum, bankNum, soundBankFile
    -- set dontUseQT to false -- long time Deprecated now -- PM 2/10/22
    put specialFolderPath( "Temporary" ) & "/playPmdTemp.mid" into tempFilePath
-   if ( notes is "stop" ) or ( notes is "clear" ) then
+   if ( tNotes is "stop" ) or ( tNotes is "clear" ) then
       try
          AVMIDIplayerStop
       end try
-      if notes is "clear" then
+      if tNotes is "clear" then
          delete file tempFilePath
       end if
       --setPlayBtn false
@@ -484,7 +494,7 @@ on playPMD_AVMIDIPlayer notes, playTempo, instNum, bankNum, soundBankFile
       try
          AVMIDIplayerStop
       end try
-      makeSMF notes, playTempo, instNum, tempFilePath
+      makeSMF tNotes, playTempo, instNum, tempFilePath
       -- get scanStdSoundBankDirectories()
       -- if it is not empty then
       --  put line 1 of it into tSoundBank
@@ -561,18 +571,18 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
    version, PlayPMD which should try to use the best musical playback engine currenlty availble. \Tags: Music, MIDI, audioClip
 
 **/
-on playPMD_FluidSynth notes, playTempo, instNum, bankNum, soundBankFile
+on playPMD_FluidSynth tNotes, playTempo, instNum, bankNum, soundBankFile
    -- set dontUseQT to false -- long time Deprecated now -- PM 2/10/22
    put specialFolderPath( "Temporary" ) & "/playPmdTemp.mid" into tempFilePath
-   if ( notes is "stop" ) or ( notes is "clear" ) then
+   if ( tNotes is "stop" ) or ( tNotes is "clear" ) then
       try
          fsMIDIplayerStop
       end try
-      if notes is "clear" then
+      if tNotes is "clear" then
          delete file tempFilePath
       end if
    else
-      makeSMF notes, playTempo, instNum, tempFilePath
+      makeSMF tNotes, playTempo, instNum, tempFilePath
       try
          fsMIDIplayerStop
       end try
@@ -635,12 +645,12 @@ Converts PlaySentence Musical Data (PMD) starting at the specified tempo,
 with the given sound patch number. The binary data returned may be written directly to a standard MIDI file or
 passed along to some MIDI playback handler.
 **/
-function playSentenceToMIDIData notes, playTempo, defInst
+function playSentenceToMIDIData tNotes, playTempo, defInst
    set the cursor to watch
    --
-   if line 1 of notes contains "//pmd" then
+   if line 1 of tNotes contains "//pmd" then
       -- exist header
-      put line 1 of notes into pmdHeader
+      put line 1 of tNotes into pmdHeader
       if item 3 of pmdHeader > 0 then
          put item 3 of pmdHeader into playTempo
       end if
@@ -651,15 +661,15 @@ function playSentenceToMIDIData notes, playTempo, defInst
    if playTempo is "" then put 100 into playTempo
    if defInst is "" then put 1 into defInst
    --
-   put getCopyrightBin( notes ) into midiEvents
-   put getInfoBin( notes ) after midiEvents
-   put getTimeSignBin( notes ) after midiEvents
+   put getCopyrightBin( tNotes ) into midiEvents
+   put getInfoBin( tNotes ) after midiEvents
+   put getTimeSignBin( tNotes ) after midiEvents
    --
    put binaryEncode( "H*", "00FF54054000000000" ) after midiEvents -- SMTPE offset
    put binaryEncode( "H*", "00FF5103" ) & num2Bin( 590000 *100 div playTempo, 3) after midiEvents
    put binaryEncode( "H*", "00B07900" ) after midiEvents -- reset all controler( CC#121 = 0 )
    --
-   put notes2EvList( notes, defInst, playTempo ) into evList
+   put notes2EvList( tNotes, defInst, playTempo ) into evList
    set the cursor to watch
    sort lines of evList
    put evList2Midi( evList ) after midiEvents
@@ -671,8 +681,8 @@ end playSentenceToMIDIData
 
 ------------------------------------------------ MakeSMF ---------------------------------------------
 ----------------makeSMF script by UDI 2002.12.06-------------
--- makeSMF notes, [ playTempo ], [ defInst ], savePath
--- param 1 notes = Score string to play or make SMF.
+-- makeSMF  tNotes , [ playTempo ], [ defInst ], savePath
+-- param Notes = Score string to play or make SMF.
 -- param 2 optional playTempo = Default play tempo.
 ---- This parameter is adopted if there is not a header ( '//pmd' ) in 'notes'.
 -- param 3 optional defInst = Default pay instrument number.
@@ -718,8 +728,8 @@ on makeSMF notes, playTempo, defInst, savePath
   close file savePath
 end makeSMF
 
-function notes2EvList notes, defInst, playTempo
-  put notes into makeSmfNotes
+function notes2EvList tNotes, defInst, playTempo
+  put tNotes into makeSmfNotes
   put "" into makeSmfEvList
   --
   put 0 into aPart
@@ -1400,18 +1410,18 @@ end num2Hex
 
 --
 function getCopyrightBin notes
-  put offset( "//c ", notes ) into aOfs
+  put offset( "//c ", tNotes) into aOfs
   if aOfs = 0 then return ""
-  put line 1 of ( char aOfs+4 to aOfs+127+4 of notes ) into copyStr
+  put line 1 of ( char aOfs+4 to aOfs+127+4 of tNotes) into copyStr
   return binaryEncode( "H*", "00FF02" ) & numToByte( length( copyStr ) ) & copyStr
 end getCopyrightBin
 
 function getInfoBin notes
   put "" into infoBin
   repeat
-    put offset( "//i ", notes ) into aOfs
+    put offset( "//i ", tNotes) into aOfs
     if aOfs = 0 then exit repeat
-    put line 1 of ( char aOfs+4 to aOfs+127+4 of notes ) into aInfoStr
+    put line 1 of ( char aOfs+4 to aOfs+127+4 of tNotes) into aInfoStr
     put binaryEncode( "H*", "00FF01" ) & numToByte( length( aInfoStr ) ) & aInfoStr after infoBin
     delete char 1 to aOfs of notes
     delete first line of notes
@@ -1420,10 +1430,10 @@ function getInfoBin notes
 end getInfoBin
 
 function getTimeSignBin notes
-  put offset( "//s ", notes ) into aOfs
+  put offset( "//s ", tNotes) into aOfs
   if aOfs = 0 then return ""
   --
-  put word 1 of line 1 of ( char aOfs+4 to aOfs+127+4 of notes ) into makeSmfWord
+  put word 1 of line 1 of ( char aOfs+4 to aOfs+127+4 of tNotes) into makeSmfWord
   --
   put getNum(4) into elem
   delete first char of makeSmfWord
