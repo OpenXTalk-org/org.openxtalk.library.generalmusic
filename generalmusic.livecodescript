@@ -1767,22 +1767,24 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
       
       Tags: Music, MIDI, Sound, PlayPMD, playSentence
       **/
-      function midiNoteNameToNum midiNoteName
-         get itemOffset(midiNoteName,"C-1,C#-1,D-1,D#-1,E-1,F-1,F#-1,G-1,G#-1,A-1,A#-1,B-1,C0,C#0,D0,D#0,E0,F0,F#0,G0,G#0,A0,A#0,B0,"& \
-               "C1,C#1,D1,D#1,E1,F1,F#1,G1,G#1,A1,A#1,B1,C2,C#2,D2,D#2,E2,F2,F#2,G2,G#2,A2,A#2,B2,C3,C#3,D3,D#3,E3,F3,F#3,G3,G#3,A3,A#3,B3,"& \
-               "C4,C#4,D4,D#4,E4,F4,F#4,G4,G#4,A4,A#4,B4,C5,C#5,D5,D#5,E5,F5,F#5,G5,G#5,A5,A#5,B5,C6,C#6,D6,D#6,E6,F6,F#6,G6,G#6,A6,A#6,B6,"& \
-               "C7,C#7,D7,D#7,E7,F7,F#7,G7,G#7,A7,A#7,B7,C8,C#8,D8,D#8,E8,F8,F#8,G8,G#8,A8,A#8,B8,C9,C#9,D9,D#9,E9,F9,F#9,G9")
-         if it is 0 then
-            get itemOffset(midiNoteName, "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,"&\
-                  "Bass Drum 2,Bass Drum 1,Side Stick,Snare Drum 1,Hand Clap,Snare Drum 2,Low Tom 2,Closed Hi-hat,Low Tom 1,Pedal Hi-hat,Mid Tom 2,"&\
-                  "Open Hi-hat,Mid Tom 1,High Tom 2,Crash Cymbal 1,High Tom 1,Ride Cymbal 1,Chinese Cymbal,Ride Bell,Tambourine,Splash Cymbal,"&\
-                  "Cowbell,Crash Cymbal 2,Vibra Slap,Ride Cymbal 2,High Bongo,Low Bongo,Mute High Conga,Open High Conga,Low Conga,High Timbale,"&\
-                  "Low Timbale,High Agogo,Low Agogo,Cabasa,Maracas,Short Whistle,Long Whistle,Short Guiro,Long Guiro,Claves,High Wood Block,"&\
-                  "Low Wood Block,Mute Cuica,Open Cuica,Mute Triangle,Open Triangle,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,"&\
-                  "101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128")
-         end if
-         return it - 1
-      end midiNoteNameToNum
+function midiNoteNameToNum midiNoteName
+   get itemOffset(midiNoteName,"C-1,C#-1,D-1,D#-1,E-1,F-1,F#-1,G-1,G#-1,A-1,A#-1,B-1,C0,C#0,D0,D#0,E0,F0,F#0,G0,G#0,A0,A#0,B0,"& \
+         "C1,C#1,D1,D#1,E1,F1,F#1,G1,G#1,A1,A#1,B1,C2,C#2,D2,D#2,E2,F2,F#2,G2,G#2,A2,A#2,B2,C3,C#3,D3,D#3,E3,F3,F#3,G3,G#3,A3,A#3,B3,"& \
+         "C4,C#4,D4,D#4,E4,F4,F#4,G4,G#4,A4,A#4,B4,C5,C#5,D5,D#5,E5,F5,F#5,G5,G#5,A5,A#5,B5,C6,C#6,D6,D#6,E6,F6,F#6,G6,G#6,A6,A#6,B6,"& \
+         "C7,C#7,D7,D#7,E7,F7,F#7,G7,G#7,A7,A#7,B7,C8,C#8,D8,D#8,E8,F8,F#8,G8,G#8,A8,A#8,B8,C9,C#9,D9,D#9,E9,F9,F#9,G9")
+   if it is 0 then get itemOffset(midiNoteName,"C-1,Db-1,D-1,Eb-1,E-1,F-1,Gb-1,G-1,Ab-1,A-1,Bb-1,B-1,C0,Db0,D0,Eb0,E0,F0,Gb0,G0,Ab0,A0,Bb0,B0,"& \
+         "C1,Db1,D1,Eb1,E1,F1,Gb1,G1,Ab1,A1,Bb1,B1,C2,Db2,D2,Eb2,E2,F2,Gb2,G2,Ab2,A2,Bb2,B2,C3,Db3,D3,Eb3,E3,F3,Gb3,G3,Ab3,A3,Bb3,B3,"& \
+         "C4,Db4,D4,Eb4,E4,F4,Gb4,G4,Ab4,A4,Bb4,B4,C5,Db5,D5,Eb5,E5,F5,Gb5,G5,Ab5,A5,Bb5,B5,C6,Db6,D6,Eb6,E6,F6,Gb6,G6,Ab6,A6,Bb6,B6,"& \
+         "C7,Db7,D7,Eb7,E7,F7,Gb7,G7,Ab7,A7,Bb7,B7,C8,Db8,D8,Eb8,E8,F8,Gb8,G8,Ab8,A8,Bb8,B8,C9,Db9,D9,Eb9,E9,F9,Gb9,G9")
+   if it is 0 then get itemOffset(midiNoteName, "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,"&\
+         "Bass Drum 2,Bass Drum 1,Side Stick,Snare Drum 1,Hand Clap,Snare Drum 2,Low Tom 2,Closed Hi-hat,Low Tom 1,Pedal Hi-hat,Mid Tom 2,"&\
+         "Open Hi-hat,Mid Tom 1,High Tom 2,Crash Cymbal 1,High Tom 1,Ride Cymbal 1,Chinese Cymbal,Ride Bell,Tambourine,Splash Cymbal,"&\
+         "Cowbell,Crash Cymbal 2,Vibra Slap,Ride Cymbal 2,High Bongo,Low Bongo,Mute High Conga,Open High Conga,Low Conga,High Timbale,"&\
+         "Low Timbale,High Agogo,Low Agogo,Cabasa,Maracas,Short Whistle,Long Whistle,Short Guiro,Long Guiro,Claves,High Wood Block,"&\
+         "Low Wood Block,Mute Cuica,Open Cuica,Mute Triangle,Open Triangle,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,"&\
+         "101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128")
+   return it - 1
+end midiNoteNameToNum
       
       function gsPatchNumToName gmPatchNum, drumChannel
          if drumChannel <> "ch10" and drumChannel <> "drums" and drumChannel <> true then -- "ch10" is reserved for drums ("ch11" additionally in GM2 spec) -- and theChannel <> "ch11"
@@ -2635,7 +2637,7 @@ function getSF2Info pRIFFfile
          put it into tListType
          if tListType = "INFO" then
             -- put "LIST Byte Length=" & tLength & cr after tDump
-            put "LIST Type=" & tListType & cr after tDump
+            -- put "LIST Type=" & tListType & cr after tDump
             read from file pRIFFfile for tLength bytes
             put it into tInfoChunk
             repeat
@@ -2777,7 +2779,6 @@ function getSF2Info pRIFFfile
          else
             next repeat
          end if
-
       end repeat
       close file pRIFFfile
    end if

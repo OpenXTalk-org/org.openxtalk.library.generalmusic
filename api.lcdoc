@@ -50,13 +50,13 @@ Tags: Music, MIDI, audioClip
 
 
 
-Name: midiNoteNumToName
+Name: midiNoteNameToNum
 
 Type: function
 
-Syntax: midiNoteNumToName(<pNoteNumber>)
+Syntax: midiNoteNameToNum(<pNoteNumber>)
 
-Summary: Get the pitch name corrisponding to the given MIDI note number.
+Summary: Get the pitch number corrisponding to the given MIDI note name.
 
 Introduced: 1.0
 
@@ -64,18 +64,18 @@ OS: mac,win,linux,ios,android
 
 Platforms: desktop, mobile
 
-Example: put midiNoteNumToName(60) -- returns "C4", aka middle C
+Example:       put midiNoteNameToNum("C4") -- returns "60", aka middle C
 
 Parameters: 
 
-pNoteNumber: The MIDI note number to get the pitchname of.
+pNoteName: The MIDI note name to get the pitch number of.
 
-Returns: String containing a pitchname such as "C#4","Db5" or "Bass Drum 1"
+Returns: A number (0-127) containing a pitch number corresponding to the name parameter.
 
 Description:
-use midiNoteNumToName to translate MIDI Note Numbers to a more humaan readable format.
-For eaxmples "C#5" is easier to recognize as C sharp on octave 5 than the '61' is, and
-"Bass Drum 1" is more recognizable than it's general MIDI number '36' is.
+      use midiNoteNameToNum to translate a Note Name from a human readable name into a MIDI pitch number.
+      For eaxmples "C4" would return 60, "C#4" would return 61, and so on.
+      General MIDI Drum kit drum names such as "Bass Drum 1" (36) are also acceptable.
 
 Tags: Music, MIDI, Sound, PlayPMD, playSentence
 
@@ -90,7 +90,7 @@ Syntax: playPMD_FluidSynth pPlaySentenceMusicalData,[<pTempoBPM>],[<pProgramNumb
 
 Summary:
 plays the Playsentence Musical Data (PMD) starting at the specified beats per minute,
-with the given sound patch number using the FluidSynth engine.
+   with the given sound patch number using the FluidSynth engine.
 
 Introduced: OXT 1.963.1
 
@@ -106,57 +106,25 @@ pTempoBPM: Intitial playback tenmpo in Beats Per Minute, this may be overridden
 
 pProgramNumber:
 number in range 0-127 is the sound patch to use as the initial
-or default instrument sound. This nay be overridden by patchchange messages within
-the playSentence string.
+   or default instrument sound. This nay be overridden by patchchange messages within
+   the playSentence string.
 
 pSoundBankFile: An optional filePath to a soundBank (.sf2 or .dls) file to use for playback.
 
-Example: playPMD_FluidSynth ("C4q Ee. Gs..",120,1)
+Example:    playPMD_FluidSynth ("C4q Ee. Gs..",120,1)
 
 Description:
-Attempts to play the Playsentence Music Data (PMD), optionally starting at the specified tempo
-in beats per minute, optionally with a given MIDI patch number (need to add 'bank-patch' suport),
-with the optionally provided Soubdbank (.sf2 or .dls) file. The default values are 120(BPM)
-and sound patch 1 (GM "Piano 1"),loading the first SoundBankFile found in default locations
-On macOS this should load  the default Roland GS Soundbank (which is the same small Soundbank
-   from the 1990s that came with QuickTime v2.5+), on iOS no default soundbank is provided
-   by the OS and so one must be provided.
-   PLEASE NOTE that this command will do nothing (fail silently) if the AVMIDIPLayer
-   builder extension is not loaded therefore scripts should check for the presence of
-   the AVMIDIPLayer libray before calling this command directly, or use the platform aware
-   version, PlayPMD which should try to use the best musical playback engine currenlty availble. \Tags: Music, MIDI, audioClip
-
-
-
-Name: midiNoteNameToNum
-
-Type: function
-
-Syntax: midiNoteNameToNum(<pNoteNumber>)
-
-Summary: Get the pitch number corrisponding to the given MIDI note name.
-
-Introduced: 1.0
-
-OS: mac,win,linux,ios,android
-
-Platforms: desktop, mobile
-
-Example: put midiNoteNameToNum("C4") -- returns "60", aka middle C
-
-Parameters: 
-
-pNoteName: The MIDI note name to get the pitch number of.
-
-Returns: A number (0-127) containing a pitch number corresponding to the name parameter.
-
-Description:
-use midiNoteNameToNum to translate a Note Name from a human readable name into a MIDI pitch number.
-For eaxmples "C4" would return 60, "C#4" would return 61, and so on.
-General MIDI Drum kit drum names such as "Bass Drum 1" (36) are also acceptable.
-
-Tags: Music, MIDI, Sound, PlayPMD, playSentence
-
+   Attempts to play the Playsentence Music Data (PMD), optionally starting at the specified tempo
+   in beats per minute, optionally with a given MIDI patch number (need to add 'bank-patch' suport),
+   with the optionally provided Soubdbank (.sf2 or .dls) file. The default values are 120(BPM)
+   and sound patch 1 (GM "Piano 1"),loading the first SoundBankFile found in default locations
+   On macOS this should load  the default Roland GS Soundbank (which is the same small Soundbank
+      from the 1990s that came with QuickTime v2.5+), on iOS no default soundbank is provided
+      by the OS and so one must be provided.
+      PLEASE NOTE that this command will do nothing (fail silently) if the AVMIDIPLayer
+      builder extension is not loaded therefore scripts should check for the presence of
+      the AVMIDIPLayer libray before calling this command directly, or use the platform aware
+      version, PlayPMD which should try to use the best musical playback engine currenlty availble. \Tags: Music, MIDI, audioClip
 
 
 
@@ -164,33 +132,73 @@ Name: playSentenceToMIDIData
 
 Type: function
 
-Syntax: playSentenceToMIDIData <playSentence>,[<playTempo>],[<soundPatchNum>]
+Syntax:       playSentenceToMIDIData <playSentence>,[<playTempo>],[<soundPatchNum>]
 
 Summary:
 playSentenceToMIDIData retruns Standard MIDI File Binary Data,
-converted from the given PlaySentenceMusicData,
-starting at the specified beats per minute, with the given patch number,
+      converted from the given PlaySentenceMusicData,
+      starting at the specified beats per minute, with the given patch number,
 
 Parameters: 
 
 playSentence:
 string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
-playTempo; Intitial playback tenmpo in Beats Per Minute, this may be overridden
-by tempo messages within the playSentence string.
+      playTempo; Intitial playback tenmpo in Beats Per Minute, this may be overridden
+      by tempo messages within the playSentence string.
 
 soundPatchNum:
 a number in range 0-127 is the sound patch to use as the initial
+      or default instrument sound. This nay be overridden by patchchange messages within
+      the playSentence string.
+
+Example:       PUT playSentenceToMIDIData("C4q Ee. Gs..",120,0) -- get MIDI data at 120BPM plays on "Piano 1"
+
+Returns:       MIDI formated binary data suitable for playback or writing to a standard midi file.
+
+Description:
+      Converts PlaySentence Musical Data (PMD) starting at the specified tempo,
+      with the given sound patch number. The binary data returned may be written directly to a standard MIDI file or
+      passed along to some MIDI playback handler.
+
+
+
+Name: playPMD
+
+Type: command
+
+Syntax: playPMD [<pInstrumentName>],pPlaySentenceMusicalData,[<pTempoBPM>],[<pProgramNumber>],[<pShellpAppPath>]
+
+Summary:
+plays the Playsentence Musical Data (PMD) starting at the specified tempo
+in beats per minute, with the given sound patch number, using the current best
+playback available on the current platform.
+
+Introduced: 1.0
+
+OS: mac,ios,android,linux,windows
+
+Platforms: desktop, mobile
+
+Parameters: 
+
+pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
+
+pTempoBPM: Intitial playback tenmpo in Beats Per Minute, this may be overridden
+
+pProgramNumber:
+number in range 0-127 is the sound patch to use as the initial
 or default instrument sound. This nay be overridden by patchchange messages within
 the playSentence string.
 
-Example: PUT playSentenceToMIDIData("C4q Ee. Gs..",120,0) -- get MIDI data at 120BPM plays on "Piano 1"
-
-Returns: MIDI formated binary data suitable for playback or writing to a standard midi file.
+Example: playPMD "C4q Ee. Gs..",120,1
 
 Description:
-Converts PlaySentence Musical Data (PMD) starting at the specified tempo,
-with the given sound patch number. The binary data returned may be written directly to a standard MIDI file or
-passed along to some MIDI playback handler.
+plays the Playsentence Musical Data (PMD) starting at the specified tempo
+in beats per minute, with the given sound patch number, using the current best
+playback available on the current platform.
+
+Tags: Music, MIDI, audioClip
+
 
 
 
@@ -271,12 +279,12 @@ in beats per minute, optionally with a given MIDI patch number (need to add 'ban
 with the optionally provided Soubdbank (.sf2 or .dls) file. The default values are 120(BPM)
 and sound patch 1 (GM "Piano 1"),loading the first SoundBankFile found in default locations.
 On macOS this should load  the default Roland GS Soundbank (which is the same small Soundbank
-from the 1990s that came with QuickTime v2.5+), on iOS no default soundbank is provided
-by the OS and so one must be provided.
-PLEASE NOTE that this command will do nothing (fail silently) if the AVMIDIPLayer
-builder extension is not loaded therefore scripts should check for the presence of
-the AVMIDIPLayer libray before calling this command directly, or use the platform aware
-version, PlayPMD which should try to use the best musical playback engine currenlty availble.
+   from the 1990s that came with QuickTime v2.5+), on iOS no default soundbank is provided
+   by the OS and so one must be provided.
+   PLEASE NOTE that this command will do nothing (fail silently) if the AVMIDIPLayer
+   builder extension is not loaded therefore scripts should check for the presence of
+   the AVMIDIPLayer libray before calling this command directly, or use the platform aware
+   version, PlayPMD which should try to use the best musical playback engine currenlty availble.
 
 Tags: Music, MIDI, audioClip
 
@@ -291,14 +299,14 @@ Syntax: makeSMF <notes>,<playTempo>,<defInst>,<savePath>
 
 Summary:
 creates a Standard MIDI File from the given PlaySentenceMusicData,
-starting at the specified beats per minute, with the given patch number,
-writing it to the provided file path.
+      starting at the specified beats per minute, with the given patch number,
+      writing it to the provided file path.
 
-Example: makeSMF ("C4q Ee. Gs..",120,1,"~/testSMF.mid")
+Example:       makeSMF ("C4q Ee. Gs..",120,1,"~/testSMF.mid")
 
 Description:
-makeSMF creates a Standard MIDI Fike (SMF) from the given PlaySentenceMusicData (PMD)
-starting at the specified beats per minute, with the given patch number, to the provided file path.
+      makeSMF creates a Standard MIDI Fike (SMF) from the given PlaySentenceMusicData (PMD)
+      starting at the specified beats per minute, with the given patch number, to the provided file path.
 
 Parameters:
 :
@@ -315,42 +323,34 @@ Parameters:
 
 
 
-Name: playPMD
+Name: midiNoteNumToName
 
-Type: command
+Type: function
 
-Syntax: playPMD [<pInstrumentName>],pPlaySentenceMusicalData,[<pTempoBPM>],[<pProgramNumber>],[<pShellpAppPath>]
+Syntax: midiNoteNumToName(<pNoteNumber>)
 
-Summary:
-plays the Playsentence Musical Data (PMD) starting at the specified tempo
-in beats per minute, with the given sound patch number, using the current best
-playback available on the current platform.
+Summary: Get the pitch name corrisponding to the given MIDI note number.
 
 Introduced: 1.0
 
-OS: mac,ios,android,linux,windows
+OS: mac,win,linux,ios,android
 
 Platforms: desktop, mobile
 
+Example:       put midiNoteNumToName(60) -- returns "C4", aka middle C
+
 Parameters: 
 
-pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
+pNoteNumber: The MIDI note number to get the pitchname of.
 
-pTempoBPM: Intitial playback tenmpo in Beats Per Minute, this may be overridden
-
-pProgramNumber:
-number in range 0-127 is the sound patch to use as the initial
-or default instrument sound. This nay be overridden by patchchange messages within
-the playSentence string.
-
-Example: playPMD "C4q Ee. Gs..",120,1
+Returns: String containing a pitchname such as "C#4","Db5" or "Bass Drum 1"
 
 Description:
-plays the Playsentence Musical Data (PMD) starting at the specified tempo
-in beats per minute, with the given sound patch number, using the current best
-playback available on the current platform.
+      use midiNoteNumToName to translate MIDI Note Numbers to a more humaan readable format.
+      For eaxmples "C#5" is easier to recognize as C sharp on octave 5 than the '61' is, and
+      "Bass Drum 1" is more recognizable than it's general MIDI number '36' is.
 
-Tags: Music, MIDI, audioClip
+Tags: Music, MIDI, Sound, PlayPMD, playSentence
 
 
 
