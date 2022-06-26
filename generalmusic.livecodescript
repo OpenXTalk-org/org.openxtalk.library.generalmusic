@@ -225,7 +225,7 @@ on playPMD pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
          put defaultSoundBank into soundBankFile
       end if
    end if
-   put tNotes, playTempo,instNum,bankNum, soundBankFile
+   -- put tNotes, playTempo,instNum,bankNum, soundBankFile
    switch platform()
       -- The possible values returned by the platform function are:
       -- "Win32" on any version of Windows
@@ -1808,44 +1808,44 @@ end midiNoteNameToNum
          end if
       end gsPatchNumToName
       
-      function gsInstrumentNames pDrumPatches, pReturnType
-         if pDrumPatches <> "ch10" and pDrumPatches <> "drums" and pDrumPatches <> true then -- "ch10" is reserved for drums ("ch11" additionally in GM2 spec) -- and theChannel <> "ch11"
-            put "Acoustic Grand Piano,Bright Acoustic Piano,Electric Grand Piano,Honkytonk Piano,Rhodes Piano,Chorused Piano,"&\
-                  "Harpsichord,Clavinet,Celesta,Glockenspiel,Music Box,Vibraphone,Marimba,Xylophone,Tubular Bells,Dulcimer,Hammond Organ,Percussive Organ,"&\
-                  "Rock Organ,Church Organ,Reed Organ,Accordion,Harmonica,Tango Accordion,Nylon Guitar,Steel Guitar,Jazz Guitar,"&\
-                  "Clean Electric Guitar,Muted Electric Guitar,Overdrive Guitar,Distorted Guitar,Guitar Harmonics,Acoustic Bass,Fingered Bass,"&\
-                  "Picked Bass,Fretless Bass,Slap Bass 1,Slap Bass 2,Synth Bass 1,Synth Bass 2,Violin,Viola,Cello,Contrabass,Tremolo Strings,Pizzicato Strings,"&\
-                  "Orchestral Harp,Timpani,String Ensemble1,String Ensemble2,Synth Strings 1,Synth Strings 2,Choir Aahs,Voice Oohs,Synth Voice,Orchestra Hit,"&\
-                  "Trumpet,Trombone,Tuba,Muted Trumpet,French Horn,Brass Section,Synth Brass 1,Synth Brass 2,Soprano Sax,Alto Sax,Tenor Sax,Baritone Sax,Oboe,"&\
-                  "English Horn,Bassoon,Clarinet,Piccolo,Flute,Recorder,Pan Flute,Bottle Blow,Shakuhachi,Whistle,Ocarina,Lead 1 Square,Lead 2 Sawtooth,"&\
-                  "Lead 3 Calliope,Lead 4 Chiff,Lead 5 Charang,Lead 6 Voice,Lead 7 Fifths,Lead 8 Bass+Lead,Pad 1 New Age,Pad 2 Warm,"&\
-                  "Pad 3 Polysynth,Pad 4 Choir,Pad 5 Bowed,Pad 6 Metallic,Pad 7 Halo,Pad 8 Sweep,FX 1 Rain,FX 2 Soundtrack,FX 3 Crystal,"&\
-                  "FX 4 Atmosphere,FX 5 Brightness,FX 6 Goblins,FX 7 Echoes,FX 8 Sci-Fi,Sitar,Banjo,Shamisen,Koto,Kalimba,Bagpipe,Fiddle,Shanai,Tinkle Bell,Agogo,"&\
-                  "Steel Drums,Woodblock,Taiko Drum,Melodic Tom,Synth Drum,Reverse Cymbal,Guitar Fret Noise,Breath Noise,Seashore,Bird Tweet,Telephone Ring,Helicopter,Applause,Gunshot" into tList
-         else -- theChannel is a drum kit channel (10)
-            put "Standard Kit,2,3,4,5,6,7,8,Room Kit,10,11,12,13,14,15,16,Power Kit,18,19,20,21,22,23,24,25,Electronic Kit,"&\
-                  "TR-808 Kit,27,28,29,30,31,32,Jazz Kit,34,35,36,37,38,39,40,Brush Kit,42,43,44,45,46,47,48,Orchestra Kit,50,51,52,53,54,55,56,SoundFX Kit,"&\
-                  "58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,"&\
-                  "100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,MT-32 Kit" into tList
-         end if
-         switch pReturnType
-            case "csv"
-               return tList
-               break
-            case "array"
-               split tList by comma
-               return tList
-               break
-            case "list"
-            case ""
-            default
-               --split tList by comma
-               -- combine tList with cr
-               replace comma with return in tList
-               return tList
-               break
-         end switch
-      end gsInstrumentNames
+function gsInstrumentNames pDrumPatches, pReturnType
+   if pDrumPatches <> "ch10" and pDrumPatches <> "drums" and pDrumPatches <> true then -- "ch10" is reserved for drums ("ch11" additionally in GM2 spec) -- and theChannel <> "ch11"
+      put "Acoustic Grand Piano,Bright Acoustic Piano,Electric Grand Piano,Honkytonk Piano,Rhodes Piano,Chorused Piano,"&\
+            "Harpsichord,Clavinet,Celesta,Glockenspiel,Music Box,Vibraphone,Marimba,Xylophone,Tubular Bells,Dulcimer,Hammond Organ,Percussive Organ,"&\
+            "Rock Organ,Church Organ,Reed Organ,Accordion,Harmonica,Tango Accordion,Nylon Guitar,Steel Guitar,Jazz Guitar,"&\
+            "Clean Electric Guitar,Muted Electric Guitar,Overdrive Guitar,Distorted Guitar,Guitar Harmonics,Acoustic Bass,Fingered Bass,"&\
+            "Picked Bass,Fretless Bass,Slap Bass 1,Slap Bass 2,Synth Bass 1,Synth Bass 2,Violin,Viola,Cello,Contrabass,Tremolo Strings,Pizzicato Strings,"&\
+            "Orchestral Harp,Timpani,String Ensemble1,String Ensemble2,Synth Strings 1,Synth Strings 2,Choir Aahs,Voice Oohs,Synth Voice,Orchestra Hit,"&\
+            "Trumpet,Trombone,Tuba,Muted Trumpet,French Horn,Brass Section,Synth Brass 1,Synth Brass 2,Soprano Sax,Alto Sax,Tenor Sax,Baritone Sax,Oboe,"&\
+            "English Horn,Bassoon,Clarinet,Piccolo,Flute,Recorder,Pan Flute,Bottle Blow,Shakuhachi,Whistle,Ocarina,Lead 1 Square,Lead 2 Sawtooth,"&\
+            "Lead 3 Calliope,Lead 4 Chiff,Lead 5 Charang,Lead 6 Voice,Lead 7 Fifths,Lead 8 Bass+Lead,Pad 1 New Age,Pad 2 Warm,"&\
+            "Pad 3 Polysynth,Pad 4 Choir,Pad 5 Bowed,Pad 6 Metallic,Pad 7 Halo,Pad 8 Sweep,FX 1 Rain,FX 2 Soundtrack,FX 3 Crystal,"&\
+            "FX 4 Atmosphere,FX 5 Brightness,FX 6 Goblins,FX 7 Echoes,FX 8 Sci-Fi,Sitar,Banjo,Shamisen,Koto,Kalimba,Bagpipe,Fiddle,Shanai,Tinkle Bell,Agogo,"&\
+            "Steel Drums,Woodblock,Taiko Drum,Melodic Tom,Synth Drum,Reverse Cymbal,Guitar Fret Noise,Breath Noise,Seashore,Bird Tweet,Telephone Ring,Helicopter,Applause,Gunshot" into tList
+   else -- theChannel is a drum kit channel (10)
+      put "Standard Kit,2,3,4,5,6,7,8,Room Kit,10,11,12,13,14,15,16,Power Kit,18,19,20,21,22,23,24,25,Electronic Kit,"&\
+            "TR-808 Kit,27,28,29,30,31,32,Jazz Kit,34,35,36,37,38,39,40,Brush Kit,42,43,44,45,46,47,48,Orchestra Kit,50,51,52,53,54,55,56,SoundFX Kit,"&\
+            "58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,"&\
+            "100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,MT-32 Kit" into tList
+   end if
+   switch pReturnType
+      case "csv"
+         return tList
+         break
+      case "array"
+         split tList by comma
+         return tList
+         break
+      case "list"
+      case ""
+      default
+         --split tList by comma
+         -- combine tList with cr
+         replace comma with return in tList
+         return tList
+         break
+   end switch
+end gsInstrumentNames
       
       function BPMppbDurationToMillisecs pBPM, pPulsesPerBeat, pDur
          -- There are 60,000 milliseconds in a minute
