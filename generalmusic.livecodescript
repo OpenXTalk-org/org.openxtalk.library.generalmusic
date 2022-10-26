@@ -18,13 +18,14 @@ on extensionFinalize
    remove the script of me from back
 end extensionFinalize
 
-function GetHyperSounds
+function GetHyperSoundsFont
    set the itemDelimiter to slash
-   get the effective filename of this stack
+   get the effective filename of me -- this stack
    put item 1 to -2 of it into tFolder
    put "/resources/HyperSound.sf2" after tFolder
+   put tFolder
    return tFolder
-end GetHyperSounds
+end GetHyperSoundsFont
 
 /**
 
