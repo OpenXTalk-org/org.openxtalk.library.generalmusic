@@ -18,6 +18,14 @@ on extensionFinalize
    remove the script of me from back
 end extensionFinalize
 
+function GetHyperSounds
+   set the itemDelimiter to slash
+   get the effective filename of this stack
+   put item 1 to -2 of it into tFolder
+   put "/resources/HyperSound.sf2" after tFolder
+   return tFolder
+end GetHyperSounds
+
 /**
 
 Title: OpenXTalk.org General Music Library
@@ -82,7 +90,7 @@ private command __Initialize
       put it into defaultSoundBank
       put defaultSoundBank into selectedSoundBank
    end if
-   
+
    if the platform is "Linux" then
       if "fluidsynth" is in the loadedExtensions then
          try
@@ -94,7 +102,7 @@ private command __Initialize
          end try
       end if
    end if
-   
+
    put gsInstrumentNames(false,"list") into instrumentNames
 end __Initialize
 
@@ -178,7 +186,7 @@ on playPMD pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
          put param(x) into tParam
          if tParam is in instrumentNames then
             get lineoffset(tParam,instrumentNames,0)
-            if it <> 0 then 
+            if it <> 0 then
                put it - 1  into instNum
                next repeat
             else
@@ -348,8 +356,8 @@ on checkPlayEnd_videoClip
    else
       send "checkPlayEndVC" to me in 30 ticks
    end if
-   
-   
+
+
 end checkPlayEnd_videoClip
 
 ------------------------------------------------ playPMD using a shell app ------------------------------------------
@@ -484,7 +492,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
    builder extension is not loaded therefore scripts should check for the presence of
    the AVMIDIPLayer libray before calling this command directly, or use the platform aware
    version, PlayPMD which should try to use the best musical playback engine currenlty availble.
-   
+
    Tags: Music, MIDI, audioClip
    **/
    on playPMD_AVMIDIPlayer tNotes, playTempo, instNum, bankNum, soundBankFile
@@ -524,7 +532,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
          end try
       end if
    end playPMD_AVMIDIPlayer
-   
+
    on setPlayBtn toPlay
       try
          set the enabled of btn "Play" to ( not toPlay )
@@ -533,39 +541,39 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
          set the enabled of btn "Stop" to ( toPlay )
       end try
    end setPlayBtn
-   
+
    -------------------------------------- playPMD using FluidSynth (macOS, Windows, Linux, Android) ------------------------------------------
    /**
    Name: playPMD_FluidSynth
-   
+
    Type: command
-   
+
    Syntax: playPMD_FluidSynth pPlaySentenceMusicalData,[<pTempoBPM>],[<pProgramNumber>],[<pSoundBankFile>]
-   
+
    Summary: plays the Playsentence Musical Data (PMD) starting at the specified beats per minute,
    with the given sound patch number using the FluidSynth engine.
-   
+
    Introduced: OXT 1.963.1
-   
+
    OS: mac,ios,win,linux
-   
+
    Platforms: desktop,mobile
-   
+
    Parameters:
-   
+
    pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
-   
+
    pTempoBPM: Intitial playback tenmpo in Beats Per Minute, this may be overridden
-   
+
    pProgramNumber: number in range 0-127 is the sound patch to use as the initial
    or default instrument sound. This nay be overridden by patchchange messages within
    the playSentence string.
-   
+
    pSoundBankFile: An optional filePath to a soundBank (.sf2 or .dls) file to use for playback.
-   
+
    Example:
    playPMD_FluidSynth ("C4q Ee. Gs..",120,1)
-   
+
    Description:
    Attempts to play the Playsentence Music Data (PMD), optionally starting at the specified tempo
    in beats per minute, optionally with a given MIDI patch number (need to add 'bank-patch' suport),
@@ -578,7 +586,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
       builder extension is not loaded therefore scripts should check for the presence of
       the AVMIDIPLayer libray before calling this command directly, or use the platform aware
       version, PlayPMD which should try to use the best musical playback engine currenlty availble. \Tags: Music, MIDI, audioClip
-            
+
       **/
       on playPMD_FluidSynth tNotes, playTempo, instNum, bankNum, soundBankFile
          -- set dontUseQT to false -- long time Deprecated now -- PM 2/10/22
@@ -612,7 +620,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
             --  Throw "Fluid Synth API Not Loaded"
          end if
       end playPMD_FluidSynth
-      
+
       on setPlayBtnFS toPlay
          try
             set the enabled of btn "Play" to ( not toPlay )
@@ -621,20 +629,20 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
             set the enabled of btn "Stop" to ( toPlay )
          end try
       end setPlayBtnFS
-      
+
       ------------------------ No-playback PMD to Standard MIDI Data (crossplatform) ----------------------------------------
       /**
       Name: playSentenceToMIDIData
-      
+
       Type: function
-      
+
       Syntax:
       playSentenceToMIDIData <playSentence>,[<playTempo>],[<soundPatchNum>]
-      
+
       Summary: playSentenceToMIDIData retruns Standard MIDI File Binary Data,
       converted from the given PlaySentenceMusicData,
       starting at the specified beats per minute, with the given patch number,
-      
+
       Parameters:
       playSentence: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
       playTempo; Intitial playback tenmpo in Beats Per Minute, this may be overridden
@@ -642,13 +650,13 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
       soundPatchNum: a number in range 0-127 is the sound patch to use as the initial
       or default instrument sound. This nay be overridden by patchchange messages within
       the playSentence string.
-      
+
       Example:
       PUT playSentenceToMIDIData("C4q Ee. Gs..",120,0) -- get MIDI data at 120BPM plays on "Piano 1"
-      
+
       Returns:
       MIDI formated binary data suitable for playback or writing to a standard midi file.
-      
+
       Description:
       Converts PlaySentence Musical Data (PMD) starting at the specified tempo,
       with the given sound patch number. The binary data returned may be written directly to a standard MIDI file or
@@ -687,7 +695,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
          --
          return midiEvents
       end playSentenceToMIDIData
-      
+
       ------------------------------------------------ MakeSMF ---------------------------------------------
       ----------------makeSMF script by UDI 2002.12.06-------------
       -- makeSMF  tNotes , [ playTempo ], [ defInst ], savePath
@@ -707,16 +715,16 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
       local makeSmfAbsT, makeSmfChannel, makeSmfAbsPart
       local makeSmfOctave, makeSmfDur, makeSmfVelocity, makeSmfGRate
       local makeSmfModuration, makeSmfExp, makeSmfHoldd, makeSmfAltArry, makeSmfKeyShift
-      
+
       /**
       Name: makeSMF
       Summary: creates a Standard MIDI File from the given PlaySentenceMusicData,
       starting at the specified beats per minute, with the given patch number,
       writing it to the provided file path.
-      
+
       Example:
       makeSMF ("C4q Ee. Gs..",120,1,"~/testSMF.mid")
-      
+
       Description:
       makeSMF creates a Standard MIDI Fike (SMF) from the given PlaySentenceMusicData (PMD)
       starting at the specified beats per minute, with the given patch number, to the provided file path.
@@ -736,7 +744,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
          write midiEvents to file savePath
          close file savePath
       end makeSMF
-      
+
       function notes2EvList tNotes, defInst, playTempo
          put tNotes into makeSmfNotes
          put "" into makeSmfEvList
@@ -1025,7 +1033,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
          put "" into makeSmfEvList
          return evList
       end notes2EvList
-      
+
       on initPart
          put 4 into makeSmfOctave
          put name2Dur( "q" ) into makeSmfDur
@@ -1038,7 +1046,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
          put 0 into makeSmfKeyShift
          put 10 into makeSmfAbsT
       end initPart
-      
+
       function getDur noDivFlag
          put 0 into aDur
          repeat
@@ -1081,7 +1089,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
          end repeat
          return aDur
       end getDur
-      
+
       function getGRate
          if first char of makeSmfWord is "@" then
             delete first char of makeSmfWord
@@ -1090,7 +1098,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
             return 0
          end if
       end getGRate
-      
+
       function getVelocity
          if first char of makeSmfWord is "v" then
             delete first char of makeSmfWord
@@ -1101,7 +1109,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
             return -1
          end if
       end getVelocity
-      
+
       function getNN dflt -- signed number
          if first char of makeSmfWord is "-" then
             put true into nFlag
@@ -1116,7 +1124,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
             return aNum
          end if
       end getNN
-      
+
       function getNum dflt
          put "" into aResult
          get offset( first char of makeSmfWord, "0123456789" ) -1
@@ -1131,7 +1139,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
          end repeat
          return aResult
       end getNum
-      
+
       on setAltShift aWord, altShift --2002.12.06
          repeat for each char aChar in aWord
             get offset( aChar, "CDEFGAB" )
@@ -1140,7 +1148,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
             end if
          end repeat
       end setAltShift
-      
+
       on setPanEvent
          put makeSmfAbsT into absT
          delete first char of makeSmfWord
@@ -1155,7 +1163,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
             put abstT2Str( absT ) & "," & ctrl2Hex( makeSmfChannel, 10, aNum ) & return after makeSmfEvList
          end repeat
       end setPanEvent
-      
+
       on setModurationEvent
          put makeSmfAbsT into absT
          delete first char of makeSmfWord
@@ -1176,7 +1184,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
             add eDur *100 to absT
          end repeat
       end setModurationEvent
-      
+
       on setRevervEvent
          delete first char of makeSmfWord
          if getNum( 0 ) = 1 then put 96 into aNum
@@ -1184,7 +1192,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
          put abstT2Str( makeSmfAbsT ) & "," & ctrl2Hex( makeSmfChannel, 91, aNum ) & return after makeSmfEvList
          add 1 to makeSmfAbsT
       end setRevervEvent
-      
+
       on setPedalEvent
          delete first char of makeSmfWord
          put getNum(0) into aNum
@@ -1205,7 +1213,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
             put abstT2Str( makeSmfAbsT + aDur *100 ) & "," & ctrl2Hex( makeSmfChannel, 64, 0 ) & return after makeSmfEvList
          end if
       end setPedalEvent
-      
+
       on setExpressionEvent
          put makeSmfAbsT into absT
          delete first char of makeSmfWord
@@ -1227,7 +1235,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
             end repeat
          end if
       end setExpressionEvent
-      
+
       on doSetCtrl topT, eDur, curV, tgV, minGap, ctrlN -- env
          put topT into absT
          put tgV into tgVal
@@ -1248,23 +1256,23 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
          end repeat
          put abstT2Str( topT + eDur *100 -1 ) & "," & ctrl2Hex( makeSmfChannel, ctrlN, tgVal ) & return after makeSmfEvList
       end doSetCtrl
-      
+
       function note2Hex pPart, aPitch, aVelocity -- note on/off  $90+pPart
          return bin2Hex( numToByte( 144 + pPart ) & numToByte( aPitch ) & numToByte( aVelocity ) )
       end note2Hex
-      
+
       function ctrl2Hex pPart, ctrlN, tmakeSmfDur -- control change $B0+pPart
          return bin2Hex( numToByte( 176 + pPart ) & numToByte( ctrlN ) & numToByte( tmakeSmfDur ) )
       end ctrl2Hex
-      
+
       function pc2Hex pPart, instNum -- program change  $C0+pPart
          return bin2Hex( numToByte( 192 + pPart ) & numToByte( instNum ) )
       end pc2Hex
-      
+
       function name2Dur aChar
          return 960 div 2^( offset( aChar, "whqestx" ) -1 )
       end name2Dur
-      
+
       function getPitch
          put first char of makeSmfWord into aChar
          if "CDEFGAB" contains aChar then -- pitch name
@@ -1308,17 +1316,17 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
             return getNum( 0 )
          end if
       end getPitch
-      
+
       function bin2Hex evStr
          put "" into theHex
          get binaryDecode( "H*", evStr, theHex )
          return theHex
       end bin2Hex
-      
+
       function abstT2Str absT
          return char 1 to ( 10- length( absT ) ) of "0000000000" & absT
       end abstT2Str
-      
+
       function evList2Midi evList -- 2002.12.06
          put "" into midiEvents
          put 0 into oldT
@@ -1340,7 +1348,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
          put binaryEncode( "H*", "00FF2F00" ) after midiEvents
          return midiEvents
       end evList2Midi
-      
+
       function getInitHex aPart, instNum
          put "" into resultHex
          --
@@ -1363,7 +1371,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
          --
          return resultHex
       end getInitHex
-      
+
       -- function getInitHex aPart, instNum
       --put "" into resultHex
       --
@@ -1378,7 +1386,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
       --
       -- return resultHex
       -- end getInitHex
-      
+
       function getMidiHeader trackSize
          put "" into aResult
          put "MThd" after aResult -- SMF marker
@@ -1387,7 +1395,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
          put num2Bin( trackSize, 4 ) after aResult
          return aResult
       end getMidiHeader
-      
+
       function num2DeltaTimeBin aNum
          put "" into aResult
          put numToByte( aNum mod 128 ) into aResult
@@ -1397,7 +1405,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
          end repeat
          return aResult
       end num2DeltaTimeBin
-      
+
       function num2Bin aNum, nDigit
          put "" into aResult
          repeat nDigit
@@ -1406,7 +1414,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
          end repeat
          return aResult
       end num2Bin
-      
+
       function num2Hex aNum, nDigit
          put "" into theHex
          repeat nDigit
@@ -1416,7 +1424,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
          end repeat
          return theHex
       end num2Hex
-      
+
       --
       function getCopyrightBin notes
          put offset( "//c ", tNotes) into aOfs
@@ -1424,7 +1432,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
          put line 1 of ( char aOfs+4 to aOfs+127+4 of tNotes) into copyStr
          return binaryEncode( "H*", "00FF02" ) & numToByte( length( copyStr ) ) & copyStr
       end getCopyrightBin
-      
+
       function getInfoBin notes
          put "" into infoBin
          repeat
@@ -1437,7 +1445,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
          end repeat
          return infoBin
       end getInfoBin
-      
+
       function getTimeSignBin notes
          put offset( "//s ", tNotes) into aOfs
          if aOfs = 0 then return ""
@@ -1462,7 +1470,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
          return binaryEncode( "H*", "00FF5804" ) & elimBin & denomiBin & binaryEncode( "H*", "1808" )
       end getTimeSignBin
       --------------------------------------------------------------  end of makeSMF  -------------------------------------------------------------------
-      
+
       --------------------------------------------------------------  begin Paul's MIDI tools -----------------------------------------------------------
       function evaluateStatusByte theHex
          switch theHex
@@ -1566,7 +1574,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
          end switch
          return empty
       end evaluateStatusByte
-      
+
 function evaluateMetaEventTypeByte theHex
    switch theHex
       case "51"
@@ -1736,35 +1744,35 @@ function midiNoteNumToName midiNoteNum, pOption
                   "101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128")
          end if
       end midiNoteNumToName
-      
+
       /**
       Name: midiNoteNameToNum
-      
+
       Type: function
-      
+
       Syntax: midiNoteNameToNum(<pNoteNumber>)
-      
+
       Summary:  Get the pitch number corrisponding to the given MIDI note name.
-      
+
       Introduced: 1.0
-      
+
       OS: mac,win,linux,ios,android
-      
+
       Platforms: desktop, mobile
-      
+
       Example:
       put midiNoteNameToNum("C4") -- returns "60", aka middle C
-      
+
       Parameters:
       pNoteName: The MIDI note name to get the pitch number of.
-      
+
       Returns: A number (0-127) containing a pitch number corresponding to the name parameter.
-      
+
       Description:
       use midiNoteNameToNum to translate a Note Name from a human readable name into a MIDI pitch number.
       For eaxmples "C4" would return 60, "C#4" would return 61, and so on.
       General MIDI Drum kit drum names such as "Bass Drum 1" (36) are also acceptable.
-      
+
       Tags: Music, MIDI, Sound, PlayPMD, playSentence
       **/
 function midiNoteNameToNum midiNoteName
@@ -1785,7 +1793,7 @@ function midiNoteNameToNum midiNoteName
          "101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128")
    return it - 1
 end midiNoteNameToNum
-      
+
       function gsPatchNumToName gmPatchNum, drumChannel
          if drumChannel <> "ch10" and drumChannel <> "drums" and drumChannel <> true then -- "ch10" is reserved for drums ("ch11" additionally in GM2 spec) -- and theChannel <> "ch11"
             return item (gmPatchNum+1) of ("Acoustic Grand Piano,Bright Acoustic Piano,Electric Grand Piano,Honkytonk Piano,Rhodes Piano,Chorused Piano,"&\
@@ -1807,7 +1815,7 @@ end midiNoteNameToNum
                   "100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,MT-32 Kit")
          end if
       end gsPatchNumToName
-      
+
 function gsInstrumentNames pDrumPatches, pReturnType
    if pDrumPatches <> "ch10" and pDrumPatches <> "drums" and pDrumPatches <> true then -- "ch10" is reserved for drums ("ch11" additionally in GM2 spec) -- and theChannel <> "ch11"
       put "Acoustic Grand Piano,Bright Acoustic Piano,Electric Grand Piano,Honkytonk Piano,Rhodes Piano,Chorused Piano,"&\
@@ -1846,7 +1854,7 @@ function gsInstrumentNames pDrumPatches, pReturnType
          break
    end switch
 end gsInstrumentNames
-      
+
       function BPMppbDurationToMillisecs pBPM, pPulsesPerBeat, pDur
          -- There are 60,000 milliseconds in a minute
          set the numberformat to "00.000"
@@ -1957,7 +1965,7 @@ end gsInstrumentNames
                   break
                case "s"
                   set the numberformat to "0000.00"
-                  
+
                   if char 2 to 3 of pDur is ".." then
                      return round (tSixteenthNoteMillisecs + tThirtySecondNoteMillisecs + tSixtyFourthNoteMillisecs,1)
                   else if char 2 of pDur is "." then
@@ -1970,7 +1978,7 @@ end gsInstrumentNames
                   break
                case "t"
                   set the numberformat to "0000.00"
-                  
+
                   if char 2 to 3 of pDur is ".." then
                      return round (tThirtySecondNoteMillisecs + tSixtyFourthNoteMillisecs + tTwoFiftySixthNoteMillisecs, 1)
                   else if char 2 of pDur is "." then
@@ -2000,30 +2008,30 @@ end gsInstrumentNames
             end switch
          end if
       end BPMppbDurationToMillisecs
-      
+
       -- BPM to ms Formula
       -- There are 60,000 milliseconds in a minute
       -- so if you want to work out how long a beat is in milliseconds for any tempo, simply follow the below formula:
       -- 60,000 / BPM = one beat in milliseconds
-      
+
       -- Example 1: 60,000 / 100 bpm = 600ms
       -- This means that if you want to set your delay pedal for a one beat delay and the tempo is 100 bpm,
       -- you should set your pedal to 600ms. What if you want to set your delay to repeat eighth notes?
       -- Simply halve the time for one beat. So an eighth note at 100 bpm is 300ms (600 / 2).
-      
+
       -- Example 2: 60,000 / 85 bpm = 705.88ms
       -- This means that if you want to set your delay pedal for a half-beat delay and the tempo is 85 bpm,
       -- you should set your pedal to 353ms (705.88ms / 2 = half a beat).
-      
+
       -- In this example the exact time of a beat is 705.88ms, so it’s important not to round it off to 706 before calculating the length of different notes.
       -- Depending on what you’re calculating, rounding off before the calculation can throw your answer out quite a bit.
-      
+
       -- Always remember that this simple formula works out what one beat is in milliseconds,
       -- so if you want to set it to 8th notes, 16th notes or anything else,
       -- you will need to work out the difference as shown later.
-      
+
       --------------------------------------------------------------
-      
+
       function setMIDItrack tempoBPM, theMIDIMsgList, InstumentNum
          put empty into theMIDItrack
          -------------- SET SMPTE FPS & OFFSET
@@ -2065,14 +2073,14 @@ end gsInstrumentNames
          put  binaryEncode("C",0) & binaryEncode("H2H2H2","FF","51","03") & binaryEncode("H6",it) after theMIDItrack  -- set tempo
          ------[deltaTime=0] & [MetaEvent = 255 (0xFF)] & [eventType=81 (0x51)] & [length=3] & [microSecsPerQrtNtBeat 0-8355711]
          --------------- END SET TEMPO--------------
-         
+
          --------------- SET TIME SIGNATURE------------
          put 4 into TimeSigNumerator -- Numerator is a literal value
          --- the denominator is specified as the value to which the power of 2 must be raised to equal the number of subdivisions per whole note.
          --  For example, a value of 0 means a whole note because 2 to the power of 0 is 1 (whole note), a value of 1 means a half-note
          -- because 2 to the power of 1 is 2 (half-note), and so on. 0=1, 1=2, 2=4, 3=8, 4=16, 5=32, 6=64, 7=128, etc. --  4=2^4 = 16 and 4/16 = 4
          put 2 into TimeSigDenominator  --  4=2^4 = 16 and Num=4/Denom=16 = 4 = beats per measure
-         
+
          put 24 into TimeSigMetroClicksPerQtrNt
          put 8 into TimeSigThtySndsPerQrtNt  --- when would this not be 8 ??? ---
          put  binaryEncode("C",0) & binaryEncode("H2H2H2","FF","58","04") & \
@@ -2080,19 +2088,19 @@ end gsInstrumentNames
                binaryEncode("C",TimeSigMetroClicksPerQtrNt) & binaryEncode("C",TimeSigThtySndsPerQrtNt) after theMIDItrack
          ------[deltaTime=0] & [MetaEvent = 255 (0xFF)] & [eventType=88 (0x58)] & [length=4] & ...
          --------------- END SET TIME SIGNATURE------------
-         
+
          --- SET INSTRUMENT PROGRAM NUM
          put binaryEncode("H2","C9") into msgTypeByte --
          put binaryEncode("C",25) into instrumentProgramNum -- 25=GS Electronic Drum Kit
          get wholeNumToVLQ(0) -- pack delta time
          put binaryEncode("H"&length(it),it) after theMIDItrack
          put msgTypeByte & instrumentProgramNum after theMIDItrack
-         
+
          --Delta Time msgTypeByte & theVelocityByte after theMIDItrack  -- note & velocity
          --    put abstT2Str( 2 ) & "," & "C" & partHex & num2Hex( aNum -1, 2 ) & return after resultHex -- program change( CN#12 )
-         
+
          -- END SET INSTRUMENT
-         
+
          put 0 into timeSinceLastEvent
          put 0 into tLastTimeStamp
          repeat with lineCnt = 1 to the number of lines in theMIDIMsgList
@@ -2159,13 +2167,13 @@ end gsInstrumentNames
          get wholeNumToVLQ(10) -- pack delta time
          put binaryEncode("H"&length(it),it) after theMIDItrack --Delta Time
          put binaryEncode("H6","FF2F00") after theMIDItrack  -- end of track
-         
+
          --------------- INSERT BEGINNING OF TRACK w/Length ---------------
          put "MTrk" & binaryEncode("M",length(theMIDItrack)) before theMIDItrack -- add begining of track + 4 byte chunk length
          ---------------
          return theMIDItrack
       end setMIDItrack
-      
+
       function setMIDIHeader formatType, numOfTracks, timeDivision
          put "MThd" into theMIDIheader
          put binaryEncode("M",6) after theMIDIheader -- 4 byte chunk length (always=6 in decimal) - Network byte order
@@ -2231,7 +2239,7 @@ end gsInstrumentNames
          ---------------
          return theMIDIheader
       end setMIDIHeader
-      
+
       --Offset	Length	Type	Description	Value
       --0x00	4	char[4]	chunk ID	"MThd" (0x4D546864)
       --0x04	4	dword	chunk size	6 (0x00000006)
@@ -2244,18 +2252,18 @@ end gsInstrumentNames
       --This value is represents either ticks per beat or frames per second.
       -- If the top bit of the word (bit mask 0x8000) is 0, the following 15 bits describe the time division in ticks per beat.
       --Otherwise the following 15 bits (bit mask 0x7FFF) describe the time division in frames per second.
-      
+
       ----Ticks per beat translate to the number of clock ticks or track delta positions (described in the Track Chunk section)
       -- in every quarter note of music. Common values range from 48 to 960, although newer sequencers go far beyond
       -- this range to ease working with MIDI and digital audio together.
-      
+
       ----Frames per second is defined by breaking the remaining 15 bytes into two values. The top 7 bits (bit mask 0x7F00)
       -- define a value for the number of SMPTE frames and can be 24, 25, 29 (for 29.97 fps) or 30.
       -- The remaining byte (bit mask 0x00FF) defines how many clock ticks or track delta positions there are per frame.
       -- So a time division example of 0x9978 could be broken down into it's three parts: the top bit is one,
       -- so it is in SMPTE frames per second format, the following 7 bits have a value of 25 (0x19) and the bottom byte has a value of 120 (0x78).
       -- This means the example plays at 24 frames per second SMPTE time and has 120 ticks per frame.
-      
+
       function getMIDIHeader theMIDIFile
          if there is not a file theMIDIFile then
             return "Error opening file " & cr & theMIDIFile
@@ -2306,8 +2314,8 @@ end gsInstrumentNames
          close file theMIDIFile
          return theMIDIheaderInfo
       end getMIDIHeader
-      
-      
+
+
       function wholeNumToVLQ theWholeNum
          -- baseConvert(number,originalBase,destinationBase)
          if theWholeNum < 127 then -- its a single byte value and theres no need to process it
@@ -2360,7 +2368,7 @@ end gsInstrumentNames
          -- return the7bitBytes
          return VQLinHex
       end wholeNumToVLQ
-      
+
       function isWholeNumString theString
          put the number of chars in theString into y
          repeat with x = 1 to y
@@ -2371,7 +2379,7 @@ end gsInstrumentNames
          end repeat
          return true
       end isWholeNumString
-      
+
       function VLQtoWholeNum theHexVLQ
          -- The number must be an integer between zero and 4,294,967,295
          -- or baseConvert fails to produce accurate results
@@ -2416,7 +2424,7 @@ end gsInstrumentNames
          end repeat
          return baseConvert(WholeNumInBinary,2,10)
       end VLQtoWholeNum
-      
+
       function isHexString theString
          if char 1 to 2 of theString is "0x" then delete char 1 to 2 of theString
          put the number of chars in theString into y
@@ -2426,7 +2434,7 @@ end gsInstrumentNames
             end if
          end repeat
       end isHexString
-      
+
       --Offset	Length	Type	Description	Value
       --0x00	4	char[4]	chunk ID	"MThd" (0x4D546864)
       --0x04	4	dword	chunk size	6 (0x00000006)
@@ -2439,18 +2447,18 @@ end gsInstrumentNames
       --This value is represents either ticks per beat or frames per second.
       -- If the top bit of the word (bit mask 0x8000) is 0, the following 15 bits describe the time division in ticks per beat.
       --Otherwise the following 15 bits (bit mask 0x7FFF) describe the time division in frames per second.
-      
+
       ----Ticks per beat translate to the number of clock ticks or track delta positions (described in the Track Chunk section)
       -- in every quarter note of music. Common values range from 48 to 960, although newer sequencers go far beyond
       -- this range to ease working with MIDI and digital audio together.
-      
+
       ----Frames per second is defined by breaking the remaining 15 bytes into two values. The top 7 bits (bit mask 0x7F00)
       -- define a value for the number of SMPTE frames and can be 24, 25, 29 (for 29.97 fps) or 30.
       -- The remaining byte (bit mask 0x00FF) defines how many clock ticks or track delta positions there are per frame.
       -- So a time division example of 0x9978 could be broken down into it's three parts: the top bit is one,
       -- so it is in SMPTE frames per second format, the following 7 bits have a value of 25 (0x19) and the bottom byte has a value of 120 (0x78).
       -- This means the example plays at 24 frames per second SMPTE time and has 120 ticks per frame.
-      
+
       --x: output amount null characters
       --a: encode amount characters as characters, padding with nulls
       --A: encode amount characters as characters, padding with spaces
@@ -2470,10 +2478,10 @@ end gsInstrumentNames
       --M: encode amount numbers as unsigned 4-byte integers in network byte order
       --f: encode amount numbers as single-precision floating-point numbers
       --d: encode amount numbers as double-precision floating-point numbers
-      
-      
+
+
       ------------ SOUNDFONT2 / DLS Utils --------------------------------
-      
+
       -- getRIFFHeaderInfo() returns RIFF four-char OStype code, comma, and the RIFF Length
       -- put getRIFFHeaderInfo(tRIFFfile) into tRIFFInfo
       -- put item 1 of tRIFFInfo into pRIFFtype
@@ -2501,17 +2509,17 @@ end gsInstrumentNames
             return "ERROR: file does not exist"
          end if
       end getRIFFHeaderInfo
-      
+
       /*
       Summary: Use scanStdSoundBankDirectories to scan filesysten directories where
       soundbank files are normally found. On macOS and Windows this should return the
       path to the standard Roland GS Soundbank.
-      
+
       Name: SF2orDLSmagicNumCheck
-      
+
       Example:
       if scanStdSoundBankDirectories() into fld "Soundbank Files"
-      
+
       Description:
       Use scanStdSoundBankDirectories to scan filesysten directories where
       soundbank files are normally found. On macOS and Windows this should return the
@@ -2541,7 +2549,7 @@ end gsInstrumentNames
                set the folder to "/usr/share/soundfonts/"
             end if
          end if
-         
+
          put the files into tFileNames
          filter lines of tFileNames with "*.sf2" into tSF2Names
          filter lines of tFileNames with "*.dls" into tDLSNames
@@ -2550,13 +2558,13 @@ end gsInstrumentNames
             put cr & tFileNames after tSoundBankFileNames
             repeat for each line theLine in tFileNames
                set cursor to busy
-               
+
                if theLine <> empty then
                   put cr& "/Library/Audio/Sounds/Banks/" & theLine after tPathList
                end if
             end repeat
          end if
-         
+
          put empty into tFileNames
          put specialFolderPath("Home") & "/Library/Audio/Sounds/Banks/" into tWrkDir
          --put tWrkDir
@@ -2584,16 +2592,16 @@ end gsInstrumentNames
          -- set the PathList of me to tPathList
          return tPathList
          -- put the PathList of me
-      end scanStdSoundBankDirectories
-      
+end scanStdSoundBankDirectories
+
       /*
       Summary: Use isSF2orDLS to ensure that the given file contains a RIFF
       header and has a type signature for either an SF2 or DLS Soundbank.
       Name: SF2orDLSmagicNumCheck
-      
+
       Example:
       if SF2orDLSmagicNumCheck("~/Path/To/ASoundbank.exs") is false then exit to top
-      
+
       Description:
       SF2orDLSmagicNumCheck returns true if the given file contains a RIFF
       header and also conatains a type signature for either an SF2 or DLS Soundbank.
@@ -2607,7 +2615,7 @@ function isSF2orDLS pFile
          return "SFBK"
       else if it contains "DLS " then
          return "DLS"
-      else 
+      else
          return false
       end if
    else
@@ -2793,14 +2801,14 @@ function getDLSInfo pRIFFfile
 end getDLSInfo
 
 function getDLSCopyRightInfo pRIFFfile
-   if there is not a file pRIFFfile then 
+   if there is not a file pRIFFfile then
       return "ERROR not a valid file path"
       exit getDLSCopyRightInfo
    end if
    open file pRIFFfile for binary read
-   read from file pRIFFfile for 4 bytes 
+   read from file pRIFFfile for 4 bytes
    put it into tRIFFType -- Should be 'RIFF'
-   if tRIFFType <> "RIFF" then 
+   if tRIFFType <> "RIFF" then
       put "ERROR file is not RIFF! SIG= " & tRIFFType & " : " & tRIFFformType & cr after tDump
       close file pRIFFfile
       return tDump
@@ -2808,9 +2816,9 @@ function getDLSCopyRightInfo pRIFFfile
    end if
    read from file pRIFFfile for 4 bytes
    get binaryDecode("I",it,tRIFFLength)
-   read from file pRIFFfile for 4 bytes 
+   read from file pRIFFfile for 4 bytes
    put it into tRIFFformType-- Should be 'DLS '
-   if tRIFFformType <> "DLS " then 
+   if tRIFFformType <> "DLS " then
       put "ERROR file is not a DLS file! SIG= " & tRIFFType & " : " & tRIFFformType & cr after tDump
       close file pRIFFfile
       return tDump
@@ -2825,7 +2833,7 @@ function getDLSCopyRightInfo pRIFFfile
       --      put it into tChunkType
       -- put "Copyright info found" & cr after tDump
       read from file pRIFFfile for 4 bytes
-      if it is empty then 
+      if it is empty then
          exit repeat
       else
          get binaryDecode("I",it,tLength)
@@ -2836,7 +2844,7 @@ function getDLSCopyRightInfo pRIFFfile
          if tCopyrightInfo <> tPrevCopyrightInfo and tCopyrightInfo <> (the last line of tCopyRightsList) then
             put tCopyrightInfo & cr after tCopyRightsList
             put tCopyrightInfo into tPrevCopyrightInfo
-         else 
+         else
             put tCopyrightInfo into tPrevCopyrightInfo
          end if
       end if
@@ -2845,7 +2853,7 @@ function getDLSCopyRightInfo pRIFFfile
    sort tCopyRightsList
    put line 1 of tCopyRightsList into tNewList
    repeat with tCounter = 2 to the number of lines in tCopyRightsList
-      if tNewList contains ( line tCounter of tCopyRightsList ) then 
+      if tNewList contains ( line tCounter of tCopyRightsList ) then
          next repeat
       else
          put line tCounter of tCopyRightsList & cr after tNewList
@@ -2862,14 +2870,14 @@ function getDLSCopyRightInfo pRIFFfile
 end getDLSCopyRightInfo
 
 function getDLSEngineersInfo pRIFFfile
-   if there is not a file pRIFFfile then 
+   if there is not a file pRIFFfile then
       return "ERROR not a valid file path"
       exit getDLSEngineersInfo
    end if
    open file pRIFFfile for binary read
-   read from file pRIFFfile for 4 bytes 
+   read from file pRIFFfile for 4 bytes
    put it into tRIFFType -- Should be 'RIFF'
-   if tRIFFType <> "RIFF" then 
+   if tRIFFType <> "RIFF" then
       put "ERROR file is not RIFF! SIG= " & tRIFFType & " : " & tRIFFformType & cr after tDump
       close file pRIFFfile
       return tDump
@@ -2877,16 +2885,16 @@ function getDLSEngineersInfo pRIFFfile
    end if
    read from file pRIFFfile for 4 bytes
    get binaryDecode("I",it,tRIFFLength)
-   read from file pRIFFfile for 4 bytes 
+   read from file pRIFFfile for 4 bytes
    put it into tRIFFformType-- Should be 'DLS '
-   if tRIFFformType <> "DLS " then 
+   if tRIFFformType <> "DLS " then
       put "ERROR file is not a DLS file! SIG= " & tRIFFType & " : " & tRIFFformType & cr after tDump
       close file pRIFFfile
       return tDump
       exit getDLSEngineersInfo
    end if
    put "FILE IS RIFF DLS, Sig4CC = " & tRIFFType & " : " & tRIFFformType &  cr after tDump
-   
+
    repeat
       read from file pRIFFfile until "IENG"
       if it is empty then exit repeat
@@ -2896,14 +2904,14 @@ function getDLSEngineersInfo pRIFFfile
       put 0 into tLength
       read from file pRIFFfile for 4 bytes
       get binaryDecode("I",it,tLength)
-      
+
       -- put "Length: " & tLength & cr after tDump
       read from file pRIFFfile for tLength bytes
       put it into tEngineerInfo
       if tEngineerInfo <> tPrevEngineerInfo and tEngineerInfo <> (the last line of tEngineersList) then
          put tEngineerInfo & cr after tEngineersList
          put tEngineerInfo into tPrevEngineerInfo
-      else 
+      else
          put tEngineerInfo into tPrevEngineerInfo
       end if
    end repeat
@@ -2911,7 +2919,7 @@ function getDLSEngineersInfo pRIFFfile
    sort tEngineersList
    put line 1 of tEngineersList into tNewList
    repeat with tCounter = 2 to the number of lines in tEngineersList
-      if ( line tCounter of tEngineersList ) is in tNewList then 
+      if ( line tCounter of tEngineersList ) is in tNewList then
          next repeat
       else
          put line tCounter of tEngineersList & cr after tNewList
@@ -3059,13 +3067,13 @@ function getSF2Instruments tRIFFfile
    get binaryDecode("I",it,tRIFFLength)
    -- put "RIFF Byte Length=" & tLength & cr after tDump
    read from file tRIFFfile for 4 bytes
-   
+
    if it <> "sfbk" then
       put "ERROR File is not a SoundFont File, FormType 4CC = " & it & cr into tDump
    else
       put "FILE IS SoundFont, Sig4CC = " & it & cr into tDump
    end if
-   
+
    read from file tRIFFfile for 4 bytes
    put it into tChunkType
    put "LIST 4CC = " & tLISTType & cr after tDump
@@ -3092,19 +3100,19 @@ function getSF2Instruments tRIFFfile
          put it into tChunkType
          put "LIST Type 4CC = " & tChunkType & cr after tDump
       end if
-      
+
    end if
-   
+
    put empty into tSoundPresets
-   
+
    read from file tRIFFfile for 4 bytes
    if it = "phdr" then
       put "phdr: " & it & cr after tDump
-      
+
       read from file tRIFFfile for 4 bytes
       get binaryDecode("I",it,t4bytes)
       put "length = " & t4bytes & cr after tDump
-      
+
       repeat 500
          read from file tRIFFfile for 20 bytes
          put it into tSoundPresetName
