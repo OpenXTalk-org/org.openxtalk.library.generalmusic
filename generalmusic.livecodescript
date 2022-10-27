@@ -18,15 +18,6 @@ on extensionFinalize
    remove the script of me from back
 end extensionFinalize
 
-function GetHyperSoundsFont
-   set the itemDelimiter to slash
-   get the effective filename of me -- this stack
-   put item 1 to -2 of it into tFolder
-   put "/resources/HyperSound.sf2" after tFolder
-   put tFolder
-   return tFolder
-end GetHyperSoundsFont
-
 /**
 
 Title: OpenXTalk.org General Music Library
@@ -91,7 +82,9 @@ private command __Initialize
       put it into defaultSoundBank
       put defaultSoundBank into selectedSoundBank
    end if
-
+   if there is not a file selectedSoundBank then
+      put GetHyperSoundsFont() into selectedSoundBank
+   end if
    if the platform is "Linux" then
       if "fluidsynth" is in the loadedExtensions then
          try
@@ -103,17 +96,51 @@ private command __Initialize
          end try
       end if
    end if
-
    put gsInstrumentNames(false,"list") into instrumentNames
 end __Initialize
 
+
+/**
+Name: GetHyperSoundsFont
+
+Type: function
+
+Syntax: GetHyperSoundsFont()
+
+Summary: Retrieve the path to the HyperSounds font included with General Music Library resources.
+
+Introduced: 1.0
+
+OS: mac,win,linux,ios,android
+
+Platforms: desktop,mobile
+
+Example:
+put GetHyperSoundsFont() into tSoundFontPath
+
+Returns: path to the HyperSounds soundfont included with General Music.
+This is a tiny sound bank consisting of only 3 patches
+
+Description:
+Retrieve the path to the HyperSounds soundfont included with General Music.
+HyperSounds is a tiny soundbank consisting of only the three sound patches based on the
+three sounds included with the original xTalk IDE, HyperCard.
+The sounds are 1) Harpsichord or HypsiChord, 2) Flute or HyperFlute, and 3) Boing
+or HyperBoing. You can select these sounds by name when using the PlayPMD command.
+
+Tags: Music, MIDI, audioClip, HyperCard
+*/
+function GetHyperSoundsFont
+   set the itemDelimiter to slash
+   get the effective filename of me -- this stack
+   put item 1 to -2 of it into tFolder
+   put "/resources/HyperSounds.sf2" after tFolder
+   -- put tFolder
+   return tFolder
+end GetHyperSoundsFont
+
 ---- makeSMF (PM modded version) ---
 -- originally by UDI --
-
---on closeCard
---  playPmd "Clear" -- stop music & delete temporary mid file
---end closeCard
-
 ----------------playPmd script by UDI 2002.12.08-------------
 -- playPmd notes, playTempo, defInst
 -- param notes = Score string to play or make SMF.
@@ -131,7 +158,6 @@ end __Initialize
 -----------------------------------------------------
 
 ------------------------------ playPMD as a videoClip (works on Android 2+) ---------------------------------------------
-
 /**
 Name: playPMD
 
@@ -185,14 +211,35 @@ on playPMD pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
       repeat with x = 1 to the paramCount
          -- put empty into tParam
          put param(x) into tParam
-         if tParam is in instrumentNames then
-            get lineoffset(tParam,instrumentNames,0)
-            if it <> 0 then
-               put it - 1  into instNum
-               next repeat
-            else
-               -- put 0 into instNum
-               next repeat
+         -- GeneralMusic lib fallback sounds (from HyperCard)
+         if tParam is among the items of "Boing,HyperBoing,Flute,HyperFlute,Harpsichord,Hypsichord" then
+            put getHyperSoundsFont() into soundBankFile
+            switch tParam
+               case "Boing"
+               case "HyperBoing"
+                  put 3 into instNum
+                  break
+               case "Flute"
+               case "HyperFlute"
+                  put 2 into instNum
+                  break
+               case "Harpsichord"
+               case "Hypsichord"
+               default
+                  put 1 into instNum
+                  break
+            end switch
+            next repeat
+         else
+            if tParam is in instrumentNames then -- check if it's a General MiDI sound name
+               get lineoffset(tParam,instrumentNames,0)
+               if it <> 0 then
+                  put it - 1  into instNum
+                  next repeat
+               else
+                  -- put 0 into instNum
+                  next repeat
+               end if
             end if
          end if
          if word 1 of tParam is "tempo" or word 1 of tParam is "Tempo" then
@@ -251,10 +298,9 @@ on playPMD pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
             playPMD_AVMIDIPlayer tNotes,playTempo,instNum,bankNum,soundBankFile
          else if it contains "fluidSynth" then
             if fsEnsureInitialize() then
-               fsMIDIPlayerInit
                -- put "FluidSynth Initialized"
+               playPMD_FluidSynth tNotes, playTempo,instNum,bankNum, soundBankFile
             end if
-            playPMD_FluidSynth tNotes, playTempo,instNum,bankNum, soundBankFile
          end if
          break
       case "iphone"
@@ -1653,6 +1699,36 @@ function evaluateMetaEventTypeByte theHex
    end switch
 end evaluateMetaEventTypeByte
 
+
+/**
+Name: controllerNumToName
+
+Type: function
+
+Syntax: controllerNumToName(pMIDICCNumber)
+
+Summary: Retrieve the path to the HyperSounds font included with General Music Library resources.
+
+Introduced: 1.0
+
+OS: mac,win,linux,ios,android
+
+Platforms: desktop,mobile
+
+Example:
+put controllerNumToName(7) into tContinuousControllerName -- string:"Volume (coarse)""
+
+Parameters:
+pMIDICCNumber: The MIDI Continuous Controller number, 0-127, to get the huamn readable name of.
+
+Returns: Returns the human readale name of a MIDI Continuous Controller (CC) corrisponding to a number parameter
+
+Description:
+Returns the human readale name of a MIDI Continuous Controller (CC) corrisponding
+to a number parameter.
+
+Tags: Music, MIDI
+*/
 function controllerNumToName ccNum
    return item ccNum+1 of ("Bank Select (coarse),Modulation Wheel (coarse),Breath controller (coarse),Foot Pedal (coarse),Undefined,"&\
          "Portamento Time (coarse),Data Entry (coarse),Volume (coarse),Balance (coarse),Undefined,Pan position (coarse),Expression (coarse),"&\
@@ -1672,6 +1748,35 @@ function controllerNumToName ccNum
          "Mono Operation,Poly Operation")
 end controllerNumToName
 
+/**
+Name: midiControllerNames
+
+Type: function
+
+Syntax: midiControllerNames()
+
+Summary:
+
+Introduced: 1.0
+
+OS: mac,win,linux,ios,android
+
+Platforms: desktop,mobile
+
+Example:
+put midiControllerNames()
+
+Parameters:
+
+Returns: a line delimited list of GeneralMIDI standard controller names
+
+Description:
+Returns 127 line-delimited list of the human readable names for the GeneralMIDI
+standard MIDI Continuous Controller (CC) names. The list is suitable for assigning
+to the text of a menu-button.
+
+Tags: Music, MIDI
+*/
 function midiControllerNames
    put "Bank Select (coarse),Modulation Wheel (coarse),Breath controller (coarse),Foot Pedal (coarse),Undefined,"&\
          "Portamento Time (coarse),Data Entry (coarse),Volume (coarse),Balance (coarse),Undefined,Pan position (coarse),Expression (coarse),"&\
@@ -1795,7 +1900,7 @@ function midiNoteNameToNum midiNoteName
    return it - 1
 end midiNoteNameToNum
 
-      function gsPatchNumToName gmPatchNum, drumChannel
+function gsPatchNumToName gmPatchNum, drumChannel
          if drumChannel <> "ch10" and drumChannel <> "drums" and drumChannel <> true then -- "ch10" is reserved for drums ("ch11" additionally in GM2 spec) -- and theChannel <> "ch11"
             return item (gmPatchNum+1) of ("Acoustic Grand Piano,Bright Acoustic Piano,Electric Grand Piano,Honkytonk Piano,Rhodes Piano,Chorused Piano,"&\
                   "Harpsichord,Clavinet,Celesta,Glockenspiel,Music Box,Vibraphone,Marimba,Xylophone,Tubular Bells,Dulcimer,Hammond Organ,Percussive Organ,"&\
@@ -1815,8 +1920,38 @@ end midiNoteNameToNum
                   "58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,"&\
                   "100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,MT-32 Kit")
          end if
-      end gsPatchNumToName
+end gsPatchNumToName
 
+
+/**
+Name: gsInstrumentNames
+
+Type: function
+
+Syntax: gsInstrumentNames()
+
+Summary:
+
+Introduced: 1.0
+
+OS: mac,win,linux,ios,android
+
+Platforms: desktop,mobile
+
+Example:
+put gsInstrumentNames()
+
+Parameters:
+
+Returns: a line delimited list of GeneralMIDI standard instrument names
+
+Description:
+Returns 127 line-delimited list of the human readable names for the GeneralMIDI
+standard instrument names. The list is suitable for assigning
+to the text of a menu-button.
+
+Tags: Music, MIDI
+*/
 function gsInstrumentNames pDrumPatches, pReturnType
    if pDrumPatches <> "ch10" and pDrumPatches <> "drums" and pDrumPatches <> true then -- "ch10" is reserved for drums ("ch11" additionally in GM2 spec) -- and theChannel <> "ch11"
       put "Acoustic Grand Piano,Bright Acoustic Piano,Electric Grand Piano,Honkytonk Piano,Rhodes Piano,Chorused Piano,"&\
@@ -2527,72 +2662,75 @@ end gsInstrumentNames
       path to the standard Roland GS Soundbank.
       */
       -- global TheSoundBanks; put scanStdSoundBankDirectories() into TheSoundBanks; put TheSoundBanks;
-      function scanStdSoundBankDirectories
-         put "gs_instruments.dls" into tSoundBankFileNames
-         if the platform is "MacOS" then
-            put "/System/Library/Components/CoreAudio.component/Contents/Resources/gs_instruments.dls" into tPathList
-            set the folder to "/Library/Audio/Sounds/Banks/"
-         else if the platform is "Win32" then
-            if there is a file "C:\windows\system32\drivers\gm.dls" then
-               put  "C:\windows\system32\drivers\gm.dls" into tPathList
-               set the folder to "C:\Windows\system32\drivers\"
-            else if there is a file "C:\Windows\SysWOW64\drivers\gm.dls" then
-               put  "C:\windows\SysWOW64\drivers\gm.dls" into tPathList
-               set the folder to "C:\Windows\SysWOW64\drivers\"
-            end if
-         else if the platform is "Linux" then
-            if there is a file "/usr/share/sounds/sf2/FluidR3_GM.sf2" then
-               put  "/usr/share/sounds/sf2/FluidR3_GM.sf2" into tPathList
-               -- Maybe also check for "GeneralUser.sf2"
-               set the folder to "/usr/share/sounds/sf2/"
-            else if there is a file "/usr/share/soundfonts/default.sf2" then
-               put  "/usr/share/soundfonts/default.sf2" into tPathList
-               set the folder to "/usr/share/soundfonts/"
-            end if
-         end if
+function scanStdSoundBankDirectories
+   if the platform is "MacOS" then
+      put "gs_instruments.dls" into tSoundBankFileNames
+      put "/System/Library/Components/CoreAudio.component/Contents/Resources/gs_instruments.dls" into tPathList
+      set the folder to "/Library/Audio/Sounds/Banks/"
+   else if the platform is "Win32" then
+      if there is a file "C:\windows\system32\drivers\gm.dls" then
+         put  "C:\windows\system32\drivers\gm.dls" into tPathList
+         set the folder to "C:\Windows\system32\drivers\"
+      else if there is a file "C:\Windows\SysWOW64\drivers\gm.dls" then
+         put  "C:\windows\SysWOW64\drivers\gm.dls" into tPathList
+         set the folder to "C:\Windows\SysWOW64\drivers\"
+      end if
+   else if the platform is "Linux" then
+      if there is a file "/usr/share/sounds/sf2/FluidR3_GM.sf2" then
+         put  "/usr/share/sounds/sf2/FluidR3_GM.sf2" into tPathList
+         -- Maybe also check for "GeneralUser.sf2"
+         set the folder to "/usr/share/sounds/sf2/"
+      else if there is a file "/usr/share/soundfonts/default.sf2" then
+         put  "/usr/share/soundfonts/default.sf2" into tPathList
+         set the folder to "/usr/share/soundfonts/"
+      end if
+   end if
 
-         put the files into tFileNames
-         filter lines of tFileNames with "*.sf2" into tSF2Names
-         filter lines of tFileNames with "*.dls" into tDLSNames
-         put tSF2Names &cr& tDLSNames into tFileNames
-         if tFileNames<> empty then
-            put cr & tFileNames after tSoundBankFileNames
-            repeat for each line theLine in tFileNames
-               set cursor to busy
+   put cr & "HyperSounds.sf2" after tSoundBankFileNames
+   put cr& GetHyperSoundsFont() after tPathList
 
-               if theLine <> empty then
-                  put cr& "/Library/Audio/Sounds/Banks/" & theLine after tPathList
-               end if
-            end repeat
-         end if
+   put the files into tFileNames
+   filter lines of tFileNames with "*.sf2" into tSF2Names
+   filter lines of tFileNames with "*.dls" into tDLSNames
+   put tSF2Names &cr& tDLSNames into tFileNames
+   if tFileNames<> empty then
+      put cr & tFileNames after tSoundBankFileNames
+      repeat for each line theLine in tFileNames
+         set cursor to busy
 
-         put empty into tFileNames
-         put specialFolderPath("Home") & "/Library/Audio/Sounds/Banks/" into tWrkDir
-         --put tWrkDir
-         set the folder to tWrkDir
-         put the files into tFileNames
-         filter lines of tFileNames with "*.sf2" into tSF2Names
-         filter lines of tFileNames with "*.dls" into tDLSNames
-         if (tSF2Names & tDLSNames) <> empty then
-            --put cr after tPathList
-            put cr after tSoundBankFileNames
+         if theLine <> empty then
+            put cr& "/Library/Audio/Sounds/Banks/" & theLine after tPathList
          end if
-         put tSF2Names &cr& tDLSNames into tFileNames
-         if tFileNames<> empty then
-            put tFileNames after tSoundBankFileNames
-            repeat for each line theLine in tFileNames
-               set cursor to busy
-               if theLine <> empty then
-                  put cr& tWrkDir & theLine after tPathList
-               end if
-            end repeat
-            -- put tPathList after msg
+      end repeat
+   end if
+
+   put empty into tFileNames
+   put specialFolderPath("Home") & "/Library/Audio/Sounds/Banks/" into tWrkDir
+   --put tWrkDir
+   set the folder to tWrkDir
+   put the files into tFileNames
+   filter lines of tFileNames with "*.sf2" into tSF2Names
+   filter lines of tFileNames with "*.dls" into tDLSNames
+   if (tSF2Names & tDLSNames) <> empty then
+      --put cr after tPathList
+      put cr after tSoundBankFileNames
+   end if
+   put tSF2Names &cr& tDLSNames into tFileNames
+   if tFileNames<> empty then
+      put tFileNames after tSoundBankFileNames
+      repeat for each line theLine in tFileNames
+         set cursor to busy
+         if theLine <> empty then
+            put cr& tWrkDir & theLine after tPathList
          end if
-         filter lines of tSoundBankFileNames without empty
-         -- put tSoundBankFileNames into me
-         -- set the PathList of me to tPathList
-         return tPathList
-         -- put the PathList of me
+      end repeat
+      -- put tPathList after msg
+   end if
+   filter lines of tSoundBankFileNames without empty
+   -- put tSoundBankFileNames into me
+   -- set the PathList of me to tPathList
+   return tPathList
+   -- put the PathList of me
 end scanStdSoundBankDirectories
 
       /*
