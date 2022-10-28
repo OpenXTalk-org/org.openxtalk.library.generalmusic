@@ -532,17 +532,17 @@ Attempts to play the Playsentence Music Data (PMD), optionally starting at the s
 in beats per minute, optionally with a given MIDI patch number (need to add 'bank-patch' suport),
 with the optionally provided Soubdbank (.sf2 or .dls) file. The default values are 120(BPM)
 and sound patch 1 (GM "Piano 1"),loading the first SoundBankFile found in default locations.
-On macOS this should load  the default Roland GS Soundbank (which is the same small Soundbank
-   from the 1990s that came with QuickTime v2.5+), on iOS no default soundbank is provided
-   by the OS and so one must be provided.
-   PLEASE NOTE that this command will do nothing (fail silently) if the AVMIDIPLayer
-   builder extension is not loaded therefore scripts should check for the presence of
-   the AVMIDIPLayer libray before calling this command directly, or use the platform aware
-   version, PlayPMD which should try to use the best musical playback engine currenlty availble.
+On macOS this should load the default Roland GS Soundbank, a small Soundbank
+from the 1990s that came with QuickTime v2.5+, on iOS no default soundbank is provided
+by the OS and so one must be provided.
+PLEASE NOTE that this command will do nothing (fail silently) if the AVMIDIPLayer
+builder extension is not loaded therefore scripts should check for the presence of
+the AVMIDIPLayer libray before calling this command directly, or use the platform aware
+version, PlayPMD which should try to use the best musical playback engine currenlty availble.
 
-   Tags: Music, MIDI, audioClip
-   **/
-   on playPMD_AVMIDIPlayer tNotes, playTempo, instNum, bankNum, soundBankFile
+Tags: Music, MIDI, audioClip
+**/
+on playPMD_AVMIDIPlayer tNotes, playTempo, instNum, bankNum, soundBankFile
       -- put tNotes, playTempo, instNum, bankNum, soundBankFile
       -- set dontUseQT to false -- long time Deprecated now -- PM 2/10/22
       put specialFolderPath( "Temporary" ) & "/playPmdTemp.mid" into tempFilePath
@@ -578,16 +578,16 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
             -- playPositionCheck
          end try
       end if
-   end playPMD_AVMIDIPlayer
+end playPMD_AVMIDIPlayer
 
-   on setPlayBtn toPlay
+on setPlayBtn toPlay
       try
          set the enabled of btn "Play" to ( not toPlay )
       end try
       try
          set the enabled of btn "Stop" to ( toPlay )
       end try
-   end setPlayBtn
+end setPlayBtn
 
    -------------------------------------- playPMD using FluidSynth (macOS, Windows, Linux, Android) ------------------------------------------
    /**
@@ -622,20 +622,20 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
    playPMD_FluidSynth ("C4q Ee. Gs..",120,1)
 
    Description:
-   Attempts to play the Playsentence Music Data (PMD), optionally starting at the specified tempo
-   in beats per minute, optionally with a given MIDI patch number (need to add 'bank-patch' suport),
-   with the optionally provided Soubdbank (.sf2 or .dls) file. The default values are 120(BPM)
-   and sound patch 1 (GM "Piano 1"),loading the first SoundBankFile found in default locations
-   On macOS this should load  the default Roland GS Soundbank (which is the same small Soundbank
-      from the 1990s that came with QuickTime v2.5+), on iOS no default soundbank is provided
-      by the OS and so one must be provided.
-      PLEASE NOTE that this command will do nothing (fail silently) if the AVMIDIPLayer
-      builder extension is not loaded therefore scripts should check for the presence of
-      the AVMIDIPLayer libray before calling this command directly, or use the platform aware
-      version, PlayPMD which should try to use the best musical playback engine currenlty availble. \Tags: Music, MIDI, audioClip
+Attempts to play the Playsentence Music Data (PMD), optionally starting at the specified tempo
+in beats per minute, optionally with a given MIDI patch number (need to add 'bank-patch' suport),
+with the optionally provided Soubdbank (.sf2 or .dls) file. The default values are 120(BPM)
+and sound patch 1 (GM "Piano 1"), loading the first SoundBankFile found in the default
+locations for the current OS. If no soundBank file is available then the fallback
+FreeFont.sf2 soundbank, included with the OXT FuildSynth library, will be used.
 
-      **/
-      on playPMD_FluidSynth tNotes, playTempo, instNum, bankNum, soundBankFile
+PLEASE NOTE that this command will do nothing (fail silently) if the AVMIDIPLayer
+builder extension is not loaded therefore scripts should check for the presence of
+the AVMIDIPLayer libray before calling this command directly, or use the platform aware
+version, PlayPMD which should try to use the best musical playback engine currenlty availble. \Tags: Music, MIDI, audioClip
+
+**/
+on playPMD_FluidSynth tNotes, playTempo, instNum, bankNum, soundBankFile
          -- set dontUseQT to false -- long time Deprecated now -- PM 2/10/22
          put specialFolderPath( "Temporary" ) & "/playPmdTemp.mid" into tempFilePath
          if ( tNotes is "stop" ) or ( tNotes is "clear" ) then
@@ -699,7 +699,7 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
       the playSentence string.
 
       Example:
-      PUT playSentenceToMIDIData("C4q Ee. Gs..",120,0) -- get MIDI data at 120BPM plays on "Piano 1"
+      put playSentenceToMIDIData("C4q Ee. Gs..",120,0) -- get MIDI data at 120BPM plays on "Piano 1"
 
       Returns:
       MIDI formated binary data suitable for playback or writing to a standard midi file.
@@ -779,8 +779,8 @@ On macOS this should load  the default Roland GS Soundbank (which is the same sm
       on makeSMF notes, playTempo, defInst, savePath
          put playSentenceToMIDIData( notes, playTempo, defInst ) into midiEvents
          set the cursor to watch
-         set the fileType to "MGRpMidi" -- MIDIGraphy (C)TONTATA
-         --set the fileType to "TVODMidi" -- QuickTime Player
+         --set the fileType to "MGRpMidi" -- MIDIGraphy (C)TONTATA
+         set the fileType to "TVODMidi" -- QuickTime Player
          --
          set the itemDel to "."
          if last item of savePath is not "mid" then
@@ -1991,7 +1991,45 @@ function gsInstrumentNames pDrumPatches, pReturnType
    end switch
 end gsInstrumentNames
 
-      function BPMppbDurationToMillisecs pBPM, pPulsesPerBeat, pDur
+
+/**
+Name: BPMppbDurationToMillisecs
+
+Type: function
+
+Syntax: BPMppbDurationToMillisecs( pBPM, pPulsesPerBeat, [pDur])
+
+Summary: Given Beats-Per-Minute and Pulses Per Beat values returns a time-length in milleseconds
+
+Introduced: 1.0
+
+OS: mac,win,linux,ios,android
+
+Platforms: desktop,mobile
+
+Example:
+put BPMppbDurationToMillisecs(120,48,"s") into tDurationInMilliseconds -- milliseconds length of sixteenth note at 120bpm
+
+Parameters:
+
+pBPM: Beats-Per-Minute, 120 BPM is default
+
+pPulsesPerBeat: defines is the resolution of MIDI timing information, 96 pulses per beat is the default
+
+pDur: an xTalk playSentence duration such as "w" for whole note, down to "x" for 128th notes
+
+Returns: Time-length in milleseconds
+
+Description:
+Given Beats-Per-Minute and Pulses Per-Beat-values returns time-lengths in milleseconds.
+Use this to convert xTalk note durations into milliseconds.
+Dotted-length duration modifiers are allowed ("s." is dotted-sixtenth note, "q3" is a quarter-note-triplet).
+If the duration parameter is empty the returned data will be a line delimited
+list of all playSentence valid note lengths in milliseconds.
+
+Tags: Music, MIDI
+*/
+function BPMppbDurationToMillisecs pBPM, pPulsesPerBeat, pDur
          -- There are 60,000 milliseconds in a minute
          set the numberformat to "00.000"
          if pPulsesPerBeat is empty then
@@ -2056,16 +2094,6 @@ end gsInstrumentNames
             return tDurCalculations
          else
             switch char 1 of pDur
-               case "w"
-                  set the numberformat to "0000.0"
-                  if char 2 to 3 of pDur is ".." then
-                     return trunc(tWholeNoteMillisecs + tHalfNoteMillisecs + tQuarterNoteMillisecs )
-                  else if char 2 of pDur is "." then
-                     return trunc(tWholeNoteMillisecs + tHalfNoteMillisecs )
-                  else
-                     return tWholeNoteMillisecs
-                  end if
-                  break
                case "h"
                   if char 2 to 3 of pDur is ".." then
                      return trunc(tHalfNoteMillisecs + tQuarterNoteMillisecs + tEigthNoteMillisecs )
@@ -2139,7 +2167,16 @@ end gsInstrumentNames
                      return tSixtyFourthNoteTrip
                   end if
                   break
+               case "w"
                default
+                  set the numberformat to "0000.0"
+                  if char 2 to 3 of pDur is ".." then
+                     return trunc(tWholeNoteMillisecs + tHalfNoteMillisecs + tQuarterNoteMillisecs )
+                  else if char 2 of pDur is "." then
+                     return trunc(tWholeNoteMillisecs + tHalfNoteMillisecs )
+                  else
+                     return tWholeNoteMillisecs
+                  end if
                   break
             end switch
          end if
@@ -2400,6 +2437,22 @@ end gsInstrumentNames
       -- so it is in SMPTE frames per second format, the following 7 bits have a value of 25 (0x19) and the bottom byte has a value of 120 (0x78).
       -- This means the example plays at 24 frames per second SMPTE time and has 120 ticks per frame.
 
+      ---
+      /*
+      Summary: Use getMIDIHeader to validate MIDI file formatted data and parse
+      its header information into a human readable format
+
+      Name: getMIDIHeader
+
+      Example:
+      put getMIDIHeader(tMyMIDIFile) into fld "MIDI File Info"
+
+      Description:
+      Use getMIDIHeader to validate MIDI file formatted data and parse
+      its header for information about the file, intial timing info, channels used,
+      atc., into a human readable format
+      */
+
       function getMIDIHeader theMIDIFile
          if there is not a file theMIDIFile then
             return "Error opening file " & cr & theMIDIFile
@@ -2452,6 +2505,10 @@ end gsInstrumentNames
       end getMIDIHeader
 
 
+      --- A util function converts a whole number integer into a string of
+      -- bytes as hex chars which represent a Variable Length Quantity.
+      -- VLQ are 7-bits per byte values of various lengths up to 56 bits ( 8 bytes of 7 bits).
+      -- VLQ is required for writing delta times to MIDI file format files.
       function wholeNumToVLQ theWholeNum
          -- baseConvert(number,originalBase,destinationBase)
          if theWholeNum < 127 then -- its a single byte value and theres no need to process it
@@ -2505,6 +2562,7 @@ end gsInstrumentNames
          return VQLinHex
       end wholeNumToVLQ
 
+      --- A util function to check if a string is a valid as a positive whole number (unsigned integer)
       function isWholeNumString theString
          put the number of chars in theString into y
          repeat with x = 1 to y
@@ -2516,6 +2574,9 @@ end gsInstrumentNames
          return true
       end isWholeNumString
 
+--- A util function converts a Variable Length Quantity (VLQ are 7-bit) string of
+-- bytes as hex chars into normal a whole number values.
+-- VLQ is required for reading delta times in MIDI file format files.
       function VLQtoWholeNum theHexVLQ
          -- The number must be an integer between zero and 4,294,967,295
          -- or baseConvert fails to produce accurate results
@@ -2561,7 +2622,8 @@ end gsInstrumentNames
          return baseConvert(WholeNumInBinary,2,10)
       end VLQtoWholeNum
 
-      function isHexString theString
+--- util function checks if string is valid hex chars
+function isHexString theString
          if char 1 to 2 of theString is "0x" then delete char 1 to 2 of theString
          put the number of chars in theString into y
          repeat with x = 1 to y
@@ -2569,7 +2631,7 @@ end gsInstrumentNames
                return false
             end if
          end repeat
-      end isHexString
+end isHexString
 
       --Offset	Length	Type	Description	Value
       --0x00	4	char[4]	chunk ID	"MThd" (0x4D546864)
@@ -2651,7 +2713,7 @@ end gsInstrumentNames
       soundbank files are normally found. On macOS and Windows this should return the
       path to the standard Roland GS Soundbank.
 
-      Name: SF2orDLSmagicNumCheck
+      Name: scanStdSoundBankDirectories
 
       Example:
       if scanStdSoundBankDirectories() into fld "Soundbank Files"
@@ -2762,6 +2824,18 @@ function isSF2orDLS pFile
    end if
 end isSF2orDLS
 
+/*
+Summary: getSF2Info extracts and returns various metadata information for a given
+SoundFont(.sf2) file.
+
+Example:
+put getDLSCopyRightInfo() into tSoundEngineers
+
+Description:
+getSF2Info extracts and returns various metadata information for a given
+SoundFont(.sf2) file.getSF2Info extracts and returns various metadata information for a given
+SoundFont(.sf2) file, or empty if no metadata is found.
+*/
 function getSF2Info pRIFFfile
    if there is not a file pRIFFfile then
       return "ERROR not a valid file path"
@@ -2932,13 +3006,34 @@ function getSF2Info pRIFFfile
    return tDump
 end getSF2Info
 
+/*
+Summary: getDLSInfo returns the copyright information and the sound engineers info
+for a given DownLoadable Soundbank(.dls) file, if the property is set.
+
+Example:
+put getDLSCopyRightInfo() into tSoundEngineers
+
+Description:
+etDLSInfo returns the copyright information and the sound engineers info
+for a given DownLoadable Soundbank(.dls) file, if the property is set, or empty.
+*/
 function getDLSInfo pRIFFfile
    PUT "Copyright(s): " & getDLSCopyRightInfo(pRIFFfile) into tReturnData
    put the result
    PUT cr & "Sound Engineer(s): " & getDLSEngineersInfo(pRIFFfile) after tReturnData
    return tReturnData
 end getDLSInfo
+/*
+Summary: getDLSCopyRightInfo returns the copyright information for a SoundFont(sf2)
+or DownLoadable Soundbank(.dls) file, if the property is set.
 
+Example:
+put getDLSCopyRightInfo() into tSoundEngineers
+
+Description:
+DLSCopyRightInfo returns the copyright information for a SoundFont(sf2)
+or DownLoadable Soundbank(.dls) file, if the property is set, or empty.
+*/
 function getDLSCopyRightInfo pRIFFfile
    if there is not a file pRIFFfile then
       return "ERROR not a valid file path"
@@ -3008,6 +3103,20 @@ function getDLSCopyRightInfo pRIFFfile
    end if
 end getDLSCopyRightInfo
 
+/*
+Summary: getDLSEngineersInfo returns the names of the Sound Engineers
+responsible for creating a SoundFont (sf2) or DownLoadable Soundbank(.dls) file,
+or returns empty property is not set for the target file
+Name: getDLSEngineersInfo
+
+Example:
+put getDLSEngineersInfo() into tSoundEngineers
+
+Description:
+getDLSEngineersInfo returns the names of the Sound Engineers
+responsible for creating a SoundFont (sf2) or DownLoadable Soundbank(.dls) file,
+or returns empty property is not set for the target file.
+*/
 function getDLSEngineersInfo pRIFFfile
    if there is not a file pRIFFfile then
       return "ERROR not a valid file path"
