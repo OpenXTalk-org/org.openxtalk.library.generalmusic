@@ -2438,23 +2438,21 @@ function BPMppbDurationToMillisecs pBPM, pPulsesPerBeat, pDur
       -- This means the example plays at 24 frames per second SMPTE time and has 120 ticks per frame.
 
       ---
-
       /*
-      Name: getMIDIHeader
-
       Summary: Use getMIDIHeader to validate MIDI file formatted data and parse
       its header information into a human readable format
 
-      Type: function
+      Name: getMIDIHeader
 
       Example:
-      put getMIDIHeader("/path/to/MIDIFile.mid") into fld "MIDI File Info"
+      put getMIDIHeader(tMyMIDIFile) into fld "MIDI File Info"
 
       Description:
       Use getMIDIHeader to validate MIDI file formatted data and parse
       its header for information about the file, intial timing info, channels used,
       atc., into a human readable format
       */
+
       function getMIDIHeader theMIDIFile
          if there is not a file theMIDIFile then
             return "Error opening file " & cr & theMIDIFile
@@ -2827,30 +2825,15 @@ function isSF2orDLS pFile
 end isSF2orDLS
 
 /*
-Name: getSF2Info
-
-Type: function
-
-Syntax: getSF2Info( pSF2FilePath )
-
-Introduced: 1.0
-
-OS: mac,win,linux,ios,android
-
-Platforms: desktop,mobile
-
-Parameters:
-
-pSF2FilePath: A file path that points to SoundFont2 (.sf2) file
-
 Summary: getSF2Info extracts and returns various metadata information for a given
 SoundFont(.sf2) file.
 
 Example:
-put getSF2Info("/Path/To/My/SoundBank.sf2") into tSoundbankInfo
+put getDLSCopyRightInfo() into tSoundEngineers
 
 Description:
 getSF2Info extracts and returns various metadata information for a given
+SoundFont(.sf2) file.getSF2Info extracts and returns various metadata information for a given
 SoundFont(.sf2) file, or empty if no metadata is found.
 */
 function getSF2Info pRIFFfile
@@ -3024,32 +3007,14 @@ function getSF2Info pRIFFfile
 end getSF2Info
 
 /*
-Name: getDLSInfo
-
-Type: function
-
-Syntax: getDLSInfo( pDLSFilePath )
-
-Introduced: 1.0
-
-OS: mac,win,linux,ios,android
-
-Platforms: desktop,mobile
-
-Parameters:
-
-pDLSFilePath: A file path that points to DownLoadable Soundbank(.dls) file
-
-Returns: information about a DLS file or empty if no metadata is found in the target file.
-
 Summary: getDLSInfo returns the copyright information and the sound engineers info
 for a given DownLoadable Soundbank(.dls) file, if the property is set.
 
 Example:
-put getDLSInfo("/Path/To/My/SoundBank.dls")
+put getDLSCopyRightInfo() into tSoundEngineers
 
 Description:
-getDLSInfo returns the copyright information and the sound engineers info
+etDLSInfo returns the copyright information and the sound engineers info
 for a given DownLoadable Soundbank(.dls) file, if the property is set, or empty.
 */
 function getDLSInfo pRIFFfile
@@ -3058,37 +3023,16 @@ function getDLSInfo pRIFFfile
    PUT cr & "Sound Engineer(s): " & getDLSEngineersInfo(pRIFFfile) after tReturnData
    return tReturnData
 end getDLSInfo
-
 /*
-Name: getDLSCopyRightInfo
-
-Type: function
-
-Syntax: getDLSCopyRightInfo( pDLSFilePath )
-
-Introduced: 1.0
-
-OS: mac,win,linux,ios,android
-
-Platforms: desktop,mobile
-
-Summary: getDLSCopyRightInfo returns the copyright information for a DownLoadable
-Soundbank(.dls) file, if the property is set.
-
-Parameters:
-
-pDLSFilePath: A file path that points to DownLoadable Soundbank(.dls) file
-
-Returns: copyright information or empty if the property is not found in the target file.
+Summary: getDLSCopyRightInfo returns the copyright information for a SoundFont(sf2)
+or DownLoadable Soundbank(.dls) file, if the property is set.
 
 Example:
-put getDLSCopyRightInfo("/Path/To/ASoundBank.dls") into tCopyRight
+put getDLSCopyRightInfo() into tSoundEngineers
 
 Description:
-getDLSCopyRightInfo returns the copyright information for a DownLoadable
-Soundbank(.dls) file, or returns empty if the property is not found in the target file.
-
-Tags: Music, MIDI, SoundFont, SoundBank
+DLSCopyRightInfo returns the copyright information for a SoundFont(sf2)
+or DownLoadable Soundbank(.dls) file, if the property is set, or empty.
 */
 function getDLSCopyRightInfo pRIFFfile
    if there is not a file pRIFFfile then
@@ -3159,38 +3103,19 @@ function getDLSCopyRightInfo pRIFFfile
    end if
 end getDLSCopyRightInfo
 
-
 /*
+Summary: getDLSEngineersInfo returns the names of the Sound Engineers
+responsible for creating a SoundFont (sf2) or DownLoadable Soundbank(.dls) file,
+or returns empty property is not set for the target file
 Name: getDLSEngineersInfo
 
-Type: function
-
-Syntax: getDLSEngineersInfo( pDLSFilePath )
-
-Introduced: 1.0
-
-OS: mac,win,linux,ios,android
-
-Platforms: desktop,mobile
-
-Summary: getDLSEngineersInfo returns the names of the Sound Engineers
-responsible for creating the DownLoadable Soundbank(.dls) file.
-
-Parameters:
-
-pSF2FilePath: A file path that points to DownLoadable Soundbank(.dls) file
-
-Returns: A list of Sound Engineers responsible for creating the Soundbank file
-
 Example:
-put getDLSEngineersInfo("/Path/To/ASoundBank.dls") into tSoundEngineering
+put getDLSEngineersInfo() into tSoundEngineers
 
 Description:
 getDLSEngineersInfo returns the names of the Sound Engineers
 responsible for creating a SoundFont (sf2) or DownLoadable Soundbank(.dls) file,
 or returns empty property is not set for the target file.
-
-Tags: Music, MIDI, SoundFont, SoundBank
 */
 function getDLSEngineersInfo pRIFFfile
    if there is not a file pRIFFfile then
@@ -3255,38 +3180,19 @@ function getDLSEngineersInfo pRIFFfile
 end getDLSEngineersInfo
 
 
+
 /*
-
+Summary: getDLSInstruments returns a line delimited list of sound patches from a DownLoadableSoundbank(.dls) file.
 Name: getDLSInstruments
-
-Type: function
-
-Syntax: getDLSInstruments( pDLSFilePath )
-
-Introduced: 1.0
-
-OS: mac,win,linux,ios,android
-
-Platforms: desktop,mobile
-
-Parameters:
-
-pDLSFilePath: A file path that points to a DownLoadableSoundbank(.dls) file
-
-Returns: A list of Sound Patches that are in the SoundFont file.
 
 Example:
 put getDLSInstruments("/System/Library/Components/CoreAudio.component/Contents/Resources/gs_instruments.dls") into btn "Select Sound Patch >"
-
-Summary: Get a line delimited list of sound patches from a DownLoadableSoundbank(.dls) file.
 
 Description:
 getDLSInstruments returns a line delimited list of sound patches from a
 DownLoadableSoundbank(.dls) file. Each list line is in the format:
 banknumber-patchnumber patchname, and so for a general midi soundbank
 the first line would be "0-1 Piano 1"
-
-Tags: Music, MIDI, SoundFont, SoundBank
 */
 function getDLSInstruments tRIFFfile
    put tRIFFfile
@@ -3380,27 +3286,9 @@ function getDLSInstruments tRIFFfile
    return tSoundBanksPrograms
 end getDLSInstruments
 
-
 /*
-Name: getSF2Instruments
-
-Type: function
-
-Syntax: getSF2Instruments( pSF2FilePath )
-
-Introduced: 1.0
-
-OS: mac,win,linux,ios,android
-
-Platforms: desktop,mobile
-
 Summary: getSF2Instruments returns a line delimited list of sound patches from a SoundFont(.sf2) file.
-
-Parameters:
-
-pSF2FilePath: A file path that points to a SoundFont2 (.SF2) file
-
-Returns: A list of Sound Patches that are in the SoundFont file.
+Name: getSF2Instruments
 
 Example:
 put getSF2Instruments("/Path/To/ASoundFont.sf2") into btn "Select Sound Patch >"
@@ -3409,8 +3297,6 @@ Description:
 getSF2Instruments returns a line delimited list of sound patches from a SoundFont(.sf2) file.
 The each list line is in the format: banknumber-patchnumber patchname,
 so for a general midi soundbank the first line would be "0-1 Piano 1"
-
-Tags: Music, MIDI, SoundFont, SoundBank
 */
 function getSF2Instruments tRIFFfile
    if there is not a file tRIFFfile then
