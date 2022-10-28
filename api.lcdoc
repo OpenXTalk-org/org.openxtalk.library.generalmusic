@@ -25,131 +25,13 @@ for use in creating GUIs for musical stacks.
 The intention is that this library will grow to include many
 more useful music and sound composition related scripts.
 
-Name: playPMD_FluidSynth
-
-Type: command
-
-Syntax: playPMD_FluidSynth pPlaySentenceMusicalData,[<pTempoBPM>],[<pProgramNumber>],[<pSoundBankFile>]
-
-Summary:
-plays the Playsentence Musical Data (PMD) starting at the specified beats per minute,
-   with the given sound patch number using the FluidSynth engine.
-
-Introduced: OXT 1.963.1
-
-OS: mac,ios,win,linux
-
-Platforms: desktop,mobile
-
-Parameters: 
-
-pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
-
-pTempoBPM: Intitial playback tenmpo in Beats Per Minute, this may be overridden
-
-pProgramNumber:
-number in range 0-127 is the sound patch to use as the initial
-   or default instrument sound. This nay be overridden by patchchange messages within
-   the playSentence string.
-
-pSoundBankFile: An optional filePath to a soundBank (.sf2 or .dls) file to use for playback.
-
-Example:    playPMD_FluidSynth ("C4q Ee. Gs..",120,1)
-
-Description:
-Attempts to play the Playsentence Music Data (PMD), optionally starting at the specified tempo
-in beats per minute, optionally with a given MIDI patch number (need to add 'bank-patch' suport),
-with the optionally provided Soubdbank (.sf2 or .dls) file. The default values are 120(BPM)
-and sound patch 1 (GM "Piano 1"), loading the first SoundBankFile found in the default
-locations for the current OS. If no soundBank file is available then the fallback
-FreeFont.sf2 soundbank, included with the OXT FuildSynth library, will be used.
-
-PLEASE NOTE that this command will do nothing (fail silently) if the AVMIDIPLayer
-builder extension is not loaded therefore scripts should check for the presence of
-the AVMIDIPLayer libray before calling this command directly, or use the platform aware
-version, PlayPMD which should try to use the best musical playback engine currenlty availble. \Tags: Music, MIDI, audioClip
-
-
-
-Name: midiNoteNameToNum
+Name: gsInstrumentNames
 
 Type: function
 
-Syntax: midiNoteNameToNum(<pNoteNumber>)
-
-Summary: Get the pitch number corrisponding to the given MIDI note name.
-
-Introduced: 1.0
-
-OS: mac,win,linux,ios,android
-
-Platforms: desktop, mobile
-
-Example:       put midiNoteNameToNum("C4") -- returns "60", aka middle C
-
-Parameters: 
-
-pNoteName: The MIDI note name to get the pitch number of.
-
-Returns: A number (0-127) containing a pitch number corresponding to the name parameter.
-
-Description:
-      use midiNoteNameToNum to translate a Note Name from a human readable name into a MIDI pitch number.
-      For eaxmples "C4" would return 60, "C#4" would return 61, and so on.
-      General MIDI Drum kit drum names such as "Bass Drum 1" (36) are also acceptable.
-
-Tags: Music, MIDI, Sound, PlayPMD, playSentence
-
-
-
-
-Name: playPMD
-
-Type: command
-
-Syntax: playPMD [<pInstrumentName>],pPlaySentenceMusicalData,[<pTempoBPM>],[<pProgramNumber>],[<pShellpAppPath>]
+Syntax: gsInstrumentNames()
 
 Summary:
-plays the Playsentence Musical Data (PMD) starting at the specified tempo
-in beats per minute, with the given sound patch number, using the current best
-playback available on the current platform.
-
-Introduced: 1.0
-
-OS: mac,ios,android,linux,windows
-
-Platforms: desktop, mobile
-
-Parameters: 
-
-pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
-
-pTempoBPM: Intitial playback tenmpo in Beats Per Minute, this may be overridden
-
-pProgramNumber:
-number in range 0-127 is the sound patch to use as the initial
-or default instrument sound. This nay be overridden by patchchange messages within
-the playSentence string.
-
-Example: playPMD "C4q Ee. Gs..",120,1
-
-Description:
-plays the Playsentence Musical Data (PMD) starting at the specified tempo
-in beats per minute, with the given sound patch number, using the current best
-playback available on the current platform.
-
-Tags: Music, MIDI, audioClip
-
-
-
-
-Name: midiControllerNames
-
-Type: function
-
-Syntax: midiControllerNames()
-
-Summary: 
 
 Introduced: 1.0
 
@@ -157,15 +39,15 @@ OS: mac,win,linux,ios,android
 
 Platforms: desktop,mobile
 
-Example: put midiControllerNames()
+Example: put gsInstrumentNames()
 
-Parameters: 
+Parameters:
 
-Returns: a line delimited list of GeneralMIDI standard controller names
+Returns: a line delimited list of GeneralMIDI standard instrument names
 
 Description:
 Returns 127 line-delimited list of the human readable names for the GeneralMIDI
-standard MIDI Continuous Controller (CC) names. The list is suitable for assigning
+standard instrument names. The list is suitable for assigning
 to the text of a menu-button.
 
 Tags: Music, MIDI
@@ -173,45 +55,11 @@ Tags: Music, MIDI
 
 
 
-Name: midiNoteNumToName
+Name: getSF2Instruments
 
 Type: function
 
-Syntax: midiNoteNumToName(<pNoteNumber>)
-
-Summary: Get the pitch name corrisponding to the given MIDI note number.
-
-Introduced: 1.0
-
-OS: mac,win,linux,ios,android
-
-Platforms: desktop, mobile
-
-Example: put midiNoteNumToName(60) -- returns "C4", aka middle C
-
-Parameters: 
-
-pNoteNumber: The MIDI note number to get the pitchname of.
-
-Returns: String containing a pitchname such as "C#4","Db5" or "Bass Drum 1"
-
-Description:
-use midiNoteNumToName to translate MIDI Note Numbers to a more humaan readable format.
-For eaxmples "C#5" is easier to recognize as C sharp on octave 5 than the '61' is, and
-"Bass Drum 1" is more recognizable than it's general MIDI number '36' is.
-
-Tags: Music, MIDI, Sound, PlayPMD, playSentence
-
-
-
-
-Name: controllerNumToName
-
-Type: function
-
-Syntax: controllerNumToName(pMIDICCNumber)
-
-Summary: Retrieve the path to the HyperSounds font included with General Music Library resources.
+Syntax: getSF2Instruments( pSF2FilePath )
 
 Introduced: 1.0
 
@@ -219,122 +67,22 @@ OS: mac,win,linux,ios,android
 
 Platforms: desktop,mobile
 
-Example: put controllerNumToName(7) into tContinuousControllerName -- string:"Volume (coarse)""
+Summary: getSF2Instruments returns a line delimited list of sound patches from a SoundFont(.sf2) file.
 
-Parameters: 
+Parameters:
 
-pMIDICCNumber: The MIDI Continuous Controller number, 0-127, to get the huamn readable name of.
+pSF2FilePath: A file path that points to a SoundFont2 (.SF2) file
 
-Returns: Returns the human readale name of a MIDI Continuous Controller (CC) corrisponding to a number parameter
+Returns: A list of Sound Patches that are in the SoundFont file.
 
-Description:
-Returns the human readale name of a MIDI Continuous Controller (CC) corrisponding
-to a number parameter.
-
-Tags: Music, MIDI
-
-
-
-
-Name: BPMppbDurationToMillisecs
-
-Type: function
-
-Syntax: BPMppbDurationToMillisecs( pBPM, pPulsesPerBeat, [pDur])
-
-Summary: Given Beats-Per-Minute and Pulses Per Beat values returns a time-length in milleseconds
-
-Introduced: 1.0
-
-OS: mac,win,linux,ios,android
-
-Platforms: desktop,mobile
-
-Example: put BPMppbDurationToMillisecs(120,48,"s") into tDurationInMilliseconds -- milliseconds length of sixteenth note at 120bpm
-
-Parameters: 
-
-pBPM: Beats-Per-Minute, 120 BPM is default
-
-pPulsesPerBeat: defines is the resolution of MIDI timing information, 96 pulses per beat is the default
-
-pDur: an xTalk playSentence duration such as "w" for whole note, down to "x" for 128th notes
-
-Returns: Time-length in milleseconds
+Example: put getSF2Instruments("/Path/To/ASoundFont.sf2") into btn "Select Sound Patch >"
 
 Description:
-Given Beats-Per-Minute and Pulses Per-Beat-values returns time-lengths in milleseconds.
-Use this to convert xTalk note durations into milliseconds.
-Dotted-length duration modifiers are allowed ("s." is dotted-sixtenth note, "q3" is a quarter-note-triplet).
-If the duration parameter is empty the returned data will be a line delimited
-list of all playSentence valid note lengths in milliseconds.
+getSF2Instruments returns a line delimited list of sound patches from a SoundFont(.sf2) file.
+The each list line is in the format: banknumber-patchnumber patchname,
+so for a general midi soundbank the first line would be "0-1 Piano 1"
 
-Tags: Music, MIDI
-
-
-
-
-Name: generalMusicLibVersion
-
-Type: function
-
-Syntax: generalMusicLibVersion()
-
-Summary: Get the General Music Library version number.
-
-Introduced: 1.0
-
-OS: mac,win,linux,ios,android
-
-Platforms: desktop,mobile
-
-Example: put "Version:" && generalMusicLibVersion()
-
-Returns: The version number of the General Music Library.
-
-Description: Use the <generalMusicLibVersion> function get the version number of the library.
-
-Tags: Music, MIDI, audioClip
-
-
-
-
-Name: playPMD_videoClip
-
-Type: command
-
-Syntax: playPMD_videoClip pPlaySentenceMusicalData,[<pTempoBPM>],[<pProgramNumber>]
-
-Summary:
-plays the Playsentence Musical Data (PMD) starting at the specified tempo
-in beats per minute, with the given sound patch number, using the current operating
-system's media play APIs, which must support MIDI in order for playback to be heard.
-
-Introduced: 1.0
-
-OS: android,linux,windows
-
-Platforms: desktop, mobile
-
-Parameters: 
-
-pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
-
-pTempoBPM: Intitial playback tenmpo in Beats Per Minute, this may be overridden
-
-pProgramNumber:
-number in range 0-127 is the sound patch to use as the initial
-or default instrument sound. This nay be overridden by patchchange messages within
-the playSentence string.
-
-Example: playPMD_videoClip ("C4q Ee. Gs..",120,1)
-
-Description:
-plays the Playsentence Musical Data (PMD) starting at the specified tempo
-in beats per minute, with the given sound patch number, using the current operating
-system's media play APIs, which must support MIDI in order for playback to be heard.
-
-Tags: Music, MIDI, audioClip
+Tags: Music, MIDI, SoundFont, SoundBank
 
 
 
@@ -355,7 +103,7 @@ OS: mac,ios
 
 Platforms: desktop,mobile
 
-Parameters: 
+Parameters:
 
 pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
 
@@ -388,37 +136,528 @@ Tags: Music, MIDI, audioClip
 
 
 
+Name: getSF2Info
+
+Type: function
+
+Syntax: getSF2Info( pSF2FilePath )
+
+Introduced: 1.0
+
+OS: mac,win,linux,ios,android
+
+Platforms: desktop,mobile
+
+Parameters:
+
+pSF2FilePath: A file path that points to SoundFont2 (.sf2) file
+
+Summary:
+getSF2Info extracts and returns various metadata information for a given
+SoundFont(.sf2) file.
+
+Example: put getSF2Info("/Path/To/My/SoundBank.sf2") into tSoundbankInfo
+
+Description:
+getSF2Info extracts and returns various metadata information for a given
+SoundFont(.sf2) file, or empty if no metadata is found.
+
+
+
+Name: getDLSCopyRightInfo
+
+Type: function
+
+Syntax: getDLSCopyRightInfo( pDLSFilePath )
+
+Introduced: 1.0
+
+OS: mac,win,linux,ios,android
+
+Platforms: desktop,mobile
+
+Summary:
+getDLSCopyRightInfo returns the copyright information for a DownLoadable
+Soundbank(.dls) file, if the property is set.
+
+Parameters:
+
+pDLSFilePath: A file path that points to DownLoadable Soundbank(.dls) file
+
+Returns: copyright information or empty if the property is not found in the target file.
+
+Example: put getDLSCopyRightInfo("/Path/To/ASoundBank.dls") into tCopyRight
+
+Description:
+getDLSCopyRightInfo returns the copyright information for a DownLoadable
+Soundbank(.dls) file, or returns empty if the property is not found in the target file.
+
+Tags: Music, MIDI, SoundFont, SoundBank
+
+
+
+
+Name: playPMD
+
+Type: command
+
+Syntax: playPMD [<pInstrumentName>],pPlaySentenceMusicalData,[<pTempoBPM>],[<pProgramNumber>],[<pShellpAppPath>]
+
+Summary:
+plays the Playsentence Musical Data (PMD) starting at the specified tempo
+in beats per minute, with the given sound patch number, using the current best
+playback available on the current platform.
+
+Introduced: 1.0
+
+OS: mac,ios,android,linux,windows
+
+Platforms: desktop, mobile
+
+Parameters:
+
+pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
+
+pTempoBPM: Intitial playback tenmpo in Beats Per Minute, this may be overridden
+
+pProgramNumber:
+number in range 0-127 is the sound patch to use as the initial
+or default instrument sound. This nay be overridden by patchchange messages within
+the playSentence string.
+
+Example: playPMD "C4q Ee. Gs..",120,1
+
+Description:
+plays the Playsentence Musical Data (PMD) starting at the specified tempo
+in beats per minute, with the given sound patch number, using the current best
+playback available on the current platform.
+
+Tags: Music, MIDI, audioClip
+
+
+
+
+Name: playPMD_Shell
+
+Type: command
+
+Syntax: playPMD_Shell pPlaySentenceMusicalData,[<pTempoBPM>],[<pProgramNumber>],[<pShellpAppPath>]
+
+Summary:
+Plays the Playsentence Musical Data (PMD) starting at the specified tempo
+in beats per minute, with the given sound initial patch number, using the shell app at a provided path.
+
+Introduced: 1.0
+
+OS: mac,ios,android,linux,windows
+
+Platforms: desktop, mobile
+
+Parameters:
+
+pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
+
+pTempoBPM: Intitial playback tenmpo in Beats Per Minute, this may be overridden
+
+pProgramNumber:
+number in range 0-127 is the sound patch to use as the initial
+or default instrument sound. This nay be overridden by patchchange messages within
+the playSentence string.
+
+pShellpAppPath: the path to a player shell app to pass a generated MIDI file to for playback.
+
+Example: playPMD_Shell "C4q Ee. Gs..",120,1,"/Path/To/WildMIDI"
+
+Description:
+Plays the Playsentence Musical Data (PMD) starting at the specified tempo
+in beats per minute, with the given sound initial patch number, using the shell app at a provided path.
+
+Tags: Music, MIDI, audioClip
+
+
+
+
 Name: playSentenceToMIDIData
 
 Type: function
 
-Syntax:       playSentenceToMIDIData <playSentence>,[<playTempo>],[<soundPatchNum>]
+Syntax: playSentenceToMIDIData <playSentence>,[<playTempo>],[<soundPatchNum>]
 
 Summary:
 playSentenceToMIDIData retruns Standard MIDI File Binary Data,
-      converted from the given PlaySentenceMusicData,
-      starting at the specified beats per minute, with the given patch number,
+converted from the given PlaySentenceMusicData,
+starting at the specified beats per minute, with the given patch number,
 
-Parameters: 
+Parameters:
 
 playSentence:
 string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
-      playTempo; Intitial playback tenmpo in Beats Per Minute, this may be overridden
-      by tempo messages within the playSentence string.
+playTempo; Intitial playback tenmpo in Beats Per Minute, this may be overridden
+by tempo messages within the playSentence string.
 
 soundPatchNum:
 a number in range 0-127 is the sound patch to use as the initial
-      or default instrument sound. This nay be overridden by patchchange messages within
-      the playSentence string.
+or default instrument sound. This nay be overridden by patchchange messages within
+the playSentence string.
 
-Example:       put playSentenceToMIDIData("C4q Ee. Gs..",120,0) -- get MIDI data at 120BPM plays on "Piano 1"
+Example: put playSentenceToMIDIData("C4q Ee. Gs..",120,0) -- get MIDI data at 120BPM plays on "Piano 1"
 
-Returns:       MIDI formated binary data suitable for playback or writing to a standard midi file.
+Returns: MIDI formated binary data suitable for playback or writing to a standard midi file.
 
 Description:
-      Converts PlaySentence Musical Data (PMD) starting at the specified tempo,
-      with the given sound patch number. The binary data returned may be written directly to a standard MIDI file or
-      passed along to some MIDI playback handler.
+Converts PlaySentence Musical Data (PMD) starting at the specified tempo,
+with the given sound patch number. The binary data returned may be written directly to a standard MIDI file or
+passed along to some MIDI playback handler.
+
+
+
+Name: getDLSInfo
+
+Type: function
+
+Syntax: getDLSInfo( pDLSFilePath )
+
+Introduced: 1.0
+
+OS: mac,win,linux,ios,android
+
+Platforms: desktop,mobile
+
+Parameters:
+
+pDLSFilePath: A file path that points to DownLoadable Soundbank(.dls) file
+
+Returns: information about a DLS file or empty if no metadata is found in the target file.
+
+Summary:
+getDLSInfo returns the copyright information and the sound engineers info
+for a given DownLoadable Soundbank(.dls) file, if the property is set.
+
+Example: put getDLSInfo("/Path/To/My/SoundBank.dls")
+
+Description:
+getDLSInfo returns the copyright information and the sound engineers info
+for a given DownLoadable Soundbank(.dls) file, if the property is set, or empty.
+
+
+
+Name: midiNoteNameToNum
+
+Type: function
+
+Syntax: midiNoteNameToNum(<pNoteNumber>)
+
+Summary: Get the pitch number corrisponding to the given MIDI note name.
+
+Introduced: 1.0
+
+OS: mac,win,linux,ios,android
+
+Platforms: desktop, mobile
+
+Example: put midiNoteNameToNum("C4") -- returns "60", aka middle C
+
+Parameters:
+
+pNoteName: The MIDI note name to get the pitch number of.
+
+Returns: A number (0-127) containing a pitch number corresponding to the name parameter.
+
+Description:
+use midiNoteNameToNum to translate a Note Name from a human readable name into a MIDI pitch number.
+For eaxmples "C4" would return 60, "C#4" would return 61, and so on.
+General MIDI Drum kit drum names such as "Bass Drum 1" (36) are also acceptable.
+
+Tags: Music, MIDI, Sound, PlayPMD, playSentence
+
+
+
+
+Name: midiNoteNumToName
+
+Type: function
+
+Syntax: midiNoteNumToName(<pNoteNumber>)
+
+Summary: Get the pitch name corrisponding to the given MIDI note number.
+
+Introduced: 1.0
+
+OS: mac,win,linux,ios,android
+
+Platforms: desktop, mobile
+
+Example: put midiNoteNumToName(60) -- returns "C4", aka middle C
+
+Parameters:
+
+pNoteNumber: The MIDI note number to get the pitchname of.
+
+Returns: String containing a pitchname such as "C#4","Db5" or "Bass Drum 1"
+
+Description:
+use midiNoteNumToName to translate MIDI Note Numbers to a more humaan readable format.
+For eaxmples "C#5" is easier to recognize as C sharp on octave 5 than the '61' is, and
+"Bass Drum 1" is more recognizable than it's general MIDI number '36' is.
+
+Tags: Music, MIDI, Sound, PlayPMD, playSentence
+
+
+
+
+Name: BPMppbDurationToMillisecs
+
+Type: function
+
+Syntax: BPMppbDurationToMillisecs( pBPM, pPulsesPerBeat, [pDur])
+
+Summary: Given Beats-Per-Minute and Pulses Per Beat values returns a time-length in milleseconds
+
+Introduced: 1.0
+
+OS: mac,win,linux,ios,android
+
+Platforms: desktop,mobile
+
+Example: put BPMppbDurationToMillisecs(120,48,"s") into tDurationInMilliseconds -- milliseconds length of sixteenth note at 120bpm
+
+Parameters:
+
+pBPM: Beats-Per-Minute, 120 BPM is default
+
+pPulsesPerBeat: defines is the resolution of MIDI timing information, 96 pulses per beat is the default
+
+pDur: an xTalk playSentence duration such as "w" for whole note, down to "x" for 128th notes
+
+Returns: Time-length in milleseconds
+
+Description:
+Given Beats-Per-Minute and Pulses Per-Beat-values returns time-lengths in milleseconds.
+Use this to convert xTalk note durations into milliseconds.
+Dotted-length duration modifiers are allowed ("s." is dotted-sixtenth note, "q3" is a quarter-note-triplet).
+If the duration parameter is empty the returned data will be a line delimited
+list of all playSentence valid note lengths in milliseconds.
+
+Tags: Music, MIDI
+
+
+
+
+Name: getMIDIHeader
+
+Type: function
+
+Syntax: getMIDIHeader(<theMIDIFile>)
+
+Summary:
+Use getMIDIHeader to validate MIDI file formatted data and parse
+its header information into a human readable format
+
+Example: put getMIDIHeader("/path/to/MIDIFile.mid") into fld "MIDI File Info"
+
+Description:
+Use getMIDIHeader to validate MIDI file formatted data and parse
+its header for information about the file, intial timing info, channels used,
+atc., into a human readable format
+
+Parameters:
+:
+
+
+
+
+Name: playPMD_videoClip
+
+Type: command
+
+Syntax: playPMD_videoClip pPlaySentenceMusicalData,[<pTempoBPM>],[<pProgramNumber>]
+
+Summary:
+plays the Playsentence Musical Data (PMD) starting at the specified tempo
+in beats per minute, with the given sound patch number, using the current operating
+system's media play APIs, which must support MIDI in order for playback to be heard.
+
+Introduced: 1.0
+
+OS: android,linux,windows
+
+Platforms: desktop, mobile
+
+Parameters:
+
+pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
+
+pTempoBPM: Intitial playback tenmpo in Beats Per Minute, this may be overridden
+
+pProgramNumber:
+number in range 0-127 is the sound patch to use as the initial
+or default instrument sound. This nay be overridden by patchchange messages within
+the playSentence string.
+
+Example: playPMD_videoClip ("C4q Ee. Gs..",120,1)
+
+Description:
+plays the Playsentence Musical Data (PMD) starting at the specified tempo
+in beats per minute, with the given sound patch number, using the current operating
+system's media play APIs, which must support MIDI in order for playback to be heard.
+
+Tags: Music, MIDI, audioClip
+
+
+
+
+Name: getDLSInstruments
+
+Type: function
+
+Syntax: getDLSInstruments( pDLSFilePath )
+
+Introduced: 1.0
+
+OS: mac,win,linux,ios,android
+
+Platforms: desktop,mobile
+
+Parameters:
+
+pDLSFilePath: A file path that points to a DownLoadableSoundbank(.dls) file
+
+Returns: A list of Sound Patches that are in the SoundFont file.
+
+Example: put getDLSInstruments("/System/Library/Components/CoreAudio.component/Contents/Resources/gs_instruments.dls") into btn "Select Sound Patch >"
+
+Summary: Get a line delimited list of sound patches from a DownLoadableSoundbank(.dls) file.
+
+Description:
+getDLSInstruments returns a line delimited list of sound patches from a
+DownLoadableSoundbank(.dls) file. Each list line is in the format:
+banknumber-patchnumber patchname, and so for a general midi soundbank
+the first line would be "0-1 Piano 1"
+
+Tags: Music, MIDI, SoundFont, SoundBank
+
+
+
+
+Name: getDLSEngineersInfo
+
+Type: function
+
+Syntax: getDLSEngineersInfo( pDLSFilePath )
+
+Introduced: 1.0
+
+OS: mac,win,linux,ios,android
+
+Platforms: desktop,mobile
+
+Summary:
+getDLSEngineersInfo returns the names of the Sound Engineers
+responsible for creating the DownLoadable Soundbank(.dls) file.
+
+Parameters:
+
+pSF2FilePath: A file path that points to DownLoadable Soundbank(.dls) file
+
+Returns: A list of Sound Engineers responsible for creating the Soundbank file
+
+Example: put getDLSEngineersInfo("/Path/To/ASoundBank.dls") into tSoundEngineering
+
+Description:
+getDLSEngineersInfo returns the names of the Sound Engineers
+responsible for creating a SoundFont (sf2) or DownLoadable Soundbank(.dls) file,
+or returns empty property is not set for the target file.
+
+Tags: Music, MIDI, SoundFont, SoundBank
+
+
+
+
+Name: controllerNumToName
+
+Type: function
+
+Syntax: controllerNumToName(pMIDICCNumber)
+
+Summary: Retrieve the path to the HyperSounds font included with General Music Library resources.
+
+Introduced: 1.0
+
+OS: mac,win,linux,ios,android
+
+Platforms: desktop,mobile
+
+Example: put controllerNumToName(7) into tContinuousControllerName -- string:"Volume (coarse)""
+
+Parameters:
+
+pMIDICCNumber: The MIDI Continuous Controller number, 0-127, to get the huamn readable name of.
+
+Returns: Returns the human readale name of a MIDI Continuous Controller (CC) corrisponding to a number parameter
+
+Description:
+Returns the human readale name of a MIDI Continuous Controller (CC) corrisponding
+to a number parameter.
+
+Tags: Music, MIDI
+
+
+
+
+Name: generalMusicLibVersion
+
+Type: function
+
+Syntax: generalMusicLibVersion()
+
+Summary: Get the General Music Library version number.
+
+Introduced: 1.0
+
+OS: mac,win,linux,ios,android
+
+Platforms: desktop,mobile
+
+Example: put "Version:" && generalMusicLibVersion()
+
+Returns: The version number of the General Music Library.
+
+Description: Use the <generalMusicLibVersion> function get the version number of the library.
+
+Tags: Music, MIDI, audioClip
+
+
+
+
+Name: isSF2orDLS
+
+Type: function
+
+Syntax: isSF2orDLS(<pFile>)
+
+Summary:
+Use isSF2orDLS to ensure that the given file contains a RIFF
+header and has a type signature for either an SF2 or DLS Soundbank.
+
+Parameters:
+:
+
+
+Name: SF2orDLSmagicNumCheck
+
+Type: function
+
+Syntax: isSF2orDLS(<pFile>)
+
+Example: if SF2orDLSmagicNumCheck("~/Path/To/ASoundbank.exs") is false then exit to top
+
+Description:
+SF2orDLSmagicNumCheck returns true if the given file contains a RIFF
+header and also conatains a type signature for either an SF2 or DLS Soundbank.
+
+Parameters:
+:
+
 
 
 
@@ -430,37 +669,34 @@ Syntax: makeSMF <notes>,<playTempo>,<defInst>,<savePath>
 
 Summary:
 creates a Standard MIDI File from the given PlaySentenceMusicData,
-      starting at the specified beats per minute, with the given patch number,
-      writing it to the provided file path.
+starting at the specified beats per minute, with the given patch number,
+writing it to the provided file path.
 
-Example:       makeSMF ("C4q Ee. Gs..",120,1,"~/testSMF.mid")
-
-Description:
-      makeSMF creates a Standard MIDI Fike (SMF) from the given PlaySentenceMusicData (PMD)
-      starting at the specified beats per minute, with the given patch number, to the provided file path.
+Example: makeSMF ("C4q Ee. Gs..",120,1,"~/testSMF.mid")
 
 Parameters:
-:
+
+notes: A string of xTalk playSentence data
+
+playTempo: The intial tempo to set in the output MIDI
+
+defInst: The intial sound patch to set in the output MIDI
+
+savePath: a file path to save the MIDI file to
+
+Description:
+makeSMF creates a Standard MIDI Fike (SMF) from the given PlaySentenceMusicData (PMD)
+starting at the specified beats per minute, with the given patch number, to the provided file path.
 
 
-:
 
-
-:
-
-
-:
-
-
-
-
-Name: gsInstrumentNames
+Name: midiControllerNames
 
 Type: function
 
-Syntax: gsInstrumentNames()
+Syntax: midiControllerNames()
 
-Summary: 
+Summary:
 
 Introduced: 1.0
 
@@ -468,18 +704,90 @@ OS: mac,win,linux,ios,android
 
 Platforms: desktop,mobile
 
-Example: put gsInstrumentNames()
+Example: put midiControllerNames()
 
-Parameters: 
+Parameters:
 
-Returns: a line delimited list of GeneralMIDI standard instrument names
+Returns: a line delimited list of GeneralMIDI standard controller names
 
 Description:
 Returns 127 line-delimited list of the human readable names for the GeneralMIDI
-standard instrument names. The list is suitable for assigning
+standard MIDI Continuous Controller (CC) names. The list is suitable for assigning
 to the text of a menu-button.
 
 Tags: Music, MIDI
+
+
+
+
+Name: playPMD_FluidSynth
+
+Type: command
+
+Syntax: playPMD_FluidSynth pPlaySentenceMusicalData,[<pTempoBPM>],[<pProgramNumber>],[<pSoundBankFile>]
+
+Summary:
+plays the Playsentence Musical Data (PMD) starting at the specified beats per minute,
+   with the given sound patch number using the FluidSynth engine.
+
+Introduced: OXT 1.963.1
+
+OS: mac,ios,win,linux
+
+Platforms: desktop,mobile
+
+Parameters:
+
+pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
+
+pTempoBPM: Intitial playback tenmpo in Beats Per Minute, this may be overridden
+
+pProgramNumber:
+number in range 0-127 is the sound patch to use as the initial
+   or default instrument sound. This nay be overridden by patchchange messages within
+   the playSentence string.
+
+pSoundBankFile: An optional filePath to a soundBank (.sf2 or .dls) file to use for playback.
+
+Example:    playPMD_FluidSynth ("C4q Ee. Gs..",120,1)
+
+Description:
+Attempts to play the Playsentence Music Data (PMD), optionally starting at the specified tempo
+in beats per minute, optionally with a given MIDI patch number (need to add 'bank-patch' suport),
+with the optionally provided Soubdbank (.sf2 or .dls) file. The default values are 120(BPM)
+and sound patch 1 (GM "Piano 1"), loading the first SoundBankFile found in the default
+locations for the current OS. If no soundBank file is available then the fallback
+FreeFont.sf2 soundbank, included with the OXT FuildSynth library, will be used.
+
+PLEASE NOTE that this command will do nothing (fail silently) if the AVMIDIPLayer
+builder extension is not loaded therefore scripts should check for the presence of
+the AVMIDIPLayer libray before calling this command directly, or use the platform aware
+version, PlayPMD which should try to use the best musical playback engine currenlty availble. \Tags: Music, MIDI, audioClip
+
+
+
+Name: scanStdSoundBankDirectories
+
+Type: function
+
+Syntax: scanStdSoundBankDirectories()
+
+Summary:
+Use scanStdSoundBankDirectories to scan filesysten directories where
+soundbank files are normally found. On macOS and Windows this should return the
+path to the standard Roland GS Soundbank.
+
+Parameters:
+
+Returns: A line-deimited list of any SoundBank files found
+
+Example: put scanStdSoundBankDirectories()
+
+Description:
+Use scanStdSoundBankDirectories to scan filesysten directories where
+soundbank files are normally found. On macOS and Windows this should return the path to the standard Roland GS Soundbank.
+
+Tags: Music, MIDI, SoundBank
 
 
 
@@ -512,47 +820,3 @@ The sounds are 1) Harpsichord or HypsiChord, 2) Flute or HyperFlute, and 3) Boin
 or HyperBoing. You can select these sounds by name when using the PlayPMD command.
 
 Tags: Music, MIDI, audioClip, HyperCard
-
-
-
-
-Name: playPMD_Shell
-
-Type: command
-
-Syntax: playPMD_Shell pPlaySentenceMusicalData,[<pTempoBPM>],[<pProgramNumber>],[<pShellpAppPath>]
-
-Summary:
-Plays the Playsentence Musical Data (PMD) starting at the specified tempo
-in beats per minute, with the given sound initial patch number, using the shell app at a provided path.
-
-Introduced: 1.0
-
-OS: mac,ios,android,linux,windows
-
-Platforms: desktop, mobile
-
-Parameters: 
-
-pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
-
-pTempoBPM: Intitial playback tenmpo in Beats Per Minute, this may be overridden
-
-pProgramNumber:
-number in range 0-127 is the sound patch to use as the initial
-or default instrument sound. This nay be overridden by patchchange messages within
-the playSentence string.
-
-pShellpAppPath: the path to a player shell app to pass a generated MIDI file to for playback.
-
-Example: playPMD_Shell "C4q Ee. Gs..",120,1,"/Path/To/WildMIDI"
-
-Description:
-Plays the Playsentence Musical Data (PMD) starting at the specified tempo
-in beats per minute, with the given sound initial patch number, using the shell app at a provided path.
-
-Tags: Music, MIDI, audioClip
-
-
-
-
