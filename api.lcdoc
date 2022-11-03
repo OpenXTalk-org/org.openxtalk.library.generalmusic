@@ -32,6 +32,8 @@ Type: function
 Syntax: gsInstrumentNames()
 
 Summary:
+get a list of names of the GeneralMIDI standard instrument names, suitable for
+assigning to the text of a menu-button
 
 Introduced: 1.0
 
@@ -41,14 +43,15 @@ Platforms: desktop,mobile
 
 Example: put gsInstrumentNames()
 
-Parameters:
+Parameters: 
 
 Returns: a line delimited list of GeneralMIDI standard instrument names
 
 Description:
-Returns 127 line-delimited list of the human readable names for the GeneralMIDI
-standard instrument names. The list is suitable for assigning
-to the text of a menu-button.
+Use gsInstrumentNames to get a 127 line-delimited list of the human readable
+names for the GeneralMIDI standard instrument names. This list is in GeneralMIDI
+order (starting with Accoustic Piano, ending with Gunshot FX) and is suitable
+for assigning to the text of a menu-button.
 
 Tags: Music, MIDI
 
@@ -69,7 +72,7 @@ Platforms: desktop,mobile
 
 Summary: getSF2Instruments returns a line delimited list of sound patches from a SoundFont(.sf2) file.
 
-Parameters:
+Parameters: 
 
 pSF2FilePath: A file path that points to a SoundFont2 (.SF2) file
 
@@ -103,7 +106,7 @@ OS: mac,ios
 
 Platforms: desktop,mobile
 
-Parameters:
+Parameters: 
 
 pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
 
@@ -148,7 +151,7 @@ OS: mac,win,linux,ios,android
 
 Platforms: desktop,mobile
 
-Parameters:
+Parameters: 
 
 pSF2FilePath: A file path that points to SoundFont2 (.sf2) file
 
@@ -180,7 +183,7 @@ Summary:
 getDLSCopyRightInfo returns the copyright information for a DownLoadable
 Soundbank(.dls) file, if the property is set.
 
-Parameters:
+Parameters: 
 
 pDLSFilePath: A file path that points to DownLoadable Soundbank(.dls) file
 
@@ -214,7 +217,7 @@ OS: mac,ios,android,linux,windows
 
 Platforms: desktop, mobile
 
-Parameters:
+Parameters: 
 
 pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
 
@@ -253,7 +256,7 @@ OS: mac,ios,android,linux,windows
 
 Platforms: desktop, mobile
 
-Parameters:
+Parameters: 
 
 pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
 
@@ -288,7 +291,7 @@ playSentenceToMIDIData retruns Standard MIDI File Binary Data,
 converted from the given PlaySentenceMusicData,
 starting at the specified beats per minute, with the given patch number,
 
-Parameters:
+Parameters: 
 
 playSentence:
 string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
@@ -323,7 +326,7 @@ OS: mac,win,linux,ios,android
 
 Platforms: desktop,mobile
 
-Parameters:
+Parameters: 
 
 pDLSFilePath: A file path that points to DownLoadable Soundbank(.dls) file
 
@@ -357,7 +360,7 @@ Platforms: desktop, mobile
 
 Example: put midiNoteNameToNum("C4") -- returns "60", aka middle C
 
-Parameters:
+Parameters: 
 
 pNoteName: The MIDI note name to get the pitch number of.
 
@@ -389,7 +392,7 @@ Platforms: desktop, mobile
 
 Example: put midiNoteNumToName(60) -- returns "C4", aka middle C
 
-Parameters:
+Parameters: 
 
 pNoteNumber: The MIDI note number to get the pitchname of.
 
@@ -421,7 +424,7 @@ Platforms: desktop,mobile
 
 Example: put BPMppbDurationToMillisecs(120,48,"s") into tDurationInMilliseconds -- milliseconds length of sixteenth note at 120bpm
 
-Parameters:
+Parameters: 
 
 pBPM: Beats-Per-Minute, 120 BPM is default
 
@@ -483,7 +486,7 @@ OS: android,linux,windows
 
 Platforms: desktop, mobile
 
-Parameters:
+Parameters: 
 
 pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
 
@@ -518,7 +521,7 @@ OS: mac,win,linux,ios,android
 
 Platforms: desktop,mobile
 
-Parameters:
+Parameters: 
 
 pDLSFilePath: A file path that points to a DownLoadableSoundbank(.dls) file
 
@@ -555,7 +558,7 @@ Summary:
 getDLSEngineersInfo returns the names of the Sound Engineers
 responsible for creating the DownLoadable Soundbank(.dls) file.
 
-Parameters:
+Parameters: 
 
 pSF2FilePath: A file path that points to DownLoadable Soundbank(.dls) file
 
@@ -589,7 +592,7 @@ Platforms: desktop,mobile
 
 Example: put controllerNumToName(7) into tContinuousControllerName -- string:"Volume (coarse)""
 
-Parameters:
+Parameters: 
 
 pMIDICCNumber: The MIDI Continuous Controller number, 0-127, to get the huamn readable name of.
 
@@ -674,7 +677,7 @@ writing it to the provided file path.
 
 Example: makeSMF ("C4q Ee. Gs..",120,1,"~/testSMF.mid")
 
-Parameters:
+Parameters: 
 
 notes: A string of xTalk playSentence data
 
@@ -697,6 +700,8 @@ Type: function
 Syntax: midiControllerNames()
 
 Summary:
+Get a line-delimited list of the human readable names for the
+GeneralMIDI standard Continuous Controller (CC) names.
 
 Introduced: 1.0
 
@@ -706,7 +711,7 @@ Platforms: desktop,mobile
 
 Example: put midiControllerNames()
 
-Parameters:
+Parameters: 
 
 Returns: a line delimited list of GeneralMIDI standard controller names
 
@@ -736,7 +741,7 @@ OS: mac,ios,win,linux
 
 Platforms: desktop,mobile
 
-Parameters:
+Parameters: 
 
 pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
 
@@ -772,12 +777,18 @@ Type: function
 
 Syntax: scanStdSoundBankDirectories()
 
+Introduced: 1.0
+
+OS: mac,win,linux,ios,android
+
+Platforms: desktop,mobile
+
 Summary:
 Use scanStdSoundBankDirectories to scan filesysten directories where
 soundbank files are normally found. On macOS and Windows this should return the
 path to the standard Roland GS Soundbank.
 
-Parameters:
+Parameters: 
 
 Returns: A line-deimited list of any SoundBank files found
 
@@ -785,7 +796,8 @@ Example: put scanStdSoundBankDirectories()
 
 Description:
 Use scanStdSoundBankDirectories to scan filesysten directories where
-soundbank files are normally found. On macOS and Windows this should return the path to the standard Roland GS Soundbank.
+soundbank files are normally found. On macOS and Windows this should return
+the path to the standard Roland GS Soundbank.
 
 Tags: Music, MIDI, SoundBank
 
@@ -820,3 +832,7 @@ The sounds are 1) Harpsichord or HypsiChord, 2) Flute or HyperFlute, and 3) Boin
 or HyperBoing. You can select these sounds by name when using the PlayPMD command.
 
 Tags: Music, MIDI, audioClip, HyperCard
+
+
+
+
