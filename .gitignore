@@ -7,3 +7,5 @@ samples/.DS_Store
 org.openxtalk.library.generalmusic.1.0.0/support/.DS_Store
 resources/.DS_Store
 ._manifest.xml
+*.old
+samples/._GeneralMusicLib Demos.oxtstack
