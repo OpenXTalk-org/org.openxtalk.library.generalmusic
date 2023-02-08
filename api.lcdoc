@@ -139,6 +139,46 @@ Tags: Music, MIDI, audioClip
 
 
 
+Name: playPMD_MCISendString
+
+Type: command
+
+Syntax: playPMD_MCISendString pPlaySentenceMusicalData, pTempoBPM,[pProgramNumber,[<pSoundBankFile>]
+
+Summary:
+plays the Playsentence Musical Data (PMD) starting at the specified beats per minute,
+with the given sound patch number using MCISendString to playback on Windows default MIDI Player.
+
+Introduced: 1.0
+
+OS: windows
+
+Platforms: desktop
+
+Parameters: 
+
+pPlaySentenceMusicalData: string containing extended-HyperTalk / xTalk 'ABC' textual music notation.
+
+pTempoBPM: Intitial playback tenmpo in Beats Per Minute, this may be overridden
+
+pProgramNumber:
+number in range 0-127 is the sound patch to use as the initial
+or default instrument sound. This nay be overridden by patchchange messages within
+the playSentence string.
+
+Example: playPMD_MCISendString ("C4q Ee. Gs..",120,1)
+
+Description:
+Attempts to play the Playsentence Music Data (PMD), optionally starting at the specified tempo
+in beats per minute, optionally with a given MIDI patch number (need to add 'bank-patch' suport).
+The default values are 120(BPM) and sound patch 1 (GM "Piano 1"), using MCISendString to
+playback on Windows default MIDI Player
+
+Tags: Music, MIDI, audioClip
+
+
+
+
 Name: getSF2Info
 
 Type: function
