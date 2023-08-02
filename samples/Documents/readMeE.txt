@@ -45,5 +45,6 @@ eudio@chabashira.co.jp
 http://member.nifty.ne.jp/UDI/
 
 
-OpenXTalk General Music Library 
-OXT GM Lib additionally contains handlers for converting MIDI values, scanning for SoundFonts in common locations, reading information such as patch names from SoundFonts/DLS files, etc.
+OpenXTalk General Music Library: 
+OXT GM Lib contains additionally handlers for converting MIDI values, scanning for SoundFonts in common locations, reading information such as patch names from SoundFonts/DLS files, etc.
+OXT GM Lib also includes the SoundFont HyperSounds.sf2 originally from Rebecca G. Bettencourt with three instrument sound samples from the HyperCard era, including the classic 'Boing'
