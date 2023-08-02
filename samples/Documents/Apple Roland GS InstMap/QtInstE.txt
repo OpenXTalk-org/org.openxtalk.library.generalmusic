@@ -1,0 +1,237 @@
+QuickTime Instrument list
+
+1,Acoustic Grand Piano
+2,Bright Acoustic Piano
+3,Electric Grand Piano
+4,Honkytonk Piano
+5,Electric Piano
+6,Chorused Piano
+7,Harpsichord
+8,Clavi
+9,Celesta
+10,Glockenspiel
+11,Music Box
+12,Vibraphone
+13,Marimba
+14,Xylophone
+15,Tubular bells
+16,Dulcimer
+17,Drawbar Organ
+18,Percussive Organ
+19,Rock Organ
+20,Church Organ
+21,Reed Organ
+22,Accordion
+23,Harmonica
+24,Tango Accordian
+25,Acoustic Nylon Guitar
+26,Acoustic Steel Guitar
+27,Electric Jazz Guitar
+28,Electric Clean Guitar
+29,Electric Guitar Muted
+30,Overdriven Guitar
+31,Distortion Guitar
+32,Guitar Harmonics
+33,Acoustic Fretless Bass
+34,Electric Bass Fingered
+35,Electric Bass Picked
+36,Fretless Bass
+37,Slap Bass 1
+38,Slap Bass 2
+39,Synth Bass 1
+40,Synth Bass 2
+41,Violin
+42,Viola
+43,Cello
+44,Contrabass
+45,Tremolo Strings
+46,Pizzicato Strings
+47,Orchestral Harp
+48,Timpani
+49,Acoustic String Ensemble
+50,Acoustic String Ensemble 2 
+51,SynthStrings 1
+52,SynthStrings 2
+53,Aah Choir
+54,Ooh Choir
+55,SynthVox
+56,Orchestra Hit
+57,Trumpet
+58,Trombone
+59,Tuba
+60,Muted Trumpet
+61,French Horn
+62,Brass Section
+63,Synth Brass 1
+64,Synth Brass 2
+65,Soprano Sax
+66,Alto Sax
+67,Tenor Sax
+68,Baritone Sax
+69,Oboe
+70,English Horn
+71,Bassoon
+72,Clarinet
+73,Piccolo
+74,Flute
+75,Recorder
+76,Pan Flute
+77,Bottle Blow
+78,Shakuhachi
+79,Whistle
+80,Ocarina
+81,Square Wave
+82,Saw Wave
+83,Calliope
+84,Chiffer
+85,Charang
+86,Solo Vox
+87,5th Saw Wave
+88,Bass & Lead
+89,Fantasy
+90,Warm
+91,Polysynth
+92,Choir
+93,Bowed
+94,Metal
+95,Halo
+96,Sweep
+97,Ice Rain
+98,Sound Tracks
+99,Crystal
+100,Atmosphere
+101,Brightness
+102,Goblins
+103,Echoes
+104,Space
+105,Sitar
+106,Banjo
+107,Shamisen
+108,Koto
+109,Kalimba
+110,Bag Pipe
+111,Fiddle
+112,Shannai
+113,Tinkle Bell
+114,Agogo
+115,Steel Drums
+116,Woodblock
+117,Taiko Drum
+118,Melodic Tom
+119,Synth Drum
+120,Reverse Cymbal
+121,Guitar Fret Noise
+122,Breath Noise
+123,Seashore
+124,Bird Tweet
+125,Telephone Ring
+126,Helicopter
+127,Applause
+128,Gunshot
+167,SynthBass101
+186,Trombone 2  
+189,Fr.Horn 2   
+209,Square      
+210,Saw         
+227,Syn Mallet  
+231,Echo Bell   
+233,Sitar 2     
+249,Gt.Cut Noise
+250,Fl.Key Click
+251,Rain        
+252,Dog         
+253,Telephone 2 
+254,Car-Engine  
+255,Laughing    
+256,Machine Gun 
+359,Echo Pan    
+377,String Slap 
+379,Thunder     
+380,Horse-Gallop
+381,DoorCreaking
+382,Car-Stop    
+383,Screaming   
+384,Lasergun    
+507,Wind        
+508,Bird 2      
+509,Door        
+510,Car-Pass    
+511,Punch       
+512,Explosion   
+635,Stream      
+637,Scratch     
+638,Car-Crash   
+639,Heart Beat  
+763,Bubble      
+765,Wind Chimes 
+766,Siren       
+767,Footsteps   
+894,Train       
+1022,Jetplane    
+1025,Piano 1     
+1026,Piano 2     
+1027,Piano 3     
+1028,Honky-tonk  
+1029,Detuned EP 1
+1030,Detuned EP 2
+1031,Coupled Hps.
+1036,Vibraphone  
+1037,Marimba     
+1039,Church Bell 
+1041,Detuned Or.1
+1042,Detuned Or.2
+1044,Church Org.2
+1046,Accordion It
+1049,Ukulele     
+1050,12-str.Gt   
+1051,Hawaiian Gt.
+1052,Chorus Gt.  
+1053,Funk Gt.    
+1055,Feedback Gt.
+1056,Gt. Feedback
+1063,Synth Bass 3
+1064,Synth Bass 4
+1065,Slow Violin 
+1073,Orchestra   
+1075,Syn.Strings3
+1086,Brass 2     
+1087,Synth Brass3
+1088,Synth Brass4
+1105,Sine Wave   
+1106,Doctor Solo 
+1132,Taisho Koto 
+1140,Castanets   
+1141,Concert BD  
+1142,Melo. Tom 2 
+1143,808 Tom     
+1150,Starship    
+1167,Carillon    
+1271,Elec Perc.  
+1278,Burst Noise 
+2049,Piano 1d    
+2053,E.Piano 1v  
+2054,E.Piano 2v  
+2055,Harpsichord 
+2065,60's Organ 1
+2068,Church Org.3
+2073,Nylon Gt.o  
+2074,Mandolin    
+2077,Funk Gt.2   
+2088,Rubber Bass 
+2111,AnalogBrass1
+2112,AnalogBrass2
+3077,60's E.Piano
+3079,Harpsi.o    
+4113,Organ 4     
+4114,Organ 5     
+4121,Nylon Gt.2  
+4149,Choir Aahs 2
+16385,Standard Kit
+16393,Room Kit
+16401,Power Kit
+16409,Electronic Kit
+16410,Analog Kit
+16417,Jazz Kit( QuickTime 2.5 not support )
+16425,Brush Kit
+16433,Orchestra Kit
+16441,SFX Kit ( QuickTime 2.5 not support )

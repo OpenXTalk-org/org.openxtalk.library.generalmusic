@@ -1,0 +1,15 @@
+This stack edites melody with mouse operation on staff notation.Click a note to select it.
+Ctrl-click to choose note value(length).
+Shift-click to expand selection.
+
+Drag note(s) up/down to change pitch.
+Drag a note left/right to change value(length).
+
+Left/right key to move selection.
+Up/down key to change pitch.
+Opt/Ctrl + left/right key to change value(length).
+
+You can cut/copy/paste/insert/delete note(s).
+ Own copy buffer is used. Not change system-buffer.
+
+2018.9 udi

@@ -1,0 +1,292 @@
+//pmd,2.0,250,1
+//c F.Chopin / Puppy Waltz
+//i Made by UDI with makeSMF
+//s 6/8
+
+$ P6 Z1 // 1/2
+  _beadg
+/0 Re@12 T30 A4ee/3V8 T25 Be/3v7 T40 A B T50 A B T60 A B A B A B
+/1 Ae/3 B A B A B T50 G^e A T70 C5 B4
+/2 T80 G^4e A Bv6 A C5 B4
+/3 T90 G^4ev6 A C5 B4 G^v7 A
+/4 T C5e B4 G^v8 A C5 B4
+/5 H1q. G^ev9 A C5 B4 G^ A
+/6 T102 H1q. C5e B4 G^ A C5 B4
+/7 H1q. G^4e A C5 B4v G^ A
+/8 T105 H1q. B4e C5 D E T90 F G@
+/9 T104 H1 B5q.@12 Ae G Fv9
+/10 H1he F5e E Ee/3 F E D^e T90 Eq@
+/11 T H1 B5q.@12 Ae G F
+/12 H1he F5e T80 Ee/3 F E T110 D^e T80 E F B4
+/13 H1q. G^4ev7 A T C5 B4v8 G^ A //=3
+/14 H1q. C5e B4 G^v9 A T102 C5 B4 //=4
+/15 H1q. G^4e A C5 B4v G^ A //=5
+/16 T105 H1q. B4e C5 D E T90 F G@ //=8
+/17 T H1 B5q.@12 Ae G F //=9
+/18 H1he F5e E Ee/3 F E D^e T90 Eq@ /=10
+/19 T95 H1 B5q.@12 Ae G Fv9 //=11
+/20 H1he E5e F T75 Ee/3 F E T80 D^e T85 Ev8 E^
+/21 T80 H1q. F5q/3 G F T95 E^e F A G
+/22 T H1q. F5e G F E^ F Bv9
+/23 H1q. A5q/3 B A G^e A C6 B5
+/24 T105 H1q. A5e B A G^ A D6v
+/25 H1q. C6e B5 A G F Ev9
+/26 H1q. D5e C B4 A G Fv8
+/27 T H1q. E4e D C E B A
+/28 H1q. G^4e A B C5 T90 D Ev9
+/29 T F5q/3 G F E^e F A G //=21
+/30 F5e G F E^ F B //=22
+/31 A5q/3 B A G^e A C6 B5 //=23
+/32 A5e B A G^ A F6v
+/33 T104 H1q. E6e D C B5v9 A G
+/34 H1q. F5e E D C B4v8 A
+/35 T95 H1q. A^4e C5 B4 F G C@
+/36 T90 H1q. D4q@12 R F5v7
+/37 T H1q. F5q/3v8 G F E^e F A G //=21
+/38 H1q. F5e Gv9 F E^ F B //=22
+/39 H1q. A5q/3 B A G^e A C6 B5 //=23
+/40 H1q. A5e B A G^ A D6v //=24
+/41 T105 H1q. C6e B5 A G F Ev9 //=25
+/42 H1q. D5e C B4 A G Fv8 //=26
+/43 T H1q. E4e D C E B A //=27
+/44 H1q. G^4e A B C5 T90 D Ev9 //=28
+/45 T F5q/3 G F E^e F A G //=21=29
+/46 F5e G F E^ F B //=22=30
+/47 A5q/3 B A G^e A C6 B5 //=23=31
+/48 A5e B A G^ A F6v //=32
+/49 T105 H1q. E6e D C B5v8 A Gv9 //=33
+/50 H1q. F5e E D C B4 Av8 //=34
+/51 T90 H1q. A^4e C5 B4 F T80 G C@ //=35
+/52 T70 H1q. D4qv7 R T75 A
+/53 H1 A4h Eq
+/54 A4h E^q
+/55 H1 A4h T77 Fq
+/56 H1 F5h T80 Fq
+/57 H1 F5h B4q
+/58 H1 F5h T75 Cq
+/59 H1 E5hv6 Dq
+/60 T60 H1 C5h./4 E T90 Dv7 B4
+/61 T80 H1 A4h Eq
+/62 T82 H1 A4h E^q
+/63 H1 ( A4h ) T84 R F
+/64 H1 F5h.
+/65 H1q. C5qv8 B^4 C5
+/66 T80 H1q. A5q Bb4 G^5
+/67 H1 A^4qv7 T75 G5 A4
+/68 F5q T65 F4v6 H0 T70 B
+/69 H1 A4hv6 T80 ( Eq )e. ( A5ev5 )s //=53
+/70 H1 A4h ( E^q )e. ( A5ev5 )s //=(54)
+/71 H1 A4h ( Fq )e. ( A5ev5 )s //=55
+/72 H1 F5h ( Fq )e. ( A5ev5 )s //=56
+/73 T85 H1 F5h ( B4q )e. ( A5ev5 )s //=57
+/74 H1 F5h ( Cq )e. ( A5ev5 )s //=58
+/75 H1 E5q D ( Cq )e. ( A5ev5 )s
+/76 T80 H1 E5q Dq. ( B4e )s ( A5ev5 )s
+/77 T75 H1 A4h ( Eq )e. ( A5ev5 )s
+/78 T80 H1 A4h ( E^q )e. ( A5ev5 )s
+/79 H1 A4h Fq
+/80 T70 H1 F5h.
+/81 T80 H1 F5h B4q
+/82 E5h Bb4q
+/83 H1 E5q A4 D^5
+/84 T75 F5q H0 E T20 A
+/85 T120 H1 A4q./4@12v7 B A B A B A B
+/86 A4q./4 B A B A B A B
+/87 A4q./4 B A B A B A B
+/88 A4q./4 B A B A B T70 A B
+/89 G^4e H0 A T80 C5 B4 T90 G^ A //=3
+/90 T C5e B4 G^v8 A C5 B4 //=4
+/91 G^4e A C5 B4 T90 G^ A //=5
+/92 C5e B4 G^ A T85 C5 B4 //=6
+/93 T80 H1q. G^4 A T C5 B4 G^ A //=13
+/94 H1q. C5e B4 G^ A C5 B4 //=14
+/95 H1q. G^4e A C5 B4 G^ A //=15
+/96 H1q. B4e C5 D E F G //=16
+/97 H1q. B5q.@12 Ae G F //=17
+/98 H1he F5e E Ee/3 F E D^e Eq@ //=18
+/99 H1 B5q.@12 Ae G F //=19
+/100 H1q. F5e Ee/3 F E D^e E F B4 //=12
+/101 H1q. G^e A C5 B4 G^ A //=5
+/102 H1q. C5e B4 G^ A C5 B4 //=6
+/103 H1q. G^4e A C5 B4 G^ A //=7
+/104 H1q. B4e C5 D E F G@ //=8
+/105 H1 B5q.@12 Ae G F //=11
+/106 H1q. F5e E Ee/3 F E D^e Eq@ //=18
+/107 H1 B5q.@12 Ae G F //=19
+/108 H1he E5e F Ee/3 F E D^e E E^ //=20
+/109 H1q. F5q/3 G F E^e F A G //=21
+/110 H1q. F5e G F E^ F B //=22
+/111 H1q. A5q/3 B A G^e A C6 B5 //=23
+/112 H1q. A5e B A G^ A D6 //=24
+/113 H1q. C6e B5 A G F E //=25
+/114 H1q. D5e C B4 A G F //=26
+/115 H1q. E4e D C E B A //=27
+/116 H1q. G^4e A B C5 D E //=28
+/117 F5q/3 G F E^e F A G //=29
+/118 F5e G F E^ F B //=30
+/119 A5q/3 B A G^e A C6 B5 //=31
+/120 A5e B A G^ A F6 //=32
+/121 E6e D C B5 A G //=33
+/122 F5e E D C B4 A //=34
+/123 A^4e C5 B4 F G C@ //=35
+/124 D4q@12 R F5 //=36
+/125 F5q/3 G F E^e F A G //=21
+/126 F5e G F E^ F B //=22
+/127 A5q/3 B A G^e A C6 B5 //=23
+/128 A5e B A G^ A D6 //=24
+/129 C6e B5 A G F E //=25
+/130 D5e C B4 A G F //=26
+/131 E4e D C E B A //=27
+/132 G^4e A B C5 D E //=28
+/133 F5q/3 G F E^e F A G //=29
+/134 F5e G F E^ F B //=30
+/135 A5q/3 B A G^e A C6 B5 //=31
+/136 A5e B A G T40 A T20 F7
+/137 T85 H1 E7q/3 D C B6 A G F E D6
+/138 T90 C6q/3 B5v7 A G F Ev6 D C B4
+/139 T70 H1 A^4e C5v7 B4 F T60 Gv8 C@v9
+/140 T45 H1 D4h.h@v9 H0
+
+$ P4 // 2/2
+  _beadg
+/0 Re T30 Ree/3 T25 Re/3 T40 R R T50 R R T60 R R R R R R
+/1 Rq T50 R T70 R
+/2 T80 Rh.
+/3 T90 Rh.
+/4 T Rh.
+/5 H1q. D3q@8v4 ( A3 D4 F )@ ( A3 D4 F )
+/6 T102 H1q. F3@ ( A3 D4 F )@ ( A3 D4 F )
+/7 H1q. D3 ( A3 D4 F ) ( A3 D4 F )
+/8 T105 H1q. F3 ( A3 D4 F )v4 T90 ( A3 D4 F )
+/9 T104 H1 A2 ( A3 C4 G )v5 ( A3 C4 G )
+/10 H1he E3 ( A3 C4 G ) T90 ( A3 C4 G )
+/11 T H1 A2 ( C4 G ) ( C G )
+/12 H1he ( A3 )e T80 R T110 ( C4 G ) T80 R ( C G ) R
+/13 H1q. D3qv4 T ( A3 D4 F ) ( A3 D4 F )
+/14 H1q. F3 ( A3 D4 F ) T102 ( A3 D4 F )
+/15 H1q. D3 ( A3 D4 F ) ( A3 D4 F ) //=7
+/16 T105 H1q. F3 ( A3 D4 F )v4 T90 ( A3 D4 F ) //=8
+/17 T H1 A2 ( A3 C4 G )v5 ( A3 C4 G ) //=9
+/18 H1he E3 ( A3 C4 G ) T90 ( A3 C4 G ) //=10
+/19 T95 H1 A2 ( A3 C4 G ) ( A3 C4 G ) //=9
+/20 H1he A3@8 T75 ( C4q Gq )e T80 R T85 A2q
+/21 T80 H1q. A^2@8v3 T95 ( F3 C4 Eb )@  ( F3 C4 Eb )
+/22 T H1q. B2q ( F3 D4 ) ( F3 D4 )
+/23 H1q. C3 ( A3 E4 Gb )v4 ( A3 E4 Gb )
+/24 T105 H1q. D3 ( A3 F4 )v5 R
+/25 H1q. G3 ( B E4 ) R
+/26 H1q. A2 ( F3 A D4 ) R
+/27 T H1q. A2 ( G3 A ) ( G A C4 )
+/28 H1q. ( D3 ) ( A D4 F ) T90 R
+/29* T ( A^3h.v5 ) ( Eb4 F )v3 ( Eb F )
+/30 ( B3h.v5 ) ( D4 F ) ( D F )
+/31 ( C4h.v5 ) ( G A ) ( G A )
+/32 D4v4 ( F A ) R
+/33 T104 H1q. G3v5 ( D4 E B ) R
+/34 H1q. A2 ( F3 A D4 ) R
+/35 H1q. T95 A2 ( G3 A ) ( G A )
+/36 H1q. T90 D3 ( A F4 ) R
+/37 T H1q. A^2@8v3 ( F3 C4 Eb )@ ( F3 C4 Eb ) //=21
+/38 H1q. B2 ( F3 D4 ) ( F3 D4 ) //=22
+/39 H1q. C3 ( A3 E4 Gb )v4 ( A3 E4 Gb ) //=23
+/40 H1q. D3 ( A3 F4 )v5 R //=24
+/41 T105 H1q. G3 ( B E4 ) R //=25
+/42 H1q. A2 ( F3 A D4 ) R //=26
+/43 T H1q. A2 ( G3 A ) ( G A C4 ) //=27
+/44 H1q. D3 ( A3 D4 F ) T90 R //=28
+/45* T ( A^3h.v4 ) ( Eb4 F )v3 ( Eb F ) //=29
+/46 ( B3h.v4 ) ( D4 F ) ( D F ) //=30
+/47 ( C4h.v4 ) ( G A ) ( G A ) //=31
+/48 D4v4 ( F A ) R //=32
+/49 T105 H1q. G3v5 ( D4 E B ) R //=33
+/50/ H1q. A2 ( F3 A D4 ) R //=34
+/51 T90 H1q. A2 ( G3 A ) T80 ( G A ) //=35
+/52 T70 H1q. D3 ( A F4 ) T75 R
+/53 H1 A2v3 ( G3 Av4 C4 ) ( G3 Av4 C4 )
+/54 ( G3 Av4 C4 ) ( G3 Av4 C4 ) ( G3 Av4 C4 )
+/55 H1 D3v3 ( A D4 ) T77 ( A3 D4 )
+/56 H1 A2v2 ( A3 D4 F ) T80 ( A3 D4 F )
+/57 H1 E3 ( A3 C4 G )v3 ( A3 C4 G )
+/58 H1 A2 ( A3 E4 G ) T75 ( A3 E4 G )
+/59 H1 D3v2 ( A3 D4 F ) ( A3 D4 F )
+/60 T60 H1 F3 ( A3 D4 F )e T90 R ( A3 D4 F )q
+/61 T80 H1 C3 ( G A )v3 ( G A )
+/62 T82 H1 A2 ( G3 A C4 )v4 ( G3 A C4 )
+/63 H1 D3 T84 ( A3 D4 ) ( A3 D4 )
+/64 H1 B^2 ( A3 D4 F )v5 ( A3 D4 F )
+/65 H1q. C3 ( A3 C4 F ) ( A3 C4 F )
+/66 T80 H1q. C2 ( G^3 C4 E^ ) R
+/67 H1 F2 T75 R ( F3 C4 )v3
+/68 R T65 R H0 T70 R
+/69 H1 C3 ( G A ) T80 ( G A )
+/70 H1 A2 ( G3 A C4 ) ( G3 A C4 )
+/71 H1 D3 ( A D4 ) ( A3 D4 ) //=55
+/72 H1 A2 ( A3 D4 F ) ( A3 D4 F ) //=56
+/73 T85 H1 E3 ( A3 C4 G )v4 ( A3 C4 G ) //=57
+/74 H1 A2 ( A3 E4 G ) ( A3 E4 G ) //=58
+/75 H1 D3v3 ( A3 D4 F ) ( A3 D4 F ) //=59
+/76 T80 H1 F3 ( A3 D4 F ) ( A3 D4 F ) //=60
+/77 T75 H1 C3 ( G A ) ( G A ) //=61
+/78 T80 H1 A2 ( G3 A C4 ) ( G3 A C4 ) //=62
+/79 H1 Cb3v3 ( F3 A E4 ) ( F3 A E4 )
+/80 T70 H1 B2 ( F3 A D^4 ) ( F3 A D^4 )
+/81 T80 H1 E3 ( Db4 G^ ) ( Db4 G^ )
+/82 R ( D4 Gb ) ( D4 Gb )
+/83 H1 ( A3h ) ( C4 G ) R
+/84 T75 R H0 R T20 R
+/85 T120 R R R
+/86 R R R
+/87 R R R
+/88 Rq./4 R R R R R T70 R R
+/89 Re R T80 R R T90 R R
+/90 T Rq R R
+/91 R R T90 R
+/92 R R T85 R
+/93 T80 H1q. ( D2@30 )v T ( A3 D4 F )v7 ( A3 D4 F )v6
+/94 H1q. F3 ( A3 D4 F ) ( A3 D4 F )
+/95 H1q. D3 ( A3 D4 F ) ( A3 D4 F )
+/96 H1q. F3 ( A3 D4 F )v5 ( A3 D4 F )
+/97 H1 A2 ( A3 C4 G ) ( A3 C4 G )
+/98 H1he E3 ( A3 C4 G ) ( A3 C4 G )
+/99 H1 A2 ( C4 G ) ( C G )
+/100 H1he A3 ( C4 G ) ( C G )
+/101 H1q. D3qv8@8 ( A3 D4 F )@v6 ( A3 D4 F ) //=5
+/102 H1q. F3@8 ( A3 D4 F )@ ( A3 D4 F ) //=6
+/103 H1q. D3 ( A3 D4 F ) ( A3 D4 F ) //=7
+/104 H1q. F3 ( A3 D4 F )v5 ( A3 D4 F ) //=8
+/105 H1 A2 ( C4 G ) ( C G ) //=11
+/106 H1he E3 ( A3 C4 G ) ( A3 C4 G ) //=18
+/107 H1 A2 ( A3 C4 G ) ( A3 C4 G )
+/108 H1he A3@8 ( A3 C4 G ) A2
+/109 H1q. A^2@8v4 ( F3 C4 Eb )@ ( F3 C4 Eb ) //=21
+/110 H1q. B2 ( F3 D4 ) ( F3 D4 ) //=22
+/111 H1q. C3 ( A3 E4 Gb ) ( A3 E4 Gb )v5 //=23
+/112 H1q. D3 ( A3 F4 )v6 R //=24
+/113 H1q. G3 ( B E4 ) R //=25
+/114 H1q. A2 ( F3 A D4 ) R //=26
+/115 H1q. A2 ( G3 A ) ( G A C4 ) //=27
+/116 H1q. D3 ( A D4 F ) R //=28
+/117* ( A^3h.v6 )v4 ( Eb4 F ) ( Eb F ) //=29
+/118 ( B3h.v6 ) ( D4 F ) ( D F ) //=30
+/119 ( C4h.v6 ) ( G A ) ( G A )v4 //=31
+/120 D4 ( F A ) R //=32
+/121 H1q. G3v6 ( D4 E B ) R //=33
+/122/ H1q. A2 ( F3 A D4 ) R //=34
+/123 H1q. Ab2 ( G3 A ) ( G A )
+/124 H1q. D3 ( A F4 ) R //=36
+/125 H1q. A^2@8v4 ( F3 C4 Eb )@ ( F3 C4 Eb ) //=21
+/126 H1q. B2 ( F3 D4 ) ( F3 D4 ) //=22
+/127 H1q. C3 ( A3 E4 Gb ) ( A3 E4 Gb )v5 //=23
+/128 H1q. D3v6 ( A3 F4 ) R //=24
+/129 H1q. G3 ( B E4 ) R //=25
+/130 H1q. A2 ( F3 A D4 ) R //=26
+/131 H1q. A2 ( G3 A ) ( G A C4 ) //=27
+/132 H1q. D3 ( A D4 F ) R //=28
+/133* ( A^3h.v6 )v4 ( Eb4 F ) ( Eb F ) //=29
+/134 ( B3h.v6 ) ( D4 F ) ( D F ) //=30
+/135 ( C4h.v6 ) ( G A ) ( G A ) //=31
+/136 D4 ( Fq Aq )ev6 R T40 R T20 R
+/137 T85 H1 G2q ( D4 E B )v7 R
+/138 T90 R R R
+/139 T70 H1 A2 ( Gb3 B )v6 T60 ( Gb B )
+/140 T45 H1 D2 ( F3 A F4 )hh H0

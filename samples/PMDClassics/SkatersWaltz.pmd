@@ -1,0 +1,712 @@
+//pmd,1.0,160,1
+//c Waldteufel / Skaters’ Waltz
+//i Made by UDI with makeSMF
+//s 3/4
+
+$V7 // (1)
+/1 C#4h.
+/2 E4h F#4q
+/3 ( F#4wh )h.
+/4 Rh.
+/5 D4h.
+/6 F#4h G#4q
+/7 ( G#4wh )h.
+/8 Rh.
+/9 B4h.
+/10 A4h C#4q
+/11 E4h.
+/12 ( D4h F#4h. )h C#4q
+/13 ( C#4 G#4 )h.
+/14 ( B3 G#4 )h.
+/15 ( A3w A4w )h.
+/16 Rh.
+/17 C#4h.
+/18 E4h F#4q
+/19 ( F#4w. )h.
+/20 Rh.
+/21 D4h.
+/22 F#4h G#4q
+/23 ( G#4wh )h.
+/24 Rh.
+/25 B4h.
+/26 A4h C#4q
+/27 E4h.
+/28 ( D4h F#4h. )h C#4q
+/29 ( C#4 G#4 )h.
+/30 ( B3 G#4 )h.
+/31 ( A3w A4w )h.
+/32 Rq ( C#5 E5 )e A5 ( C#5 E5 ) A5
+/33 ( C#5 E5 )e A5 ( C#5 F#5 ) A5 ( C#5 E5 ) A5
+/34 ( C#5 F#5 )e A5 ( C#5 E5 ) A5 ( C#5 F#5 ) A5
+/35 ( D5 E5 )q ( D5 G#5 ) ( D5 G#5 )
+/36 ( D5 E5 )q ( D5e G#5e ) ( D5e G#5e )
+/37 ( D5 E5 )e B5 ( D5 F#5 ) B5 ( D5 E5 ) B5
+/38 ( D5 F#5 )e B5 ( D5 E5 ) B5 ( D5 F#5 ) B5
+/39 ( C#5 E5 )q ( A5 C#5 ) ( A5 C#5 )
+/40 ( C#5 E5 )q ( A5 C#5 ) ( A5 C#5 )
+/41 ( C#5 E5 )e A5 ( C#5 F#5 ) A5 ( C#5 E5 ) A5
+/42 ( C#5 F#5 )e A5 ( C#5 E5 ) A5 ( C#5 F#5 ) A5
+/43 ( C#5 E5 )q ( E5 G#5 ) ( E5 G#5 )
+/44 ( C#5 E5 )q ( E5 G#5 ) ( E5 G#5 )
+/45 ( C5 G#5 )e A5 ( D#5 G#5 ) A5 ( C5 G#5 ) A5
+/46 ( D#5 G#5 )e A5 ( C5 G#5 ) A5 ( D#5 G#5 ) A5
+/47 ( C#5 G#5 )e A5 ( E5 G#5 ) A5 ( C#5 G#5 ) A5
+/48 ( E5 G#5 )e A5 ( D5 G#5 ) A5 ( E5 G#5 ) A5
+/49 ( C#5 E5 )e A5 ( C#5 F#5 ) A5 ( C#5 E5 ) A5
+/50 ( C#5 F#5 )e A5 ( C#5 E5 ) A5 ( C#5 F#5 ) A5
+/51 ( D5 E5 )q ( D5 G#5 ) ( D5 G#5 )
+/52 ( D5 E5 )q ( D5 G#5 ) ( D5 G#5 )
+/53 ( D5 E5 )e B5 ( D5 F#5 ) B5 ( D5 E5 ) B5
+/54 ( D5 F#5 )e B5 ( D5 E5 ) B5 ( D5 F#5 ) B5
+/55 ( C#5 E5 )q ( A5 C#5 ) ( A5 C#5 )
+/56 ( C#5 E5 )q ( A5 C#5 ) ( A5 C#5 )
+/57 ( A4 G4 )e E5 ( B4 G4 ) E5 ( A4 G4 ) E5
+/58 ( B4 G4 )e E5 ( A4 G4 ) E5 ( B4 G4 ) E5
+/59 ( A4 F#4 )e D5 ( B4 F#4 ) D5 ( A4 F#4 ) D5
+/60 ( B4 F#4 )e D5 ( A4 F#4 ) D5 ( B4 F4 ) D5
+/61 ( C#5 E4 )e E5 ( A4 C#5 ) E5 ( C#5 E4 ) E5
+/62 ( D5 G#4 )e E5 ( D5 E4 ) E5 ( D5 G#4 ) E5
+/63 ( A4 C#5 )e E5 ( C#5 E4 ) E5 ( A4 C#5 ) E5
+/64 ( A4 A5 C#5 )e R ( C#5 E5 )e A5 ( C#5 F#5 ) A5
+/65 ( C#5 E5 )e A5 ( C#5 F#5 ) A5 ( C#5 E5 ) A5
+/66 ( C#5 F#5 )e A5 ( C#5 E5 ) A5 ( C#5 F#5 ) A5
+/67 ( D5 E5 )q ( D5 G#5 ) ( D5 G#5 )
+/68 ( D5 E5 )q ( D5 G#5 ) ( D5 G#5 )
+/69 ( D5 E5 )e B5 ( D5 F#5 ) B5 ( D5 E5 ) B5
+/70 ( D5 F#5 )e B5 ( D5 E5 ) B5 ( D5 F#5 ) B5
+/71 ( C#5 E5 )q ( A5 C#5 ) ( A5 C#5 )
+/72 ( C#5 E5 )q ( A5 C#5 ) ( A5 C#5 )
+/73 ( C#5 E5 )e A5 ( C#5 F#5 ) A5 ( C#5 E5 ) A5
+/74 ( C#5 F#5 )e A5 ( C#5 E5 ) A5 ( C#5 F#5 ) A5
+/75 ( C#5 E5 )q ( E5 G#5 )e R ( E5 G#5 ) R
+/76 ( C#5 E5 )q ( E5 G#5 )e R ( E5 G#5 ) R
+/77 ( C5 G#5 )e A5 ( D#5 G#5 ) A5 ( C5 G#5 ) A5
+/78 ( D#5 G#5 )e A5 ( C5 G#5 ) A5 ( D#5 G#5 ) A5
+/79 ( C#5 G#5 )e A5 ( E5 G#5 ) A5 ( C#5 G#5 ) A5
+/80 ( E5 G#5 )e A5 ( D5 G#5 ) A5 ( E5 G#5 ) A5
+/81 ( C#5 E5 )e A5 ( C#5 F#5 ) A5 ( C#5 E5 ) A5
+/82 ( C#5 F#5 )e A5 ( C#5 E5 ) A5 ( C#5 F#5 ) A5
+/83 ( D5 E5 )q ( D5 G#5 )e R ( D5 G#5 ) R
+/84 ( D5 E5 )q ( D5 G#5 )e R ( D5 G#5 ) R
+/85 ( D5 E5 )e B5 ( D5 F#5 ) B5 ( D5 E5 ) B5
+/86 ( D5 F#5 )e B5 ( D5 E5 ) B5 ( D5 F#5 ) B5
+/87 ( C#5 E5 )q ( A5 C#5 )e R ( A5 C#5 ) R
+/88 ( C#5 E5 )q ( A5 C#5 )e R ( A5 C#5 ) R
+/89 ( A4 G4 )e E5 ( B4 G4 ) E5 ( A4 G4 ) E5
+/90 ( B4 G4 )e E5 ( A4 G4 ) E5 ( B4 G4 ) E5
+/91 ( A4 F#4 )e D5 ( B4 F#4 ) D5 ( A4 F#4 ) D5
+/92 ( B4 F#4 )e D5 ( A4 F#4 ) D5 ( B4 F4 ) D5
+/93 ( C#5 E4 )e E5 ( A4 C#5 ) E5 ( C#5 E4 ) E5
+/94 ( D5 G#4 )e E5 ( D5 E4 ) E5 ( D5 G#4 ) E5
+/95 ( A4 C#5 )e E5 ( C#5 E4 ) E5 ( A4 C#5 ) E5
+/96 ( A4 A5 C#5 )e R Rh
+/97 C#4h.
+/98 E4h F#4q
+/99 ( F#4wh )h.
+/100 Rh.
+/101 D4h.
+/102 F#4h G#4q
+/103 ( G#4wh )h.
+/104 Rh.
+/105 B4h.
+/106 A4h C#4q
+/107 E4h.
+/108 ( D4h F#4h. )h C#4q
+/109 ( C#4 G#4 )h.
+/110 ( B3 G#4 )h.
+/111 ( A3w A4w )h.
+/112 Rq F#4e A4 D5 F#5
+/113 B5q R A5
+/114 Re.. A5t A6q R
+/115 ( C#4w )h.
+/116 Rq G4e A4 C#5 E5
+/117 B5q R A5
+/118 Re.. A5t A6q R
+/119 ( D4w )h.
+/120 Rq F#4e A4 D5 F#5
+/121 B5q R A5
+/122 Re.. A5t A6q R
+/123 ( C#4w )h.
+/124 Re.. C#5t C#6q R
+/125 ( F4w )h.
+/126 Re.. F5t F6q R
+/127 ( F#4w )h.
+/128 Rq F#4e A4 D5 F#5
+/129 B5q R A5
+/130 Re.. A5t A6q R
+/131 ( C#4w )h.
+/132 Rq G4e A4 C#5 E5
+/133 B5q R A5
+/134 Re.. A5t A6q R
+/135 ( D4w )h.
+/136 Rq F#4e A4 D5 F#5
+/137 B5q R A5
+/138 Re.. A5t A6q R
+/139 ( C#4w )h.
+/140 Re.. C#5t C#6q R
+/141 ( F4w )h.
+/142 Re Rs. F5t F6q R
+/143 ( F#4w )h.
+/144 Rh Re Rs. C#6t
+/145 ( B5 G5 )e Rs. C#6t ( B5 G5 )e Rs. C#6t ( B5e G5e )e Rs. C#6t
+/146 ( B5 G5 )e Rs. C#6t ( B5 G5 )e Rs. C6t ( A#5 G5 )e Rs. B5t
+/147 ( A5 F#5 )e Rs. B5t ( A5 F#5 )e Rs. B5t ( A5 F#5 )e Rs. B5t
+/148 ( A5 F#5 )e Rs. B5t ( A5 F#5 )e Rs. B5t ( A5 F#5 )e Rs. B5t
+/149 ( A5 G5 )e Rs. B5t ( A5 G5 )e Rs. B5t ( A5 G5 )e Rs. B5t
+/150 ( A5 G5 )e Rs. B5t ( A5 G5 )e Rs. B5t ( A5 G5 )e Rs. B5t
+/151 ( A5 F#5 )e Rs. B5t ( A5 F#5 )e Rs. B5t ( A5 F#5 )e Rs. B5t
+/152 ( A5 F#5 )e Rs. B5t ( A5 F#5 )e Rs. B5t ( A#5 F#5 )e Rs. C#6t
+/153 ( B5 G5 )e Rs. C#6t ( B5 G5 )e Rs. C#6t ( B5 G5 )e Rs. C#6t
+/154 ( B5 G5 )e Rs. C#6t ( B5 G5 )e Rs. C#6t ( A#5 G5 )e Rs. B5t
+/155 ( A5 F#5 )e Rs. B5t ( A5 F#5 )e Rs. B5t ( A5 F#5 )e Rs. B5t
+/156 ( A5 F#5 )e Rs. B5t ( A5 F#5 )e Rs. B5t ( A5 F#5 )e Rs. B5t
+/157 ( A5 G5 )e Rs. B5t ( A5 G5 )e Rs. B5t ( A5 G5 )e Rs. B5t
+/158 ( A5 G5 )e Rs. D6t ( C#6 G5 )e Rs. D6t ( C#6 G5 )e Rs. E6t
+/159 ( D6 F#5 )e Rs. E6t ( D6 F#5 )e Rs. E6t ( D6 F#5 )e R
+/160 D5q Rq Re Rs. C#6t
+/161 ( B5 G5 )e Rs. C#6t ( B5 G5 )e Rs. C#6t ( B5 G5 )e Rs. C#6t
+/162 ( B5 G5 )e Rs. C#6t ( B5 G5 )e Rs. C6t ( A#5 G5 )e Rs. B5t
+/163 ( A5 F#5 )e Rs. B5t ( A5 F#5 )e Rs. B5t ( A5 F#5 )e Rs. B5t
+/164 ( A5 F#5 )e Rs. B5t ( A5 F#5 )e Rs. B5t ( A5 F#5 )e Rs. B5t
+/165 ( A5 G5 )e Rs. B5t ( A5 G5 )e Rs. B5t ( A5 G5 )e Rs. B5t
+/166 ( A5 G5 )e Rs. B5t ( A5 G5 )e Rs. B5t ( A5 G5 )e Rs. B5t
+/167 ( A5 F#5 )e Rs. B5t ( A5 F#5 )e Rs. B5t ( A5 F#5 )e Rs. B5t
+/168 ( A5 F#5 )e Rs. B5t ( A5 F#5 )e Rs. B5t ( A#5 F#5 )e Rs. C#6t
+/169 ( B5 G5 )e Rs. C#6t ( B5 G5 )e Rs. C#6t ( B5 G5 )e Rs. C#6t
+/170 ( B5 G5 )e Rs. C#6t ( B5 G5 )e Rs. C#6t ( A#5 G5 )e Rs. B5t
+/171 ( A5 F#5 )e Rs. B5t ( A5 F#5 )e Rs. B5t ( A5 F#5 )e Rs. B5t
+/172 ( A5 F#5 )e Rs. B5t ( A5 F#5 )e Rs. B5t ( A5 F#5 )e Rs. B5t
+/173 ( A5 G5 )e Rs. B5t ( A5 G5 )e Rs. B5t ( A5 G5 )e Rs. B5t
+/174 ( A5 G5 )e Rs. D6t ( C#6 G5 )e Rs. D6t ( C#6 G5 )e Rs. E6t
+/175 ( D6 F#5 )e Rs. E6t ( D6 F#5 )e Rs. E6t ( D6 F#5 )e R
+/176 D5q F#4e A4 D5 F#5
+/177 B5q R A5
+/178 Re Rs. A5t A6q R
+/179 ( C#4w )h.
+/180 Rq G4e A4 C#5 E5
+/181 B5q R A5
+/182 Re Rs. A5t A6q R
+/183 ( D4w )h.
+/184 Rq F#4e A4 D5 F#5
+/185 B5q R A5
+/186 Re Rs. D5t D6q R
+/187 ( G4w )h.
+/188 Re Rs. D5t D6q R
+/189 ( A4w )h.
+/190 Re Rs. A5t A6q R
+/191 ( D5w )q ( A4 F#4 ) ( A4 F#4 )
+/192 ( A4 F#4 )q R R
+/193 ( C#5 C#6 )h.
+/194 ( E4 E5 )h.
+/195 ( A4 E4 E5 )h.
+/196 ( A4 D#4 D#5 )h.
+/197 ( B4h. B5h. )q D4 D4
+/198 ( D4 D5 )h.
+/199 ( A4wh D5h. E4wh )h.
+/200 C#5h.
+/201 B4h C#5q
+/202 D5q ( G#4 G#5 )q. ( F#4 F#5 )e
+/203 ( F#4 F#5 )h.
+/204 ( F4 F5 )h.
+/205 B4h C#5q
+/206 D5q ( C#5 C#6 )q. ( B4 B5 )e
+/207 ( A4 A5 )h.
+/208 ( G#4 G#5 )h.
+/209 B5q A5 F#5
+/210 E5q D#5 D5
+/211 C#5e3 D5 C#5 C5q C#5
+/212 E5q D5 F#4
+/213 ( A4h. )he. A4t C#5
+/214 B4h.
+/215 ( A4w )h.
+/216 Rh.
+/217 ( C#5 C#6 )h.
+/218 ( E4 E5 )h.
+/219 ( A4 E4 E5 )h.
+/220 ( A4 D#4 D#5 )h.
+/221 ( B4h. B5h. )q D4 D4
+/222 ( D4 D5 )h.
+/223 ( A4wh D5h. E4wh )h.
+/224 C#5h.
+/225 B4h C#5q
+/226 D5q ( G#4 G#5 )q. ( F#4 F#5 )e
+/227 ( F#4 F#5 )h.
+/228 ( F4 F5 )h.
+/229 B4h C#5q
+/230 D5q ( C#5 C#6 )q. ( B4 B5 )e
+/231 ( A4 A5 )h.
+/232 ( G#4 G#5 )h.
+/233 B5q A5 F#5
+/234 E5q D#5 D5
+/235 C#5e3 D5 C#5 C5q C#5
+/236 E5q D5 F#4
+/237 ( A4h. )he. A4t C#5
+/238 B4h.
+/239 ( A4w )h.
+/240 Rq C#6e R C#6 R
+/241 C#6e B5 F5 R ( F#5h )q
+/242 Rq ( C#6e )q ( B5e )
+/243 B5e A5 ( D#5e )q ( E5h )
+/244 Rq ( B5e )q ( A5e )
+/245 A5e G#5 ( A#4e )q ( B4h )
+/246 Rq ( G#5e )q ( F#5e )
+/247 D#5e F#5 ( E5e )q ( C#5h )
+/248 Rq ( C#6e )q ( C#6e )
+/249 C#6e B5 ( F5e )q ( F#5h )
+/250 Rq ( C#6e )q ( B5e )
+/251 B5e A5 ( D#5e )q ( E5h )
+/252 Rq ( B5e )q ( A5e )
+/253 A5e G#5 G#4q G#5e F#5
+/254 F#4q F#5e G5 F4q
+/255 ( E4 E5 )e ( E4 E5 ) ( E4 E5 )q ( E4 G#4 )q
+/256 ( E4e A4e )q ( C#6e ) ( C#6e )
+/257 C#6e B5 ( F5e )q ( F#5h )
+/258 Rq ( C#6e )q ( B5e )
+/259 B5e A5 ( D#5e )q ( E5h )
+/260 Rq ( B5e )q ( A5e )
+/261 A5e G#5 ( A#4e )q ( B4h )
+/262 Rq ( G#5e )q ( F#5e )
+/263 D#5e F#5 ( E5e )q ( C#5h )
+/264 Rq ( C#6e )q ( C#6e )
+/265 C#6e B5 ( F5e )q ( F#5h )
+/266 Rq ( C#6e )q ( B5e )
+/267 B5e A5 ( D#5e )q ( E5h )
+/268 Rq ( B5e )q ( A5e )
+/269 A5e G#5 G#4q G#5e F#5
+/270 F#4q F#5e G5e F4q
+/271 ( E5h )e E5 ( E5e )q G#4
+/272 A4q Re A4 A4q
+/273 F#5h.
+/274 C#5q D5 F#5
+/275 ( B4wh )h.
+/276 Rh.
+/277 G5h.
+/278 D#5q E5 G5
+/279 ( C#5wh )h.
+/280 Rh.
+/281 A5h.
+/282 F5q F#5 A5
+/283 D5h.
+/284 C#5q D5 F#5
+/285 E4h.
+/286 D#4q E4 A4
+/287 ( D4w )h.
+/288 Rh.
+/289 F#5h.
+/290 C#5q D5 F#5
+/291 ( B4wh )h.
+/292 Rh.
+/293 G5h.
+/294 D#5q E5 G5
+/295 ( C#5wh )h.
+/296 Rh.
+/297 A5h.
+/298 F5q F#5 A5
+/299 D5h.
+/300 C#5q D5 F#5
+/301 E4h.
+/302 D#4q E4 A4
+/303 D4h.
+/304 A3e D4 F#4 A4 D5 F#5
+/305 A5e B5 A5 F#5 D5 G5
+/306 F#5e D5 B4 E5 D5 A4
+/307 ( C#5 G4 )e ( C#5 G4 ) ( C#5 G4 )q ( C#5 G4 )
+/308 A5e B5 A5 G5 A4 G5
+/309 ( A4 E5 G4 )e ( A4 E5 G4 ) ( A4 E5 G4 )q ( A4 E5 G4 )
+/310 A5e B5 A5 G5 A4 F#5
+/311 ( A4 D5 )e ( A4 D5 ) ( A4 D5 )q ( A4 D5 )
+/312 A3e D4 F#4 A4 D5 F#5
+/313 A5e B5 A5 F#5 D5 G5
+/314 F#5e D5 B4 E5 D5 A4
+/315 ( B4 C#5 G#4 )e ( B4 C#5 G#4 ) ( B4 C#5 G#4 )q ( B4 C#5 G#4 )
+/316 C#5e D5 C#5 F#5 F5 A5
+/317 ( B4 F5 G#5 )e ( B4 F5 G#5 ) ( B4 F5 G#5 )q ( B4 F5 G#5 )
+/318 C#5e F#5 F5 A5 G#5 C#5
+/319 F#5q Re ( A4 C#5 F#5 ) ( A4 C#5 F#5 )q
+/320 A3e D4 F#4 A4 D5 F#5
+/321 A5e B5 A5 F#5 D5 G5
+/322 F#5e D5 B4 E5 D5 A4
+/323 ( C#5 G4 )e ( C#5 G4 ) ( C#5 G4 )q ( C#5 G4 )
+/324 A5e B5 A5 G5 A4 G5
+/325 ( A4 E5 G4 )e ( A4 E5 G4 ) ( A4 E5 G4 )q ( A4 E5 G4 )
+/326 A5e B5 A5 G5 A4 F#5
+/327 ( A4 D5 )e ( A4 D5 ) ( A4 D5 )q ( A4 D5 )
+/328 A3e D4 F#4 A4 D5 F#5
+/329 A5e B5 A5 F#5 D5 G5
+/330 F#5e D5 B4 E5 D5 A4
+/331 ( B4 C#5 G#4 )e ( B4 C#5 G#4 ) ( B4 C#5 G#4 )q ( B4 C#5 G#4 )
+/332 C#5e D5 C#5 F#5 F5 A5
+/333 ( B4 F5 G#5 )e ( B4 F5 G#5 ) ( B4 F5 G#5 )q ( B4 F5 G#5 )
+/334 C#5e F#5 F5 A5 G#5 C#5
+/335 F#5q Re ( A4 C#5 F#5 ) ( A4 C#5 F#5 )q
+/336 ( A4 A5 C#5 G5 )q Re ( A4 A5 C#5 G5 ) ( A4 A5 C#5 G5 )q
+/337 F#5h.
+/338 C#5q D5 F#5
+/339 ( B4wh )h.
+/340 Rh.
+/341 G5h.
+/342 D#5q E5 G5
+/343 ( C#5wh )h.
+/344 Rh.
+/345 A5h.
+/346 F5q F#5 A5
+/347 D5h.
+/348 C#5q D5 F#5
+/349 E4h.
+/350 D#4q E4 A4
+/351 ( D4w )h.
+/352 Rq
+
+$V6 // (2)
+/1 A2qv5@8 ( A3 Ev6 ) ( A Ev6 )
+/2 C#3q ( A Ev6 ) ( A Ev6 )
+/3 B2q ( D3 Ev7 G#v6 ) ( D Ev7 G#v6 )
+/4 E2q ( D3 Ev7 G#v6 ) ( D Ev7 G#v6 )
+/5 B2q ( D3 Ev6 G# ) ( D Ev6 G# )
+/6 E2q ( D3 Ev6 G# ) ( D Ev6 G# )
+/7 C#3q ( A Ev7 ) ( A Ev7 )
+/8 C#3q ( A Ev7 ) ( A Ev7 )
+/9 F#2q ( A3 C#v6 F# ) ( A C#v6 F# )
+/10 F#2q ( A3 C#v6 F# ) ( A C#v6 F# )
+/11 B2q ( A3 Dv6 F# ) ( A Dv6 F# )
+/12 B2q ( A3 Dv6 F# ) ( A Dv6 F# )
+/13 E2q ( D3 E G# ) ( D Ev7 G# )
+/14 E2q ( D3 E G# ) ( D Ev7 G# )
+/15 A2q ( C#3 Ev7 ) ( C# Ev7 )
+/16 H1h ( C#3 Ev7 )q Rh
+/17 A2q ( A3 E ) ( A E )
+/18 C#3q ( A E ) ( A E )
+/19 B2q ( D3 Ev7 G#v6 ) ( D Ev7 G#v6 )
+/20 E2q ( D3 Ev7 G#v6 ) ( D Ev7 G#v6 )
+/21 B2q ( D3 E G# ) ( D E G# )
+/22 E2q ( D3 E G# ) ( D E G# )
+/23 C#3q ( A Ev7 ) ( A Ev7 )
+/24 C#3q ( A Ev7 ) ( A Ev7 )
+/25 F#2q ( A3 C# F# ) ( A C# F# )
+/26 F#2q ( A3 C# F# ) ( A C# F# )
+/27 B2q ( A3 D F# ) ( A D F# )
+/28 B2q ( A3 D F# ) ( A D F# )
+/29 E2q ( D3 Ev7 G#v6 ) ( D Ev7 G#v6 )
+/30 E2q ( D3 Ev7 G#v6 ) ( D Ev7 G#v6 )
+/31 A2q ( C#3 Ev7 ) ( C# Ev7 )
+/32 H1h ( C#3 E3v7 )q Rh
+/33 A2q ( A3 C#4 E3 )v7 ( A3 C#4 E3 )
+/34 E2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/35 B2q ( D4 E3 G#3 ) ( D4 E3 G#3 )
+/36 E2q ( D4 E3 G#3 ) ( D4 E3 G#3 )
+/37 G#2q ( B3 D4 E3 ) ( B3 D4 E3 )
+/38 E2q ( D4 E3 G#3 ) ( D4 E3 G#3 )
+/39 A2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/40 E2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/41 A2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/42 A2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/43 G#2q ( C#4 E3 G#3 ) ( C#4 E3 G#3 )
+/44 G#2q ( C#4 E3 G#3 ) ( C#4 E3 G#3 )
+/45 G#2q ( C4 F#3 G#3 ) ( C4 F#3 G#3 )
+/46 G#2q ( C4 G#3 ) ( C4 F#3 G#3 )
+/47 C#3q ( C#4 E3 G#3 ) ( C#4 E3 G#3 )
+/48 E2q ( D4 E3 G#3 ) ( D4 E3 G#3 )
+/49 A2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/50 E2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/51 B2q ( D4 E3 G#3 ) ( D4 E3 G#3 )
+/52 E2q ( D4 E3 G#3 ) ( D4 E3 G#3 )
+/53 G#2q ( B3 D4 E3 ) ( B3 D4 E3 )
+/54 E2q ( D4 E3 G#3 ) ( D4 E3 G#3 )
+/55 A2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/56 A2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/57 A2q ( A3 C#4 G3 ) ( A3 C#4 G3 )
+/58 A2q ( A3 C#4 G3 ) ( A3 C#4 G3 )
+/59 F#3q ( A3 D4 F#3 ) ( A3 D4 F#3 )
+/60 D3q ( A3 D4 F#3 ) ( A3 B3 F3 )
+/61 E3q ( A3 C#4 ) ( A3 C#4 )
+/62 E2q ( D4 E3 G#3 ) ( D4 E3 G#3 )
+/63 A2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/64 ( A2e )h.
+/65 A2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/66 E2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/67 B2q ( D4 E3 G#3 ) ( D4 E3 G#3 )
+/68 E2q ( D4 E3 G#3 ) ( D4 E3 G#3 )
+/69 G#2q ( B3 D4 E3 ) ( B3 D4 E3 )
+/70 E2q ( D4 E3 G#3 ) ( D4 E3 G#3 )
+/71 A2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/72 E2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/73 A2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/74 A2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/75 G#2q ( C#4 E3 G#3 ) ( C#4 E3 G#3 )
+/76 G#2q ( C#4 E3 G#3 ) ( C#4 E3 G#3 )
+/77 G#2q ( C4 F#3 G#3 ) ( C4 F#3 G#3 )
+/78 G#2q ( C4 G#3 ) ( C4 F#3 G#3 )
+/79 C#3q ( C#4 E3 G#3 ) ( C#4 E3 G#3 )
+/80 E2q ( D4 E3 G#3 ) ( D4 E3 G#3 )
+/81 A2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/82 E2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/83 B2q ( D4 E3 G#3 ) ( D4 E3 G#3 )
+/84 E2q ( D4 E3 G#3 ) ( D4 E3 G#3 )
+/85 G#2q ( B3 D4 E3 ) ( B3 D4 E3 )
+/86 E2q ( D4 E3 G#3 ) ( D4 E3 G#3 )
+/87 A2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/88 A2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/89 A2q ( A3 C#4 G3 ) ( A3 C#4 G3 )
+/90 A2q ( A3 C#4 G3 ) ( A3 C#4 G3 )
+/91 F#3q ( A3 D4 F#3 ) ( A3 D4 F#3 )
+/92 D3q ( A3 D4 F#3 ) ( A3 B3 F3 )
+/93 E3q ( A3 C#4 ) ( A3 C#4 )
+/94 E2q ( D4 E3 G#3 ) ( D4 E3 G#3 )
+/95 A2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/96 H1h ( A2e A3e )h.
+/97 A2qv6 ( A3 E3 ) ( A3 E3 )
+/98 C#3q ( A3 E3 ) ( A3 E3 )
+/99 B2q ( D3 E3 G#3 ) ( D3 E3 G#3 )
+/100 E2q ( D3 E3 G#3 ) ( D3 E3 G#3 )
+/101 B2q ( D3 E3 G#3 ) ( D3 E3 G#3 )
+/102 E2q ( D3 E3 G#3 ) ( D3 E3 G#3 )
+/103 C#3q ( A3 E3 ) ( A3 E3 )
+/104 C#3q ( A3 E3 ) ( A3 E3 )
+/105 F#2q ( A3 C#3 F#3 ) ( A3 C#3 F#3 )
+/106 F#2q ( A3 C#3 F#3 ) ( A3 C#3 F#3 )
+/107 B2q ( A3 D3 F#3 ) ( A3 D3 F#3 )
+/108 B2q ( A3 D3 F#3 ) ( A3 D3 F#3 )
+/109 E2q ( D3 E3 G#3 ) ( D3 E3 G#3 )
+/110 E2q ( D3 E3 G#3 ) ( D3 E3 G#3 )
+/111 A2q ( C#3 E3 ) ( C#3 E3 )
+/112 H1h ( C#3q E3q )h.
+/113 D3q ( A3 F#3 ) ( A3 F#3 )
+/114 A2q ( A3 F#3 ) ( A3 F#3 )
+/115 E3q ( A3 G3 ) ( A3 G3 )
+/116 A2q ( A3 G3 ) ( A3 G3 )
+/117 E3q ( A3 G3 ) ( A3 G3 )
+/118 A2q ( A3 G3 ) ( A3 G3 )
+/119 D3q ( A3 F#3 ) ( A3 F#3 )
+/120 A2q ( A3 F#3 ) ( A3 F#3 )
+/121 D3q ( A3 F#3 ) ( A3 F#3 )
+/122 D3q ( A3 F#3 ) ( A3 F#3 )
+/123 C#3q ( A3 F#3 ) ( A3 F#3 )
+/124 C#3q ( A3 F#3 ) ( A3 F#3 )
+/125 C#3q ( B3 C#4 G#3 ) ( B3 C#4 G#3 )
+/126 C#3q ( B3 C#4 G#3 ) ( B3 C#4 G#3 )
+/127 ( A3 C#4 F#3 )q ( A3 C#4 ) ( A3 C#3 C#4 )
+/128 ( A3q C#4q F#2q )h.
+/129 D3q ( A3 F#3 ) ( A3 F#3 )
+/130 A2q ( A3 F#3 ) ( A3 F#3 )
+/131 E3q ( A3 G3 ) ( A3 G3 )
+/132 A2q ( A3 G3 ) ( A3 G3 )
+/133 E3q ( A3 G3 ) ( A3 G3 )
+/134 A2q ( A3 G3 ) ( A3 G3 )
+/135 D3q ( A3 F#3 ) ( A3 F#3 )
+/136 A2q ( A3 F#3 ) ( A3 F#3 )
+/137 D3q ( A3 F#3 ) ( A3 F#3 )
+/138 D3q ( A3 F#3 ) ( A3 F#3 )
+/139 C#3q ( A3 F#3 ) ( A3 F#3 )
+/140 C#3q ( A3 C#4 F#3 ) ( A3 C#4 F#3 )
+/141 C#3q ( B3 C#4 G#3 ) ( B3 C#4 G#3 )
+/142 C#3q ( B3 C#4 G#3 ) ( B3 C#4 G#3 )
+/143 ( A3 C#4 F#3 )q ( A3 C#4 ) ( A3 C#3 C#4 )
+/144 ( A3q C#4q F#2q )h.
+/145 G2qv6 ( B3 E4 G3 ) ( B3 E4 G3 )
+/146 G2q ( B3 E4 G3 ) ( A#3 E4 G3 )
+/147 A2q ( A3 D4 F#3 ) ( A3 D4 F#3 )
+/148 A2q ( A3 D4 F#3 ) ( A3 D4 F#3 )
+/149 E3q ( A3 C#4 G3 ) ( A3 C#4 G3 )
+/150 A2q ( A3 C#4 G3 ) ( A3 C#4 G3 )
+/151 D3q ( A3 D4 F#3 ) ( A3 D4 F#3 )
+/152 D3q ( A3 D4 F#3 ) ( A#3 D4 F#3 )
+/153 G2q ( B3 E4 G3 ) ( B3 E4 G3 )
+/154 G2q ( B3 E4 G3 ) ( A#3 E4 G3 )
+/155 A2q ( A3 D4 F#3 ) ( A3 D4 F#3 )
+/156 A2q ( A3 D4 F#3 ) ( A3 D4 F#3 )
+/157 E3q ( A3 C#4 G3 ) ( A3 C#4 G3 )
+/158 A2q ( A3 C#4 G3 ) ( A3 C#4 G3 )
+/159 D3q ( A3 D4 F#3 ) ( A3 D4 F#3 )
+/160 ( F#3q )h.
+/161 G2q ( B3 E4 G3 ) ( B3 E4 G3 )
+/162 G2q ( B3 E4 G3 ) ( A#3 E4 G3 )
+/163 A2q ( A3 D4 F#3 ) ( A3 D4 F#3 )
+/164 A2q ( A3 D4 F#3 ) ( A3 D4 F#3 )
+/165 E3q ( A3 C#4 G3 ) ( A3 C#4 G3 )
+/166 A2q ( A3 C#4 G3 ) ( A3 C#4 G3 )
+/167 D3q ( A3 D4 F#3 ) ( A3 D4 F#3 )
+/168 D3q ( A3 D4 F#3 ) ( A#3 D4 F#3 )
+/169 G2q ( B3 E4 G3 ) ( B3 E4 G3 )
+/170 G2q ( B3 E4 G3 ) ( A#3 E4 G3 )
+/171 A2q ( A3 D4 F#3 ) ( A3 D4 F#3 )
+/172 A2q ( A3 D4 F#3 ) ( A3 D4 F#3 )
+/173 E3q ( A3 C#4 G3 ) ( A3 C#4 G3 )
+/174 A2q ( A3 C#4 G3 ) ( A3 C#4 G3 )
+/175 D3q ( A3 D4 F#3 ) ( A3 D4 F#3 )
+/176 ( F#3q )h.
+/177 D3qv7 ( A F# ) ( A F# )
+/178 A2q ( A3 F# ) ( A F# )
+/179 E3q ( A G ) ( A G )
+/180 A2q ( A3 G ) ( A G )
+/181 E3q ( A G ) ( A G )
+/182 A2q ( A3 G3 ) ( A3 G3 )
+/183 D3q ( A3 F#3 ) ( A3 F#3 )
+/184 A2q ( A3 F#3 ) ( A3 F#3 )
+/185 ( D3h. )q ( A3 F#3 ) ( A3 F#3 )
+/186 ( C3h. )q ( A3 D3 F#3 ) ( A3 D3 F#3 )
+/187 ( B2h. )q ( D3 G3 ) ( D3 G3 )
+/188 ( A#2h. )q ( D3 F3 G#3 ) ( D3 F3 G#3 )
+/189 ( A2h. )q ( A3 D3 F#3 ) ( A3 D3 F#3 )
+/190 ( A2h. )q ( A3 C#4 G3 ) ( A3 C#4 G3 )
+/191 D3q F#2 A2
+/192 ( D2q )h.
+/193 A2qv7 ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/194 A2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/195 ( F#3h. )q ( A3 B3 ) ( A3 B3 )
+/196 ( F#3h. )q ( A3 B3 ) ( A3 B3 )
+/197 ( F3h. )q ( A3 B3 ) ( A3 B3 )
+/198 ( E3h. )q ( B3 G#3 ) ( B3 G#3 )
+/199 A2q ( A3 E ) ( A E )
+/200 A2q ( A3 E ) ( A E )
+/201 D3q ( B F# ) ( B F# )
+/202 B2q ( B3 D4 F#3 ) ( B3 D4 F#3 )
+/203 C#3q ( B G# ) ( B G# )
+/204 C#3q ( B G# ) ( B G# )
+/205 D3q ( B3 D4 F#3 ) ( B3 D4 F#3 )
+/206 B2q ( B3 D4 F#3 ) ( B3 D4 F#3 )
+/207 ( E3h. )q ( B3 D4 ) ( B3 D4 )
+/208 ( F3h. )q ( B3 D4 ) ( B3 D4 )
+/209 ( F#3h. )q ( A3 C#4 ) ( A3 C#4 )
+/210 ( G#3h. )q ( B3 D4 E4 ) ( B3 D4 E4 )
+/211 ( A3h )q ( C#4 E4 ) ( A#3 E4 G4 )
+/212 ( B3h )q ( D4 F#4 ) D3
+/213 ( E3h. )q ( A3 C#4 ) ( A3 C#4 )
+/214 ( E3h. )q ( D4 G#3 ) ( D4 G#3 )
+/215 A2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/216 ( A3 C#4 E3 )q Rh
+/217 A2qv6 ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/218 A2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/219 ( F#3h. )q ( A3 B3 ) ( A3 B3 )
+/220 ( F#3h. )q ( A3 B3 ) ( A3 B3 )
+/221 ( F3h. )q ( A3 B3 ) ( A3 B3 )
+/222 ( E3h. )q ( B3 G#3 ) ( B3 G#3 )
+/223 A2q ( A3 E3 ) ( A3 E3 )
+/224 A2q ( A3 E3 ) ( A3 E3 )
+/225 D3q ( B3 F#3 ) ( B3 F#3 )
+/226 B2q ( B3 D4 F#3 ) ( B3 D4 F#3 )
+/227 C#3q ( B3 G#3 ) ( B3 G#3 )
+/228 C#3q ( B3 G#3 ) ( B3 G#3 )
+/229 D3q ( B3 D4 F#3 ) ( B3 D4 F#3 )
+/230 B2q ( B3 D4 F#3 ) ( B3 D4 F#3 )
+/231 ( E3h. )q ( B3 D4 ) ( B3 D4 )
+/232 ( F3h. )q ( B3 D4 ) ( B3 D4 )
+/233 ( F#3h. )q ( A3 C#4 ) ( A3 C#4 )
+/234 ( G#3h. )q ( B3 D4 E4 ) ( B3 D4 E4 )
+/235 ( A3h )q ( C#4 E4 ) ( A#3 E4 G4 )
+/236 ( B3h )q ( D4 F#4 ) D3
+/237 ( E3h. )q ( A3 C#4 ) ( A3 C#4 )
+/238 ( E3h. )q ( D4 G#3 ) ( D4 G#3 )
+/239 A2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/240 ( A3 C#4 E3 )q Rh
+/241 D3qv6 ( B3 D4 F#3 ) ( B3 D4 F#3 )
+/242 D3q ( B3 D4 F#3 ) ( B3 D4 F#3 )
+/243 E3q ( A3 C#4 ) ( A3 C#4 )
+/244 E3q ( A3 C#4 ) ( A3 C#4 )
+/245 B2q ( D4 E3 G#3 ) ( D4 E3 G#3 )
+/246 E2q ( D4 E3 G#3 ) ( D4 E3 G#3 )
+/247 A2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/248 A2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/249 D3q ( B3 D4 F#3 ) ( B3 D4 F#3 )
+/250 D3q ( B3 D4 F#3 ) ( B3 D4 F#3 )
+/251 E3q ( A3 C#4 ) ( A3 C#4 )
+/252 E3q ( A3 C#4 ) ( A3 C#4 )
+/253 ( B3 D4 E3 )q Rh
+/254 ( A3 D4 E3 )q Rh
+/255 ( D4 E3 G#3 )q ( D4 E3 G#3 ) ( D4 E3 G#3 )
+/256 ( A3e C#4e )h.
+/257 D3q ( B3 D4 F#3 ) ( B3 D4 F#3 )
+/258 D3q ( B3 D4 F#3 ) ( B3 D4 F#3 )
+/259 E3q ( A3 C#4 ) ( A3 C#4 )
+/260 E3q ( A3 C#4 ) ( A3 C#4 )
+/261 B2q ( D4 E3 G#3 ) ( D4 E3 G#3 )
+/262 E2q ( D4 E3 G#3 ) ( D4 E3 G#3 )
+/263 A2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/264 A2q ( A3 C#4 E3 ) ( A3 C#4 E3 )
+/265 D3q ( B3 D4 F#3 ) ( B3 D4 F#3 )
+/266 D3q ( B3 D4 F#3 ) ( B3 D4 F#3 )
+/267 E3q ( A3 C#4 ) ( A3 C#4 )
+/268 E3q ( A3 C#4 ) ( A3 C#4 )
+/269 ( B3 D4 E3 )q Rh
+/270 ( A3 D4 E3 )q Rh
+/271 ( D4q E3q E4h G#3q )e E4 ( D4q E3q E4e G#3q )q ( D4 E3 E4 G#3 )
+/272 ( A3 C#4 E4 )q Re ( A2 A3 C#4 E4 )e ( A2 A3 C#4 E4 )q
+/273 ( D3h. )qv7 ( A3 D4 F#3 ) ( A3 D4 F#3 )
+/274 ( F#3h. )q ( A3 D4 ) ( A3 D4 )
+/275 ( G3h. )q ( B3 D4 ) ( B3 D4 )
+/276 F#3q G3 B3
+/277 ( E3h. )q ( B3 E4 G3 ) ( B3 E4 G3 )
+/278 ( G3h. )q ( B3 E4 ) ( B3 E4 )
+/279 ( A3h. )q ( C#4 E4 ) ( C#4 E4 )
+/280 G#3q A3 C#4
+/281 ( F#3h. )q ( A3 C#4 ) ( A3 C#4 )
+/282 ( F#3h. )q ( A3 C#4 ) ( A3 C#4 )
+/283 B2q ( B3 D4 F#3 ) ( B3 D4 F#3 )
+/284 D3q ( B3 D4 F#3 ) ( B3 D4 F#3 )
+/285 ( E3h. )q ( A#3 D4 G3 ) ( A#3 D4 G3 )
+/286 A2q ( A3 C#4 G3 ) ( A3 C#4 G3 )
+/287 ( D3q D4w )q ( A3 F#3 ) ( A3 F#3 )
+/288 ( A3 F#3 )q Rh
+/289 ( D3h. )qv6 ( A3 D4 F#3 ) ( A3 D4 F#3 )
+/290 ( F#3h. )q ( A3 D4 ) ( A3 D4 )
+/291 ( G3h. )q ( B3 D4 ) ( B3 D4 )
+/292 F#3q G3 B3
+/293 ( E3h. )q ( B3 E4 G3 ) ( B3 E4 G3 )
+/294 ( G3h. )q ( B3 E4 ) ( B3 E4 )
+/295 ( A3h. )q ( C#4 E4 ) ( C#4 E4 )
+/296 G#3q A3 C#4
+/297 ( F#3h. )q ( A3 C#4 ) ( A3 C#4 )
+/298 ( F#3h. )q ( A3 C#4 ) ( A3 C#4 )
+/299 B2q ( B3 D4 F#3 ) ( B3 D4 F#3 )
+/300 D3q ( B3 D4 F#3 ) ( B3 D4 F#3 )
+/301 ( E3h. )q ( A#3 D4 G3 ) ( A#3 D4 G3 )
+/302 A2q ( A3 C#4 G3 ) ( A3 C#4 G3 )
+/303 ( D3q D4h. )q ( A3 F#3 ) ( A3 F#3 )
+/304 D3q Rh
+/305 F#4q D4 B3
+/306 A3q G3 F#3
+/307 ( A2 A3 )e ( A2 A3 ) ( A2 A3 )q ( A2 A3 )
+/308 Rh.
+/309 ( A3 C#4 G4 )e ( A3 C#4 G4 ) ( A3 C#4 G4 )q ( A3 C#4 G4 )
+/310 Rh.
+/311 ( D4e F#4e )e ( D4e F#4e ) ( D4 F#4 )q ( D4 F#4 )
+/312 Rh.
+/313 F#4q D4 B3
+/314 A3q G3 F#3
+/315 ( C#4 F3 )e ( C#4 F3 ) ( C#4 F3 )q ( C#4 F3 )
+/316 Rh.
+/317 ( C#3 C#4 )e ( C#3 C#4 ) ( C#3 C#4 )q ( C#3 C#4 )
+/318 Rh.
+/319 ( A3 C#4 F#3 )q Re ( F#2 F#3 ) ( F#2 F#3 )q
+/320 Rh.
+/321 F#4q D4 B3
+/322 A3q G3 F#3
+/323 ( A2 A3 )e ( A2 A3 ) ( A2 A3 )q ( A2 A3 )
+/324 Rh.
+/325 ( A3 C#4 G4 )e ( A3 C#4 G4 ) ( A3 C#4 G4 )q ( A3 C#4 G4 )
+/326 Rh.
+/327 ( D4 F#4 )ev7 ( D4 F#4 ) ( D4 F#4 )q ( D4 F#4 )
+/328 Rh.
+/329 F#4q D4 B3
+/330 A3q G3 F#3
+/331 ( C#4 F3 )e ( C#4 F3 ) ( C#4 F3 )q ( C#4 F3 )
+/332 Rh.
+/333 ( C#3 C#4 )e ( C#3 C#4 ) ( C#3 C#4 )q ( C#3 C#4 )
+/334 Rh.
+/335 ( A3 C#4 F#3 )q Re ( F#2 F#3 ) ( F#2 F#3 )q
+/336 ( E2 E3 )q Re ( E2 E3 ) ( E2 E3 )q
+/337 ( D3h. )qv7 ( A3 D4 F#3 ) ( A3 D4 F#3 )
+/338 ( F#3h. )q ( A3 D4 ) ( A3 D4 )
+/339 ( G3h. )q ( B3 D4 ) ( B3 D4 )
+/340 F#3q G3 B3
+/341 ( E3h. )q ( B3 E4 G3 ) ( B3 E4 G3 )
+/342 ( G3h. )q ( B3 E4 ) ( B3 E4 )
+/343 ( A3h. )q ( C#4 E4 ) ( C#4 E4 )
+/344 G#3q A3 C#4
+/345 ( F#3h. )q ( A3 C#4 ) ( A3 C#4 )
+/346 ( F#3h. )q ( A3 C#4 ) ( A3 C#4 )
+/347 B2q ( B3 D4 F#3 ) ( B3 D4 F#3 )
+/348 D3q ( B3 D4 F#3 ) ( B3 D4 F#3 )
+/349 ( E3h. )q ( A#3 D4 G3 ) ( A#3 D4 G3 )
+/350 A2q ( A3 C#4 G3 ) ( A3 C#4 G3 )
+/351 D3q ( A3 F#3 ) ( A3 F#3 )
+/352 ( A3 F#3 )q Rh

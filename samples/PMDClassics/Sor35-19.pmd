@@ -1,0 +1,142 @@
+//pmd,1.0,100,25
+//c Sor / 35 -19                                              
+//i Made by UDI with makeSMF              
+//s 2/4
+
+$V8 // (1)
+/1 Rh
+/2 ( A#3h C#4h F#4h )h
+/3 ( B3h C#4h F4h )h
+/4 ( A#3h C#4h F#4h )h
+/5 ( B3h C#4h G#4h )h
+/6 ( A#4h C#4h F#4h )h
+/7 ( B4h D#4h F#4h )h
+/8 ( C5h D#4h F#4h )h
+/9 ( C#4h C#5h F4h )h
+/10 C#5e ( C#5t )s3 ( C#5t ) ( C#5t ) C#5e ( C#5t )s3 ( C#5t ) ( C#5t )
+/11 C#5e ( C#5t )s3 ( C#5t ) ( C#5t ) C#5e C#5
+/12 C#5e ( C#5t )s3 ( C#5t ) ( C#5t ) C#5e C#5
+/13 C#5e ( C#5t )s3 ( C#5t ) ( C#5t ) C#5e C#5
+/14 C#5e C#5 C#5 C#5
+/15 C#5e ( C#5q )q.
+/16 Re ( C#5t )s3 ( C#5t ) ( C#5t ) C#5e C#5
+/17 C#5e ( C#5t )s3 ( C#5t ) ( C#5t ) C#5e C#5
+/18 C#5e C#5q C#5e
+/19 Re ( C#5t )s3 ( C#5t ) ( C#5t ) C#5e C#5
+/20 C#5e ( C#5t )s3 ( C#5t ) ( C#5t ) C#5e C#5
+/21 C#5e ( C#5t )s3 ( C#5t ) ( C#5t ) C#5e C#5
+/22 C#5e C#5 C#5 C#5
+/23 C#5e ( C#5t )s3 ( C#5t ) ( C#5t ) C#5e C#5
+/24 C#5e ( C#5t )s3 ( C#5t ) ( C#5t ) C#5e C#5
+/25 C#5e ( C#5t )s3 ( C#5t ) ( C#5t ) C#5e C#5
+/26 C#5e C#5 C#5 C#5
+/27 C#5e ( C#5t )s3 ( C#5t ) ( C#5t ) C#5e C#5
+/28 C#5e ( C#5t )s3 ( C#5t ) ( C#5t ) C#5e C#5
+/29 C#5e ( C#5t )s3 ( C#5t ) ( C#5t ) C#5e C#5
+/30 C#5e C#5 C#5 C#5
+/31 C#5e ( C#5t )s3 ( C#5t ) ( C#5t ) C#5e C#5
+/32 C#5e ( C#5t )s3 ( C#5t ) ( C#5t ) C#5e C#5
+/33 C#5e ( C#5t )s3 ( C#5t ) ( C#5t ) C#5e C#5
+/34 C#5e C#5 C#5 C#5
+/35 ( C#5e F#4e )h
+/36 A#4h
+/37 ( B4h D#4h )h
+/38 B3h
+/39 ( A#3h F#4h )h
+/40 ( A#3h E4h F#4h )h
+/41 ( B3h D#4h F#4h )h
+/42 ( B3h D4h F4h )h
+/43 ( A#3h C#4h F#4h )h
+/44 ( A#3h F#4h )h
+/45 ( A#3h C#4h F#4h )h
+/46 T80 ( A#3h C#4h F#4h )h
+/47 T60 ( A#3h C#4h F#4h )h
+
+$V8 // (2)
+/1 Rh
+/2 Rh
+/3 Rh
+/4 Rh
+/5 Rh
+/6 Rh
+/7 Rh
+/8 Rh
+/9 Rh
+/10 Rh
+/11 Rh
+/12 Rh
+/13 Rh
+/14 Rh
+/15 Rh
+/16 Rh
+/17 Rh
+/18 Rh
+/19 Rh
+/20 Rh
+/21 Rh
+/22 Rh
+/23 Rh
+/24 Rh
+/25 Rh
+/26 Rh
+/27 Rh
+/28 Rh
+/29 Rh
+/30 Rh
+/31 Rh
+/32 Rh
+/33 Rh
+/34 Rh
+/35 Rh
+/36 C#4q. E4e
+/37 T80 Rh
+/38 T60 G#4q. F4e
+
+$V8 // (3)
+/1 Rh
+/2 F#3h
+/3 ( B3h G#3h )h
+/4 ( A#3h F#3h )h
+/5 ( B3h F3h )h
+/6 E3h
+/7 D#3h
+/8 G#3h
+/9 C#3h
+/10 Rh
+/11 Rh
+/12 ( A#4qe F#4q. )q. ( C#4e G#4e )e
+/13 ( A#3qe F#4q. )q. ( C#4e G#4e )e
+/14 ( A#4e F#4e )e ( C#4e G#4e ) ( A#3e F#4e ) ( A#4e F#4e )
+/15 ( C#4es G#4e. )e. ( A#4s F#4s )s ( C#4e G#4e )e C#4
+/16 ( A#4qe F#4q. )q. ( C#4e G#4e )e
+/17 ( A#3qe F#4q. )q. ( C#4e G#4e )e
+/18 ( A#4e F#4e )e ( A#4e F#4e ) ( C#4e G#4e ) ( C#4e G#4e )
+/19 ( A#3qe F#4qe )h
+/20 ( C#4qe G#4q. )q. ( C#4e G#4e )e
+/21 ( A#4qe F#4q. )q. ( A#4e F#4e )e
+/22 ( B4e G#4e )e ( C#4e G#4e ) ( A#4e F#4e ) ( A#3e F#4e )
+/23 ( C#4q G#4q )q C#4
+/24 ( C#4qe G#4q. )q. ( C#4e G#4e )e
+/25 ( A#4qe F#4q. )q. ( A#4e F#4e )e
+/26 ( B4e G#4e )e ( C#4e G#4e ) ( A#4e F#4e ) ( A#3e F#4e )
+/27 ( C#4qe G#4qe )h
+/28 ( A#4qe F#4q. )q. ( C#4e G#4e )e
+/29 ( A#3qe F#4q. )q. ( C#4e G#4e )e
+/30 ( A#4e F#4e )e ( C#4e G#4e ) ( A#3e F#4e ) ( A#4e F#4e )
+/31 ( C#4q G#4q )q C#4
+/32 ( A#4qe F#4q. )q. ( C#4e G#4e )e
+/33 ( A#4qe F#4q. )q. ( C#4e G#4e )e
+/34 ( A#4e F#4e )e ( A#4e F#4e ) ( C#4e G#4e ) ( C#4e G#4e )
+/35 A#3e ( F#3t )s3 ( F#3t ) ( F#3t ) F#3e F#3
+/36 F#3e ( F#3t )s3 ( F#3t ) ( F#3t ) F#3e F#3
+/37 F#3e ( F#3t )s3 ( F#3t ) ( F#3t ) F#3e F#3
+/38 F#3e ( F#3t )s3 ( F#3t ) ( F#3t ) F#3e F#3
+/39 F#3e ( F#3t )s3 ( F#3t ) ( F#3t ) F#3e F#3
+/40 F#3e ( F#3t )s3 ( F#3t ) ( F#3t ) F#3e F#3
+/41 F#3e ( F#3t )s3 ( F#3t ) ( F#3t ) F#3e F#3
+/42 F#3e ( F#3t )s3 ( F#3t ) ( F#3t ) F#3e F#3
+/43 F#3e ( F#3t )s3 ( F#3t ) ( F#3t ) F#3e F#3
+/44 F#3e ( F#3t )s3 ( F#3t ) ( F#3t ) F#3e F#3
+/45 F#3e ( F#3t )s3 ( F#3t ) ( F#3t ) F#3e F#3
+/46 T80 F#3e ( F#3t )s3 ( F#3t ) ( F#3t ) F#3e F#3
+/47 T60 F#3h

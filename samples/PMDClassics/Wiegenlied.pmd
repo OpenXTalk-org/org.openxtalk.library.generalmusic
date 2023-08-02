@@ -1,0 +1,146 @@
+//pmd,1.0,50,12
+//c R.A.Shumann / Wiegenlied Op.124-Nr.6
+//i Made by UDI with makeSMF
+//s 2/4
+
+$V6 #f
+/0 T200 Rh T
+/1 Y9h10 H1 ( B4q )e3 G D H1 ( D5q ) B4 G
+/2 Y10h9 H1 ( G5q ) Ce3 G4 ( E5q ) C G4
+/3 H1 ( D5q ) B4 G ( Bq ) G D
+/4 H1 ( G4q ) E B3 H1 ( A4q ) F C
+/5 H1 ( B4q ) G D H1 ( D5q ) G4 D H
+/6 Yq7 ( A4h ) F D R F D
+/7 Y8e9 H1 ( B4q ) G D H1 ( D5q ) G4 D
+/8 H1 ( A4q ) F D H1 ( Bq ) G# D
+/9 Yh10 H1 ( C5q ) A4 E ( E5q ) C A4
+/10 Y10h9 H1 ( A5q ) D A4 ( F^5q ) D A4
+/11 H1 ( E5q ) C A4 ( C5q ) A4 E
+/12 H1 ( A4q ) F^ C H1 ( Bq ) G# D
+/13 H1 ( C5q ) A4 E H1 ( E5q ) A4 E
+/14 H1 ( A4q ) F# C ( Bq ) F D
+/15 Yh.7 H1 ( Ghq ) D B3 H0 R E4 C
+/16 R D4 B3 R R R
+//
+/1 Y9h10 H1 ( B4q )e3 G D H1 ( D5q ) B4 G
+/2 Y10h9 H1 ( G5q ) Ce3 G4 ( E5q ) C G4
+/3 H1 ( D5q ) B4 G ( Bq ) G D
+/4 H1 ( G4q ) E B3 H1 ( A4q ) F C
+/5 H1 ( B4q ) G D H1 ( D5q ) G4 D H
+/6 Yq7 ( A4h ) F D R F D
+/7 Y8e9 H1 ( B4q ) G D H1 ( D5q ) G4 D
+/8 H1 ( A4q ) F D H1 ( Bq ) G# D
+/9 Yh10 H1 ( C5q ) A4 E ( E5q ) C A4
+/10 Y10h9 H1 ( A5q ) D A4 ( F^5q ) D A4
+/11 H1 ( E5q ) C A4 ( C5q ) A4 E
+/12 H1 ( A4q ) F^ C H1 ( Bq ) G# D
+/13 H1 ( C5q ) A4 E H1 ( E5q ) A4 E
+/14 H1 ( A4q ) F# C ( Bq ) F D
+/15 Yh.7 H1 ( Ghq ) D B3 H0 R E4 C
+/16 R D4 B3 R R R
+//
+/17 Y8e9 H1 ( F4q )e3 D A3 H1 ( A4q ) D A3
+/18 Yh10 H1 ( B4q ) G D H1 ( E5q ) B4 G
+/19 Y10h9 H1 ( D5q ) A4 G H1 ( C#5h ) A4 G
+/20 R A ( Ge3 )s.3 Ye.7 H0 ( C5e )t3 ( B4q )e3 G ( A E ) Y9
+/21 H1 ( F4q ) D A3 H1 ( A4q ) F D
+/22 H1 ( B4q ) G D ( E5q ) B4 G
+/23 H1 ( C#5q ) A4 E ( F5q ) C A4
+/24 H1 ( D5q ) B4 F H1 ( G5q ) D B4
+/25 H1 ( E5q ) C A4 ( G5q ) E A4
+/26 H1 ( F5q ) D A4 ( D5q ) A4 F
+/27 Yh10 H1 ( B4q ) G D H1 ( C#5q ) G4 E
+/28 Y10h9 H1 ( D5h ) G#4 D G# D H0 G#
+/29 H1 ( E5q ) A4 G^ H1 ( G5q ) C# A4
+/30 H1 ( F5q ) D A4 ( D5q ) A4 F
+/31 H1 ( B4q ) G D H1 ( C#5q ) G4 E
+/32 H1 ( D5q ) F4 D H1 ( C^5q ) A4 D
+//
+/1 Y9h10 H1 ( B4q )e3 G D H1 ( D5q ) B4 G
+/2 Y10h9 H1 ( G5q ) Ce3 G4 ( E5q ) C G4
+/3 H1 ( D5q ) B4 G ( Bq ) G D
+/4 H1 ( G4q ) E B3 H1 ( A4q ) F C
+/5 H1 ( B4q ) G D H1 ( D5q ) G4 D H
+/6 Yq7 ( A4h ) F D R F D
+/7 Y8e9 H1 ( B4q ) G D H1 ( D5q ) G4 D
+/8 H1 ( A4q ) F D H1 ( Bq ) G# D
+/9 Yh10 H1 ( C5q ) A4 E ( E5q ) C A4
+/10 Y10h9 H1 ( A5q ) D A4 ( F^5q ) D A4
+/11 H1 ( E5q ) C A4 ( C5q ) A4 E
+/12 H1 ( A4q ) F^ C H1 ( Bq ) G# D
+/13 H1 ( C5q ) A4 E H1 ( E5q ) A4 E
+/14 H1 ( A4q ) F# C ( Bq ) F D
+/15 Yh.7 H1 ( Ghq ) D B3 H0 R E4 C
+/16 R D4 B3 R R R
+/ Rq
+
+$V6 #f
+/0 T200 Rh T
+/1 Y8h10 G3q B
+/2 Y10h9 H1h E4 C
+/3 H1h B3 G
+/4 E3 D
+/5 G2 B
+/6 Yq.7 D3h
+/7 Y8e G2q B
+/8 D3 B2
+/9 Y8h10 A2h
+/10 Y10h9 H1h F^4q D
+/11 H1h C4 A2
+/12 F^3 E
+/13 A2 C3
+/14 D3h
+/15 Yh.7 ( G2h. )q C
+/16 R G3
+//
+/1 Y8h10 G3q B
+/2 Y10h9 H1h E4 C
+/3 H1h B3 G
+/4 E3 D
+/5 G2 B
+/6 Yq.7 D3h
+/7 Y8e G2q B
+/8 D3 B2
+/9 Y8h10 A2h
+/10 Y10h9 H1h F^4q D
+/11 H1h C4 A2
+/12 F^3 E
+/13 A2 C3
+/14 D3h
+/15 Yh.7 ( G2h. )q C
+/16 R G3
+//
+/17 Y8e D3q F
+/18 Yh10 G3 E
+/19 Y10h9 A3 ( A2h )
+/20 R Ye.7 B2q3 C3e3 Y9
+/21 D3q F
+/22 H1h G3 E
+/23 H1h A3 F
+/24 B3 G
+/25 H1h C4 B3
+/26 H1h D4 F3
+/27 Yh10 G3 A
+/28 Y10h9 Bh
+/29 C4q E
+/30 H1h D4 F3
+/31 G3 A
+/32 D3 F
+//
+/1 Y8h10 G3q B
+/2 Y10h9 H1h E4 C
+/3 H1h B3 G
+/4 E3 D
+/5 G2 B
+/6 Yq.7 D3h
+/7 Y8e G2q B
+/8 D3 B2
+/9 Y8h10 A2h
+/10 Y10h9 H1h F^4q D
+/11 H1h C4 A2
+/12 F^3 E
+/13 A2 C3
+/14 D3h
+/15 Yh.7 ( G2h. )q C
+/16 R G3
+/ Rq

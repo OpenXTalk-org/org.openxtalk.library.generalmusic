@@ -1,0 +1,289 @@
+pmd2.0 grammar
+
+ -- HyperTalk's PLAY command 'plsySentence' syntax --
+
+ Pitch name
+    Do Re Mi Fa Sol La Si = C D E F G A B
+    sharp C ... C#    flat C ... Cb     rest ... R
+
+ Octave
+    from 1 to 8 ( center 4 initially )
+    center C ... C4  upper C ... C5
+    with accidental mark ... C#5
+    If octave is not specify then the value is hand over from prev note.
+
+ Absolute pitch by numeric
+    center C ... 60   D ... 62   D# ... 63
+    rest ... 0
+
+ Note value ( duration )
+    1/1 ... w   1/2 ... h   1/4 ... q   1/8 ... e
+    1/16 ... s   1/32 ... t   1/64 ... x
+    dotted note ... Cq.   tuplet 3 ... Cq3
+    If length is not specified then the value is hand over from prev note.
+
+
+
+ ***** Extended PMD format *****
+ ( cc# : MIDI's control change number )
+
+
+ -- Extended note --
+
+Octave
+   can use octave -1 and 0 (zero) for the full MIDI pitch range
+
+Accidental mark
+  ## Double sharp
+    ex. G## This note is same to A
+  bb Double flat
+    ex. Abb This note is same to G
+  _ Flat ( same to b )
+    ex A_ This note is equal to Ab
+  __ Double flat ( same to bb )
+    ex A__ This note is equal to Abb
+  ^ Natural
+    ex G^ This note ignores a Alternate command.
+
+Extended note value (length)
+   max 8 dotted.
+      Cq. = q + q/2   Cq.. = q + q/2 + q/4   Cq... = q + q/2 + q/4 + q/8
+   any devided beat note.
+      Cq/5   Cq/7  ets.
+   length addition.
+      Cwe = w + e    Cwq3 = w + q3
+
+ @ gate time
+   percentage sound of note.
+      Cq@5 = q/2 sound  and q/2 silent.
+   range 0-20   initially 10
+   If not specify gate time then hand over from prev note.
+
+ V velocity
+   velocity( volume ) of note.
+      CqV5 = 1/2 volume
+   range 0-10   initially 10
+   If not specify velocity then hand over from prev note.
+
+ (  ) chord
+   max 32 notes sound at a time on each parts.
+      (C E G)q ... C & E & G sound q time.
+      (C4 E G C5)h ... C & E & G & C5 sound h time.
+   each notes are able to have those length.
+      (C E Ge)q ... C & E sound q time. But G sound e time.
+   each notes are able to have gate time & velocity too.
+      (C E G@7V5) ... only G, gate time 7 and velocity 5.
+   those length, gate time and velocity effect only that note.
+      dont hand over to next note.
+
+ A note is ...
+   note name + octabe + length + gate time + velocity
+   ex. (C#4qe.@10V10)qe.@10V10
+
+
+
+ -- part and part option --
+
+ $ partition.
+      C $ D $ G
+   are 3 parts.
+   Partition max 32.
+  
+   instrument option
+      $1 C $17 C
+   are Piano and Organ play.
+
+   volume option
+      $V10  nomaly volume.
+      default 10  range 0-10
+
+
+ -- attribute commands --
+
+  On  Octave setting command
+    ex. O5 Default octave of next note is 5.
+
+  Ln  Step time ( note length ) setting command
+    ex. Le Default length of next note is e.
+
+  @n  Gate time ( sound ratio ) setting command
+    ex. @7 Default gate-time of next note is 7.
+
+  Vn Velocity setting command
+    ex. V8 Default velocity of next note is 8.
+
+
+
+ -- effect commands --
+
+ M modulation
+   vibrato effect. ( cc#1 )
+   depth renge 0-10 default 0   ex. M7
+   transition time attachable    ex. Mq7
+
+
+ Y expression
+   intonation effect. ( cc#11 )
+   loud range 0-10 default 10   ex. Y7
+   transition time attachable    ex. Yq7
+
+
+ % pitch bend
+   pitch control. ( PitchBend )
+   %10 ... halftone up   %20 ... 1tone up   %-20 ... 1tone down
+   default 0
+   transition time attachable    ex. %q60
+   max +-30 to SMF.
+
+
+ P panpot
+   position change. ( cc#10 )
+   range 0(left)-10(right) default 5   ex. P7
+   transition time attachable    ex. Pq7
+   no effect on 68k with QT instrument.
+
+
+ Z acoustics
+   Z1 ... reverb on ( cc#91 )
+           no effect on 68k with QT instrument.
+   Z0 ... all of acoustics to off.
+   range 0,1,2,3,4,5 default 0
+
+
+ H pedal hold
+   H1 ... hold pedal on ( cc#64 )
+   H0 or H-1 ... pedal off.
+   range 0,1,2,3,-1,-2,-3 default 0
+   releace time attachable    ex. H1q .. after q pedal off
+
+
+ & portament
+   portament effect. ( cc#5 )
+   C &5 D E  ...  D is C-D, E is D-E pronounce.
+   range 0(non)-10(transition on all note time)  default 0
+   no effect on chord.
+
+
+ T tempo
+   change music tempo.
+   it's relatively by XCMD parameter 'tempo'
+   Caution: effect to only one part.
+
+
+ -- alternate & key sift command --
+
+Alternate
+  # Sharp displacement command
+    ex. #CF  C is C#, F is F# after the command
+  ## Double sharp displacement command.
+    ex. ##F  F is G after the command
+  _ Flat displacement command
+    ex. _BE  B is Bb, E is Eb after the command
+  __ Double flat displacement command.
+    ex. _B  B is A after the command
+  ^ Natural displacement command ( Cancel alternate )
+    ex. ^B  B is B after the command
+    If pitch name is omitted then all pitch is changed to natural.
+    You can join # or _ just after that.
+    ex. ^#F  all pitch is to natural, and displacement F to F#.
+  Those does not influence a note of numerical value expression. ( 60q as Cq )
+  Accidental sticking to a note is given priority to.
+
+
+key shift
+  ~n ex ~12  All note after the command is up to12 half pitch.
+       ex ~-12 All note after the command is down to12 half pitch 
+       ex ~ (parameter is omitted)  All note after the command is changed to origin.
+
+ -- comment --
+
+ Comment out
+   bar comment   bar ( '|' or '/' ) to next space.
+   line comment  double bar ( '||' or '//' ) to end of line.
+   block comment   '|*' or '/*'  to  '*|' or '*/'.
+
+ -- special comment --
+
+TimeSign '//s '
+  example: //s 3/4
+  Only one word after "//s " is effective.
+  Only one exists in music.
+  It is written in at SMF as a 'time sign' meta event.
+
+Copytight '//c '
+  example: //c Chopin / Puppy Waltz
+  It effective till end of line.
+  Only one exists in music.
+  Copyright is written in at movie file and SMF.
+
+Information text '//i '
+  example: //i Made by UDI with UxPlayMIDI
+  It effective till end of line.
+  A music can have some lines.
+  This text is written in at movie file and SMF.
+
+DataName '//n '
+  example: //n Puppy Waltz
+  It effective till end of line.
+  Only one exists in music.
+  DataName is written in at movie file ( as FullName ) and SMF ( as Sequence name ).
+
+ -- other --
+
+ return character is equal space character.
+ bar ( '|' or '/' ) is equal space character.
+
+ Instrument number
+   GM instrument   1-128
+   GS instrument   129-16383
+   drum kit   16385-16441
+
+ Volume controls
+   V velocity ... C5V7 ( range 0-10   initially 10 )
+      each note's volume.
+   Y expression command ( range 0-10   initially 10 )
+      freestyle volume.
+   $V part volume. ( range 0-10   initially 10 )
+      barance of some parts.
+   XCMD parameter 'volume'  ( range 0-100   initially 100 )
+      playing volume.
+   If all of volumes is initially then normaly volume playing.
+
+
+ -- 'PMD' text file format --
+
+ 1st line as pmd header.
+//pmd,version,tempo,instNum
+
+ version   'pmd' version
+ tempo   play speed ( same as XCMD 2nd parameter )
+ instNum   instrument number ( same as XCMD 3rd parameter )
+ 
+
+ -- devided beat note --
+
+        orign      divid by   indicate1   indicate2
+            q            3              e3            q/3
+            q            5              s5            q/5
+            q            6              s6            q/6
+            q            7              s7            q/7
+            q            9              t9            q/9
+            q           11             t11          q/11
+
+            q.           2              q2.            q./2
+            q.           4              e4.            q./4
+            q.           5              e5.            q./5
+            q.           7              s7.            q./7
+            q.           8              s8.            q./8
+            q.          10             s10.          q./10
+
+
+ -- distribute --
+
+ If you need then free distribute this document.
+ ( You can extract or edit this document. )
+
+
+                                   UDI
+                     eudio@chabashira.co.jp
+                     http://member.nifty.ne.jp/UDI/

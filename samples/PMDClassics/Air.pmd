@@ -1,0 +1,126 @@
+//pmd,1.0,35,
+//c J.S.Bach / Air on the G string
+//i Made by UDI with makeSMF
+//s 4/4
+
+$49V Z1 P6 //--1-- Acoustic String Ensemble
+/1 T500 Rw T100
+/2 Y2we9 Gb5weV9 Bs Yh5 G E D Db D Dbq B4s Ae.
+/4 Y5h A5hs Gbs C B4 E5 Eb A G
+/5 Y5h G5hs Es B4 A D5 Db G Y7q6h Gbsqe Abs A De Dt E Gbss Es E D
+/7 Db5s B4 Bt Db5 Dse Dbs B4 Yq6q3 Ah
+
+/8 Y3w Gb5we Bs Yh5 G E D Db D Dbq B4s Ae. //=2
+/10 Y5h A5hs Gbs C B4 E5 Eb A G
+/11 Y5h G5hs Es B4 A D5 Db G Y7q6h Gbsqe Abs A De Dt E Gbss Es E D
+/13 Db5s B4 Bt Db5 Dse Dbs B4 Yq6q3 Ah
+
+/14 Y4qe Db5qs Dt Db B4 Db5 Yq9q6 A4s A5q. Ce
+/15 Y4q9q6q10q5 B4e B5es As G Gb Gqt Gbt E D Dbs B4
+/16 Y4hq9q6 Bb4s B Db5es Ds Ees Gbs Gq Gbe
+/17 Yhq6q3 E5s D Db B4 Db5 Dt E De B4h
+
+/18 Y3q.8s7q9q D5qs Gbs E D Bq. As Ab
+/19 Y6h7 Gb5t E As A4e Be. Db5t D Dbe. B4s Ye7e4 Aq
+/20 Y5whq9q3 D5q. Gbs Es Eqe Gs Gbs Gbqe As Gs Gh
+
+/22 Yh8h9 A4qs Db5s E G G E Gbee. Gt A
+/23 D5qs Gbs A C6 Y6 B5qe De
+/24 Yq7q6q7q6 Db5s E Gee B4e A E5s Gbt Gts Gbe Es
+/25 D5t Db B4e Db5s Et Dx3V E D E D E Dt DbsV9 D Ye6q.3 Dh
+
+/26 Y4qe Db5qs Dt Db B4 Db5 Yq9q6 A4s A5q. Ce //=14
+/27 Y4q9q6q10q5 B4e B5es As G Gb Gqt Gbt E D Dbs B4
+/28 Y4hq9q6 Bb4s B Db5es Ds Ees Gbs Gq Gbe
+/29 Yhq6q3 E5s D Db B4 Db5 Dt E De B4h
+
+/30 Y3q.8s7q9q D5qs Gbs E D Bq. As Ab
+/31 Y6h7 Gb5t E As A4e Be. Db5t D Dbe. B4s Ye7e4 Aq
+/32 Y5whq9q3 D5q. Gbs Es Eqe Gs Gbs Gbqe As Gs Gh
+
+/34 Yh8h9 A4qs Db5s E G G E Gbee. Gt A
+/35 D5qs Gbs A C6 Y6 B5qe De
+/36 Yq7q6q7q6 Db5s E Gee B4e A E5s Gbt Gts Gbe Es
+/37 D5t Db B4e Db5s Et Dx3V E D E D E Dt T80 DbsV9 D Ye6q.2 Dh
+
+
+$49V9 P3 Z1 //--2-- Acoustic String Ensemble
+/1 T500 Rw T100
+/2 Y2wq D5wqV9 B4q Yq.8q5 Ahe Y6h7q3 C5s B4 C5e As C B4q R
+/5 Yh8q3 B4e E5s D E Gb G E A4q R
+/6 Yq7 A4he Abs A Be Ab
+/7 A4e Yh3 Aq Abe Eh
+
+/8 Y3w D5wq B4q Yq.8q5 Ahe Y6h7q3 C5s B4 C5e As C B4q R
+/11 Yh8q3 B4e E5s D E Gb G E A4q R
+/12 Yq7 A4he Abs A Be Ab
+/13 A4e Yh3 Aq Abe Eh
+
+/14 Y5h.8q5 A4hs Bs C5es B4s A G
+/15 Y5q6 G4q. Eb5e Ews Ds Db B4 Bb B Db5e
+/17 Yw3 B4e B B Bb Gbh
+/18 Y5h.8q6 E4q Gb B4e E4s Gb Ab A Bee Aq Abe Ahe
+/20 Yh.6q5 B4s C5 B4 Db5 Dq Dbs B4 Db5 Eb Eee
+/21 Y5h9h4 Eb5s Db Eb E Gbes Ebs E B4 E4qs
+/22 Db4s E A Db5e A4ee Db5s D D4qe
+/23 E4e Gbq Ghe
+/24 B4e E5qs Ds Db B4 Ae B
+/25 A4q Ax G A G Gbs Ge Yh3 Gbh
+
+/26 Y5h.8q5 A4hs Bs C5es B4s A G
+/27 Y5q6 G4q. Eb5e Ews Ds Db B4 Bb B Db5e
+/29 Yw3 B4e B B Bb Gbh
+/30 Y5h.8q6 E4q Gb B4e E4s Gb Ab A Bee Aq Abe Ahe
+/32 Yh.6q5 B4s C5 B4 Db5 Dq Dbs B4 Db5 Eb Eee
+/33 Y5h9h4 Eb5s Db Eb E Gbes Ebs E B4 E4qs
+/34 Db4s E A Db5e A4ee Db5s D D4qe
+/35 E4e Gbq Ghe
+/36 B4e E5qs Ds Db B4 Ae B
+/37 A4q Ax G A G T80 Gbs Ge Yh2 Gbh
+
+
+$7V6 //--3-- Harpsichord
+/1 T500 Rw T100
+/2 D3eV5 D4 Db Db3 B2V7 B3 A A2
+/3 G2eV9 G3 Ab Ab2 A A3 G G2
+/4 Gb2e Gb3 E E2 Eb Eb3 B2 B3
+/5 E2e E3 D D2 Db Db3 A2 A3
+/6 D3e D4 Db Db3 B2 B3 Ab E
+/7 A3e D E E2 As B Db3 D E G Gb E
+
+/8 D3e D4 Db Db3 B2 B3 A A2
+/9 G2e G3 Ab Ab2 A A3 G G2
+/10 Gb2e Gb3 E E2 Eb Eb3 B2 B3
+/11 E2e E3 D D2 Db Db3 A2 A3
+/12 D3e D4 Db Db3 B2 B3 Ab E
+/13 A3e D E E2 As B Db3 D E G Gb E
+
+/14 A2e A3 G G2 Gb Gb3 E E2
+/15 Eb2e Eb3 Gb B2 E3 E4 D D3
+/16 Db3e Db4 B3 B2 Bb B Db3 Bb2
+/17 B2e G3 E Gb B2 B3 A A2
+
+/18 Ab2e Ab3 Gb Gb2 E E3 D D2
+/19 Db2e Db3 D E A2 A3 G G2
+/20 Gb2e Gb3 G G2 Ab Ab3 A A2
+/21 Bb2e Bb3 B B2 E3 E4 D D3
+
+/22 Db3e Db4 A3 Db4 D D3 C C4
+/23 B3e B2 A A3 G G2 Gb Gb3
+/24 E3e E2 D D3 Db A2 D3 G
+/25 A3e G A A2 Y7q D2h Y8
+
+/26 A2e A3 G G2 Gb Gb3 E E2
+/27 Eb2e Eb3 Gb B2 E3 E4 D D3
+/28 Db3e Db4 B3 B2 Bb B Db3 Bb2
+/29 B2e G3 E Gb B2 B3 A A2
+
+/30 Ab2e Ab3 Gb Gb2 E E3 D D2
+/31 Db2e Db3 D E A2 A3 G G2
+/32 Gb2e Gb3 G G2 Ab Ab3 A A2
+/33 Bb2e Bb3 B B2 E3 E4 D D3
+
+/34 Db3e Db4 A3 Db4 D D3 C C4
+/35 B3e B2 A A3 G G2 Gb Gb3
+/36 E3e E2 D D3 Db A2 D3 G
+/37 A3e G T80 A A2 Y7q D2h

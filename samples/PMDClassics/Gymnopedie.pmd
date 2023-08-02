@@ -1,0 +1,166 @@
+//pmd,1.0,70,1036
+//c Satie / Gymnopedie 1
+//i Made by UDI with makeSMF
+//s 3/4
+
+$V6 P6
+/1 T300 Rh. T100
+/2 Rh.
+/3 Rh.
+/4 Rh.
+/5 Rh.
+/6 Rq Gb5 A5
+/7 G5q Gb5 Db5
+/8 B4q Db5 D5
+/9 A4h.
+/10 Gb4h.
+/11 Gb4h.
+/12 Gb4h.
+/13 Gb4h.
+/14 Rq Gb5 A5
+/15 G5q Gb5 Db5
+/16 B4q Db5 D5
+/17 A4h.
+/18 Db5h.
+/19 Rh.
+/20 E4h.
+/21 Rh.
+/22 Rh.
+/23 A4q B4 C5
+/24 E5q D5 B4
+/25 D5q C5 B4
+/26 ( D5h.h )h.
+/27 Rh.
+/28 E5q F5 G5
+/29 A5q C5 D5
+/30 E5q D5 B4
+/31 ( D5h.h )h.
+/32 Rh.
+/33 G5h.
+/34 Gb5h.
+/35 B4q A4 B4
+/36 Db5q D5 E5
+/37 Db5q D5 E5
+/38 ( Gb4h. )h G4q
+/39 ( A4 C5 )h.
+/40 ( A4 D5 )h.
+/41 Rh.
+/42 Rh.
+/43 Rh.
+/44 Rh.
+/45 Rq Gb5 A5
+/46 G5q Gb5 Db5
+/47 B4q Db5 D5
+/48 A4h.
+/49 Gb4h.
+/50 Gb4h.
+/51 Gb4h.
+/52 Gb4h.
+/53 Rq Gb5 A5
+/54 G5q Gb5 Db5
+/55 B4q Db5 D5
+/56 A4h.
+/57 Db5h.
+/58 Gb5h.
+/59 ( E4h.h.h. )h.
+/60 Rh.
+/61 Rh.
+/62 A4q B4 C5
+/63 E5q D5 B4
+/64 D5q C5 B4
+/65 D5h.
+/66 D5h D5q
+/67 E5q F5 G5
+/68 A5q C5 D5
+/69 E5q D5 B4
+/70 ( D5h.h )h.
+/71 Rh D5q
+/72 G5h.
+/73 F5h.
+/74 B4q C5 F5
+/75 E5q D5 C5
+/76 E5q D5 C5
+/77 F4h.
+/78 ( A4 C5 )h.
+/79 T70 (A4 D5 )h.
+
+$V6 P4
+/1 T300 Rh. T100
+/2 ( G2h. )q ( B3 D4 Gb4 )h
+/3 ( D2h. )q ( A3 Db4 Gb4 )h
+/4 ( G2h. )q ( B3 D4 Gb4 )h
+/5 ( D2h. )q ( A3 Db4 Gb4 )h
+/6 ( G2h. )q ( Gb4 D4 G3 )h
+/7 ( D2h. )q ( A3 Db4 Gb4 )h
+/8 ( G2h. )q ( B3 D4 Gb4 )h
+/9 ( D2h. )q ( A3 Db4 Gb4 )h
+/10 ( G2h. )q ( Gb4 B3 D4 )h
+/11 ( D2h. )q ( A3 Gb4 Db4 )h
+/12 ( G2h. )q ( Gb4 B3 D4 )h
+/13 ( D2h. )q ( A3 Db4 Gb4 )h
+/14 ( G2h. )q ( B3 D4 Gb4 )h
+/15 ( D2h. )q ( A3 Db4 Gb4 )h
+/16 ( G2h. )q ( B3 D4 Gb4 )h
+/17 ( D2h. )q ( A3 Db4 Gb4 )h
+/18 ( Gb2h. )q ( A3 Db4 Gb4 )h
+/19 ( B1h. )q ( B3 D4 Gb4 )h
+/20 ( E2h. )q ( G3 B3 )h
+/21 ( E2h. )q ( B3 D4 G4 )h
+/22 ( D2h. )q ( F3 A3 D4 )h
+/23 ( A1h. )q ( A3 C4 E4 )h
+/24 ( D2h. )q ( G3 B3 E4 )h
+/25 ( D2h. )q ( D3 G3 B3 E4 )h
+/26 ( D2h. )q ( E3 C3 A3 D4 )h
+/27 ( D2h. )q ( C3 A3 Gb3 D4 )h
+/28 ( D2h. )q ( A3 C4 F4 )h
+/29 ( D2h. )q ( A3 C4 E4 )h
+/30 ( D2h. )q ( D3 G3 B3 E4 )h
+/31 ( D2h. )q ( C3 E3 A3 D4 )h
+/32 ( D2h. )q ( C3 Gb3 A3 D4 )h
+/33 ( E2h. )q ( B3 E4 G4 )h
+/34 ( Gb2h. )q ( A3 Db4 Gb4 )h
+/35 ( B1h. )q ( B3 D4 Gb4 )h
+/36 ( E2h. )q ( Db4 E4 A4 )h
+/37 ( E2h. )q ( A3 Db4 Gb4 A4 )h
+/38 ( E2h. )q ( D4 B2 A3 ) ( D4 E3 B3 )
+/39 ( A2 G3 E4 C4 )h.
+/40 ( D2 A2 D3 D4 Gb4 )h.
+/41 ( G2h. )q ( B3 D4 Gb4 )h
+/42 ( D2h. )q ( A3 Db4 Gb4 )h
+/43 ( G2h. )q ( B3 D4 Gb4 )h
+/44 ( D2h. )q ( A3 Db4 Gb4 )h
+/45 ( G2h. )q ( B3 D4 Gb4 )h
+/46 ( D2h. )q ( A3 Db4 Gb4 )h
+/47 ( G2h. )q ( B3 D4 Gb4 )h
+/48 ( D2h. )q ( A3 Db4 Gb4 )h
+/49 ( G2h. )q ( B3 D4 Gb4 )h
+/50 ( D2h. )q ( A3 Db4 Gb4 )h
+/51 ( G2h. )q ( B3 D4 Gb4 )h
+/52 ( D2h. )q ( A3 Db4 Gb4 )h
+/53 ( G2h. )q ( B3 D4 Gb4 )h
+/54 ( D2h. )q ( A3 Db4 Gb4 )h
+/55 ( G2h. )q ( B3 D4 Gb4 )h
+/56 ( D2h. )q ( A3 Db4 Gb4 )h
+/57 ( Gb2h. )q ( A3 Db4 Gb4 )h
+/58 ( B1h. )q ( B3 D4 Gb4 )h
+/59 ( E2h. )q ( B3 G3 )h
+/60 ( E2h. )q ( G4 D4 B3 )h
+/61 ( D2h. )q ( D4 F3 A3 )h
+/62 ( A1h. )q ( A3 C4 E4 )h
+/63 ( D2h. )q ( G3 B3 E4 )h
+/64 ( D2h. )q ( D3 G3 B3 E4 )h
+/65 ( D2h. )q ( C3 E3 A3 D4 )h
+/66 ( D2h. )q ( C3 Gb3 A3 D4 )h
+/67 ( D2h. )q ( A3 C4 F4 )h
+/68 ( D2h. )q ( A3 C4 E4 )h
+/69 ( D2h. )q ( D3 G3 B3 E4 )h
+/70 ( D2h. )q ( C3 E3 A3 D4 )h
+/71 ( D2h. )q ( C3 Gb3 A3 D4 )h
+/72 ( E2h. )q ( B3 E4 G4 )h
+/73 ( E2h. )q ( A3 D4 F4 A4 )h
+/74 ( E2h. )q ( A3 C4 F4 )h
+/75 ( E2h. )q ( E4 C4 A4 )h
+/76 ( E2h. )q ( C4 F4 A4 )h
+/77 ( E2h. )q ( D4 B2 A3 ) ( D4 E3 B3 )
+/78 ( A2 G3 E4 C4 )h.
+/79 T70 ( D2 A2 D3 D4 F4 )h.

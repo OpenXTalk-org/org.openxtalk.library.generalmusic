@@ -1,0 +1,454 @@
+//pmd,1.0,140
+//s 2/4
+//c W.A.Mozart / Turkish march
+//i Made by UDI with makeSMF
+
+$V7 P6
+/1 Rq B4s A4 G#4 A4
+/2 C5e R D5s C5 B4 C5
+/3 E5e R F5s E5 D#5 E5
+/4 B5s A5 G#5 A5 B5 A5 G#5 A5
+/5 C6q ( A5t )e ( C6t )s G5t A5
+/6 ( B5t )e ( A5t F#5t ) ( E5t G5t ) ( A5t F#5t )s G5t A5
+/7 ( B5t )e ( A5t F#5t ) ( E5t G5t ) ( A5t F#5t )s G5t A5
+/8 ( B5t )e ( A5t F#5t ) ( E5t G5t ) ( D#5t F#5t )
+/9 E5q B4s A4 G#4 A4
+/10 C5e R D5s C5 B4 C5
+/11 E5e R F5s E5 D#5 E5
+/12 B5s A5 G#5 A5 B5 A5 G#5 A5
+/13 C6q ( A5t )e ( C6t )s G5t A5
+/14 ( B5t )e ( A5t F#5t ) ( E5t G5t ) ( A5t F#5t )s G5t A5
+/15 ( B5t )e ( A5t F#5t ) ( E5t G5t ) ( A5t F#5t )s G5t A5
+/16 ( B5t )e ( A5t F#5t ) ( E5t G5t ) ( D#5t F#5t )
+/17 E5q ( C5t E5t )e ( D5t F5t )
+/18 ( E5t G5t )e ( E5t G5t ) A5s G5 F5 E5
+/19 ( B4e D5q )e G4 ( C5t E5t ) ( D5t F5t )
+/20 ( E5t G5t )e ( E5t G5t ) A5s G5 F5 E5
+/21 ( B4 D5 )q ( A4t C5t )e ( B4t D5t )
+/22 ( C5t E5t )e ( C5t E5t ) F5s E5 D5 C5
+/23 ( B4q G#4e )e E4 ( A4t C5t ) ( B4t D5t )
+/24 ( C5t E5t )e ( C5t E5t ) F5s E5 D5 C5
+/25 ( B4q G#4q )q B4s A4 G#4 A4
+/26 ( C5t )q D5s C5 B4 C5
+/27 ( E5t )q F5s E5 D#5 E5
+/28 B5s A5 G#5 A5 B5 A5 G#5 A5
+/29 C6q ( A5t )e ( B5t )
+/30 ( C6t )e ( B5t ) ( A5t ) ( G#5t )
+/31 ( A5t )e ( E5t ) ( F5t ) ( D5t )
+/32 C5q B4e. A4t B4
+/33 A4q ( C5t E5t )e ( D5t F5t )
+/34 ( E5t G5t )e ( E5t G5t ) A5s G5 F5 E5
+/35 ( B4e D5q )e G4 ( C5t E5t ) ( D5t F5t )
+/36 ( E5t G5t )e ( E5t G5t ) A5s G5 F5 E5
+/37 ( B4 D5 )q ( A4t C5t )e ( B4t D5t )
+/38 ( C5t E5t )e ( C5t E5t ) F5s E5 D5 C5
+/39 ( B4q G#4e )e E4 ( A4t C5t ) ( B4t D5t )
+/40 ( C5t E5t )e ( C5t E5t ) F5s E5 D5 C5
+/41 ( B4 G#4 )q B4s A4 G#4 A4
+/42 ( C5t )q D5s C5 B4 C5
+/43 ( E5t )q F5s E5 D#5 E5
+/44 B5s A5 G#5 A5 B5 A5 G#5 A5
+/45 C6q ( A5t )e ( B5t )
+/46 ( C6t )e ( B5t ) ( A5t ) ( G#5t )
+/47 ( A5t )e ( E5t ) ( F5t ) ( D5t )
+/48 C5q B4e. A4t B4
+/49 A4q ( A4t A5t )e ( B4t B5t )
+/50 ( C#5 C#6 )q ( A4t A5t )e ( B4t B5t )
+/51 ( C#5t C#6t )e ( B4t B5t ) ( A4t A5t ) ( G#4t G#5t )
+/52 ( F#4t F#5t )e ( G#4t G#5t ) ( A4t A5t ) ( B4t B5t )
+/53 ( G#4 G#5 )e ( E4t E5t ) ( A4t A5t ) ( B4t B5t )
+/54 ( C#5 C#6 )q ( A4t A5t )e ( B4t B5t )
+/55 ( C#5t C#6t )e ( B4t B5t ) ( A4t A5t ) ( G#4t G#5t )
+/56 ( F#4t F#5t )e ( B4t B5t ) ( G#4t G#5t ) ( E4t E5t )
+/57 ( A4 A5 )q ( A4t A5t )e ( B4t B5t )
+/58 ( C#5 C#6 )q ( A4t A5t )e ( B4t B5t )
+/59 ( C#5t C#6t )e ( B4t B5t ) ( A4t A5t ) ( G#4t G#5t )
+/60 ( F#4t F#5t )e ( G#4t G#5t ) ( A4t A5t ) ( B4t B5t )
+/61 ( G#4 G#5 )e ( E4t E5t ) ( A4t A5t ) ( B4t B5t )
+/62 ( C#5 C#6 )q ( A4t A5t )e ( B4t B5t )
+/63 ( C#5t C#6t )e ( B4t B5t ) ( A4t A5t ) ( G#4t G#5t )
+/64 ( F#4t F#5t )e ( B4t B5t ) ( G#4t G#5t ) ( E4t E5t )
+/65 ( A4 A5 )q C#6s D6 C#6 B5
+/66 A5s B5 A5 G#5 F#5 A5 G#5 F#5
+/67 F5s F#5 G#5 F5 C#5 D#5 F5 C#5
+/68 F#5s F5 F#5 G#5 A5 G#5 A5 B5
+/69 C#6s C6 C#6 C6 C#6 D6 C#6 B5
+/70 A5s B5 A5 G#5 F#5 A5 G#5 F#5
+/71 E5s F#5 G#5 E5 C#5 D#5 E5 C#5
+/72 D#5s E5 F#5 D#5 C5 C#5 D#5 C5
+/73 C#5q C#6s D6 C#6 B5
+/74 A5s B5 A5 G#5 F#5 A5 G#5 F#5
+/75 F5s F#5 G#5 F5 C#5 D#5 F5 C#5
+/76 F#5s F5 F#5 G#5 A5 G#5 A5 B5
+/77 C#6s C6 C#6 C6 C#6 D6 C#6 B5
+/78 A5s B5 A5 G#5 F#5 A5 G#5 F#5
+/79 E5s F#5 G#5 E5 C#5 D#5 E5 C#5
+/80 D#5s E5 F#5 D#5 C5 C#5 D#5 C5
+/81 C#5q E5s D5 C#5 B4
+/82 A4s B4 C#5 D5 E5 F#5 G#5 A5
+/83 A5s G#5 F#5 E5 E5 D5 C#5 B4
+/84 A4s B4 C#5 D5 E5 F#5 G#5 A5
+/85 A#5e ( B5t ) E5s D5 C#5 B4
+/86 A4s B4 C#5 D5 E5 F#5 G#5 A5
+/87 A5s G#5 F#5 E5 E5 D5 C#5 B4
+/88 C#5s E5 A4 C#5 B4 D5 G#4 B4
+/89 A4q C#6s D6 C#6 B5
+/90 A5s B5 A5 G#5 F#5 A5 G#5 F#5
+/91 F5s F#5 G#5 F5 C#5 D#5 F5 C#5
+/92 F#5s F5 F#5 G#5 A5 G#5 A5 B5
+/93 C#6s C6 C#6 C6 C#6 C6 C#6 A#5
+/94 D6s C#6 D6 C#6 D6 C#6 D6 C#6
+/95 D6s C#6 B5 A5 G#5 A5 B5 G#5
+/96 A5s B5 C#6 F#5 F5 F#5 G#5 F5
+/97 F#5q E5s D5 C#5 B4
+/98 A4s B4 C#5 D5 E5 F#5 G#5 A5
+/99 A5s G#5 F#5 E5 E5 D5 C#5 B4
+/100 A4s B4 C#5 D5 E5 F#5 G#5 A5
+/101 A#5e ( B5t ) E5s D5 C#5 B4
+/102 A4s B4 C#5 D5 E5 F#5 G#5 A5
+/103 A5s G#5 F#5 E5 E5 D5 C#5 B4
+/104 C#5s E5 A4 C#5 B4 D5 G#4 B4
+/105 A4q C#6s D6 C#6 B5
+/106 A5s B5 A5 G#5 F#5 A5 G#5 F#5
+/107 F5s F#5 G#5 F5 C#5 D#5 F5 C#5
+/108 F#5s F5 F#5 G#5 A5 G#5 A5 B5
+/109 C#6s C6 C#6 C6 C#6 C6 C#6 A#5
+/110 D6s C#6 D6 C#6 D6 C#6 D6 C#6
+/111 D6s C#6 B5 A5 G#5 A5 B5 G#5
+/112 A5s B5 C#6 F#5 F5 F#5 G#5 F5
+/113 F#5q ( A4t A5t )e ( B4t B5t )
+/114 ( C#5 C#6 )q ( A4t A5t )e ( B4t B5t )
+/115 ( C#5t C#6t )e ( B4t B5t ) ( A4t A5t ) ( G#4t G#5t )
+/116 ( F#4t F#5t )e ( G#4t G#5t ) ( A4t A5t ) ( B4t B5t )
+/117 ( G#4 G#5 )e ( E4t E5t ) ( A4t A5t ) ( B4t B5t )
+/118 ( C#5 C#6 )q ( A4t A5t )e ( B4t B5t )
+/119 ( C#5t C#6t )e ( B4t B5t ) ( A4t A5t ) ( G#4t G#5t )
+/120 ( F#4t F#5t )e ( B4t B5t ) ( G#4t G#5t ) ( E4t E5t )
+/121 ( A4 A5 )q ( A4t A5t )e ( B4t B5t )
+/122 ( C#5 C#6 )q ( A4t A5t )e ( B4t B5t )
+/123 ( C#5t C#6t )e ( B4t B5t ) ( A4t A5t ) ( G#4t G#5t )
+/124 ( F#4t F#5t )e ( G#4t G#5t ) ( A4t A5t ) ( B4t B5t )
+/125 ( G#4 G#5 )e ( E4t E5t ) ( A4t A5t ) ( B4t B5t )
+/126 ( C#5 C#6 )q ( A4t A5t )e ( B4t B5t )
+/127 ( C#5t C#6t )e ( B4t B5t ) ( A4t A5t ) ( G#4t G#5t )
+/128 ( F#4t F#5t )e ( B4t B5t ) ( G#4t G#5t ) ( E4t E5t )
+/129 ( A4 A5 )q B4s A4 G#4 A4
+/130 ( C5e )q D5s C5 B4 C5
+/131 ( E5e )q F5s E5 D#5 E5
+/132 B5s A5 G#5 A5 B5 A5 G#5 A5
+/133 C6q ( A5t )e ( C6t )s G5t A5
+/134 ( B5t )e ( A5t F#5t ) ( E5t G5t ) ( A5t F#5t )s G5t A5
+/135 ( B5t )e ( A5t F#5t ) ( E5t G5t ) ( A5t F#5t )s G5t A5
+/136 ( B5t )e ( A5t F#5t ) ( E5t G5t ) ( D#5t F#5t )
+/137 E5q B4s A4 G#4 A4
+/138 C5e R D5s C5 B4 C5
+/139 E5e R F5s E5 D#5 E5
+/140 B5s A5 G#5 A5 B5 A5 G#5 A5
+/141 C6q ( A5t )e ( C6t )s G5t A5
+/142 ( B5t )e ( A5t F#5t ) ( E5t G5t ) ( A5t F#5t )s G5t A5
+/143 ( B5t )e ( A5t F#5t ) ( E5t G5t ) ( A5t F#5t )s G5t A5
+/144 ( B5t )e ( A5t F#5t ) ( E5t G5t ) ( D#5t F#5t )
+/145 E5q ( C5t E5t )e ( D5t F5t )
+/146 ( E5t G5t )e ( E5t G5t ) A5s G5 F5 E5
+/147 ( B4e D5q )e G4 ( C5t E5t ) ( D5t F5t )
+/148 ( E5t G5t )e ( E5t G5t ) A5s G5 F5 E5
+/149 ( B4 D5 )q ( A4t C5t )e ( B4t D5t )
+/150 ( C5t E5t )e ( C5t E5t ) F5s E5 D5 C5
+/151 ( B4q G#4e )e E4 ( A4t C5t ) ( B4t D5t )
+/152 ( C5t E5t )e ( C5t E5t ) F5s E5 D5 C5
+/153 ( B4 G#4 )q B4s A4 G#4 A4
+/154 ( C5t )q D5s C5 B4 C5
+/155 ( E5t )q F5s E5 D#5 E5
+/156 B5s A5 G#5 A5 B5 A5 G#5 A5
+/157 C6q ( A5t )e ( B5t )
+/158 ( C6t )e ( B5t ) ( A5t ) ( G#5t )
+/159 ( A5t )e ( E5t ) ( F5t ) ( D5t )
+/160 C5q B4e. A4t B4
+/161 A4q ( C5t E5t )e ( D5t F5t )
+/162 ( E5t G5t )e ( E5t G5t ) A5s G5 F5 E5
+/163 ( B4e D5q )e G4 ( C5t E5t ) ( D5t F5t )
+/164 ( E5t G5t )e ( E5t G5t ) A5s G5 F5 E5
+/165 ( B4 D5 )q ( A4t C5t )e ( B4t D5t )
+/166 ( C5t E5t )e ( C5t E5t ) F5s E5 D5 C5
+/167 ( B4q G#4e )e E4 ( A4t C5t ) ( B4t D5t )
+/168 ( C5t E5t )e ( C5t E5t ) F5s E5 D5 C5
+/169 ( B4 G#4 )q B4s A4 G#4 A4
+/170 ( C5t )q D5s C5 B4 C5
+/171 ( E5t )q F5s E5 D#5 E5
+/172 B5s A5 G#5 A5 B5 A5 G#5 A5
+/173 C6q ( A5t )e ( B5t )
+/174 ( C6t )e ( B5t ) ( A5t ) ( G#5t )
+/175 ( A5t )e ( E5t ) ( F5t ) ( D5t )
+/176 C5q B4e. A4t B4
+/177 A4q A4s A5 B4 B5
+/178 C#5s C#6s Re A4s A5 B4 B5
+/179 C#5s C#6 B4 B5 A4 A5 G#4 G#5
+/180 F#4s F#5 G#4 G#5 A4 A5 B4 B5
+/181 G#4s G#5 E4 E5 A4 A5 B4 B5
+/182 C#5s C#6s Re A4s A5 B4 B5
+/183 C#5s C#6 B4 B5 A4 A5 G#4 G#5
+/184 F#4s F#5 B4 B5 G#4 G#5 E4 E5
+/185 ( A4 A5 )q A4s A5 B4 B5
+/186 C#5s C#6s Re A4s A5 B4 B5
+/187 C#5s C#6 B4 B5 A4 A5 G#4 G#5
+/188 F#4s F#5 G#4 G#5 A4 A5 B4 B5
+/189 G#4s G#5 E4 E5 A4 A5 B4 B5
+/190 C#5s C#6 R R A4 A5 B4 B5
+/191 C#5s C#6 B4 B5 A4 A5 G#4 G#5
+/192 F#4s F#5 B4 B5 G#4 G#5 E4 E5
+/193 ( A4 A5 )q ( A4q A5e. )e. A5s
+/194 ( A5 C#5 C#6@20 E5 )q R
+/195 ( A5 C#5 C#6@20 E5 )q R
+/196 D6s ( C#6x ) ( B5x ) ( C#6x ) D6 ( C#6x ) ( B5x ) ( C#6x )
+/197 ( A5 D6 F#5 )h
+/198 ( A5 C#6 E5 )t R R D6 ( A5 C#6 E5 ) R R D6 ( A5 C#6 E5 ) R R D6 ( A5 C#6 E5 ) R R R
+/199 ( B5q. E5h G#5h )q. ( E6t )e
+/200 ( A5 C#5 C#6@20 E5 )q R
+/201 ( A5 C#5 C#6@20 E5 )q R
+/202 D6s ( C#6x ) ( B5x ) ( C#6x ) D6 ( C#6x ) ( B5x ) ( C#6x )
+/203 ( A5 D6 F#5 )h
+/204 ( A5 C#6 E5 )h
+/205 ( B5t E5t G#5t )s. C#6t ( B5t E5t G#5t )s. C#6t ( B5t E5t G#5t )s. C#6t ( B5t E5t G#5t )e
+/206 ( A5q )e. ( E5t )s ( C#6t )e. ( C#6x E5t )t A5
+/207 ( C#6h )q.. E5t A5
+/208 C#6h
+/209 D6s ( C#6x ) ( B5x ) ( C#6x ) ( D6x ) ( C#6x ) ( B5x ) ( C#6x )
+/210 D6h
+/211 ( C#6t )s. D6t ( C#6t )s. D6t ( C#6t )s. D6t ( C#6t )e
+/212 B5q. E6e
+/213 ( A5 C#5 C#6@20 E5 )q R
+/214 ( A5 C#5 C#6@20 E5 )q R
+/215 D6s ( C#6x ) ( B5x ) ( C#6x ) D6 ( C#6x ) ( B5x ) ( C#6x )
+/216 ( A5 D6 F#5 )h
+/217 ( A5 C#6 E5 )h
+/218 ( B5t E5t G#5t )s. C#6t ( B5t E5t G#5t )s. C#6t ( B5t E5t G#5t )s. C#6t ( B5t E5t G#5t )e
+/219 ( A4 A5 C#5 E5 )q. ( C#5t C#6t )e
+/220 ( A4 A5 )q. ( C#5t C#6t )e
+/221 ( A4 A5 )q. ( C#5 C#6 )e
+/222 ( A4t A5t )e ( C#5t C#6t ) ( A4t A5t ) ( E5t E6t )
+/223 ( A4s A5s )q ( A4s. A5s. C#5s. E5s. )
+
+$V6 P4
+/1 Rh
+/2 A3e ( C4t E4t ) ( C4t E4t ) ( C4t E4t )
+/3 A3e ( C4t E4t ) ( C4t E4t ) ( C4t E4t )
+/4 ( A3t )e ( C4t E4t ) ( A3t ) ( C4t E4t )
+/5 A3e ( C4t E4t ) ( C4t E4t ) ( C4t E4t )
+/6 ( E3t )e ( B3t E4t ) ( B3t E4t ) ( B3t E4t )
+/7 ( E3t )e ( B3t E4t ) ( B3t E4t ) ( B3t E4t )
+/8 ( E3t )e ( B3t E4t ) ( B2t ) ( B3t )
+/9 E3q R
+/10 A3e ( C4t E4t ) ( C4t E4t ) ( C4t E4t )
+/11 A3e ( C4t E4t ) ( C4t E4t ) ( C4t E4t )
+/12 ( A3t )e ( C4t E4t ) ( A3t ) ( C4t E4t )
+/13 A3e ( C4t E4t ) ( C4t E4t ) ( C4t E4t )
+/14 ( E3t )e ( B3t E4t ) ( B3t E4t ) ( B3t E4t )
+/15 ( E3t )e ( B3t E4t ) ( B3t E4t ) ( B3t E4t )
+/16 ( E3t )e ( B3t E4t ) ( B2t ) ( B3t )
+/17 E3q R
+/18 ( C3t )e ( C4t ) ( E3t ) ( E4t )
+/19 G3q R
+/20 ( C3t )e ( C4t ) ( E3t ) ( E4t )
+/21 G3q R
+/22 ( A2t )e ( A3t ) ( C3t ) ( C4t )
+/23 E3q R
+/24 ( A2t )e ( A3t ) ( C3t ) ( C4t )
+/25 E3q R
+/26 A3e ( C4t E4t ) ( C4t E4t ) ( C4t E4t )
+/27 A3e ( C4t E4t ) ( C4t E4t ) ( C4t E4t )
+/28 ( A3t )e ( C4t E4t ) ( A3t ) ( C4t E4t )
+/29 F3e ( A3t D#4t ) ( A3t D#4t ) ( A3t D#4t )
+/30 ( E3t )e ( A3t E4t ) ( D3t ) ( B3t F3t )
+/31 ( C3t )e ( A3t E3t ) ( E3t ) ( B3t F3t )
+/32 ( A3t E3t )e ( A3t E3t ) ( E3t G#3t ) ( E3t G#3t )
+/33 ( A2 A3 )q R
+/34 ( C3t )e ( C4t ) ( E3t ) ( E4t )
+/35 G3q R
+/36 ( C3t )e ( C4t ) ( E3t ) ( E4t )
+/37 G3q R
+/38 ( A2t )e ( A3t ) ( C3t ) ( C4t )
+/39 E3q R
+/40 ( A2t )e ( A3t ) ( C3t ) ( C4t )
+/41 E3q R
+/42 A3e ( C4t E4t ) ( C4t E4t ) ( C4t E4t )
+/43 A3e ( C4t E4t ) ( C4t E4t ) ( C4t E4t )
+/44 ( A3t )e ( C4t E4t ) ( A3t ) ( C4t E4t )
+/45 F3e ( A3t D#4t ) ( A3t D#4t ) ( A3t D#4t )
+/46 ( E3t )e ( A3t E4t ) ( D3t ) ( B3t F3t )
+/47 ( C3t )e ( A3t E3t ) ( E3t ) ( B3t F3t )
+/48 ( A3t E3t )e ( A3t E3t ) ( E3t G#3t ) ( E3t G#3t )
+/49 ( A2q A3q )q.t A2t C#3 E3
+/50 ( A3t )e ( A3t ) ( A3t ) A3t A2 C#3 E3
+/51 ( A3t )e ( A3t ) ( A3t ) A3t D2 F#2 A2
+/52 ( D3t )e D3t D#2 F#2 A2 ( D#3t )e ( D#3t E2t )t G#2 ( B2t )s
+/53 ( E3t )e ( E3t ) ( E3t ) E3t A2 C#3 E3
+/54 ( A3t )e ( A3t ) ( A3t ) A3t A2 C#3 E3
+/55 ( A3t )e ( A3t ) ( A3t ) A3t D2 F#2 A2
+/56 ( D3t )e D3t E2 G#2 B2 ( E3t )e ( E3t )
+/57 A2q Re Rt A2 C#3 E3
+/58 ( A3t )e ( A3t ) ( A3t ) A3t A2 C#3 E3
+/59 ( A3t )e ( A3t ) ( A3t ) A3t D2 F#2 A2
+/60 ( D3t )e D3t D#2 F#2 A2 ( D#3t )e ( D#3t E2t )t G#2 ( B2t )s
+/61 ( E3t )e ( E3t ) ( E3t ) E3t A2 C#3 E3
+/62 ( A3t )e ( A3t ) ( A3t ) A3t A2 C#3 E3
+/63 ( A3t )e ( A3t ) ( A3t ) A3t D2 F#2 A2
+/64 ( D3t )e D3t E2 G#2 B2 ( E3t )e ( E3t )
+/65 A2q R
+/66 F#3e ( A3t C#4t ) ( A3t C#4t ) ( A3t C#4t )
+/67 G#3e ( B3t C#4t ) ( B3t C#4t ) ( B3t C#4t )
+/68 F#3e ( A3t C#4t ) ( A3t C#4t ) ( A3t C#4t )
+/69 F3e ( C#4t G#3t ) ( C#4t G#3t ) ( C#4t G#3t )
+/70 F#3e ( A3t C#4t ) ( A3t C#4t ) ( A3t C#4t )
+/71 G#3e ( C#4t E4t ) ( C#4t E4t ) ( C#4t E4t )
+/72 G#3e ( D#4t F#4t ) ( D#4t F#4t ) ( D#4t F#4t )
+/73 ( C#4 E4 )q R
+/74 F#3e ( A3t C#4t ) ( A3t C#4t ) ( A3t C#4t )
+/75 G#3e ( B3t C#4t ) ( B3t C#4t ) ( B3t C#4t )
+/76 F#3e ( A3t C#4t ) ( A3t C#4t ) ( A3t C#4t )
+/77 F3e ( C#4t G#3t ) ( C#4t G#3t ) ( C#4t G#3t )
+/78 F#3e ( A3t C#4t ) ( A3t C#4t ) ( A3t C#4t )
+/79 G#3e ( C#4t E4t ) ( C#4t E4t ) ( C#4t E4t )
+/80 G#3e ( D#4t F#4t ) ( D#4t F#4t ) ( D#4t F#4t )
+/81 ( C#4 E4 )q R
+/82 A3e ( C#4t E4t ) ( C#4t E4t ) ( C#4t E4t )
+/83 ( B3t )e ( D4t E4t ) ( G#3t ) ( D4t E4t )
+/84 A3e ( C#4t E4t ) ( C#4t E4t ) ( C#4t E4t )
+/85 E3e ( D4t G#3t ) ( D4t G#3t ) ( D4t G#3t )
+/86 A3e ( C#4t E4t ) ( C#4t E4t ) ( C#4t E4t )
+/87 ( B3t )e ( D4 E4 ) ( G#3t ) ( D4 E4 )
+/88 ( A3t )e ( F#3t ) ( D3t ) ( E3t )
+/89 ( A2t )e ( A3t ) R R
+/90 ( F#3t )e ( A3t C#4t ) ( A3t C#4t ) ( A3t C#4t )
+/91 ( G#3t )e ( B3t C#4t ) ( B3t C#4t ) ( B3t C#4t )
+/92 F#3e ( A3t C#4t ) ( A3t C#4t ) ( A3t C#4t )
+/93 C#3e ( C#4t G#3t ) ( C#4t G3t ) ( C#4t F#3t )
+/94 B2e ( B3t F#3t ) ( B3t F#3t ) ( B3t F#3t )
+/95 B2e ( B3t G#3t ) ( B3t G#3t ) ( B3t G#3t )
+/96 ( C#3t )e ( A3t F#3t ) ( C#3t ) ( B3t G#3t )
+/97 ( A3 F#3 )q R
+/98 A3e ( C#4t E4t ) ( C#4t E4t ) ( C#4t E4t )
+/99 ( B3t )e ( D4t E4t ) ( G#3t ) ( D4t E4t )
+/100 A3e ( C#4t E4t ) ( C#4t E4t ) ( C#4t E4t )
+/101 E3e ( D4t G#3t ) ( D4t G#3t ) ( D4t G#3t )
+/102 A3e ( C#4t E4t ) ( C#4t E4t ) ( C#4t E4t )
+/103 ( B3t )e ( D4 E4 ) ( G#3t ) ( D4 E4 )
+/104 ( A3t )e ( F#3t ) ( D3t ) ( E3t )
+/105 ( A2t )e ( A3t ) R R
+/106 ( F#3t )e ( A3t C#4t ) ( A3t C#4t ) ( A3t C#4t )
+/107 ( G#3t )e ( B3t C#4t ) ( B3t C#4t ) ( B3t C#4t )
+/108 F#3e ( A3t C#4t ) ( A3t C#4t ) ( A3t C#4t )
+/109 C#3e ( C#4t G#3t ) ( C#4t G3t ) ( C#4t F#3t )
+/110 B2e ( B3t F#3t ) ( B3t F#3t ) ( B3t F#3t )
+/111 B2e ( B3t G#3t ) ( B3t G#3t ) ( B3t G#3t )
+/112 ( C#3t )e ( A3t F#3t ) ( C#3t ) ( B3t G#3t )
+/113 ( A3 F#3 )q Re Rt A2 C#3 E3
+/114 ( A3t )e ( A3t ) ( A3t ) A3t A2 C#3 E3
+/115 ( A3t )e ( A3t ) ( A3t ) A3t D2 F#2 A2
+/116 ( D3t )e D3t D#2 F#2 A2 ( D#3t )e ( D#3t E2t )t G#2 ( B2t )s
+/117 ( E3t )e ( E3t ) ( E3t ) E3t A2 C#3 E3
+/118 ( A3t )e ( A3t ) ( A3t ) A3t A2 C#3 E3
+/119 ( A3t )e ( A3t ) ( A3t ) A3t D2 F#2 A2
+/120 ( D3t )e D3t E2 G#2 B2 ( E3t )e ( E3t )
+/121 A2q Re Rt A2 C#3 E3
+/122 ( A3t )e ( A3t ) ( A3t ) A3t A2 C#3 E3
+/123 ( A3t )e ( A3t ) ( A3t ) A3t D2 F#2 A2
+/124 ( D3t )e D3t D#2 F#2 A2 ( D#3t )e ( D#3t E2t )t G#2 ( B2t )s
+/125 ( E3t )e ( E3t ) ( E3t ) E3t A2 C#3 E3
+/126 ( A3t )e ( A3t ) ( A3t ) A3t A2 C#3 E3
+/127 ( A3t )e ( A3t ) ( A3t ) A3t D2 F#2 A2
+/128 ( D3t )e D3t E2 G#2 B2 ( E3t )e ( E3t )
+/129 A2q R
+/130 A3e ( C4t E4t ) ( C4t E4t ) ( C4t E4t )
+/131 A3e ( C4t E4t ) ( C4t E4t ) ( C4t E4t )
+/132 ( A3t )e ( C4t E4t ) ( A3t ) ( C4t E4t )
+/133 A3e ( C4t E4t ) ( C4t E4t ) ( C4t E4t )
+/134 ( E3t )e ( B3t E4t ) ( B3t E4t ) ( B3t E4t )
+/135 ( E3t )e ( B3t E4t ) ( B3t E4t ) ( B3t E4t )
+/136 ( E3t )e ( B3t E4t ) ( B2t ) ( B3t )
+/137 E3q R
+/138 A3e ( C4t E4t ) ( C4t E4t ) ( C4t E4t )
+/139 A3e ( C4t E4t ) ( C4t E4t ) ( C4t E4t )
+/140 ( A3t )e ( C4t E4t ) ( A3t ) ( C4t E4t )
+/141 A3e ( C4t E4t ) ( C4t E4t ) ( C4t E4t )
+/142 ( E3t )e ( B3t E4t ) ( B3t E4t ) ( B3t E4t )
+/143 ( E3t )e ( B3t E4t ) ( B3t E4t ) ( B3t E4t )
+/144 ( E3t )e ( B3t E4t ) ( B2t ) ( B3t )
+/145 E3q R
+/146 ( C3t )e ( C4t ) ( E3t ) ( E4t )
+/147 G3q R
+/148 ( C3t )e ( C4t ) ( E3t ) ( E4t )
+/149 G3q R
+/150 ( A2t )e ( A3t ) ( C3t ) ( C4t )
+/151 E3q R
+/152 ( A2t )e ( A3t ) ( C3t ) ( C4t )
+/153 E3q R
+/154 A3e ( C4t E4t ) ( C4t E4t ) ( C4t E4t )
+/155 A3e ( C4t E4t ) ( C4t E4t ) ( C4t E4t )
+/156 ( A3t )e ( C4t E4t ) ( A3t ) ( C4t E4t )
+/157 F3e ( A3t D#4t ) ( A3t D#4t ) ( A3t D#4t )
+/158 ( E3t )e ( A3t E4t ) ( D3t ) ( B3t F3t )
+/159 ( C3t )e ( A3t E3t ) ( E3t ) ( B3t F3t )
+/160 ( A3t E3t )e ( A3t E3t ) ( E3t G#3t ) ( E3t G#3t )
+/161 ( A2 A3 )q R
+/162 ( C3t )e ( C4t ) ( E3t ) ( E4t )
+/163 G3q R
+/164 ( C3t )e ( C4t ) ( E3t ) ( E4t )
+/165 G3q R
+/166 ( A2t )e ( A3t ) ( C3t ) ( C4t )
+/167 E3q R
+/168 ( A2t )e ( A3t ) ( C3t ) ( C4t )
+/169 E3q R
+/170 A3e ( C4t E4t ) ( C4t E4t ) ( C4t E4t )
+/171 A3e ( C4t E4t ) ( C4t E4t ) ( C4t E4t )
+/172 ( A3t )e ( C4t E4t ) ( A3t ) ( C4t E4t )
+/173 F3e ( A3t D#4t ) ( A3t D#4t ) ( A3t D#4t )
+/174 ( E3t )e ( A3t E4t ) ( D3t ) ( B3t F3t )
+/175 ( C3t )e ( A3t E3t ) ( E3t ) ( B3t F3t )
+/176 ( A3t E3t )e ( A3t E3t ) ( E3t G#3t ) ( E3t G#3t )
+/177 ( A2 A3 )q Re Rt A2 C#3 E3
+/178 ( A3t )e ( A3t ) ( A3t ) A3t A2 C#3 E3
+/179 ( A3t )e ( A3t ) ( A3t ) A3t D2 F#2 A2
+/180 ( D3t )e D3t D#2 F#2 A2 ( D#3t )e ( D#3t E2t )t G#2 ( B2t )s
+/181 ( E3t )e ( E3t ) ( E3t ) E3t A2 C#3 E3
+/182 ( A3t )e ( A3t ) ( A3t ) A3t A2 C#3 E3
+/183 ( A3t )e ( A3t ) ( A3t ) A3t D2 F#2 A2
+/184 ( D3t )e D3t E2 G#2 B2 ( E3t )e ( E3t )
+/185 A2q Re Rt A2 C#3 E3
+/186 ( A3t )e ( A3t ) ( A3t ) A3t A2 C#3 E3
+/187 ( A3t )e ( A3t ) ( A3t ) A3t D2 F#2 A2
+/188 ( D3t )e D3t D#2 F#2 A2 ( D#3t )e ( D#3t E2t )t G#2 ( B2t )s
+/189 ( E3t )e ( E3t ) ( E3t ) E3t A2 C#3 E3
+/190 ( A3t )e ( A3t ) ( A3t ) A3t A2 C#3 E3
+/191 ( A3t )e ( A3t ) ( A3t ) A3t D2 F#2 A2
+/192 D3e ( D3e )t E2 G#2 B2 E3e ( E3e )t A2 ( C#3t )s
+/193 A3e A3 A3 ( A3e )t A2 C#3 E3
+/194 ( A3t )e ( A3t ) ( A3t ) A3t A2 C#3 E3
+/195 ( A3t )e ( A3t ) ( A3t ) A3t A2 C#3 E3
+/196 ( A3t )e ( A3t ) ( A3t ) A3t D2 F#2 A2
+/197 ( D3t )e ( D3t ) ( D3t ) D3t A2 C#3 E3
+/198 ( A3t )e ( A3t ) ( A3t ) A3t E2 G#2 B2
+/199 ( E3t )e ( E3t ) ( E3t ) E3t A2 C#3 E3
+/200 ( A3t )e ( A3t ) ( A3t ) A3t A2 C#3 E3
+/201 ( A3t )e ( A3t ) ( A3t ) A3t A2 C#3 E3
+/202 ( A3t )e ( A3t ) ( A3t ) A3t D2 F#2 A2
+/203 ( D3t )e ( D3t ) ( D3t ) D3t A2 C#3 E3
+/204 ( A3t )e ( A3t ) ( A3t ) A3t E2 G#2 B2
+/205 ( E3t )e ( E3t ) ( E3t ) ( E3t )
+/206 A3s E4 C#4 E4 A3 E4 C#4 E4
+/207 A3s E4 C#4 E4 A3 E4 C#4 E4
+/208 A3s E4 C#4 E4 A3 E4 C#4 E4
+/209 A3s E4 C#4 E4 A3 E4 C#4 E4
+/210 A3s F#4 D4 F#4 A3 F#4 D4 F#4
+/211 A3s E4 C#4 E4 A3 E4 C#4 E4
+/212 E3s E4 B3 E4 E3 E4 ( B3s )t A2 ( C#3t E4s ) E3
+/213 ( A3t )e ( A3t ) ( A3t ) A3t A2 C#3 E3
+/214 ( A3t )e ( A3t ) ( A3t ) A3t A2 C#3 E3
+/215 ( A3t )e ( A3t ) ( A3t ) A3t D2 F#2 A2
+/216 ( D3t )e ( D3t ) ( D3t ) D3t A2 C#3 E3
+/217 ( A3t )e ( A3t ) ( A3t ) A3t E2 G#2 B2
+/218 ( E3t )e ( E3t ) ( E3t ) E3t A2 C#3 E3
+/219 ( A3t )e ( A3t ) ( A3t ) A3t A2 C#3 E3
+/220 ( A3t )e ( A3t ) ( A3t ) A3t A2 C#3 E3
+/221 ( A3t )e ( A3t ) ( A3t ) A3t A2 C#3 E3
+/222 ( A3t )e A3t A2 C#3 E3 ( A3t )e ( A3t )
+/223 ( A2t. )q ( A2s. A3s. C#3s. E3s. )

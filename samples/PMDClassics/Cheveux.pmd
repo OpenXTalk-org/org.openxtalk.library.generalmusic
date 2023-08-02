@@ -1,0 +1,104 @@
+//pmd,2.0,60,
+//c C.A.Debussy / La fille aux cheveux de lin
+//i Made by UDI with makeSMF
+//s 3/4
+
+P6 _beadgc
+/0 T400 Rh. T
+/1 D5q.V8 B4s G Ee Gs B
+/2 D5e B4s G Ee Gs B Ge H1 Gs E4
+/3 H1 Ge F4s E H1 Dhh
+/4 E4e H0 G
+
+/5 H1 ( D4 F A )q. H1 ( D F D5 )e H1 ( E4 G B ) H1 ( D G )s B
+/6 H1 Ae H1 D5e H1 ( D^4 F B )q ( Eqq Bqq E5qq )q
+/7 Rq H0 B4q. C5e
+/8 H1 D5qe B4s G H1 Ee Gs B
+/9 H1 D5e B4s G H1 Ee H1 Gs B Ge H1 Gs E
+
+/10 H1 G4e Fs E H1q Dh
+/11 ( B3 D4 )h Re B3s D4
+/12 H1 E4eV9 Gs A C5e D E ( Gq )e
+/13 H1 Re F5s EV8 Dqs Cs B4s A
+
+/14 H1 Gs A Bes H1 As ( Ges )e H1 Rs Fs ( Ees )e
+/15 H1 Rs D4 Ces Ds Fb A C5sV9 D Fb A
+/16 H1 C6e B5sV8 A Gh
+
+/17 H1 B5e As G H1 Eqe Ds C
+/18 H1 B4e As G H1 ( Eqe F3h Ah Bh )qe E4s C^
+/19 H1 ( E B3 F^ )h H1 ( C4 A3 )e E4s C
+
+/20 H1 ( E4 B3 G^ )h H1 C5e Es C
+/21 H1 E5e B4s C^5 E F G^ B H1 ( C6bqe Eqe )q
+/22 Re H1 D6s3 E D H1 B5e H1 Aes Gs F E
+
+/23 H1 E5e H1 D5s3 E D H1 B4e H1 ( A E )q H1 Gs ( A F )
+/24 H1 ( B4 E B3 )e. ( G4 D G3 )s H1 ( E4 B3 E )e ( G4 D G3 ) ( B4 E B3 ) ( D5 G4 D )
+/25 ( B4 E B3 )e ( G4 D G3 ) H1 ( E4 B3 E )q H1 ( G4 C G3 )
+/26 H1 ( B4 E B3 )e. ( G4 D G3 )s H1 ( B4 E B3 )e ( D5 G4 D ) ( E5 B4 E ) ( G5 D G4 )
+
+/27 ( B5 D B4 )e ( G5 D G4 ) H1 ( B4 C )q H1 ( D A3 )
+/28 H1 Rq R ( D6qqe )q
+/29 Rqe B5s G Ee Gs B
+/30 ( D6e G4h. Eh. )e B5s G Ee Gs B Ge Gs E
+/31 H1 ( G5q B4h. Gh. )q F5 E
+
+/32 H1 D5q. Ce B4 F
+/33 H1 G4s A ( Bes )e H1 Rs F ( Ges )e H1 Rs F ( Ees )e
+/34 H1 Rs D4 ( Ees )e H1 Rs D ( Ees )e H1 Rs D ( Ees )e
+
+/35 H1 Rs ( G4 D )s@7 ( A E ) ( C5 G4 ) ( D5 A4 ) ( E5 C ) ( G5 D ) ( A E ) ( C6 G5 )e3 ( D6 A5 ) ( E6 C )
+/36 H1 ( G6h.h.q Dh.h.h.q B5h.h.h.q Gh.h.q )h.@
+/37 Rh.
+/38 ( G6 G5 )h.V6
+/39 Rh. H0
+
+
+$V7 P4 _beadgc
+/0 T400 Rh. T
+/1 Rh.
+/2 Rq R Re H1 ( C3 E G C4 )eV8
+/3 H1 ( G2h.h D3h.h Gh.h Bh.h )h.
+/4 Rh H0 Rq
+
+/5 H1 ( D3 A )q. H1 ( B2 F3 B )e H1 ( E3 B ) H1 ( G B )
+/6 H1 ( D3 A D4 F )q H1 ( B2 F3 B ) H1 ( E2qq B2qq G^3qq Bqq )
+/7 Rq H0 R R
+/8 H1 ( Fb3 G B D4 )h H1 ( G3 A C^4 )q
+/9 H1 ( Fb3 G B D )q H1 ( G3 A C^4 ) H1 ( E3q )e H1 D2e
+
+/10 H1 ( G2h.h. D3h.h. Gh. Bh. )q H1q D4qs Cs B3 A
+/11 G3e Fs E Dqs B2s A G
+/12 H1 ( D4 C A3 D G2 D G1h.h )h.
+/13 H1 ( B4 G Dh. B3h. Gh. Dh. )h G1q
+
+/14 H1 ( E4 C G )e. ( F4 D B3 )s H1 ( E4 C G )e. ( D4 B3 F )s H1 ( C4 A3 E )e. ( B3 G D )s
+/15 H1 ( A3h. Fbh. Ch. )q ( G1h )qe C2e
+/16 H1 ( G4 E C G C2 )h.
+
+/17 H1 ( C5 G4 E A3 )q H1 ( F4 C A3 D )h
+/18 H1 ( C4 G3 E A2 )q H1 ( B2e B1h )e Re ( B2qe )q
+/19 H1 ( E2h. )e ( B2e )s C^3s ( E3s B2he )s F3s G ( B^se )s H1 Fe E4s C
+
+/20 H1 ( E3h )e Bs C^3 E F G^ ( Bsq )s H1 ( C4e E3q )e E4s C
+/21 H1 ( B4h G4h E4e B3e Ee )e B3s C^4 /. E4s F G^ B H1 ( E5qe Gbqe Cbqe Eqe Cb5qe Gb4qe Eqe Cbqe )q
+/22 Re H1 ( A5 F D A4 F D )e H1 ( G5 E B4 G E ) H1 ( E5q. Cq. F4q. Eq. Cq. A3q. Eq. )e A2q
+
+/23 H1 ( G4e E Cb G3 C )e H1 ( A4 F D A3 D ) H1 ( EG4 E4 B3 E ) H1 ( C4 A3 )q ( Cb4 D3ee. )e
+/24 H1 G2e. ( B E )s H1 ( G D )e ( B E ) ( D3 G2 ) ( E3 B2 )
+/25 ( D3 G2 )e ( B2 E ) H1 ( G2 C )q H1 ( A D )
+/26 H1 ( D3 G2 )e. ( E3 B2 )s H1 ( G3 D )e ( B3 E ) ( D4 G3 ) ( E4 B3 )
+/27 ( G4 D )e ( E B3 ) H1 ( G3 E B2 )q H1 ( F3 D )
+/28 H1 ( G4h.h. E4h.h. C4h.h. G3h.h. C3h.h. G2h.h. C2h.h.h. )h.
+/29 Rh.
+/30 ( G4h.h. Eh.h. Ch. G3h. )h A4q
+/31 H1 ( E4 B3 G B2 E )h.
+/32 H1 ( E4 D B3 D G2 )h.
+/33 H1 ( E4 C G3 )e. ( F4 D A3 )s H1 ( E4 C G3 )e. ( D4 B3 F )s H1 ( C4 A3 E )e. ( B3 F D )s
+/34 H1 ( A3 F C )e. ( B3 G D )s H1 ( C4 A3 E )e. ( B3 G D )s H1 ( A3 F C )e. ( B3 G D )s
+/35 H1 ( C4 A E )h.
+/36 H1 ( D5h.h.h.q B4h.h.h.q Gh.h.h.q Dh.h.h.q G3h.h.h.q )h.
+/37 ( D5 D4 )qV7 R R
+/38 Rh.
+/39 Rh.

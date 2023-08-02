@@ -1,0 +1,149 @@
+//pmd,2.0,70,25
+//c Georges Bizet / Carmen - Habanera -
+//i Made by UDI with makeSMF
+//s 2/4
+
+$ _b P6
+/0 T400 Rh T
+/1 Rh
+/2 Rh
+/3 Rh
+/4 Rq ( D5 F4 D )e@6V8 ( C#5 F4 D )
+/5 H1q ( C5 F4 D )e3@ C5 C5 ( B^4 F D )e@6 ( B F D )
+/6 H1q ( A F D )s@ Ae As ( G# D )e@6 ( G D )
+
+/7 H1q ( F4 D )s3@12 G F Es F (G D )e@6 ( F D )
+/8 H1q ( E4 D B3 )e@ Re ( D5 E4 D )e@6 ( C#5 E4 D )
+/9 H1q ( C^5 E4 D )e3@ C^5 C^ ( B^4 E D )e@6 (Bb E D )
+/10 H1q ( A4 E D )s@ Ae As ( G D )e@6 ( F D )e
+/11 H1q ( E4 C# )s3@12 F E Ds E ( Fe C )e@6 ( E C )
+/12 H1q D4q@12 ( D4e@8 )xV10 ( Fstx@8 D5st@8 )x Rst ( C#5 F4 D )e@6V8
+
+/13 H1q ( C^5 F4 D )e3@ C^5  C^5 ( B^4 F E )e@6 ( Bb F E )
+/14 H1q ( A4 F D )s@ Ae As ( G# D )e@6 ( G^ D )
+/15 H1q ( F4 D )s3@11 G F Es F ( G D )e@6 ( F D )
+/16 H1q ( E4 D B3 )e@ Re ( D4e@8 )xV10 ( Estx@8 D5st@8 )x Rst ( C#5 E4 D )e@6V8
+/17 H1q ( C^5 E4 D )e3@ C^5 C^ ( B^4 E D )e@6 ( Bb E D )
+/18 H1q ( A4 E D )s@ Ae As ( G D )e@6 ( F D )
+
+/19 H1q ( E C# )s3@12 F E Ds E ( F C )e@6 ( E C )
+/20 ^#fc H1q. D4q ( D6 F5 D )e@ ( C6 F5 D )
+/21 H1q ( C^6 F5 d )e3@ C^6 C^ ( B5 F D )e@6 ( Bb F D )
+/22 H1q ( A5 F D )e@ Rs As@12 ( G# C A4 )e@6 ( G^5 C A4 )
+/23 H1q ( F5 D A4 )s3@12 G5 F Es F ( G5 D A4 )e@6 ( F5 D A4 )
+/24 H1q ( E5 D B4 G )e Re ( D6 G5 E D )e ( C6 G5 E D )
+
+/25 H1q ( C^6 G5 E D )e3@ C^6 C^ ( B5 E D )e@6 ( Bb5 E D )
+/26 H1q ( B5 E D )e@ Rs B ( G5 D B4 )e@6 ( F5 D B4 )
+/27 H1q ( E5 C# G4 )s3@12 F5 E Ds E ( F5 C G4 )e@6 ( E5 C G4 )
+/28 H1q ( D5 F4 )e@ Rs A4s@12 De@6 ( E A3 )
+/29 H1q ( F4 D )e.@ As@12 ( F D )e@6 ( E A3 )
+/30 H1q ( D4 F3 )e.@ E4s@12 ( F D )e@6 ( G E )
+
+/31 H1q ( A4 F )s@6 ( A F )V9 ( A F ) ( A F )V10 ( B G )e  ( A F )V9
+/32 H1q ( G4 E )e@6V8 Rs Bs@12 Ee@6 ( F B3 )
+/33 H1q ( G4 E )e@6 Rs Bs@12 ( G E )e@6 ( F B3 )
+/34 H1q ( E4 G3 )e.@6 F4s@12 ( G E )e@6 ( A F )
+/35 H1q ( B4 G )s@6 ( B G )V9 ( B G ) ( B G )V10 ( C5 A4 )e ( B G )V9
+/36 H1q ( A4 F )e@V8 Rs A5@12V10 ( D6 F5 D )e@ ( E6 A5 E )
+
+/37 H1e. ( D6 B5 F )e@ Rs A4s@12V8 ( FD )e@6 ( E A3 )
+/38 H1q ( D4 F3 )e.@ E4s@12 ( F D )e@6 ( G E )
+/39 H1q ( A4 F )s@6 ( A F )V9 ( A F ) ( A F )V10 ( D5 B4 )e ( C5e A4e )s. ( C5e )t@12V9
+/40 H1q ( G4 E )e@V8 Rs B5s@12V10 ( E6 G5 E )e@6 ( F6 B5 F )
+/41 H1e. ( G6 C G5 )e@ Rs B4s@12V8 ( G E )e@6 ( F B3 )
+/42 H1q ( E4 G3 )e.@ F4s ( G E )e@6 ( A F )
+
+/43 H1q ( C5 G4 E )e3@12 B4 F ( Ge )s3 T70 At3@ G Fe.3 Es3 T
+/44 H1q D4e@ Rs As@12 ( D5 F4 )e@6 ( E5 A4 )
+/45 H1q ( F5 D )e@ Rs ( A F )s@12 ( F D )e@6 ( E A4 )
+/46 H1q ( D5 F4 )e@ Rs ( E5 A4 )s@12 ( F5 D )e@6 ( G E )
+/47 H1q ( A5 F )s@6 ( A F )V9 ( A F ) ( A F )V10 ( B G )e ( A F )V9
+/48 H1q ( G5 E )e@V8 Rs B4s@12 ( E5 G4 )e@6 ( F5 B4 )
+
+/49 H1q ( G5 E )e@ Rs ( B5 G )s@12 ( G E )e@6 ( F B4 )
+/50 H1q ( E5 G4 )e@ Rs ( F5 B4 )s@12 ( G5 E )e@6 ( A F )
+/51 H1q ( B5 G )s@6 ( B G )V9 ( B G ) ( B G )V10 ( C6 A5 )e ( B G )V9
+/52 H1q ( A5 F )e@V8 Rs As@12V10 ( D6 F5 B )e@6 ( E6 A5 E )
+/53 H1e. ( F6 D F5 )e@6 Rs A4s@12V8 ( F D )e@6 ( E A3 )
+/54 H1q ( D4 F3 )e@ Rs ( E4 A3 )s@12 ( F4 D )e@6 ( G E )
+
+/55 H1q ( A4 F )s@6 ( A F )V9 ( A F ) ( As Fs )t ( Ae )t@ ( D5 B4 )e@ ( C5 A4 )@12
+/56 H1q ( G4 E )e@ Rs B5sV10 ( E6 G5 E )e@6 ( F6 B5 F )
+/57 H1e. ( B6 G G5 )e@6 Rs B4s@12V9 ( G E )e@6 ( F B3 )
+/58 H1q ( E4 G3 )e@ Rs F5s@12 ( G E )e@6 ( A F )V10
+/59 H1q ( C6 G5 E )s@12 B G# A T80 F6e. T Et3@ F E
+/60 H1e D6e@6 Rs A@12 H1e ( D6 F D )e@6 Re
+
+
+$ _b P4
+/0 T400 Rh T
+/1 D2e@7V6 Rs As@ F3e@6 A2
+/2 D2e@7 Rs As@ F3e@6 A2
+/3 D2e@7 Rs As@ F3e@6 A2
+/4 D2e@7 Rs As@ F3e@6 A2
+/5 D2e@7 Rs As@ F3e@6 A2
+/6 D2e@7 Rs As@ F3e@6 A2
+
+/7 D2e@7 Rs As@ F3e@6 A2
+/8 D2e@7 Rs As@ F3e@6 A2
+/9 D2e@7 Rs As@ F3e@6 A2
+/10 D2e@7 Rs As@ F3e@6 A2
+/11 D2e@7 Rs As@ F3e@6 A2
+/12 D2e@7 Rs As@ F3e@6 A2
+
+/13 D2e@7 Rs As@ F3e@6 A2
+/14 D2e@7 Rs As@ F3e@6 A2
+/15 D2e@7 Rs As@ F3e@6 A2
+/16 D2e@7 Rs As@ F3e@6 A2
+/17 D2e@7 Rs As@ F3e@6 A2
+/18 D2e@7 Rs As@ F3e@6 A2
+
+/19 D2e@7 Rs As@ F3e@6 A2
+/20 ^#fc D2e@7 Rs As@ F3e@6 A2
+/21 D2e@7 Rs As@ F3e@6 A2
+/22 D2e@7 Rs As@ F3e@6 A2
+/23 D2e@7 Rs As@ F3e@6 A2
+/24 D2e@7 Rs As@ F3e@6 A2
+
+/25 D2e@7 Rs As@ F3e@6 A2
+/26 D2e@7 Rs As@ F3e@6 A2
+/27 D2e@7 Rs As@ F3e@6 A2
+/28 D2e@7 Rs As@ F3e@6 A2
+/29 D2e@7 Rs As@ F3e@6 A2
+/30 D2e@7 Rs As@ F3e@6 A2
+
+/31 D2e@7 Rs As@ F3e@6 A2
+/32 D2e@7 Rs As@ F3e@6 A2
+/33 D2e@7 Rs As@ F3e@6 A2
+/34 D2e@7 Rs As@ F3e@6 A2
+/35 D2e@7 Rs As@ F3e@6 A2
+/36 D2e@7 Rs As@ F3e@6 A2
+
+/37 D2e@7 Rs As@ F3e@6 A2
+/38 D2e@7 Rs As@ F3e@6 A2
+/39 D2e@7 Rs As@ F3e@6 A2
+/40 D2e@7 Rs As@ F3e@6 A2
+/41 D2e@7 Rs As@ F3e@6 A2
+/42 D2e@7 Rs As@ F3e@6 A2
+
+/43 H1q ( E3 B2 D )e@ Re Rs3 T70 Rs3 Re.3 Rs3 T
+/44 D2e@7 Rs As@ F3e@6 A2
+/45 D2e@7 Rs As@ F3e@6 A2
+/46 D2e@7 Rs As@ F3e@6 A2
+/47 D2e@7 Rs As@ F3e@6 A2
+/48 D2e@7 Rs As@ F3e@6 A2
+
+/49 D2e@7 Rs As@ F3e@6 A2
+/50 D2e@7 Rs As@ F3e@6 A2
+/51 D2e@7 Rs As@ F3e@6 A2
+/52 D2e@7 Rs As@ F3e@6 A2
+/53 D2e@7 Rs As@ F3e@6 A2
+/54 D2e@7 Rs As@ F3e@6 A2
+
+/55 T95 D2e@7 Rs  As@ F3e@6 T A2
+/56 D2e@7 Rs As@ F3e@6 A2
+/57 D2e@7 Rs As@ F3e@6 A2
+/58 D2e@7 Rs As@ F3e@6 A2
+/59 ( Aq. Gq. Eq. Cq. A3q. )q@ T80 Re. T Rs
+/60 ( D4 A3 F D )e@6 Rs A2s@ H1e ( D3 D2 )e@6 Re

@@ -1,0 +1,205 @@
+//pmd,1.0,130,
+//c F.Chopin / Etude op.10-12
+//i Made by UDI with makeSMF
+//s 4/4
+
+$V7 Z1 P6 // (1)
+/1 T400 Rw T
+/2 ( G5 B5 F5 D5 B4 )h.V9 Rq
+/3 Rh. ( G#5 F5 D#5 G#4 )e. ( G4 G5 )sV7
+/4 ( D6 G5 F5 D5 )h.V9 Rq
+/5 Rh. ( G#5 F5 D#5 G#4 )e. ( G4 G5 )sV7
+/6 ( G5 F5 F6 D6 )eV9 G#6s G6 F6 D6 D#6 D6 B5 G5 G#5 G5 F5 D5 D#5 D5
+/7 B4s G4 G#4 G4 F4 D4 D#4 D4 B3 G3 G#3 G3 F3 D3 D#3 D3
+/8 C3s B2 G3 F3 D#3 D3 D#3 D3 C3 B2 A#3 G#3 G3 F3 G3 F3
+/9 D#3s D3 D#4 D4 C4 B3 C4 B3 G#3 G3 G#3 G3 F3 D#3 F3 D#3
+/10 ( C3e )w
+/11 Rhe. ( C5 C6 )sV7 ( D5 D6 )e.V9 ( D#5 D#6 )sV8
+/12 ( D#5 D#6 )he.V9  ( G5 D#5 C5 G4 )sV7 ( G4 G5 D#5 C5 )e. ( G5 D#5 C5 G4 )s
+/13 ( G#5h D#5he C5he G#4h )h ( G4 G5 )e Rs ( C5 C6 )sV9 ( D6 D5 )e. ( D#5 D#6 )s
+/14 ( D#5 D#6 )he.V7  ( G5 D#5 C5 G4 )s ( G4 C5 D#5 G5 )e. ( G5 D#5 C5 G4 )sV9
+/15 ( A4 C5 D#5 A5 )w
+/16 ( D5 A5 D6 )s Re. ( G5 D5 G4 )q Re. ( G5 C#5 G4 )sV7 ( G#4 C#5 G#5 )e. ( G5 C#5 G4 )sV7
+/17 ( G4 C5 G5 )eV9 ( C5 C6 )sV7 Rs ( F5 C5 F4 )qV9 Re. ( F5 C5 F4 )sV7 ( G4 C5 G5 )e.V9 ( F5 C5 F4 )sV7
+/18 ( E4w E5w C5h... )h...V9 ( D#5 D#4 )s
+/19 ( B4h D#5 D#4 )q ( D5 D4 )h Rq
+/20 Rw
+/21 Rhe. ( C5 C6 )sV7 ( D6 D5 )e. ( D#5 D#6 )s
+/22 ( D#5 D#6 )he.V9 ( G5 D#5 C5 G4 )sV7 ( G4 C5 D#5 G5 )e. ( G5 D#5 C5 G4 )s
+/23 ( G#5h G#4h D#5he C5he )hV9 ( G4 G5 )eV7 Rs ( C5 C6 )s ( D5 D6 )e. ( D#5 D#6 )s
+/24 ( D#5 D#6 )he.V9 ( G5 D#5 C5 G4 )sV7 ( G4 C5 D#5 G5 )e. ( G5 D#5 C5 G4 )s
+/25 ( A4 A5 F5 D#5 )wV9
+/26 ( A#5 F5 A#4 )q.V5 ( A#4 A#5 F5 )qV6 ( A#5 G5 A#4 )V7 ( B4q B5q G5q )eV8
+/27 Re ( G5 C6 A#5 C5 )qV9 ( C#5 C#6 A#5 G5 )V ( D5 D6 A#5 )e ( A#5 D#6 D#5 ) ( A#5 E6 E5 )
+/28 ( F5 F6 D6 A#5 )h ( F5 D5 D6 A#5 )qV9 ( D6e. A5q F5q D#5q )e.V8 C6s
+/29 ( D5s F5s A#5s )s Rh...
+/30 ( G#5 B5 D#5 B4 )h.V9 ( D#5 B4 G#4 D#4 )e.V8 ( F4 F5 )s
+/31 ( F#5 D#5 A#4 F#4 )h.V9 ( F#4 F#5 )e.V8 ( G#5 G#4 )s
+/32 ( A5 F#5 C#5 A4 )h.V9 ( C#5 A4 F#4 C#4 )e.V8 ( D#4 D#5 )s
+/33 ( E5 C#5 G#4 E4 )h.V9 ( E5 E4 )e.V8 ( F#4 F#5 )s
+/34 ( G#5 F#5 D#5 G#4 )h.V9 ( G#5 F#5 D#5 G#4 )e. ( A#4 A#5 )s
+/35 ( B4 F5 G#5 B5 )e R ( F5 A#5 G#5 A#4 )h ( A#4 A#5 G#5 F5 )e. ( C5 C6 )s
+/36 ( C#5 C#6 A#5 G5 )e R ( G5 C6 A#5 C5 )q Rh
+/37 Rw
+/38 ( G#5 C6 F6 G#6 )h ( F6 C6 F5 )q ( F5 C6 C5 )
+/39 ( A#4h F5hq A#5h )h ( G#5 G#4 )q R
+/40 ( G#5 C6 F6 G#6 )h ( F6 C6 F5 )q ( F5 C6 C5 )
+/41 ( C5 F5 C6 )h. ( B5 F5 B4 )e. ( C5 C6 )s
+/42 ( F5 D5 B5 D6 )w
+/43 Rh. ( G#5 F5 D#5 G#4 )e. ( G4 G5 )sV7
+/44 ( G5 F5 D6 F6 )wV9
+/45 Rh. ( G#5 F5 D#5 G#4 )e. ( G4 G5 )sV7
+/46 ( G5 F5 D6 G6 )sV9 R G#6 G6V8 F6V9 D6V8 D#6 D6 B5V9 G5V8 G#5 G5 F5V9 D5V8 D#5 D5
+/47 B4sV9 G4V8 G#4 G4 F4V9 D4V8 D#4 D4 B3V9 G3V8 G#3 G3 F3V9 D3V8 D#3 D3
+/48 C3sV9 B2V8 G3 F3 D#3V9 D3V8 D#3 D3 C3V9 B2V8 A#3 G#3 G3V9 F3V8 G3 F3
+/49 D#3s D3 D#4 D4 C4V9 B3V8 C4 B3 G#3 G3 G#3 G3 F3 D#3 F3 D#3
+/50 C3e Rhqe
+/51 Rhe. ( C5 C6 )exV7 ( C#5 C#6 )s ( D5 D6 )sx ( D#5 D#6 )t
+/52 ( D#5 D#6 )he.V9 ( G5 D#5 C5 G4 )sV7 ( G5 D#5 C5 G4 )e. ( G4 C5 D#5 G5 )s
+/53 ( D#5 C5 G#4 G#5 )hV9  ( G4 G5 )e3s3V7 ( B4 B5 )e3 ( C5 C6 ) ( C#5 C#6 )e3 ( D5 D6 )e3 ( D#5 D#6 )s3
+/54 ( D#5 D#6 )he.V9 ( G5 D#5 C5 G4 )sV7 ( G5 D#5 C5 G4 )e. ( G4 G5 D#5 C5 )s
+/55 ( D#5 C5 A4 A5 )hqeV9 Re
+/56 ( A4s )xV8 ( D5s ) ( A5s ) ( D6s ) Res ( G5 D5 G4 )qe3V9  ( G5 C#5 G4 )e3V8 ( G5 C#5 G4 ) ( C#5 G5 G4 ) ( G#4 G#5 C#5 )e3s3 ( G5 C#5 G4 )s3
+/57 ( G4s C5s G5s )t ( C5 C6 )stV9 Re ( F5 C5 F4 )qe3V8 ( F5 C5 F4 )e3 ( F5 C5 F4 ) ( E5 C5 E4 )s ( F5 C5 F4 ) ( G4 C5 G5 )st ( F5 C5 F4 )t
+/58 ( E5 C5 E4 )eV9 R ( C5h D#5he D#4he. )he. ( D#5 D#4 )s
+/59 ( B4h D#5 D#4 )q ( D5 D4 )hq
+/60 Rw
+/61 Rh Re3V8 ( B4 B5 ) ( C5 C6 )V8 ( C#5 C#6 ) ( D5 D6 )e3 Rs3 ( D#6 D#5 )s3
+/62 ( D#5 D#6 )hV9 Re. ( G5 D#5 C5 G4 )sV7 ( G4 C5 D#5 G5 )e. ( G5 D#5 C5 G4 )s
+/63 ( D#5 C5 G#4 G#5 )hV9 ( G5 G4 )s3V8 R ( B4 B5 )e3 ( C5 C6 ) ( C#5 C#6 )sV9 ( D5 D6 )V8 ( F5 F6 )s. ( D#5s D#6s )t
+/64 ( D#5 D#6 )hV9 Re. ( G5 D#5 C5 G4 )sV7 ( G4 C5 D#5 G5 )e. ( G5 D#5 C5 G4 )sV8
+/65 ( A4 D#5 A5 )wV9
+/66 ( C#5 A#4 A#5 )h ( G#5 C#5 A#4 G#4 )q ( F#5 F#4 C#5 A#4 )e. ( F5 C#5 A#4 F4 )s
+/67 ( F4 F5 C#5 A#4hq )h ( E5 E4 )q R
+/68 ( G#5 E5 B4 G#4 )hV8 ( F#5 F#4 B4 G#4 )q ( E5 E4 B4 G#4 )e. ( D#5 B4 G#4 D#4 )s
+/69 ( D#4 D#5 B4 G#4hq )h ( D5 D4 )q R
+/70 ( G5 D#5 G4 )wV9
+/71 G5h..V7 F5eV6
+/72 F5h D#5
+/73 D#5e F5s D#5 C#5e. D#5s F5q G#4
+/74 ( C5ww )w
+/75 Rw
+/76 C5q. B4e ( D5q )h
+/77 Rw
+/78 ( C5wh )wV7
+/79 Rh D5h
+/80 ( E5 E4 )wV8
+/81 C5h.V7 ( D5 B4 )qV7
+/82 ( G5 C5 G4 E4 )sV9 R G#6 G6 E6 C6 C#6 C6 A#5 G5 G#5 G5 E5 C5 C#5 C5
+/83 A#4s G4 G#4 G4 E4 C4 C#4  C4 Rh
+/84 C4q R  C4 R
+/85 C4e R H1 C4e H0 Rhe
+/ Re
+
+$V6 Z1 P5 // (2)
+/1 T400 Rw T R R R R R R R R R
+/11 Rw R R R R R R R R R
+/21 Rw R R R R R R R R R
+/31 Rw R R R R R R R R R
+/41 Rw R R R R R R R R R
+/51 Rw R R R R R R R R R
+/61 Rw R R R R R R R R R
+/71 ( D5w G4h )hV7 G4
+/72 ( C5 G4 )wV6
+/73 ( F4 G#4 )w
+/74 ( D#4ww )w
+/75 Rw
+/76 ( F4 D4 )hq Rq
+/77 Rw
+/78 Rw
+/79 ( G#4 F4 )w
+/80 G4w
+/81 ( G4h G#4w C4w )h F4V7
+/82 Re G#5sV9 G5 E5 C5 C#5 C5 A#4 G4 G#4 G4 E4 C4 C#4 C4
+/83 Rh A#3s G3 G#3 G3 E3 C3 C#3 C3
+/84 ( A3 F3 C3 )q R ( G#3 F3 C3 ) R
+/85 ( C3 G3 F3 )e R ( C3 G3 E3 )V Rhe
+/ Re
+
+$V5 Z1 P4 // (3)
+/1 T400 Rw T
+/2 Re G#4sV9 G4 F4 D4 D#4 D4 B3 G3 G#3 G3 F3 D3 D#3 D3
+/3 B2s G2 G#2 G2 F2 D2 D#2 D2 C2 G1 C2 G1 C2 G1 C2 G1
+/4 ( B1s )e G#4s G4 F4 D4 D#4 D4 B3 G3 G#3 G3 F3 D3 D#3 D3
+/5 B2s G2 G#2 G2 F2 D2 D#2 D2 C2 G1 C2 G1 C2 G1 C2 G1
+/6 ( B1s )e G#5s G5 F5 D5 D#5 D5 B4 G4 G#4 G4 F4 D4 D#4 D4
+/7 B3s G3 G#3 G3 F3 D3 D#3 D3 B2 G2 G#2 G2 F2 D2 D#2 D2
+/8 C2s B1 G2 F2 D#2 D2 D#2 D2 C2 A#1 A#2 G#2 G2 F2 G2 F2
+/9 D#2s D2 D#3 D3 C3 B2 C3 B2 G#2 G2 G#2 G2 F2 D#2 F2 D#2
+/10 ( C2w )s G2 C3 D3 D#3 G3 C4 D4 D#4 D4 C4 G3 D#3 D3 C3 G2
+/11 ( C2h )s G2 C3 D3 D#3 D3 C3 G2 ( C2h ) G2 C3 D3 D#3 D3 C3 G2
+/12 ( C2w )s G2 C3 D3 D#3 G3 C4 D4 D#4 D4 C4 G3 D#3 D3 C3 G2
+/13 ( C2h )s G2 C3 D3 D#3 D3 C3 G2 ( C2h ) G2 C3 D3 D#3 D3 C3 G2
+/14 ( C2w )s G2 C3 D3 D#3 G3 C4 D4 D#4 D4 C4 G3 D#3 D3 C3 G2
+/15 ( C2h )s F#2 C3 D3 D#3 D3 C3 F#2 ( C2h ) F#2 C3 D3 D#3 D3 C3 F#2
+/16 ( B1h )s B2 D3 G3 D4 G3 D3 B2 ( A#1h ) A#2 C#3 G3 C#4 G3 C#3 A#2
+/17 ( A1h )s A2 C3 F3 C4 F3 C3 A2 ( G#1h ) G#2 C3 F3 C4 F3 C3 G#2
+/18 ( G1wwx )s G2 C3 B2 C#3 C3 D3 C#3 D#3 D3 E3 D#3 F3 E3 F#3 F3
+/19 G3s F#3 G#3 G3 A#3 G#3 G3 F3 D#3 D3 C3 B2 G#2 G2 F2 D2
+/20 ( C2w )s G2 C3 D3 D#3 G3 C4 D4 D#4 D4 C4 G3 D#3 D3 C3 G2
+/21 ( C2h )s G2 C3 D3 D#3 D3 C3 G2 ( C2h ) G2 C3 D3 D#3 D3 C3 G2
+/22 ( C2w )s G2 C3 D3 D#3 G3 C4 D4 D#4 D4 C4 G3 D#3 D3 C3 G2
+/23 ( C2h )s G#2 C3 D3 D#3 D3 C3 G2 ( C2h ) G2 C3 D3 D#3 D3 C3 G2
+/24 ( C2w )s G2 C3 D3 D#3 G3 C4 D4 D#4 D4 C4 G3 D#3V7 D3 C3 G2
+/25 ( C2h )s F2 C3 D3 D#3 D3 C3 F2 ( C2h ) F2 C3 D3 D#3 D3 C3 F2
+/26 ( D2h )sV6 A#2 B2 A#2 A#3 A#2 B2 A#2 ( D#2h ) A#2 B2 A#2 A#3 A#2 B2 A#2
+/27 ( E2h )sV7 A#2 C3 A#2 A#3 A#2 C3 A#2 ( F2q ) A#2 A#3 A#2 ( F#2q ) A#2 A#3 A#2
+/28 ( F2w )sV9 A#2 D3 F3 A#3 D4 G4s. F4t F4s D4 A#3 G3 F3 D#3 C3 F2
+/29 ( A#1w )sV8 C#3 C3 B2 A#2 C3 B2 A#2 A2 B2 A#2 A2 G#2 A#2 A2 G#2
+/30 ( G#1w )e G2s G#2 B2 D#3 A#2 B2 D#3 G#3 D3 D#3 G#3 B3 G3 G#3
+/31 ( D#2w )s D#4 F3 F#3 A#3 D#4 D3 D#3 F#3 A#3 A2 A#2 D#3 F#3 F2 F#2
+/32 ( F#1w )e F2s F#2 A2 C#3 G#2 A2 C#3 F#3 C3 C#3 F#3 A3 F3 F#3
+/33 ( C#2w )s C#4 D#3 E3 G#3 C#4 C3 C#3 E3 G#3 G2 G#2 C#3 E3 D#2 E2
+/34 ( C2w )sV7 D#4 G3 G#3 A3 G#3 F#3 E3 D#3 C#3 C3 A2 G2 G#2 D#2 G#2
+/35 ( D2w )s F4 A3 A#3 B3 A#3 G#3 F#3 F3 D#3 D3 B2 A2 A#2 F2 A#2
+/36 ( E2wwx )sV9 G4 B3 C4 C#4 C4 A#3 G#3 G3 F3 E3 G3 F3 E3 C#3 C3
+/37 B2s C3 C#3 C3 A#2 G#2 G2 F2 E2 C#2 C2 B1 C2 A#1 G#1 G1
+/38 ( F1wwx )s C2 F2 G2 G#2 C3 F3 G3 G#3 C4 F4 G4 G#4 G4 F4 C4
+/39 C#4s F4 C#4 G#3 F3 C#3 G#2 F2 C#2 ( G#1es ) C#2 F2 C#2 ( G#1es ) C#2 F2
+/40 ( F1wwx )s C2 F2 G2 G#2 C3 F3 G3 G#3 C4 F4 G4 G#4 G4 F4 C4
+/41 D4s F4 D4 C4 G#3 F3 D3 C3 G#2 F2 D2 C2 ( G#1q ) C2 D2 G#2
+/42 ( G2s G1s )e G#4s G4 F4 D4 D#4 D4 B3 G3 G#3 G3 F3 D3 D#3 D3
+/43 B2s G2 G#2 G2 F2 D2 D#2 D2 C2 G1 C2 G1 C2 G1 C2 G1
+/44 ( B1s )eV8 G#4s G4 F4 D4 D#4 D4 B3 G3 G#3 G3 F3 D3 D#3 D3
+/45 B2s G2 G#2 G2 F2 D2 D#2 D2 C2 G1 C2 G1 C2 G1 C2 G1
+/46 ( B2s )e G#5s G5 F5 D5 D#5 D5 B4 G4 G#4 G4 F4 D4 D#4 D4
+/47 B3s G3 G#3 G3 F3 D3 D#3 D3 B2 G2 G#2 G2 F2 D2 D#2 D2
+/48 C2s B1 G2 F2 D#2 D2 D#2 D2 C2 B1 A#2 G#2 G2 F2 G2 F2
+/49 D#2s D2 D#3 D3 C3 B2 C3 B2 G#2 G2 G#2 G2 F2 D#2 F2 D#2
+/50 ( C2w )s G#2 C3 D3 D#3 G3 C4 D4 D#4 D4 C4 G3 D#3 D3 C3 G2
+/51 ( C2h )s G2 C3 D3 D#3 D3 C3 G2 ( C2h ) G2 C3 D3 D#3 D3 C3 G2
+/52 ( C2w )s G2 C3 D3 D#3 G3 C4 D4 D#4 D4 C4 G3 D#3 D3 C3 G2
+/53 ( C2h )s G2 C3 D3 D#3 D3 C3 G2 ( C2h ) G2 C3 D3 D#3 D3 C3 G2
+/54 ( C2w )s G2 C3 D3 D#3 G3 C4 D4 D#4 D4 C4 G3 D#3 D3 C3 G2
+/55 ( C2h )s F#2 C3 D3 D#3 D3 C3 F#2 ( C2h ) F#2 C3 D3 D#3 D3 C3 F#2
+/56 ( B1h )s B2 D3 G3 D4 G3V9 D3 B2 ( A#1h ) A#2 C#3 G3 C#4 G3 C#3 A#2
+/57 ( A1h )s A2 C3 F3 C4 F3 C3 A2 ( G#1h ) G#2 C3 F3 C4 F3 C3 G#2
+/58 ( G1wwx )s G2 C3 B2 C#3 C3 D3 C#3 D#3 D3 E3 D#3 F3 E3 F#3 F3
+/59 G3s F#3 G#3 G3 A#3 G#3 G3 F3 D#3 D3 C3 B2 G#2 G2 F2 D2
+/60 ( C2w )s G2 C3 D3 D#3 G3 C4 D4 D#4 D4 C4 G3 D#3 D3 C3 G2
+/61 ( C2h )s G2 C3 D3 D#3 D3 C3 G2 ( C2h ) G2 C3 D3 D#3 D3 C3 G2
+/62 ( C2w )s G2 C3 D3 D#3 G3 C4 D4 D#4 D4 C4 G3 D#3 D3 C3 G2
+/63 ( C2h )s G2 C3 D3 D#3 D3 C3 G2 ( C2h ) G2 C3 D3 D#3 D3 C3 G2
+/64 ( C2w )s G2 C3 D3 D#3 G3 C4 D4 D#4 D4 C4 G3 D#3 D3 C3 G2
+/65 ( C2h )s F#2 C3 D3 D#3 D3 C3 F#2 ( C2h ) F#2 C3 D3 D#3 D3 C3 F#2
+/66 ( C#2h )s C#3 F#3 G#3 A#3 G#3 F#3 C#3 ( C#2h ) C#3 F#3 G#3 A#3 G#3 F#3 C#3
+/67 ( C#2w )s C#3 G3 A#3 C#4 C4 A#3 G#3 G3 F3 E3 C#3 C3 A#2 G#2 G2
+/68 ( B1h )s B2 E3 F#3 G#3 F#3 E3 B2 ( B1h ) B2 E3 F#3 G#3 F#3 E3 B2
+/69 ( B1w )s B2 F3 G#3 B3 A#3 G#3 F#3 F3 D#3 D3 C3 A#2 G#2 F#2 F2
+/70 ( A#1h )sV8 A#2 D#3 F3 G3 F3 D#3 A#2 ( A#1h ) A#2 D#3 F3 G3 F3 D#3 A#2
+/71 ( B1h )sV7 B2 D3 G3 D4 G3 D3 B2 ( B1h ) B2 D3 G3 D4 G3 D3 B2
+/72 ( C2w )sV6 G2 C3 D3 D#3 G3 C4 D4 D#4 D4 C4 G3 D#3 D3 C3 G2
+/73 ( F1w )sV7 C#2 F2 G2 G#2 C#3 F3 G3 G#3 G3 F3 C#3 G#2 F2 C#2 G#1
+/74 ( G1wwwwx )eV8 E2s D#2 F2 E2 F#2 F2 G2 F#2 G#2 G2 A2 G#2 A#2 A2
+/75 B2sV9 A#2 C3 B2 C#3 C3 D3 C#3 D#3 D3 E3 D#3 F3 E3 F#3 F3
+/76 G3s F#3 G#3 G3 A#3 G#3 G3 F3 D#3 D3 F3 D#3 G3 F3 D#3 D3
+/77 C3s B2 D3 C3 B2 G#2 G2 F#2 G2 G#2 F2 G2 D#2 F2 D2 D#2
+/78 ( C2s C4e )e C#4s C4 A#3 G3 G#3 G3 E3 C3 C#3 C3 A#2 G2 G#2 G2
+/79 F2s C2 F2 C2 F2 C2 F2 C2 F2 C2 F2 C2 F2 C2 F2 C2
+/80 ( C3s )eV8 C#4s C4 A#3 G3 G#3 G3 E3 C3 C#3 C3 A#2 G2 G#2 G2
+/81 F2sV7 C2 F2 C2 F2 C2 F2 C2 F2 C2 F2 C2 F2 C2 F2 C2
+/82 ( C3s )wV9
+/83 A#3s G3 G#3 G3 E3 C3 C#3 C3 A#2 G2 G#2 G2 E2 C2 C#2 C2
+/84 ( F2q F1q )h ( F2q F1q )
+/85 ( C2 C1 )e R ( C1 C2 )h Rq
+/ Re

@@ -1,0 +1,53 @@
+//pmd,1.0,100,107
+//i Okinawa Fork song / Tinsag
+//i Made by UDI with makeSMF
+
+$V8
+/1 T200 Rw T
+/2 E4q Ee G F E Dq
+/3 C4q G3e B C4q C
+/4 E4q Ee G F Ee Dq
+/5 C4q Ce B3 C4q G
+/6 Re E4 E G Bq D5
+/7 C5q. Ce B4q C5
+/8 Re E4 E G F E Dq
+/9 C4q Ce B3 C4q G
+/10 Re E4 E G F E D4q
+/11 C4q G3e B C4q C
+/12 E4q Ee G F E Dq
+/13 C4q G3e B C4q C
+/14 E4q Ee G F E Dq
+/15 C4q Ce B3 C4q G
+/16 Re E4 E G Bq D5
+/17 C5q. Ce B4q C5
+/18 Re E4 E G F E Dq
+/19 C4q Ce B3 C4q G
+/20 Re E4 E G F E Dq
+/21 C4q G3e B C4q C
+/22 E4q Ee G F E T90 Dq
+/23 T80 C4q G3e T70 B C4q C
+
+$V3 Z1
+/1 T200 Rw T
+/2 E4q Ee G F E Dq
+/3 C4q G3e B C4q C
+/4 E4q Ee G F Ee Dq
+/5 C4q Ce B3 C4q G
+/6 Re E4 E G Bq D5
+/7 C5q. Ce B4q C5
+/8 Re E4 E G F E Dq
+/9 C4q Ce B3 C4q G
+/10 Re E4 E G F E D4q
+/11 C4q G3e B C4q C
+/12 E4q Ee G F E Dq
+/13 C4q G3e B C4q C
+/14 E4q Ee G F E Dq
+/15 C4q Ce B3 C4q G
+/16 Re E4 E G Bq D5
+/17 C5q. Ce B4q C5
+/18 Re E4 E G F E Dq
+/19 C4q Ce B3 C4q G
+/20 Re E4 E G F E Dq
+/21 C4q G3e B C4q C
+/22 E4q Ee G F E T90 Dq
+/23 T80 C4q G3e T70 B C4q C

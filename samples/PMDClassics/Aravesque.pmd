@@ -1,0 +1,124 @@
+//pmd,1.0,140,1037
+//c Brugmuller / Aravesque
+//i Made by UDI with makeSMF
+//s 2/4
+
+$ P6 Z1 // (1)
+/1 Rh
+/2 Rh
+/3 Rh
+/4 A4sV6 B4 C5 B4 ( A4s )q
+/5 A4s B4 C5V8 D5 ( E5s )q
+/6 D5sV7 E5 F5 G5 ( A5s )q
+/7 A5s B5 C6V9 D6 ( E6s )q
+/8 Re ( E5s )eV8 E5V7 F5
+/9 ( D5s )qV6 ( D5qe )V8
+/10 Re G5eV6 D5V7 E5
+/11 ( C5s )q E5V9
+/12 A4sV6 B4 C5 B4 ( A4s )q
+/13 A4s B4 C5V8 D5 ( E5s )q
+/14 D5sV7 E5 F5 G5 ( A5s )q
+/15 A5s B5 C6V9 D6 ( E6s )q
+/16 Re ( E5s )eV8 E5V7 F5
+/17 ( D5s )qV6 ( D5qe )V8
+/18 Re G5e D5 E5
+/19 C5q ( C6s )V9
+/20 E5q.@12V7 B4e
+/21 C5q. A4e
+/22 E5q. B4e
+/23 C5q. A4e
+/24 A5q. E5e
+/25 F5q. E5e
+/26 D5e C5 B4 A4
+/27 G#4q ( E5@7 )@
+/28 A4sV6 B4 C5 B4 ( A4s )q
+/29 A4s B4 C5V8 D5 ( E5s )q
+/30 D5sV7 E5 F5 G5 ( A5s )q
+/31 A5s B5 C6V9 D6 ( E6s )q
+/32 Re ( B4s )eV8 B4V7 C5
+/33 A4qV6 ( E5qe )V8
+/34 Re ( B4s )eV7 B4 C5
+/35 A4hV6
+/36 E5q.@12 B4e
+/37 C5q. A4e
+/38 E5q. B4e
+/39 C5q. A4e
+/40 A5q. E5e
+/41 F5q. E5e
+/42 D5e C5 B4 A4
+/43 G#4q Z0 ( E5@7 )@
+/44 A4s B4 C5 B4 ( A4s )q
+/45 A4s B4 C5 D5 ( E5s )q
+/46 D5s E5 F5 G5 ( A5s )q
+/47 A5s B5 C6 D6 ( E6s )q
+/48 Re ( B4s )e B4 C5
+/49 A4q ( E5qe )
+/50 Re ( B4s )e B4 C5
+/51 A4s B4 C5 B4 ( A4s )q
+/52 D5s E5 F5 G5 ( A5s )q
+/53 A5s B5 C6 B5 ( A5s )q
+/54 D6s E6 F6 G6 ( A6s )q
+/55 E4s D4 C4 B3 ( A3s )q
+/56 ( A5w C5w )h
+/57 Rh
+/ Re
+
+$ P4 // (2)
+/1 Rh
+/2 ( E4s C4s A3s )q@8V5 ( E4s C4s A3s )
+/3 ( E4s C4s A3s )q ( E4s C4s A3s )
+/4 ( E4s C4s A3s )q ( E4s C4s A3s )
+/5 ( E4s C4s A3s )q ( E4s C4s A3s )
+/6 ( F4s D4s A3s )qV5 ( F4s D4s A3s )V6
+/7 ( E4s C4s A3s )qV5 ( E4s C4s A3s )V6
+/8 ( G3s C4s E4s )qV4 ( E4s C4s G3s )
+/9 ( G3s B3s F4s )q ( F4s B3s G3s )
+/10 ( G3s B3s F4s )q ( G3s B3s F4s )
+/11 ( C4s E4s )q E4
+/12 ( E4s C4s A3s )qV5 ( E4s C4s A3s )
+/13 ( E4s C4s A3s )qV5 ( E4s C4s A3s )
+/14 ( F4s D4s A3s )qV5 ( F4s D4s A3s )V6
+/15 ( E4s C4s A3s )qV5 ( E4s C4s A3s )V6
+/16 ( G3s C4s E4s )qV4 ( E4s C4s G3s )
+/17 ( G3s B3s F4s )q ( F4s B3s G3s )
+/18 ( G3s B3s F4s )q ( G3s B3s F4s )
+/19 ( C4qe E4qe )h
+/20 G#2s@V6 A2 B2 A2 ( G#2s )q
+/21 A2s B2 C3 D3 ( E3s )q
+/22 G#2s A2 B2 A2 ( G#2s )q
+/23 A2s B2 C3 D3 ( E3s )q
+/24 C#3s D3 E3 D3 ( C#3s )q
+/25 D3s E3 F3 G3 A3e G3
+/26 F3e E3 D3 D#3
+/27 E3e D3 C3 B2V5
+/28 ( E4s C4s A3s )q@8 ( E4s C4s A3s )
+/29 ( E4s C4s A3s )q ( E4s C4s A3s )
+/30 ( F4s D4s A3s )q ( F4s D4s A3s )
+/31 ( E4s C4s A3s )q ( E4s C4s A3s )
+/32 ( A3s D4s E4s )qV4 ( A3s D4s E4s )
+/33 ( A3s C4s E4s )q ( A3s C4s E4s )
+/34 ( A3s D4s E4s )q ( A3s D4s E4s )
+/35 ( A3s C4s E4s )q ( A3s C4s E4s )
+/36 G#2s@V6 A2 B2 A2 ( G#2s )q
+/37 A2s B2 C3 D3 ( E3s )q
+/38 G#2s A2 B2 A2 ( G#2s )q
+/39 A2s B2 C3 D3 ( E3s )q
+/40 C#3s D3 E3 D3 ( C#3s )q
+/41 D3s E3 F3 G3 A3e G3
+/42 F3e E3 D3 D#3
+/43 E3e D3 C3 B2V5
+/44 ( E4s C4s A3s )q@8 ( E4s C4s A3s )
+/45 ( E4s C4s A3s )q ( E4s C4s A3s )
+/46 ( F4s D4s A3s )q ( F4s D4s A3s )
+/47 ( E4s C4s A3s )q ( E4s C4s A3s )
+/48 ( A3s D4s E4s )q ( A3s D4s E4s )
+/49 ( A3s C4s E4s )q ( A3s C4s E4s )
+/50 ( A3s D4s E4s )q ( A3s D4s E4s )
+/51 ( E4s C4s A3s )q ( E4s C4s A3s )
+/52 ( F4s D4s A3s )q ( F4s D4s A3s )V6
+/53 ( E4s C4s A3s )q ( E4s C4s A3s )
+/54 ( F4s D4s A3s ) ( F4s D4s A3s )qV7
+/55 E3sV6 D3 C3 B2 ( A2s )q
+/56 ( A3w E4w )h@V8
+/57 Rh
+/ Re

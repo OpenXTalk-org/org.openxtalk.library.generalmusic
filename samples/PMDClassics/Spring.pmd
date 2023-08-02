@@ -1,0 +1,519 @@
+//pmd,1.0,90,
+//c A.Vivaldi / Season ( Spring )
+//i Made by UDI with makeSMF
+
+$49v6 Z1 M1 // (2) Acoustic String Ensemble
+/1 Rqe E5e@8V8
+/2 G#5s@ R G# R G# R F#5 E5t R B5q Re B5s A5@5
+/3 G#5s@ R G# R G# R F#5 E5t R B5q Re B5s A5@5
+/4 G#5e@8 A5s@ B5@5 A5eV7 G#5V6 F#5 D#5 B4 E5
+/5 G#5s R G# R G# R F#5 E5t R B5q@8 Re B5s@ A5@5
+/6 G#5s@ R G# R G# R F#5 E5t R B5q@8 Re B5s@ A5@5
+/7 G#5e@8 A5s@ B5@5 A5e G#5 F#5q. E5eV8
+/8 B5e@8 A5s@ G#5@5 A5e B5 C#6 B5q E5eV6
+/9 B5e@8 A5s@ G#5@5 A5e B5 C#6 B5q E5eV8
+/10 C#6e@5 B5q A5e G#5@8 F#5s@ E5t R G#5t F#5 G#5 F#5@20 Re
+/11 E5qe@5 E5eV6 B5 A5s@ G#5@5 A5e B5
+/12 C#6e@5 B5q E5e B5 A5s@ G#5@5 A5e B5
+/13 C#6e@5 B5q E5e C#6 B5q A5e
+/14 G#5e@8 F#5s@ E5t R G#5 F#5 G#5 F#5@20 Re C#6t@ B5 C#6 B5@20 Re C#6t@ B5 C#6 B5@20 Re
+/15 C#6t@ B5 C#6 B5@20 Re C#6t@ B5 C#6 B5@20 Re C#6t@ B5 C#6 B5@20 Re C#6t@ B5 C#6 B5@20 Re
+/16 B5e@5 B B B B B B B
+/17 B5e@5 B B B B B B5 C#6s@ D#6
+/18 E6s D#6 C#6 B5 A5 G#5 F#5 E5 Rh
+/19 Rw
+/20 Rq. E6e@5 E E E E
+/21 F#5t@ E5 F#5 E5@30 Rq E6e@5 E E E E
+/22 F#5t E5 F#5 E5@30 Rqe B5qs@ E6s@8 B5@ C#6@5
+/23 B5qs@ E6s@8 B5@ C#6@8 B5@ E6@8 B5@ C#6@8 B5@ E6@8 B5@ C#6@8
+/24 B5s@ E6@8 B5@ C#6@8 B5@ E6@8 B5@ C#6@8 B5e@5 E5 A5t@ G#5 A5 G#5@20 Re
+/25 Rq A5t@ G#5 A5 G#5@20 Rqe A5t@ G#5 A5 G#5s Rst
+/26 Rq A5t G#5 A5 G#5@20 Re E6q@5 E6
+/27 F#6t@ E6 F#6 E6@20 Rqe E6q@5 E6
+/28 F#6t@ E6 F#6 E6@20 Rhq E5e@5V8
+/29 B5e@8 A5s@ G#5@5 A5e B5 C#6 B5q E5e
+/30 B5e@8 A5s@ G#5@5 A5e B5 C#6 B5q E5e
+/31 C#6e@8 B5q@5 A5e G#5@8 F#5s@ E5@5 G#5t@ F#5 G#5 F#5@20 Re
+/32 E5e@5V5 G#4s@ A4@8 B4@ A4@8 B4@ A4@8 G#4@V6 A4@8 G#4@ A4@8 B4@ A4@8 B4@ A4@8
+/33 G#4s@V7 A4@8 G#4@ A4@8 B4@ A4@8 B4@ A4@8 G#4@ A4@8 G#4@ A4@8 B4@ C#5@8 B4@ C#5@8
+/34 D#5s@V7 E5@8 D#5@ E5@8 F#5@ E5@8 F#5@ E5@8 D#5@ E5@8 D#5@ E5@8 F#5@ E5@8 F#5@ E5@8
+/35 D#5s@V8 E5@8 D#5@ E5@8 F#5@ G#5@8 F#5@ G#5@8 A5@V9 G#5@8 A5@ G#5@8 F#5@ A5@8 G#5@ F#5@8
+/36 G#5e@5V6 F#5s@ E5@8 D#5@ C#5@8V5 B4@ A4@8 G#4@ A4@8 G#4@ A4@8 B4@ A4@8 B4@ A4@8
+/37 G#4s@ A4@8 G#4@ A4@8 B4@V6 A4@8 B4@ A4@8 G#4@ A4@8 G#4@ A4@8 B4@ A4@8 B4@ A4@8
+/38 G#4e@ Rq G#5e A5h
+/39 G#5h F#5
+/40 G#5h A5
+/41 G#5h F#5e Rq B4sV8 R
+/42 F#5e@8 E5s@ D#5@5 E5e F#5 G#5 F#5q B4e
+/43 F#5e@8 E5s@ D#5@5 E5e F#5 G#5 F#5q B4e
+/44 G#5e@5 F#5q E5e D#5@8 C#5s@ B4@5 C#5q
+/45 B4t@V6 R B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3
+/46 B4tV8 C#5 D#5 E5 F#5 G#5 A5 B5@20 Rq B4t@ C#5 D#5 E5 F#5 G#5 A5 B5@20 Rq
+/47 B3t@V6 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 B3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3
+/48 B5s3V8 G#5 B5 E6 B5 E6 B5 G#5 B5 E6 B5 E6 B5 G#5 B5 D#6 B5 D#6 B5 G#5 B5 D#6 B5 D#6
+/49 C#6e Rqe C#6s3 A#5 C#6 F#6 C#6 F#6 C#6 A#5 C#6 F#6 C#6 F#6
+/50 C#6s3 A#5 C#6 F#6 C#6 F#6 C#6 A#5 C#6 F#6 C#6 F#6 D#6e Rqe
+/51 D#6s3 C6 D#6 G#6 D#6 G#6 D#6 C6 D#6 G#6 D#6 G#6 D#6 C6 D#6 F#6 D#6 F#6 D#6 C6 D#6 F#6 D#6 F#6
+/52 E6e Rqe E6s3 C#6 E6 G#6 E6 G#6 E6 C#6 E6 G#6 E6 G#6
+/53 D#6s3 B5 D#6 G#6 D#6 G#6 D#6 B5 D#6 G#6 D#6 G#6 C#6 A5 C#6 F#6 C#6 F#6 C#6 A5 C#6 F#6 C#6 F#6
+/54 B5s3 G#5 B5 E6 B5 E6 B5 G#5 B5 E6 B5 E6 A5 F#5 A5 D#6 A5 D#6 A5 F#5 A5 D#6 A5 D#6
+/55 G#5s3 E5 G#5 C#6 G#5 C#6 G#5 E5 G#5 C#6 G#5 C#6 G#5 D#5 G#5 C#6 G#5 C#6 G#5 D#5 G#5 C#6 G#5 C#6
+/56 G#5s3V6 D#5 G#5 C6 G#5 C6 G#5 D#5 G#5 C6 G#5 C6 C#6e R R C#5sV8 R
+/57 G#5e@8 F#5s@ E5@5 F#5e G#5 A5 G#5q C#5sV6 R
+/58 G#5e@8 F#5s@ E5@5 F#5e G#5 A5 G#5q C#5sV8 R
+/59 A5e@5 G#5q F#5e E5@8 D#5s@ C#5@8 E5t@ D#5 E5 D#5s Rst
+/60 C#5e@5V6 G#5 G# G# G# G#V7 G# G#
+/61 A5e@5 A A#5V8 A# B5 B C6 C
+/62 D#6t@V6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6
+/63 D#6t C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6
+/64 C#6s D#6@8 C#6@ D#6@8 C#6qs@ D#6s@8 C#6@ D#6@8 ( C#6qs )q@
+/65 Rs D#6s@8 C#6@ D#6@8 C#6@ D#6@8 C#6@ D#6@8 C#6t@ D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6
+/66 C#6tV7 D#6 C#6 D#6 C#6 D#6 C#6V8 D#6 C#6 D#6 C#6 D#6V8 C#6 D#6 C#6 D#6 C#6 D#6V9 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6 C#6 D#6
+/67 G#5e@5V8 G# G# F#5s@ G#5@5 A5q@ Re A5s G#5t R
+/68 F#5e@5 F#5 F#5 E5s@ F#5@5 ( G#5q )qe@ G#5s A5t R
+/69 B5e@5 B B Bs@ A5@5 G#5e G# G# G#s@ A5t R
+/70 B5e@5 B B Bs@ A5@5 G#5e G# G# G#s@ A5t R
+/71 B5e@5 B5 B5 A5s@ G#5@5 F#5@ B4@8V6 C#5@ B4@8 D#5@ C#5@8 E5@ D#5@8
+/72 F#5s@ E5@8 G#5@ F#5@8 A5@ G#5@8 B5@ A5@8V8 B4@ A4@8 C#5@ B4@8V6 D#5@ C#5@8 E5@ D#5@8
+/73 F#5s@V8 E5@8 G#5@ F#5@8 A5@ G#5@8 B5@ A5@8 G#5@V6 E5@8 F#5@ E5@8 G#5@ E5@8 F#5@ E5@8
+/74 A5s@V8 E5@8 F#5@ E5@8 A5@ E5@8 F#5@ E5@8 B5 E5@8 F#5@ E5@8 B5@ E5@8 F#5@ E5@8
+/75 C#6e@5 D#6 E6q@8 E6s@V6 B5@8 E6@ B5@8 C#6@ B5@8 E6@ B5@8
+/76 C#6s@V8 B5@8 E6@ B5@8 C#6@ B5@8 E6@ B5@8 E6e@5 E5 G#5t@V6 F#5 G#5 F#5 G#5 F#5 G#5 F#5
+/77 E5es@5V8 G#5s A5e B5 C#6 B5q E5e
+/78 B5e@8 A5s@ G#5@5 A5e B5 C#6 B5q E5e
+/79 C#6e@5 B5q A5e G#5@8 F#5s@ E5@5 G#5t@ F#5 G#5 F#5@20 Re
+/80 E5e Rq E5e@5V6 B5@8 A5s@ G#5@5 A5e B5
+/81 C#6e@5 B5q E5e B5@8 A5s@ G#5@5 A5e B5
+/82 C#6e@5 B5q E5e C#6 B5q A5e
+/83 G#5e@8 F#5s@ E5@5 T80 G#5t@ F#5 G#5 F#5@20 Re T50 E5q@ R
+
+$49v6 P3 Z1 // (3) Acoustic String Ensemble
+/1 Rqe E5e@8V8
+/2 G#5e@5 G#5 G#5 F#5s@ E5@5 B5q@ Re B5s A5@5
+/3 G#5e@5 G#5 G#5 F#5s@ E5@5 B5q@ Re B5s A5@5
+/4 G#5e@8 A5s@ B5@5 A5e G#5 F#5 D#5 B4V6 E5
+/5 G#5e@8 G#5 G#5 F#5s@ E5@5 B5q Re B5s A5@5
+/6 G#5e@5 G#5 G#5 F#5s@ E5@5 B5q@ Re B5s A5@5
+/7 G#5e@8 A5s@ B5@5 A5e G#5 F#5e@ Rq E5e@5V8
+/8 B5e@8 A5s@ G#5@5 A5e B5 C#6 B5q E5eV6
+/9 B5e@8 A5s@ G#5@5 A5e B5 C#6 B5q E5eV8
+/10 C#6e@5 B5q A5e G#5@8 F#5s@ E5@5 F#5q
+/11 E5e@ Rq E5e@5V6 B5@8 A5s@ G#5@5 A5e B5
+/12 C#6e@5 B5q E5e B5@8 A5s@ G#5@5 A5e B5
+/13 C#6e@5 B5q E5e C#6 B5q A5e
+/14 G#5e@8 F#5s@ E5@5 F#5q E5q R
+/15 Rw
+/16 Rh B5t@ A5 B5 A5@11 Re B5t@ A5 B5 A5@11 Re
+/17 B5t A5 B5 A5t@11 Re B5t A5 B5 A5@11 Re B5t A5 B5 A5@11 Re B5t A5 B5 A5@11 Re
+/18 B5e@5 B B B B B B B
+/19 B5e@5 B B B B B B C#6s@ D#6
+/20 E6s D#6 C#6 B5 A5 G#5 F#5 E5s Rq. E6s R
+/21 E6e@5 E E E6 F#5t@ E5 F#5 E5qt@ E6s R
+/22 E6e@5 E E E F#5t@ E5 F#5 E5@20 Re A5t G#5 A5 G#5@20 Re
+/23 Rq A5t@ G#5 A5 G#5@20 Rq. A5t G#5 A5 G#5@20 Re
+/24 Rq A5t@ G#5 A5 G#5@20 Re B5qs@ E6s@8 B5@ C#6t R
+/25 B5qs E6s@8 B5@ C#6@8 B5@ E6@8 B5@ C#6@8 B5@ E6@8 B5@ C#6@8
+/26 B5s@ E6@8 B5@ C#6@8 B5@ E6@8 B5@ C#6@8 B5e@5 E5 Rq
+/27 E6q@5 E6 F#6t@ E6 F#6 E6@20 Rq.
+/28 E6q@5 E6 F#6t@ E6 F#6 E6@20 Rq E5e@5V8
+/29 B5e@8 A5s@ G#5@5 A5e B5 C#6 B5q E5e
+/30 B5e@8 A5s@ G#5@5 A5e B5 C#6 B5q E5e
+/31 C#6e@5 B5q A5e G#5@8 F#5s@5 E5 G#5t@ F#5 G#5 F#5@20 Re
+/32 E5e@5V4 G#4s@ A4@8 B4@ A4@8 B4@ A4@8 G#4@V5 A4@8 G#4@ A4@8 B4@ A4@8 B4@ A4@8
+/33 G#4s@ A4@8 G#4@ A4@8 B4@ A4@8 B4@V6 A4@8 G#4@ A4@8 G#4@ A4@8 B4@ C#5@8 B4@ C#5@8
+/34 D#5s@ E5@8 D#5@ E5@8 F#5@ E5@8 F#5@ E5@8 D#5@ E5@8 D#5@ E5@8 F#5@V8 E5@8 F#5@ E5@8
+/35 D#5s@ E5@8 D#5@ E5@8 F#5@ G#5@8 F#5@ G#5@8 A5@V9 G#5@8 A5@ G#5@8 F#5@V8 A5@8 G#5@ F#5@8
+/36 G#5e@5V6 F#5s@ E5@8 D#5@ C#5@8 B4@ A4@8 G#4@V5 A4@8 G#4@ A4@8 B4@ A4@8 B4@ A4@8
+/37 G#4s@ A4@8 G#4@ A4@8 B4@V6 A4@8 B4@ A4@8 G#4@V5 A4@8 G#4@ A4@8 B4@ A4@8 B4@ A4@8
+/38 G#4e@ Rq G#5e@8V6 A5h@
+/39 G#5h F#5
+/40 G#5h A5
+/41 G#5h F#5e Rq B4sV8 R
+/42 F#5e@8 E5s@ D#5@5 E5e F#5 G#5 F#5q B4e
+/43 F#5e@8 E5s@ D#5@5 E5e F#5 G#5 F#5q B4e
+/44 G#5e@5 F#5q E5e D#5@8 C#5s@ B4@5 C#5q
+/45 B4s@5 B3t B B B B B B B B B B B B B B B B B B B B B B B B B B B B B
+/46 B4t@ C#5 D#5 E5 F#5 G#5 A5 B5@20 Rq B4t@ C#5 D#5 E5 F#5 G#5 A5 B5@20 Rq
+/47 B3t@5 B B B B B B B B B B B B B B B A3 A A A A A A A A A A A A A A A
+/48 G#3e@ Rhqe
+/49 A3t@5 A A A A A A A A A A A A A A A A#3e@ Rqe
+/50 Rh B3t@5 B B B B B B B B B B B B B B B
+/51 C4e@ Rhqe
+/52 C#4t@5 C# C# C# C# C# C# C# C# C# C# C# C# C# C# C# C#4e@ Rqe
+/53 B3t@5 B B B B B B B B B B B B B B B A3e@ Rqe
+/54 G#4t@5 G# G# G# G# G# G# G# G# G# G# G# G# G# G# G# F#4e@ Rqe
+/55 E4t@5 E E E E E E E C#4 C# C# C# C# C# C# C# G# G# G# G# G# G# G# G# G# G# G# G# G# G# G# G#
+/56 G#3t@5 G# G# G# G# G# G# G# G#V7 G# G# G# G# G# G# G# C#4e@ Rq C#5s R
+/57 G#5e@8 F#5s@ E5@5 F#5e G#5 A5 G#5q C#5eV6
+/58 G#5e@8 F#5s@ E5@5 F#5e G#5 A5 G#5q C#5eV8
+/59 A5e@5 G#5q F#5e E5@8 D#5s@ C#5@5 E5t@ D#5 E5 D#5@20 Re
+/60 C#5e@ Rhqe
+/61 Rw
+/62 Re C#5e@5V6 C# C# C# C# C# D#
+/63 E5e@5 E F F5 F#5 F# G5 G
+/64 G#5qs@ A5s@8 G#5@ A5@8 G#5qs@ A5s@8 G#5@ A5@5
+/65 G#5t A5 G#5 A5 G#5 A5 G#5 A5 G#5 A5 G#5 A5 G#5 A5 G#5 A5@5 G#5s@ A5@8 G#5@ A5@8 G#5@ A5@8 G#5@ A5@8
+/66 G#5t@ A5 G#5 A5 G#5 A5 G#5 A5 G#5 A5 G#5 A5 G#5 A5 G#5 A5 G#5 A5 G#5 A5 G#5 A5 G#5 A5 G#5V7 A5 G#5 A5V8 G#5 A5 G#5V8 A5
+/67 G#5e@5V8 G# G#5 F#5s@ G#5@5 A5q@ Re A5s G#5@5
+/68 F#5e@5 F# F# E5s@ F#5@5 G#5q@ Re G#5s A5@5
+/69 B5e@5 B B B5s@ A5@5 G#5e G# G# G#5s@ A5@5
+/70 B5e@5 B B B5s@ A5@5 G#5e G# G# G#5s@ A5@5
+/71 B5e@5 B B5 A5s@ G#5@5 F#5q Rq
+/72 Rw R R R R
+/77 B5e@8 A5s@ G#5@5 A5e B5 C#6 B5q E5e
+/78 B5e@8 A5s@ G#5@5 A5e B5 C#6 B5q E5e
+/79 C#6e@5 B5q A5e G#5@8 F#5s@ E5@5 G#5t@ F#5 G#5 F#5@20 Re
+/80 E5e@ Rq E5e@5 B@8 A5s@ G#5@5 A5e B5
+/81 C#6e@5 B5q E5e B5@8 A5s@ G#5@5 A5e B5
+/82 C#6e@5 B5q E5e C#6 B5q A5e
+/83 G#5e@8 F#5s@ E5@5 T80 G#5t@ F#5 G#5 F#5@20 Re T50 E5q@ R
+
+$49v6 P4 Z1 // (4) Acoustic String Ensemble
+/1 Rqe B4e@8V8
+/2 E5e@5 E E E G#5@20 Rq G#5s@ F#5@5
+/3 E5e@5 E E E G#5@20 Rq G#5s@ F#5@5
+/4 E5e@8 F#5s@ G#5@5 F#5e E5 D#5e@ Rq B4e@5V6
+/5 E5e@5 E E E G#5@20 Rq G#5s@ F#5@5
+/6 E5e@5 E E E G#5@20 Rq G#5s@ F#5@5
+/7 E5e@8 F#5s@ G#5@5 F#5e E5 D#5e@ Rq G#5e@5V8
+/8 G#5e@8 F#5s@ E5@5 F#5e G#5 A5 G#5q G#5eV6
+/9 G#5e@8 F#5s@ E5@5 F#5e G#5 A5 G#5q G#5eV8
+/10 A5e@5 G#5q F#5e E5q D#5
+/11 E5e@ Rq G#5e@5V6 G#5@8 F#5s@ E5@5 F#5e@5 G#5
+/12 A5e@5 G#5q G#5e G#5@8 F#5s@ E5@5 F#5e G#5
+/13 A5e@5 G#5q G#5e A5 G#5q F#5e
+/14 E5q@5 D#5 E5 R
+/15 Rs A5s@ G#5 A5 A5t G#5 A5 G#5@20 Res A5s@ G#5 A5 A5t G#5 A5 G#5@20 Re
+/16 Re B5t@ A5 G#5 F#5 E5e Rq B5t A5 G#5 F#5 E5e R
+/17 Rs A5s G#5 A5 A5t G#5 A5 G#5@20 Re. A5s@ G#5 A5 A5t G#5 A5 G#5@20 Re
+/18 Rhe B5t@ A5 G#5 F#5 E5e R
+/19 Re B5t A5 G#5 F#5 E5e Rq B5t A5 G#5 F#5 E5e R
+/20 Rh G#5e. A5t R G#5e. A5t R
+/21 G#5e. A5s@5 G#5e.@ A5s@5 G#5 A5@5 G#5@ A5@5 G#5@ A5@5 G#5@ A5@5
+/22 G#5t@ A5@5 G#5@ A5@5 G#5@ A5@5 G#5@ A5@5 G#5@ A5@5 G#5@ A5@5 G#5@ A5@5 G#5@ A5@5 G#5@ A5 G#5 A5 G#5 A5 G#5 A5@5 Rq
+/23 A5t@ G#5@5 A5@ G#5@20 Rq. A5t@ G#5@5 A5@ G#5@20 Rq.
+/24 A5t@ G#5@5 A5@ G#5@20 Rq. A5t@ G#5@5 A5@ G#5@20 Rq.
+/25 A5t@ G#5@5 A5@ G#5@20 Rq. A5t@ G#5@5 A5@ G#5@20 Rq.
+/26 A5t@ G#5@5 A5@ G#5@20 Eq. E5qs@ B5s@8 E5@ F#5@8
+/27 E5qs@ B5s@8 E5@ F#5@8 E5@ B5@8 E5@ F#5@8 E5@ B5@8 E5@V8 F#5@8
+/28 E5s@ B5@8 E5@ F#5@8 E5@ B5@8 E5@ F#5@8 E5e@ Rq E5s R
+/29 G#5e@8 F#5s@ E5@5 F#5e G#5 A5 G#5q G#5e
+/30 G#5e@8 F#5s@ E5@5 F#5e G#5 A5 G#5q G#5e
+/31 A5e@5 G#5q F#5e E5q D#5
+/32 E5e@5V2 E4s@ F#4@8 G#4@ F#4@8 G#4@V4 F#4@8 E4@ F#4@8 E4@ F#4@8 G#4@ F#4@8 G#4@ F#4@8
+/33 E4s@V5 F#4@8 E4@ F#4@8 G#4@ F#4@8 G#4@V6 F#4@8 E4@ F#4@8 E4@ F#4@8 G#4@ A4@8 G#4@ A4@8
+/34 B4s@ C#5@8 B4@ C#5@8 D#5@ C#5@8 D#5@ C#5@8 B4@V7 C#5@8 B4@ C#5@8 D#5@ C#5@8 D#5@ C#5@8
+/35 B4s@V8 C#5@8 B4@ C#5@8 D#5@ E5@8 D#5@ E5@8 F#5@V9 E5@8 F#5@ E5@8 D#5@ F#5@8 E5@ D#5@8
+/36 E5e@5V6 D#5s@ C#5@8 B4@ A4@8 G#4@ F#4@8 E4@V5 F#4@8 E4@ F#4@8 G#4@ F#4@8 G#4@ F#4@8
+/37 E4s@V6 F#4@8 E4@ F#4@8 G#4@ F#4@8 G#4@ F#4@8 E4@ F#4@8 E4@ F#4@8 G#4@ F#4@8 G#4@ F#4@8
+/38 G#4e@ Rq E5e@8 F#5h@
+/39 E5h D#5
+/40 E5h F#5
+/41 E5h D#5e Rq D#5sV8 R
+/42 D#5e@8 C#5s@ B4@5 C#5e D#5 E5 D#5q D#5e
+/43 D#5e@8 C#5s@ B4@5 C#5e D#5 E5 D#5q D#5e
+/44 E5e@5 D#5q C#5e B4q A#4
+/45 B4s@5 B3t B B B B B B B B B B B B B B B B B B B B B B B B B B B B B
+/46 B4t@ C#5 D#5 E5 F#5 G#5 A5 B5@20 Rq B4t@ C#5 D#5 E5 F#5 G#5 A5 B5@20 Rq
+/47 B3t@5 B B B B B B B B B B B B B B B A3 A A A A A A A A A A A A A A A
+/48 G#3e@ Rhqe
+/49 A3t@5 A A A A A A A A A A A A A A A A#3e@ Rqe
+/50 Rh B3t@5 B B B B B B B B B B B B B B B
+/51 C4e@ Rhqe
+/52 C#4t@5 C# C# C# C# C# C# C# C# C# C# C# C# C# C# C# C#4e@ Rqe
+/53 B3t@5 B B B B B B B B B B B B B B B A3e@ Rqe
+/54 G#4t@5 G# G# G# G# G# G# G# G# G# G# G# G# G# G# G# F#4e@ Rqe
+/55 E4t@5 E4 E4 E4 E4 E4 E4 E4 C#4 C# C# C# C# C# C# C# G#3 G# G# G# G# G# G# G# G# G# G# G# G# G# G# G#
+/56 G#3t@5 G# G# G# G# G# G# G# G#V7 G# G# G# G# G# G# G# C#4e@ Rq G#4sV8 R
+/57 E5e@8 D#5s@ C#5@5 D#5e E5 F#5 E5q E5eV6
+/58 E5e@8 D#5s@ C#5@5 D#5e E5 F#5 E5q E5eV8
+/59 F#5e@5 E5q D#5e C#5q C5
+/60 C#5e@ Rhqe
+/61 Rw R R
+/64 E5qsV6 F#5s@8 E5@ F#5@8 E5qs@ F#5s@8 E5@ F#5t R
+/65 E5t F#5 E5 F#5 E5 F#5 E5 F#5 E5 F#5 E5 F#5 E5 F#5 E5 F#5 E5s F#5@8 E5@ F#5@8 E5@ F#5@8 E5@ F#5@8
+/66 E5t@ F#5 E5 F#5 E5 F#5 E5 F#5 E5 F#5 E5 F#5 E5 F#5 E5 F#5 E5 F#5 E5 F#5 E5 F#5 E5V7 F#5 E5 F#5 E5V8 F#5 E5 F#5 E5 F#5
+/67 E5e@5 E5 E5 D#5s@ E5@5 F#5q@ Re F#5s E5t R
+/68 D#5e@5 D# D# C#5s@ D#5@5 E5q@ Re E5s F#5t R
+/69 G#5e@5 G# G# G#5s@ F#5@5 E5e E E Es@ F#5t R
+/70 G#5e@5 G# G# G#s@ F#5@5 E5e E E Es@ F#5t R
+/71 G#5e@5 G# G# F#5s@ E5@5 D#5q R
+/72 Rw R R R R
+/77 G#5e@8 F#5s@ E5@5 F#5e G#5 A5 G#5q G#5e
+/78 G#5e@8 F#5s@ E5@5 F#5e G#5 A5 G#5q G#5e
+/79 A5e@5 G#5q F#5e E5q D#5
+/80 E5e@ Rq G#5e@5 G#5@8 F#5s@ E5@5 F#5e G#5
+/81 A5e@5 G#5q G#5e G#5@8 F#5s@ E5@5 F#5e G#5
+/82 A5e@5 G#5q G#5e A5 G#5q F#5e
+/83 E5q@5 T80 D#5 T50 E5q@ Rq
+
+$49v5 P7 Z1 // (5) Acoustic String Ensemble
+/1 Rqe G#4stV8 Rt
+/2 B4e@5 B B B E4q@ Re G#4s A4@5
+/3 B4e@5 B B B E4q@ Re G#4s A4@5
+/4 B4e@5 B C#5 C# F#4e@ Rq G#4e@5V6
+/5 B4e@5 B B B E4q@ Re G#4s A4@5
+/6 B4e@5 B B B E4q@ Re G#4s A4@5
+/7 B4e@5 B C#5 C# F#4e@ Rq G#4e@5V8
+/8 E4q@5 E A4e E4q E4eV6
+/9 E4q@5 E A4e E4q E4eV8
+/10 A4e@5 E4q D#5e B4q B4
+/11 G#4e@ Rq B4e@5V6 E4q E4
+/12 A4e@5 E4q B4e E4q E4
+/13 A4e@5 E4q E4e A4 E4q D#5e
+/14 B4q@5 B4 G#4 R
+/15 Rw R R R R R R R R R R R R
+/28 Rh.. B4e@5V8
+/29 E4q@5 E A4e E4q B4e
+/30 E4q@5 E A4e E4q B4e
+/31 E4q@5 G#4e D#5 B4q B4
+/32 G#4e@5V6 B3 B B B B B B
+/33 B3e@5 B B B B B B B
+/34 B3e@5 F#4 F# F# F# F# F# F#
+/35 F#4e@5 F# F# F# D#4 D# D# D#
+/36 B3e@5 B B B B B B B
+/37 B3e@5 B B B B B B B
+/38 B3w@15
+/39 Rw
+/40 B3w@
+/41 B3h B3e Rq F#4sV8 R
+/42 B3q@5 B E4e B3q F#4e
+/43 B3q@5 B E4e B3q F#4e
+/44 E4e@5 B3 E4 A#4 F#4q F#4
+/45 D#4s@5 B3t B B B B B B B B B B B B B B B B B B B B B B B B B B B B B
+/46 B3q@3 B B B
+/47 B3t@5 B B B B B B B B B B B B B B B A3 A A A A A A A A A A A A A A A
+/48 G#3e@ Rhqe
+/49 A3t@5 A A A A A A A A A A A A A A A A#3e@ Rqe
+/50 Rh B3t@5 B B B B B B B B B B B B B B B
+/51 C4e@ Rhqe
+/52 C#4t@5 C# C# C# C# C# C# C# C# C# C# C# C# C# C# C# C#e@ Rqe
+/53 B3t@5 B B B B B B B B B B B B B B B A3e@ Rqe
+/54 G#4t@5 G# G# G# G# G# G# G# G# G# G# G# G# G# G# G# F#4e@ Rqe
+/55 E4t@5 E E E E E E E C#4 C# C# C# C# C# C# C# G#3 G# G# G# G# G# G# G# G# G# G# G# G# G# G# G#
+/56 G#3t@5 G# G# G# G# G# G# G# G#V7 G# G# G# G# G# G# G# C#4e@ Rq G#4e@5
+/57 C#4q@5V8 C# F#4e C#q G#4eV6
+/58 C#4q@5 C#4 F#4e C#4q G#4eV8
+/59 F#4e@5 C#4 F#4 C5 G#4q G#
+/60 E4e@ Rhqe
+/61 Rw R R R R R
+/67 E4e@5 E4 E E C#4 C# F#4 A4
+/68 A4e@5 A F#4 D#4 B3 B B B
+/69 B3e@5 B B B B B B B
+/70 B3e@5 B B B B B B B
+/71 B3e@5 B B B B3q R
+/72 Rw R R R R
+/77 E4q@5 E4 A4e E4q B4e
+/78 E4q@5 E4 A4e E4q B4e
+/79 A4e@5 E4 A4 D#5 B4q B4
+/80 G#4qe@5 B4eV6 E4q E4
+/81 A4e@5 E4q B4e E4q E4
+/82 A4e@5 E4q B4e A4 E4 B4 D#5
+/83 B4q@5 T80 B4 T50 G#4q@ R
+
+$49v5 Z1 // (6) Acoustic String Ensemble
+/1 Rqe E3sV8 Rt.  //<- [-x]
+/2 E3q@5 E E E
+/3 E3q@5 E E E
+/4 E3e@5 E A2 A#2 B2q. E3eV6
+/5 E3q@5 E E E
+/6 E3q@5 E E E
+/7 E3e@5 E3 A2 A#2 B2q. E3eV8
+/8 E3q@5 E E E
+/9 E3q@5 E E E
+/10 E3q@5 E3e@5 B2 E3 E2 B3 B2
+/11 E2q.@5 E3eV6 E3q E3
+/12 E3q@5 E E E
+/13 E3q@5 E E E
+/14 E3e@5 E2 B3 B2 E2q R
+/15 Rw R R R R R R R R R R R R
+/28 Rh.. E3sV8 Rs
+/29 E3q@5 E E E
+/30 E3q@5 E E E
+/31 E3q@5 E3e@5 B2 E3 E2 B3 B2
+/32 E3e@5V6 E E E E E E E
+/33 E3e@5 E E E E EV7 E E
+/34 B2e@5V6 B B B B B B B
+/35 B2e@5 B B B B BV7 B B
+/36 E3e@5V6 E E E E E E E
+/37 E3e@5 E E E E E E E
+/38 E3s@ B2@5 E3@ B2@5 E3@ B2@5 E3@ B2@5 D#3@ B2@5 D#3@ B2@5 D#3@ B2@5 D#3@ B2@5
+/39 E3s@ B2@5 E3@ B2@5 E3@ B2@5 E3@ B2@5 F#3@V8 B2@5 F#3@ B2@5 F#3@ B2@5 F#3@ B2@5
+/40 E3s@V6 B2@5 E3@ B2@5 E3@ B2@5 E3@ B2@5 D#3@ B2@5 D#3@ B2@5 D#3@ B2@5 D#3@ B2@5
+/41 E3s@ B2@5 E3@ B2@5 E3@ B2@5 E3@ B2@5 B2e@ Rq B2e@5V8
+/42 B2q@5 E E E
+/43 B2q@5 E E E
+/44 B2q@5 B2e F#3 B3 B2 F#3 F#2
+/45 B2t@5 B B B B B B B B B B B B B B B B B B B B B B B B B B B B B B B
+/46 B2q@5 E E E
+/47 B2t@5 B B B B B B B B B B B B B B B A2 A A A A A A A A A A A A A A A
+/48 G#2q@5 Rhq
+/49 A2t@5 A A A A A A A A A A A A A A A A#2q Rq
+/50 Rh B2t@5 B B B B B B B B B B B B B B B
+/51 C3q@5 Rhq
+/52 C#3t@5 C# C# C# C# C# C# C# C# C# C# C# C# C# C# C# C#q Rq
+/53 B2t@5 B B B B B B B B B B B B B B B Aq Rq
+/54 G#3t@5 G# G# G# G# G# G# G# G# G# G# G# G# G# G# G# F#q Rq
+/55 E3t@5 E E E E E E E C#3 C# C# C# C# C# C# C# G#2 G# G# G# G# G# G# G# G# G# G# G# G# G# G# G#
+/56 G#2t@5 G# G# G# G# G# G# G# G# G# G# G# G# G# G# G# C#3q. C#3e
+/57 C#3q@5 C#3 C#3 C#3
+/58 C#3q@5 C#3 C#3 C#3
+/59 C#3q@5 C#3e G#3 C#4 C#3 G#3 G#2
+/60 G#2q@5 Rhq
+/61 Rw R R R R R
+/67 C#3e@5 C# C# C# F#3 F# F# F#
+/68 B2e@5 B B B E3 E E B2
+/69 E3e@5 E E B2 E3 E E B2
+/70 E3e@5 E E B2 E3 E E B2
+/71 E3e@5 E E B2 B2q Rq
+/72 Rw R R R R
+/77 E3q@5 E E E
+/78 E3q@5 E E E
+/79 E3q@5 E3e B2 E3 E2 B3 B2
+/80 E2qe@5 E3eV6 Eq E
+/81 E3q@5 E E E
+/82 E3q@5 E E Ee B2
+/83 E3e@5 E2 T80 B3 B2 T50 E2q@ R
+
+$49v5 P8 // (7) Acoustic String Ensemble
+/1 Rqe E2e@5V8
+/2 E2q@5 E E E
+/3 E2q@5 E E E
+/4 E2e@5 E2 A1 A#1 B1q. E2eV6
+/5 E2q@5 E E E
+/6 E2q@5 E E E
+/7 E2e@5 E2 A1 A#1 B1q. E2eV8
+/8 E2q@5 E E E
+/9 E2q@5 E E E
+/10 E2q@5 E2e B1 E2 E1 B2 B1
+/11 E1qe@5 E2eV6 E2q E2
+/12 E2q@5 E E E
+/13 E2q@5 E E E
+/14 E2e@5 E1 B2 B1 E1q R
+/15 Rw R R R R R R R R R R R R
+/28 Rhqe E2e@5V8
+/29 E2q@5 E E E
+/30 E2q@5 E E E
+/31 E2q@5 E2e B1 E2 E1 B2 B1
+/32 E2e@5 EV6 E E E E E E
+/33 E2e@5 E E E E EV7 E E
+/34 B1e@5V6 B B B B B B B
+/35 B1e@5 B B B B BV7 B B
+/36 E2e@5V5 E E E E E E E
+/37 E2e@5 E E E E E E E
+/38 E2s@V7 B1@5 E2@ B1@5 E2@ B1@5 E2@ B1@5 D#2@ B1@5 D#2@ B1@5 D#2@ B1@5 D#2@ B1@5
+/39 E2s@ B1@5 E2@ B1@5 E2@ B1@5 E2@ B1@5 F#2@V8 B1@5 F#2@ B1@5 F#2@ B1@5 F#2@ B1@5
+/40 E2s@V6 B1@5 E2@ B1@5 E2@ B1@5 E2@ B1@5 D#2@ B1@5 D#2@ B1@5 D#2@ B1@5 D#2@ B1@5
+/41 E2s@ B1@5 E2@ B1@5 E2@ B1@5 E2@ B1@5 B1e@ Rq B1e@5V8
+/42 B1q@5 E E E
+/43 B1q@5 E E E
+/44 B1q@5 B1e@5 F#2 B2 B1 F#2 F#1
+/45 B1t@5 B B B B B B B B B B B B B B B B B B B B B B B B B B B B B B B 
+/46 B1q@3 B B B
+/47 B1t@5 B B B B B B B B B B B B B B B A1 A A A A A A A A A A A A A A A
+/48 G#1q@5 Rhq
+/49 A1t@5 A A A A A A A A A A A A A A A A#1q Rq
+/50 Rh B1t@5 B B B B B B B B B B B B B B B
+/51 C2q Rhq
+/52 C#2t@5 C# C# C# C# C# C# C# C# C# C# C# C# C# C# C# C#q R
+/53 B1t@5 B B B B B B B B B B B B B B B A1q R
+/54 G#2t@5 G# G# G# G# G# G# G# G# G# G# G# G# G# G# G# F#2q R
+/55 E2t@5 E E E E E E E C#2 C# C# C# C# C# C# C# G#1 G# G# G# G# G# G# G# G# G# G# G# G# G# G# G#
+/56 G#1t@5 G# G# G# G# G# G# G# G# G# G# G# G# G# G# G# C#2q. C#2e
+/57 C#2q@5 C# C# C#
+/58 C#2q@5 C# C# C#
+/59 C#2q@5 C#2e G#2 C#3 C#2 G# G#1
+/60 G#1q@5 Rhq
+/61 Rw R R R R R
+/67 C#2e@5 C# C# C# F#2 F# F# F#
+/68 B1e@5 B B B E2 E E B1
+/69 E2e@5 E E B1 E2 E E B1
+/70 E2e@5 E E B1 E2 E E B1
+/71 E2e@5 E E B1 B1q Rq
+/72 Rw R R R R
+/77 E2q@5 E E E
+/78 E2q@5 E E E
+/79 E2q@5 E2e B1 E2 E1 B2 B1
+/80 E1qe@5 E2eV6 E2q E2
+/81 E2q@5 E E E
+/82 E2q@5 E E E2e B1
+/83 E2e@5 E1 T80 B2 B1 T50 E1q@ R
+
+$7v5 P7 Z1 // (8) Harpsichord
+/1 Rqe E4e@5V8
+/2 E4q@5 E E E
+/3 E4q@5 E E E
+/4 E4e@5 E A3 A#3 B3q. E4e
+/5 E4q@5 E E E
+/6 E4q@5 E E E
+/7 E4e@5 E A3 A#3 B3q. E4e
+/8 E4q@5 E E E
+/9 E4q@5 E E E
+/10 E4q@5 E4e B3 E4 E3 B4 B3
+/11 E3qe@5 E4e Eq E
+/12 E4q@5 E E E
+/13 E4q@5 E E E
+/14 E4e@5 E3 B4 B3 E3q Rq
+/15 Rw R R R R R
+/21 Rw R R R R R
+/27 Rw
+/28 Rh Rq Re E4e@5
+/29 E4q@5 E E E
+/30 E4q@5 E E E
+/31 E4q@5 E4e B3 E4 E3 B4 B3
+/32 E4e@5 E E E E E E E
+/33 E4e@5 E E E E E E E
+/34 B3e@5 B B B B B B B
+/35 B3e@5 B B B B B B B
+/36 E4e@5 E E E E E E E
+/37 E4e@5 E E E E E E E
+/38 E4s@ B3 E4 B3 E4 B3 E4 B3 D#4 B3 D#4 B3 D#4 B3 D#4 B3
+/39 E4s B3 E4 B3 E4 B3 E4 B3 F#4 B3 F#4 B3 F#4 B3 F#4 B3
+/40 E4s B3 E4 B3 E4 B3 E4 B3 D#4 B3 D#4 B3 D#4 B3 D#4 B3
+/41 E4s B3 E4 B3 E4 B3 E4 B3 B3e R R B3s R
+/42 B3q@5 B B B
+/43 B3q@5 B B B
+/44 B3q@5 Be F#4 B4 B3 F#3 F#
+/45 B3t@ B B B B B B B B B B B B B B B B B B B B B B B B B B B B B B B 
+/46 B3q@3 B B B
+/47 B3t@ B B B B B B B B B B B B B B B A3 A A A A A A A A A A A A A A A
+/48 G#e R Rq R R
+/49 A3t A A A A A A A A A A A A A A A A#3e R R R
+/50 Rh B3t B B B B B B B B B B B B B B B 
+/51 C4e R Rq R R
+/52 C#4t C# C# C# C# C# C# C# C# C# C# C# C# C# C# C# C#4e R R R
+/53 B3t B B B B B B B B B B B B B B B A3e R R R
+/54 G#t G# G# G# G# G# G# G# G# G# G# G# G# G# G# G# F#4e R R R
+/55 E4t E E E E E E E C#4 C C C C C C C G#3 G# G# G# G# G# G# G# G# G# G# G# G# G# G# G#
+/56 G#3t G# G# G# G# G# G# G# G# G# G# G# G# G# G# G# C#e R R C#s R
+/57 C#4q@5 C# C# C#
+/58 C#4q@5 C# C# C#
+/59 C#4q@5 C#e G# C#5 C#4 G#4 G#3
+/61 G#3e@ R Rq R R
+/61 Rw R R R R R
+/67 C#4e@5 C# C# C# F#4 F# F# F#
+/68 B3e@5 B B B E4 E E B3
+/69 E4e@5 E E B3 E4 E E B3
+/70 E4e@5 E E B3 E4 E E B3
+/71 E4e@5 E E B3 B3q R
+/72 Rw R R R R
+/77 E4q@5 E E E 
+/78 E4q@5 E E E 
+/79 E4q@5 Ee B3 E4 E3 B4 B3
+/80 E3qe@5 E4e Eq E
+/81 E4q@5 E E E 
+/82 E4q@5 E E Ee B3
+/83 E4e@5 E3 T80 B4 B3 T50 E3q@ R
+
+$43v4 M5 // (9) Cello
+/1 Rh Rw R R R R R R R R R R R R R R R R R R
+/21 Rw R R R R R R R R R R R R R R R R R R R
+/41 Rw R R R R R R R R R R R R R R R R R R
+/60 Y7WW5wwww10( C#3wwwwwww )wV9
+/61 Rw R R R R R R R R R
+/71 Rh Y ( B2wh )hV7
+/72 Rw
+/73 Rh E3q@8 E3
+/74 F#3q F# G#3 G#
+/75 A3q G#3e F#3 E3q R
+/76 E3e R T80 E3q T50 B2 R

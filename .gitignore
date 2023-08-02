@@ -9,3 +9,4 @@ resources/.DS_Store
 ._manifest.xml
 *.old
 samples/._GeneralMusicLib Demos.oxtstack
+.DS_Store

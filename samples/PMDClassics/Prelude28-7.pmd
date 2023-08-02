@@ -1,0 +1,28 @@
+//pmd,1.0,100,
+//c F.Chopin / Prelude Op.28-7
+//i Made by UDI with makeSMF
+//s 3/4
+
+/1 T400 Rh T100 E4qV8
+/2 (C#5 E3wqV6)e. D5s (B4 G# E)q (B G# E)q
+/3 (B G# E)h (F#5 D)qV6
+/4 (D# C A3wqV4)e. (E5 C#qs)s Aq (A C#)q
+/5 (A C#)h (C#5 E4)qV7
+
+/6 (A# C# E3wqV5)e. B4s (D5 F#4 D)q (D5 F#4 D4)
+/7 (D5 F#4 D4)h (G#4 D)qV5
+
+/8 (G# D A2wqV4)e. (A4 C#qs)s C#5q (C#5 C#4)
+/9 (C#5 C#4)h E4qV8
+
+/10 (C#5 G#4q E4q E3wqV7)e. D5s (B4 G# D)q (B4 G# D)
+/11 (B4 G# D)h (F#5 D)qV9
+
+/12 (D# C A3wqV7)e.V8 (E5qs C#qs)s (C#6 A5 E C#)q T90 (C#6 A5 E C#)
+/13 (C#6 A#5 E C# A#)hV9 T (C#5 A#4)qV8
+
+/14 (C#5 A#4 B2wqV5)e. (D5 B4qs)s F#5q (F# A4)
+/15 (F#5 G#4)h (G#4 D)qV7
+
+/16 (B D A2wqV4)e. H3 (A4ws C#)s (A5 C#)q T90 (A5 C#)V6
+/17 ( AhV5 C#V3) Rh

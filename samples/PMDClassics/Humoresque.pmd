@@ -1,0 +1,93 @@
+//pmd,2.0,50,44
+//c A.Dvorak / Humoresque
+//i Made by UDI with makeSMF
+//s 2/4
+
+$ _beadgc P6 Z1
+/0 T400 Rh T
+/1 G4s@9V8 Rt At Gs Rt At Bs Rt / D5t Es Rt ( Dt )x ( E5sV7 )x
+/2 G5s Rt Ft As Rt Gt / Fs Rt At Gs Rt ( Et )x ( B4sV7 )x
+
+/3 D5s Rt Dt Es Rt Dt / Gs Rt Et Ds Rt B4t
+/4 ( A4h )e E D C
+/5 ( B3sV5 )x G4tx Rt At Gs Rt At / Bs Rt D5t Es Rt Dt
+
+/6 E5s Rt Ft As Rt Gt / Fs Rt At Gs Rt Et
+/7 ( D5 G4 )s Rt D5t Gs Rt G4t / ( G A )e ( D5 F4 )
+/8 ( G4 B3 )q. Re
+
+/1 G4s Rt At Gs Rt At Bs Rt / D5t Es Rt ( Dt )x ( E5sV7 )x
+/2 G5s Rt Ft As Rt Gt / Fs Rt At Gs Rt ( Et )x ( B4sV7 )x
+
+/3 D5s Rt Dt Es Rt Dt / Gs Rt Et Ds Rt B4t
+/4 ( A4h )e E D C
+/5 ( B3sV5 )x G4tx Rt At Gs Rt At / Bs Rt D5t Es Rt Dt
+
+/6 E5s Rt Ft As Rt Gt / Fs Rt At Gs Rt Et
+/7 D5s Rt Dt Gs Rt G4t / ( G A )e ( D5 F4 )
+/8 ( G4 B3 )q. Re
+
+/17 A4e ( B5 G )s Rt ( A F )t ( A F )e ( G E )
+/18 ( G5 E )e ( F D )s Rt ( E C )t ( E C )e ( D B4 )
+/19 ( D5 B4 )e ( C5 A4 )s ( E5 Gb4 ) ( D5 F4 )e ( C5e Gb4 )s A
+/20 ( B4 G )s ( A D ) ( G B3 )q Gs A
+
+/21 A4e ( B5 G )s Rt ( A F )t@6 ( Fe A )s3@8 B A ( G E )e@6 //17
+/22 ( G5 E )e@9 ( F D )s Rt ( E C )t ( E Ce )s3@8 F E ( D B4 )e@6 //18
+/23 ( D5 B4 )s@9 ( C5 A4e ) D5 ( E5 Gb4 ) ( A Fe. )s A ( Bs )tx ( D5tx )x ( C5 E4 )s
+
+/24 ( B4 F )e ( Bbbq D ) C^ ( Ae Cbe )stx ( B3s )x
+/25 G4s Rt At Gs Rt At Bs Rt D5t Es Rt Dt //1
+/26 G5s Rt Ft As Rt Gt / Fs Rt At Gs Rt ( Et )x ( B4sV7 )x //2
+
+/27 D5s Rt Dt Es Rt Dt / Gs Rt Et Ds Rt B4t //3
+/28 A4qestx ( B3sV5 )x //4
+/29 G4s Rt At Gs Rt At / Bs Rt D5t Es Rt ( Dt )x ( D5t )x //5
+/30 G5s Rt Ft As Rt Gt / Fs Rt At Gs Rt Et //3
+/31 ( D5 G )s Rt Dt ( Bbb5 G4 )s Rt D5t ( C^ G4 )s Rt B5t ( A F4 )s Rt ( Et )x ( D5t )
+/32 ( G5 D G4 )h
+
+
+$ _beadgc P4 Z1
+/0 T400 Rh T
+/1 G2e@5V5 ( D3 B ) ( D4 G3 ) ( G4 B3 )
+/2 ( C3 C2 )e ( C4 E3 ) ( E4 G3 ) ( G4 A3 )
+
+/3 G2 ( B3 D ) ( D4 G3 ) ( B4 B3 ) //1
+/4 ( D3h )e@9V6 Ge Fq
+/5 G2e@5V5 ( B3 D ) ( D4 G3 ) ( A4 B3 )
+
+/6 C3e ( C4 E3 ) ( E4 G3 ) ( B4 C )
+/7 ( B3q B2 )e@9V6 E3s Ebbs ( C4 D3 )q
+/8 G2s Rt D3tV7 D4s Rt D3tV6 Ge Re
+
+/1 G2e@5V5 ( D3 B ) ( D4 G3 ) ( G4 B3 )
+/2 ( C3 C2 )e ( C4 E3 ) ( E4 G3 ) ( G4 A3 )
+
+/3 G2 ( B3 D ) ( D4 G3 ) ( B4 B3 )
+/4 ( D3h )e@9V6 Ge Fq
+/5 G2e@5V5 ( B3 D ) ( D4 G3 ) ( A4 B3 )
+
+/6 C3e ( C4 E3 ) ( E4 G3 ) ( B4 C )
+/7 ( B3q B2 )e@9V6 E3s Ebbs ( C4 D3 )q
+/8 G2s Rt D3tV7 D4s Rt D3tV6 Ge Re
+
+/17 G2sV5 ( B3 D ) ( D4 G3 ) R D3 ( D4 G3 ) ( G4 D3 ) R
+/18 ( G3 C )s E4 C G3 ( E2 G^3 )q
+/19 A2s E3 Ae ( Dq )e Es F
+/20 ( G2q. )e D3s G De Re
+
+/21 G2sV5 ( B3 D ) ( D4 G3 ) R D3 ( D4 G3 ) ( G4 B3 ) R //17
+/22 ( G3 C )s E4 C G3 ( E2 G^3 )q@7 //18
+/23 A3s E C4e ( C4 D3 )q
+
+/24 ( A3 D^ )e ( G E ) A2 ( Eb3 De )s F
+/25 G2e@5V5 ( D3 B ) ( D4 G3 ) ( G4 B3 ) //1
+/26 ( C3 C2 )e ( C4 E3 ) ( E4 G3 ) ( G4 A3 ) //2
+
+/27 G2e@5V5 ( D3 B ) ( D4 G3 ) ( G4 B3 ) //1
+/28 ( D3h )e@9 ( E4 G3 ) ( D4 F3q ) C4
+/29 G2e@5V5 ( D3 B ) ( D4 G3 ) ( G4 B3 ) //1
+/30 ( C3 C2 )e ( C4 E3 ) ( E4 G3 ) ( G4 A3 ) //2
+/31 ( B3 D2 )e@9 ( D4 E3 ) ( C^4 A2 ) ( Cb4 F3 )
+/32 ( B3h G2h )e F3 G R

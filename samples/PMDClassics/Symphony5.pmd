@@ -1,0 +1,15 @@
+//pmd,1.0,150,,
+//c L.van Beethoven  / Symphony No 5
+//i Made by UDI with makeSMF
+
+$49 //49,Acoustic String Ensemble
+Re (G4 G3e.)eV8 G4 G D#w.@8 (F4 F3e.)e@10 F4 F Dww RwV6 Re D#5eV5 D# D# Cw Rh Re Fe F F Dhe@10 Ge@7V6 G F D#h@10 De@7V8 G G F D#h@10 De@7V G G F D# Rq. (C5 G#3)e Rq. T90 (G5 G4e G3e)ww@ T80 Rq G#4eV5 G# G# Fw.@ Rq
+
+$1 //1,Acoustic Grand Piano
+Re Rx G3eV8 G Gs.. D#w.@8 Rt Fe@10 F Fs. Dww H0 Rwwwwww. D#e Rq. (G#2)e
+
+$49V8 P6 //49,Acoustic String Ensemble
+Re G4eV8 G G D#w.@8 Fe@10 F F Dww Re G@7V4 G G D#whe@10 GetV5 Ge G Dw@10 Gwe@10 D#e@7V6 D# F Ghe@10 D#e@7 D# F G D5 D G4 (D#5 G4 C4) Rq. F#e Rq. (B D)q.
+
+$49V9 P4 //49,Acoustic String Ensemble
+Re Rx G3eV8 G Gs.. D#w.@7 Rt Fe@10 F Fs. Dww Rhe G#e@7V4 G# G# Gwqe@10 Rq G#e@7 G# G# Gh@10 Dh@10V6 D#e@7 D# D# F Ghe@10 D#e@7V7 D# F Gq. De D#eV8 Rq. G#3e Rq. Ge

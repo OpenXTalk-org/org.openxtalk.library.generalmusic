@@ -1,0 +1,163 @@
+//pmd,1.0,130,
+//c Bizet / Carmen - finar
+//i Made by UDI with makeSMF
+//s 2/4
+
+$49V7 P3 //1// Acoustic String Ensemble
+/1 Rh | A5s@6 R AV A A E D E | A R A A A B C#6 B5
+/4 A5s R A A B A G# A
+/5 B5s3@ C#6 B5 C#6 B5 C#6 B5 C#6 B5 A#s B@9
+/6 D6s@6 R D D D A5 G A | D6 R D D D E F# E
+/8 D6s R D C# B5 R B A
+/9 G#s3@ A G# A G# A G# A G# F#s G#@9
+/10 A5s@6 R A A A E D E | A R A A A B C#6 B5
+/12 A5s R A A B A G# A
+/13 B5s3@ C#6 B5 C#6 B5 C#6 B5 C#6 B5 A#s B@9
+/14 E6s@6 R E E E@ D@6 C D | E R E E E@ D@6 C D
+/16 E6s R Rq. | Re E4s E A3 R //17
+
+$49V8 P7 //2// Acoustic String Ensemble
+/1 Rh | A4s@6 R AV A A E D E | A R A A A B C#5 B4
+/4 A4s R A A B A G# A
+/5 B4s3@ C#5 B4 C#5 B4 C#5 B4 C#5 B4 A#s B@9
+/6 D5s@6 R D D D A4 G A | D5 R D D D E F# E
+/8 D5s R D C# B4 R B4 A
+/9 G#s3@ A G# A G# A G# A G# F#s G#@9
+/10 A4s@6 R A A A E D E | A R A A A B C#5 B4
+/12 A4s R A A B A G# A
+/13 B4s3@ C#5 B4 C#5 B4 C#5 B4 C#5 B4 A#s B@9
+/14 E5s@6 R C6 C C@ G5@6 E G | C6 R C C C@ G5@6 E G
+/16 E5s Rq..
+
+$49V7 P3 //3// Acoustic String Ensemble
+/1 Rh | A3e@3 R EV R | A R E R | A R E R | G# R E R
+/6 D3e R A R | D R A R | D R G# R | C# R E R
+/9 A3e R E R | A R E R | A R G# R | F# R E R
+/14 (E5 C)s@3 R (E C) (E C) (E C)@ (D G4)@3 (C5 E4) (D5 G4) 
+/15 (E C)s R (E C) (E C) (E C)@ (D G4)@3 (C5 E4) (D G4)
+/16 (E5 E4)s R Re R R | R E3s E Rq //17
+
+$49V5 P6 //5// Acoustic String Ensemble
+/1 Rh | A2e@3 R EV R | A R E R | A R G# R | F# R E R
+/6 D2e R A R | D R A R | D R G#1 R | C#2 R E R
+/10 A1e R E2 R | A R E R | A R G# R | F# R E R
+/14 C2e R G1 R | C2 R G1 R | E1 R R R | R E1s@5 E A1e //17
+
+$74V4 P4 //6// Flute
+/1 Rh | A6s@6 R AV A A E D E | A R A A A B C#7 B6
+/4 A6s R A A B A G# A
+/5 B6s3@ C#7 B6 C#7 B6 C#7 B6 C#7 B6 A#s B@9
+/6 D7s@6 R D D D A6 G A | D7 R D D D E F# E
+/8 D7s R D C# B6 R B A
+/9 G#s3@ A G# A G# A G# A G# F#s G#@9
+/10 A6s@6 R A A A E D E | A R A A A B C#7 B6
+/12 A6s R A A B A G# A
+/13 B6s3@ C#7 B6 C#7 B6 C#7 B6 C#7 B6 A#s B@9
+/14 E7s@6 R E E E@ D@6 C D | E R E E E@ D@6 C D
+/16 E7s R E6 F# G# R E C#7 | B6q Ae //17
+
+$69V5 P6 //7// Oboe
+/1 Rh | A5s@5 R AV A A E D E | A R A A A B C#6 B5
+/4 A5s R A A B A G# A
+/5 B5s3@ C#6 B5 C#6 B5 C#6 B5 C#6 B5 A#s B@9
+/6 D6s@5 R D D D A5 G A | D6 R D D D E F# E
+/8 D6s R D C# B5 R B A
+/9 G#s3@ A G# A G# A G# A G# F#s G#@9
+/10 As@5 R A A A E D E | A R A A A B C#6 B5
+/12 A5s R A A B A@8 G#@5 A
+/13 Bs3@ C#6 B5 C#6 B5 C#6 B5 C#6 B5 A#s B@9
+/14 C6s@5 R C C C@8 G5@5 E G | C6 R C C C@ G5@5 E G
+/16 E5s R E F# G# R E C#6 | B5q Ae //17
+
+$72V5 P4 //8// Clarinet
+/1 Rh | A4s@6 R AV A A E D E | A R A A A B C#5 B4
+/4 A4s R A A B A G# A
+/5 B4s3@ C#5 B4 C#5 B4 C#5 B4 C#5 B4 A#s B@9
+/6 D5s@6 R D D D A4 G A | D5 R D D D E F# E
+/8 D5s R D C# B4 R B4 A
+/9 G#s3@ A G# A G# A G# A G# F#s G#@9
+/10 A4s@6 R A A A E D E | A R A A A B C#5 B4
+/12 A4s R A A B A G# A
+/13 B4s3@ C#5 B4 C#5 B4 C#5 B4 C#5 B4 A#s B@9
+/14 (E5 C)s@6 R (E C) (E C) (E C)@ (D G4) (C5 E4) (D5 G4)
+/15 (E C)s R (E C) (E C) (E C)@ (D G4) (C5 E4) (D G4)
+/16 (E5 E4)s R E F# | G# R E C#5 //17
+
+$71V5 P6 //9// Bassoon
+/1 Rh | A3e@3 R EV R | A R E R | A2 R G# R | F# R E R
+/6 D2e R A R | D R A R | D R G# R | C# R E R
+/10 A2e R E R | A R E R | A R G# R | F# R E R
+/14 C2e R G R | C R G R
+/16 Ee (D4 G#3)s@5 (D4 G#3) (D4 G#3) R (D4 G#3) (D4 G#3)
+/17 (D4 G#3)q@ (C#4 A3)e@5
+
+$1V5 P4 //11// Acoustic Grand Piano
+/1 Rh | Re (A4 A3)@3V R (A4 A3) | R (A4 A3) R (A4 A3)
+/4 Re (A4 A3) R (A4 A3) R | (A4 A3) R (E4 E3)
+/6 Re (A4 A3) R (A4 A3) R | (A4 A3) R (A4 A3)
+/8 Re (A4 A3) R B4 | R C# R (E4 E3)
+/10 Re (A4 A3) R (A4 A3) | R (A4 A3) R (A4 A3)
+/12 Re (A4 A3) R (A4 A3) | R (A4 A3) R (E4 E3)
+/14 Re G4 R G | R G R G
+/16 E4e (E4 E3)s@5 (E4 E3) (E4 E3) R (E4 E3) (E4 E3) | (E4 E3)q@12 A3e@5 //17
+
+$16385V6 //10// Standard Kit
+/1 Rh / (59 57)eV 81V5 R 81 / R 81 R 81
+/4 Re 81 R 81 / R 81 (59 57)V 81V5
+/6 (59 57)eV 81V5 R 81 / R 81 R 81
+/8 Re 81 R 81 / R 81 (59 57)V 81V5
+/10 (59 57)eV 81V5 R 81 / R 81 R 81
+/12 Re 81 R 81 / R 81 (59 57)V 81V5
+/14 (59 57)e@8V 81V5 R 81 / (59 57)V 81V5 R 81
+/16 (81 59V)e Rq. / Re 81s 81 81 //17
+
+$61V5 P6 //12// French Horn
+/1 Rh | Re@3 E4V R (D B3) | R E4 R (D B3)
+/4 Re E4 R E | R (D# B3) R (G#4 G#3)
+/6 Re (F#4 D) R E | R (F# D) R E
+/8 Re (F# D) R (F# D) | Re (G#4 G#3) R G#3
+/10 Re E4 R (D4 B3) | R E4 R (D4 B3)
+/12 Re E4 R E | R (D#4 B3) R (G#4 B3)
+/14 Re G3 R G | R G R G
+/16 (E4 E3)s R (E4 E3) (E4 E3) (E4 E3) R (E4 E3) (E4 E3)
+/17 (E4 E3)q@12
+
+$57V5 P4 //13// Trumpet
+/1 Rh | Re (A4 E)@3V R (A E) | R (A E) R (A E)
+/4 Re (A E) R (A E) | R (A D#) R (G# E)
+/6 Re (A4 F#) R (A G) | R (A G#) R (A G)
+/8 Re (A F#) R (B F#) | R (G# F) R (G# E)
+/10 Re (A4 E) R (A E) | R (A E) R (A E)
+/12 Re (A E) R (A E) | R (A D#) R (G# E)
+/14 (E5 C)e (E C)s@5 (E C) (E C)@ (D G4@)@5 (C5 E4) (D5 G4)
+/15 (E5 C)s R (E C) (E C) (E C)@ (D G4@)@5 (C5 E4) (D5 G4)
+/16 (E5 E3)e E4s F# G# R  E4 C#5 | B4q@ A@5 //17
+
+$58V6 P6 //14// Trombone
+/1 Rh | A3e@3 R EV R | A R E R | A R G# R | F# R E R
+/6 De R A R | D R A2 R | D3 R G# R | C# R E R
+/10 Ae R E R | A R E R | A@V13 R G#@3 R | F# R E R
+/15 C3eV R G2 R | C3 R G2 R | E3 Es@5 E E R E E | Eq Ae
+//17
+
+$58V6 P4 //15// Trombone
+/1 Rh | Re (C#4 A3)@3V R (D4 B3) | R (C#4 A3) R (D4 B3)
+/4 Re (C#4 A3) R (C#4 A3) | R (B3 A) R (B G#)
+/6 Re (D4 A3) R (E4 A3) | R (D4 A3) R (E4 A3)
+/8 Re (D4 A3) R (D4 B3) | R (C#4 G#3) R (D4 B3)
+/10 Re (C#4 A3) R (D4 B3) | R (C#4 A3) R (D4 B3)
+/12 Re (C#4 A3) R (C#4 A3) | R (B3 A) R (B G#)
+/14 Re (G4 G3) R (G4 G3) | R (G4 G3) R (G4 G3)
+/16 E4e (D4 G#3)s@5 (D4 G#3) (D4 G#3) R (D4 G#3) (D4 G#3)
+/17 (D4 G#3)q@
+
+$48V6 P6 //16// Timpani
+/1 Rh | A2e@3 (C4A3) E3 (D4 B3)V | A2e (C4A3) E3 (D4 B3)
+/4 A2e (C#4 A3) E3 (C#4 A3) | A2e (B3 A) E3 (B G#)
+/6 A2e (D4 A3) A2 (E4 A3) | A2 (D4 A3) A2 (E4 A3)
+/8 A2e (D4 A3) A2 (D4 B3) | E3 (C#4 G#3) E3 (D4 B3)
+/10 A2e (C#4 A3) E3 (D4 B3) | A2 (C#4 A3) E3 (C#4 A3)
+/12 A2e (C#4 A3) E3 (C#4 A3) | A2 (B3 A) E (B G#)
+/14 E3e (G4 G3) E3 (G4 G3) | E3 (G4 G3) E3 (G4 G3)
+/16 (E4 E3)e (D4 G#3)s@5V6 (D4 G#3) (D4 G#3) R (D4 G#3) (D4 G#3)
+/17 (D4q@ G#3q@)eV E3s E3s@ A2e@5

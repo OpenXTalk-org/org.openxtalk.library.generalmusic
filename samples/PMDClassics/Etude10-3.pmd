@@ -1,0 +1,84 @@
+//pmd,1.0,40
+//c F.Chopin / Etude10-3
+//i Made by UDI with makeSMF
+//s 2/4
+
+$1v7 // (1) Acoustic Grand Piano
+/1 T300 Rq. T B3e
+/2 ( E2q Ab3s E4e )s ( B2e B3s ) ( Ab3s Eb4s ) ( B2s B3s E4s ) ( B1q A3s Eb4qs Gb4qs ) ( B2e B3s ) A3 ( B2s B3s )
+/3 ( B1q A3s )s ( B2e B3s Ab4s ) ( A3s Eb4s Ab4s ) ( B2s B3s Gb4s ) ( E2q E4q Ab4qs Ab3s ) ( B2e B3s ) Ab3 ( B2s B3s )
+/4 ( E2q Ab3s )s ( B2e E4s A4s ) ( B3s A4s ) ( B2s E4s Ab4s ) ( B1q Eb4s Db5es ) ( B2e A4s ) B3 ( B2s Eb4s B4s )
+/5 ( E2q B3s A4s )s ( B2e E4s Ab4s ) ( Ab3s Eb4s ) ( B2s B3s E4s ) ( B1q A3s Db4s Gb4qs ) ( B2e B3s Eb4s ) ( A3s Db4s ) ( B2s B3s Eb4s )
+/6 ( B1q A3s Db4s )s ( B2e B3s Eb4s Ab4s ) ( A3s Db4s Ab4s ) ( B2s B3s Eb4s Gb4s ) ( E2q Ab3s E4q ) ( B2e B3s ) Ab3 ( B2s B3s )
+/7 ( D4s E2q Ab4s )s ( E3s E4s A4s ) ( D4s Gb4s ) ( E3s E4s Ab4s ) ( A2q Db4s A4s ) ( E3e E4s B4s ) ( Db4s Ab4s ) ( E3s E4s A4s )
+/8 ( A2q Db4s Db5e )s ( Gb3e E4s ) ( Db4s Gb4q ) ( Gb3s E4s ) ( B2q B3s ) ( Gb3e E4s )s3 Bb4t3 ( Ab4s B3s )s ( Gb3s E4s Gb4es )
+/9 ( Db3q Bb3s )s ( Gb3e E4s )s3 Bb4t3 ( Ab4s Bb3s )s ( Gb3s E4s Gb4s ) ( B2q A3s Eb4q B4q ) ( Gb3e B3s ) A3 ( Gb3s B3s )
+/10 ( E2q Ab3s E4e Ab4e )s ( B2e B3s ) ( Ab3s Eb4s ) ( B2s B3s E4s ) ( B1q A3s Eb4q Gb4q ) ( B2e B3s ) A3 ( B2s B3s )
+/11 ( B1q A3s )s ( B2e B3s Ab4s ) ( A3s Eb4e Ab4s ) ( B2s B3s Gb4s ) ( E2q Ab3s E4q Ab4q ) ( B2e B3s ) Ab3 ( B2s B3s )
+/12 ( E2q Ab3s )s ( B2e E4s A4s ) ( B3s A4s ) ( B2s E4s Ab4s ) ( B1q Eb4s Db5es ) ( B2e A4s ) B3 ( B2s Eb4s B4s )
+/13 ( E2q B3s A4s )s ( B2e E4s Ab4s ) ( Ab3s Eb4s ) ( B2s B3s E4s ) ( B1q A3s Db4s Gb4q ) ( B2e B3s Eb4s ) ( A3s Db4s ) ( B2s B3s Eb4s )
+/14 ( B1q A3s Db4s )s ( B2e B3s Eb4s Ab4s ) ( A3s Db4s Ab4s ) ( B2s B3s Eb4s Gb4s ) ( E2q Ab3s E4q ) ( B2e B3s ) Ab3 ( B2s B3s )
+/15 ( E2q D4s Gb4s B4s )s ( E3e E4s Ab4s Db5s ) ( D4s Gb4s Db5s ) ( E3s E4s Ab4s B4s ) ( A2q Db4s A4s ) ( E3s E4s B4s ) ( Db4s Ab4s ) ( E3s E4s A4s )
+/16 ( Ab2q Gb4s C5s Eb5s )s ( Ab3e Ab4s E5s ) ( Gb4s Bb4s E5s ) ( Ab3s Ab4s C5s Eb5s ) ( Db3q E4s Db5s ) ( Ab3e Ab4s Eb5s ) ( E4s C5s ) ( Ab3s Ab4s Db5s )
+/17 ( Db3s E3s Gb3s Bb3s E4s Bb4s E5s )s ( Db3s E3s Gb3s Bb3s Gb4s Bb4s Gb5s ) ( Db3s E3s Gb3s Bb3s Eb4s Bb4s Eb5s ) ( Db3s E3s Gb3s Bb3s E4s Bb4s E5s ) ( C3s E3s Gb3s Bb3s Gb4s Bb4s Gb5s ) ( C3s E3s Gb3s Bb3s Ab4s Bb4s Ab5s ) ( C3s E3s Gb3s Bb3s E4s Bb4s E5s ) ( C3s E3s Gb3s Bb3s Gb4s Bb4s Gb5s )
+/18 ( B2h E3h Ab3h B3h Ab4s E5q Ab5q )s B4 Ab4 B4 Ab4 ( B4s Gb5s ) ( Ab4s E5s ) ( B4s Db5s )
+/19 ( Gb3s Eb4s Eb5q )s ( B3s Gb4s ) ( B2s Eb4s ) ( B3s Gb4s ) ( Db3s E4s E5s ) ( Ab3s Ab4s Eb5s ) ( Ab2s E4s Db5s ) ( Ab3s Ab4s )
+/20 ( Eb3s B3s B4q )s ( Ab3s Eb4s ) ( Ab2s B3s ) ( Ab3s Eb4s ) ( A2s Db5s Db4s ) ( E3s B4s E4s ) ( E2s A4s Db4s ) ( E3s E4s )
+/21 ( B2s Ab3s Ab4h )s ( E3s B3s ) ( E2s Ab3s ) ( E3s B3s ) ( B2s Ab3s ) ( E3s B3s ) ( E2e Ab3s ) ( B2s B3s )t3 ( Ab4x ) Gb4
+/22 ( Ab3q E4q E3q )q ( Ab4s E5s )s ( Gb4s Eb5s ) ( Ab4s E5s ) ( Eb4s B4s )
+/23 ( Gb2s Gb4s Eb5s )s ( Bb3s E4s Db5s ) ( Gb2s Gb4s Eb5s ) ( B3s Eb4s Ab4s ) ( Gb2s E4e B4s ) ( Db4s Bb4s ) ( B3s Ab4s Db5e ) ( Bb3s Gb4s )s3 Bb4t3
+/24 ( B2s E4s Ab4s )s ( Gb3s Eb4s Gb4s )s3 Bb4t3 ( B3s E4s Ab4s )s ( Eb4s Gb4s ) ( Ab4s E5s ) ( Gb4s Eb5s ) ( Ab4s E5s ) ( Eb4s B4s )
+/25 ( Gb2s Gb4s Eb5s )s ( Bb3s E4s Db5s ) ( Gb2s Gb4s Eb5s ) ( B3s Eb4s Ab4s ) ( Gb2s E4e B4s ) ( Db4s Bb4s ) ( B3s Ab4s Db5e ) ( Bb3s Gb4s )s3 Bb4t3
+/26 ( B2s E4s Ab4s )s ( Gb3s Eb4s Gb4s )s3 Bb4t3 ( B3s E4s Ab4s )s ( Eb4s Gb4s ) ( A4s Gb5s ) ( Ab4s E5s ) ( Gb5s A4s ) ( E4s Db5s )
+/27 ( Ab2s Ab4s E5s )s ( C4s Gb4s Eb5s ) ( Ab2s Ab4s E5s ) ( Db4s E4s Bb4s ) ( Ab2s Gb4e Db5s ) ( Eb4s C5s ) ( Db4s A4s Eb5e ) ( C4s Ab4s )s3 B4t3
+/28 ( Db3s Gb4s A4s )s ( Ab3s E4s Ab4s )s3 B4t3 ( Db4s Gb4s A4s )s ( E4s Ab4s ) ( A4s Gb5s ) ( Ab4s E5s ) ( A4s Gb5s ) ( E4s Db5s )
+/29 ( Ab2s Ab4s E5s )s ( C4s Gb4s Eb5s ) ( Ab2s Ab4s E5s ) ( Db4s E4s Bb4s ) ( Ab2s Gb4e Db5s ) ( Eb4s C5s ) ( Db4s A4s Eb5e ) ( C4s Ab4s )s3 B4t3
+/30 ( Db3s Gb4s A4s )s ( Ab3s E4s Ab4s )s3 B4t3 ( Db4s Gb4s A4s )s ( Db3s E4s Ab4s )s3 B4t3 ( B2s Gb4s A4s )s ( D4s E4s Ab4s ) ( E3s Gb4s A4s ) ( B2s Ab4s B4s )
+/31 ( A2es A4es Db5es )s ( E3s Db4s E4s ) ( E3es Gb4es D4es ) ( E2s A4s Db5s ) ( B2es Ab4es B4es ) ( E3s D4s Gb4s ) ( E3e D4e E4e ) ( E2s Ab4s B4s )
+/32 ( A2es A4es C5es )s ( E3s E4s C4s ) ( E3e D4es F4es ) ( E2s A4s C5s ) ( B2es Ab4es B4es ) ( E3s D4s F4s ) ( E3e E4e D4e ) ( E2s Ab4s B4s )
+/33 ( G2s G3s B4s Db5s E4s Db4s )s ( G3s B3s Db5s E5s ) ( E4s Db4s G4s B4s ) ( G4s E4s Db5s B4s ) ( Db4s B3s E5s G5s ) ( Db4s E4s G5s B5s ) ( G4s B4s Db5s E5s ) ( B4s Db5s G5s E5s )
+/34 ( E4s G4s Db6s B5s )s ( B4s G4s E6s Db6s ) ( Db5s E5s G5s B5s ) ( B4s Db5s Db6s B5s ) ( G6s E6s ) ( Gb3t E4t Db4t Bb4t G5t ) ( Gb3t E4t Db4t Bb4t Gb5t ) ( Gb3t E4t Db4t Bb4t E5t )
+/35 ( B3s B4es Eb5es )s ( Gb3s Eb4s Gb4s ) ( Gb3es E4es Ab4es ) ( Gb2s B4s Eb5s ) ( Db3es Bb4es Db5es ) ( Gb3s Ab4s E4s ) ( Gb3e E4e Gb4e ) ( Gb2s Db5s Bb4s )
+/36 ( B2es B4es D5es )s ( Gb3s D4s Gb4s ) ( Gb3es E4es G4es ) ( Gb2s B4s D5s ) ( Db3es Bb4es Db5es ) ( Gb3s E4s G4s ) ( Gb3e E4e Gb4e ) ( Gb2s Bb4s Db5s )
+/37 ( A2s A3s Db5s Eb5s Gb4s Eb4s )s ( Db4s A3s Eb5s Gb5s ) ( Gb4s Eb4s A4s Db5s ) ( A4s Gb4s Eb5s Db5s ) ( Eb4s Db4s A5s Gb5s ) ( Gb4s Eb4s Db6s A5s ) ( Db5s A4s Eb5s Gb5s ) ( Eb5s Db5s A5s Gb5s )
+/38 ( Gb4s A4s Eb6s Db6s )s ( Db5s A4s Gb6s Eb6s ) ( Eb5s Gb5s Db6s A5s ) ( A5s Gb5s Eb6s Db6s ) ( Eb5s Db5s A6s Gb6s ) ( Gb4t Eb4t Ab3t C5t A5t ) ( Eb4t Gb4t Ab3t C5t Ab5t ) ( Eb4t Gb4t Ab3t C5t Gb5t )
+/39 ( Ab3t D4t F4t B4s F5s )s ( F3s B3s Ab4s D5s ) ( Bb3s E3s G4s Db5s ) ( Eb3s A3s C5s Gb5s ) ( D3s Ab3s B4s F5s ) ( Db3s G3s E5s Bb5s ) ( C3s Gb3s Eb5s A5s ) ( B2s F3s Ab5s D6s )
+/40 ( Bb2s E3s G5s Db6s )s ( E3s Bb3s G4s Db5s ) ( Eb3s A3s Gb4s C5s ) ( D3s Ab3s B4s F5s ) ( Db3s G3s Bb4s E5s ) ( C3s Gb3s Eb5s A5s ) ( B2s F3s D5s Ab5s ) ( Bb2s E3s G5s Db6s )
+/41 ( A2s Eb3s Gb5s C6s )s ( Eb3s A3s Gb4s C5s ) ( D3s Ab3s F4s B4s ) ( Db3s G3s Bb4s E5s ) ( C3s Gb3s A4s Eb5s ) ( B2s F3s D5s Ab5s ) ( Bb2s E3s Db5s G5s ) ( A2s Eb3s Gb5s C6s )
+/42 ( Ab2s D3s F5s B5s )s ( Db3s G2s E6s Bb5s ) ( Gb2s C3s A5s Eb6s ) ( D6s Ab6s B2s F2s ) ( Db6s G6s E2s Bb2s ) ( Gb6s C7s Eb2s A2s ) ( F6s B6s D2s Ab2s ) ( Bb6s E7s Db2s G2s )
+/43 ( B6s Eb7s B1t Gb2t )s ( Eb6s B6s ) ( A5s Gb6s ) ( Eb5s B5s ) ( A4s Gb5s ) ( Eb4s B4s ) ( Gb4s A3s ) ( Eb3s B3s )
+/44 ( A2s Gb3s )s ( C2s C3s A4s Gb4s E4s A3s ) ( B1s B2s Gb4s B4s E4s B3s ) ( A1s A2s E4s Gb4s C4s C5s ) ( B1s B2s Gb4s E4s B4s B3s ) ( C2s C3s A3s E4s Gb4s A4s ) ( B1s B2s E4s Gb4s B4s B3s ) ( A1s A2s E4s Gb4s C4s C5s )
+/45 ( B3s Eb4s Gb4s B4s )s ( A6s Eb7s ) ( B6s Eb6s ) ( Eb6s Gb5s ) ( B4s A5s ) ( A4s Eb5s ) ( Eb4s B4s ) ( Gb3s Eb4s )
+/46 ( B2s A3s )s ( C2s C3s A3s E4s Gb4s A4s ) ( B1s B2s B3s Gb4s E4s B4s ) ( A1s A2s Gb4s E4s C4s C5s ) ( B1s B2s B3s E4s Gb4s B4s ) ( C3s C2s A3s E4s Gb4s A4s ) ( B1s B2s B3s E4s Gb4s B4s ) ( A1s A2s Gb4s C5s Gb5s E5s )
+/47 ( B1s B2s Gb4s B4s Eb5s Gb5s )s ( D4s B4s B6s D6s ) ( Ab4s D5s Ab5s F6s ) ( F4s D5s F5s D6s ) ( B3s Ab4s Ab6s B5s ) ( C4s A4s C6s A6s ) ( Gb4s Eb5s Gb5s Eb6s ) ( C5s Eb4s Eb5s C6s )
+/48 ( A3s Gb4s Gb6s A5s )s ( C4s A4s A6s C6s ) ( Gb4s Eb5s Eb6s Gb5s ) ( F4s D5s D6s F5s ) ( B3s Ab4s Ab6s B5s ) ( Bb3s G4s G6s Bb5s ) ( E4s Db5s E5s Db6s ) ( Eb4s C5s Eb5s C6s )
+/49 ( A3s Gb4s Gb6s A5s )s ( A4s C4s A6s C6s ) ( Eb5s Gb4s Gb5s Eb6s ) ( Eb4s C5s Eb5s C6s ) ( A3s Gb4s Gb6s A5s ) ( B3s Ab4s Ab6s B5s ) ( F4s D5s D6s F5s ) ( B4s D4s B5s D5s )
+/50 ( Ab3s F4s Ab5s F6s )s ( Ab4s B3s B5s Ab6s ) ( D5s F4s D6s F5s ) ( E4s Db5s E5s Db6s ) ( Bb3s G4s G6s Bb5s ) ( A3s Gb4s A5s Gb6s ) ( C5s Eb4s Eb5s C6s ) ( D4s B4s B5s D5s )
+/51 ( Ab3s F4s Ab5s F6s )s ( Ab4s B3s Ab6s B5s ) ( D5s F4s D6s F5s ) ( B4s D4s B5s D5s ) ( Ab3s F4s F6s Ab5s ) ( A3s Gb4s Gb6s A5s ) ( C5s Eb4s Eb5s C6s ) ( A4s C4s A5s C5s )
+/52 ( Gb3s Eb4s Gb5s Eb6s )s ( A3s Gb4s Gb6s A5s ) ( C5s Eb4s Eb5s C6s ) ( B4s D4s D5s B5s ) ( Ab3s F4s F6s Ab5s ) ( G3s E4s E6s G5s ) ( Bb4s Bb3s Db5s Bb5s ) ( A4s A3s C5s A5s )
+/53 ( Gb3s Eb4s Eb6s Gb5s )s ( F3s D4s F5s D6s ) ( B3s Ab4s B4s Ab5s ) ( Bb3s G4s Bb4s G5s ) ( E3s Db4s E5s Db6s ) ( Bb3s G4s Bb4s G5s ) ( E3s Db4s E5s Db6s ) ( G4s Bb3s Bb4s G5s )
+/54 ( E3s C4s E5s C6s )s ( Gb4s Bb3s Bb4s Gb5s ) ( E3s C4s E5s C6s ) ( Gb4s Bb3s Gb5s Bb4s ) ( E3s C4s E5s C6s ) ( Gb4s A3s Gb5s A4s ) ( E3s C4s C6s E5s ) ( Gb4s A3s Gb5s A4s )
+/55 ( B2s B3s B5s Eb5s )e ( E3e B4s D4s )s ( E4s Ab4s ) ( A2e Db4s B4s ) ( E4s A4s ) ( C3e A3s Gb4q ) E4
+/56 ( A3s B2e )s Eb4 ( E3t B4s D4s )s3 ( Gb3t )t3 ( Ab4s E4s ) E3s3 ( A2e Db4s B4s )s ( E4s A4s ) ( C3e A3s Gb4q ) E4
+/57 ( A3s B2e )s Eb4 ( B1e Ab4s A3s ) ( Gb4s B3s ) ( E2e Ab3s Gb4s ) ( B3s E4s ) ( B2q G3s Db4e ) B3
+/58 ( Gb3s E4s )s ( B3s Eb4s ) ( B1t A3s Ab4s )s3 ( Db2t )t3 ( B3s Gb4s ) B1s3 ( E2e Ab3s Gb4s )s ( B3s E4s ) ( B2q G3s Db4e ) B3
+/59 ( Gb3s E4s )s ( B3s Eb4e ) ( E2t G3s )s3 ( Gb2t )t3 ( B3s Db4s ) E2s3 ( B1e Gb3s E4s )s ( B3s Eb4e ) ( B2q G3e ) ( B3s Db4s )
+/60 ( Gb3s E4s )s ( B3s Eb4e ) ( E2t G3s )s3 ( Gb2t )t3 ( B3s Db4s ) E2s3 ( B2e Gb3s E4s )s ( B3s Eb4e ) ( G3e ) ( Db4s B3s )
+/61 ( Gb3s E4s )s ( B3s Eb4s ) ( Gb3s E4s ) ( B3s Eb4s ) ( Gb3s E4s ) ( Db4s Eb4s ) ( Gb2t Gb3s E4s )s3 ( Ab2t )t3 ( Db4s Eb4s ) Gb2s3
+/62 ( Gb3s E4s B1q )s ( A3s Eb4s ) ( Gb3s E4s ) ( A3s Eb4s ) ( Gb3s E4s ) ( B3s Eb4s ) ( Gb3s Db4s ) ( B3s Eb4s )
+/63 ( Ab4e Ab3s E2q )s ( B3s B2e ) ( Eb4s Ab3s ) ( E4s B3s B2s ) ( Gb4qs Eb4qe A3s B1q ) ( B3s B2e ) A3 ( B3s B2s )
+/64 ( A3s B1q )s ( Ab4s B3s B2e ) ( Ab4s Eb4e A3s ) ( Gb4s B3s B2s ) ( Ab4qs E4q Ab3s E2q ) ( B3s B2e ) Ab3 ( B3s B2s )
+/65 ( Ab3s E2q )s ( A4s E4s B2e ) ( A4s B3s ) ( Ab4s E4s B2s ) ( Db5es Eb4s B1q ) ( A4s B2e ) B3 ( B4s Eb4s B2s )
+/66 ( A4s B3s E2q )s ( Ab4s E4s B2e ) ( Eb4s Ab3s ) ( E4s B3s B2s ) ( Gb4qs Db4s A3s B1q ) ( Eb4s B3s B2e ) ( Db4s A3s ) ( Eb4s B3s B2s )
+/67 ( Db4s A3s B1q )s ( Ab4s Eb4s B3s B2e ) ( Ab4s Db4s A3s ) ( Gb4s Eb4s B3s B2s ) ( E4q Ab3s E2q ) ( B3s B2e ) Ab3 ( B3s B2s )
+/68 ( B4s Gb4s D4s E2q )s ( Db5s Ab4s E4s E3e ) ( Db5s Gb4s D4s ) ( B4s Ab4s E4s E3s ) ( A4s Db4s A2q ) ( B4s E4s E3s ) ( Ab4s Db4s ) ( A4s E4s E3s )
+/69 ( Eb5s C5s Gb4s Ab2q )s ( E5s Ab4s Ab3e ) ( E5s Bb4s Gb4s ) ( Eb5s C5s Ab4s Ab3s ) ( Db5s E4s Db3q ) ( Eb5s Ab4s Ab3e ) ( C5s E4s ) ( Db5s Ab4s Ab3s )
+/70 ( E5t Bb4t E4t Bb3t Gb3t E3t Db3t )s ( Gb5t Bb4t Gb4t Bb3t Gb3t E3t Db3t ) ( Eb5t Bb4t Eb4t Bb3t Gb3t E3t Db3t ) ( E5t Bb4t E4t Bb3t Gb3t E3t Db3t ) ( Gb5t Bb4t Gb4t Bb3t Gb3t E3t C3t ) ( Ab5t Bb4t Ab4t Bb3t Gb3t E3t C3t ) ( E5t Bb4t E4t Bb3t Gb3t E3t C3t ) ( Gb5t Bb4t Gb4t Bb3t Gb3t E3t C3t )
+/71 ( Ab5qs E5q Ab4s B3h Ab3h E3h B2h )s B4 Ab4 B4 Ab4 ( Gb5s B4s ) ( E5s Ab4s ) ( Db5s B4s )
+/72 ( Eb5q Eb4s Gb3s )s ( Gb4s B3s ) ( Eb4s B2s ) ( Gb4s B3s ) ( E5s E4s Db3s ) ( Eb5s Ab4s Ab3s ) ( Db5s E4s Ab2s ) ( Ab4s Ab3s )
+/73 ( B4q B3s Eb3s )s ( Eb4s Ab3s ) ( B3s Ab2s ) ( Eb4s Ab3s ) ( Db4s Db5s A2s ) ( E4s B4s E3s ) ( Db4s A4s E2s ) ( E4s E3s )
+/74 ( B2s Ab3s Ab4qs )s ( E3s B3s ) ( E2s Ab3s ) ( E3s B3s ) ( C3s A3s ) ( E3s C4s Gb4s ) ( E2s A3s E4s ) ( E3s C4s )
+/75 ( B2s Ab3s Ab4qs )s ( E3s B3s ) ( E2s Ab3s ) ( E3s B3s ) ( C3s A3s ) ( E3s C4s Gb4s ) ( E2s A3s E4s ) ( E3s C4s )
+/76 ( B2s Ab3s Ab4hq )s ( E3s B3s ) ( E2s Ab3s ) ( E3s B3s ) ( B2s Ab3s ) ( E3s B3s ) ( E2s Ab3s ) ( E3s B3s )
+/77 ( B2s Ab3s )s ( E3s B3s ) ( E2s Ab3s ) ( E3s B3s ) ( B2s Ab3s ) ( E3s B3s Gb4t ) ( E2s Ab3s E4t ) ( B2ht B3t )
+/78 ( Ab3h E4h E2h )h

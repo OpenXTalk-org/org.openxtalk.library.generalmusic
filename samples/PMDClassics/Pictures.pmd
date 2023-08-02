@@ -1,0 +1,83 @@
+//pmd,1.0,90,
+//c M.P.Mussorgsky
+//n Pictures at an exhibition - promenade
+//i Made by UDI with makeSMF
+
+$V8 Z1 P6 // 1of 2 ----------------------
+
+/0 Rq
+/1 G4q F Bb C5e F Dq
+/2 Ce F5 Dq Bb4 C5 G4 F
+
+/3 (G4 D Bb3)q (F4 C A3) (Bb4 D4 Bb3) (C5 A4q Cq)e F5 (D5 A4 F4)q 
+/4 (C5 A4q C4q)e F5  (D5 A4 F4)q (Bb4 G4 D4) (C5 G4 E4) (G4 C4 G3) (F4 C4 A3)
+
+/5 F4q G4 D4 F4e G4 C4q
+/6 G4e A4 F4q (F5 F4) (D5 F4) (C5e F4q)e Bb4 F4q 
+
+/7 F4q G4 D4 F4e G4 Eb4q
+/8 Bb4e C5 Ab4q (Ab5 Ab4) (F5 Ab4) (Eb5e Ab4q)e Db5 Ab4q
+
+/9 (Ab4 Ab3)q (Bb4 Bb3) (Ab4 Ab3) (Bb4 Bb3)e (C5 C4) (Eb5 Eb4) (Bb4 Bb3) (Ab4 Ab3)q
+/10 (Db5 Ab4 F4 Db4)e (Eb5 C5 Ab4 Eb4) (F5 Db5 Ab4 F4) (Ab5 Ab4) (Gb5 Eb5 Bb4 Gb4) (F5 Db5 Ab4 F4) (Eb5 C5 Ab4 Eb4) (Gb5 Gb4) (F5 Db5 Bb4 F4) (Db5 Db4) (Eb5 C5 Ab4 Eb4)q
+
+/11 (Ab4 Ab3)q (Bb4 Bb3) (Ab4 Ab3) (Bb4 Bb3)e (C5 C4) (Eb5 Eb4) (Bb4 Bb3)
+/12 (C5 C4)q (D5 D4) (C5 C4) (D5 D4)e (F5 F4) (G5 G4) (D5 D4) (C5 C4)q 
+
+/13 (F5 C5 A4 F4)e (G5 E5 C5 G4) (A5 F5 C5 A4) (C6 C5) (Bb5 G5 D5 Bb4) (A5 F5 C5 A4) (G5 E5 C5 G4) (Bb5 Bb4) (A5 F5 D5 A4) (F5 F4) (G5 E5 C5 G4)q
+/14 (A5 C5q A4q)e E5 (F5 D5 F4)q (A5 C5 A4) (D5 Bb4 E4) (A5 C5 A4) (D5 Bb4 E4)
+
+/15 (F5 A4q F4q)e C5 (D5 Bb4 E4)q (F5 A4 F4) (D5 Bb4 E4) (F5 A4q F4q)e C5 (D5 Bb4 E4)q
+/16 (C5q G4q Eb4)e E4 (A4 F4 C4)q (Bb F4 D4) (C5q G4q Eb4)e E4 (A4 E4 C4)q (Bb4 F4q D4q)e D5
+
+/17 (C5 G4 E4)q (A4 F4 D4 C4) (C5 G4 E4) (F5 F4) (Eb5 Bb4 G4 Eb4)e (D5 D4) (C5 A4 E4 C4) (Bb4 F4 D4)
+/18 (C5 F4 C4)q (D5 F4 D4) (F5 C5 A4 F4) (G5 Eb5 Bb4 G4)e (Bb5 Bb4) (F5 F4)q (G5 G4)
+
+/19 (F5 F4)q (Eb5 Bb4 G4 Eb4)e (D5 D4) (C5 A4 F4 C4) (Bb4 F4 D4) (C5 F4 C4)q (D5 F4 D4) (F5 C5 A4 F4)
+/20 (G5 Eb5 Bb4 G4)e (Bb5 Bb4) (F5 F4)q (G5 G4) (F5 F4) G4 F4
+
+/21 (G5 E5 Bb4 G4)e (Bb5 Bb4) (F5 F4)q (G5 G4) (F5 F4) (G4 Eb4 Bb3)q (F4 C4 A3)
+/22 (Bb4 F4 Bb3)q (C5 A4 F4 C4)e (F5 F4) (D5 Bb4 F4 D4)q (C5 A4 F4 C4)e (F5 F4) (D5 Bb4 F4 D4)q (Bb4 F4 D4 Bb3)
+
+/23 (C5 G4 Eb4 C4)q (G4 E4 C4 G3) (F4 C4 A3) (G4 D4 G3) (F4 C4 A3) (Bb4 D4 Bb3)
+/24 (C5 A4 F4 C4)e (F5 F4) (D5 Bb4 F4 D4)q (Bb4 G4 D4 Bb3) T90 (Eb5 C5 G4 Eb4) T80 (C5 A4 F4 C4) T35 (Bb4 F4 D4)
+
+
+$V5 Z1 P4 // 2 of 2 ----------------------
+
+/0 Rq
+/1 Rwq
+/2 Rw.
+
+/3 (G3 G2)q (F3 A2) (G3 G2) (F3 F2) (D3 D2)
+/4 (F3 F2)q (Bb3 Bb2) (G3 G2) (C3 C2) (E3 E2) (F3 F2)
+
+/5 Rwq
+/6 Rh (F3 F2)q (Bb3 Bb2) (G3 G2) (F3 F2)
+
+/7 Rwq
+/8 Rh (Ab3 Ab2)q (Db4 Db3) (Bb3 Bb2) (Ab3 Ab2)
+
+/9 (Eb3h. Gb2)h F2q (Eb3h. Gb2) Gb2 (Gb3 Gb2)
+/10 (F3 F2)e (Eb3 Eb2) (Db3 Db2)q (Eb3 Eb2)e (F3 F2) (Ab3 Ab2)q (Bb3 Bb2) (Ab3 Ab2)
+
+/11 (Eb4h. Gb2 Gb1)h (F2 F1)q (Eb4q. Gb2 Gb1) (Gb3 Gb2)e R
+/12 (G4h. Bb2 Bb1)h (A2 A1)q (G4h. Bb2 Bb1) (Bb2 Bb1) (Bb3 Bb2)
+
+/13 (A3 A2)e (G3 G2) (F3 F2)q (G3 G2)e (A3 A2) (C4 C3)q (D4 D3) (C4 C3)
+/14 (A3 A2)q (Bb3 Bb2) (F3 F2) (G3 G2) (F3 F2) (G3 G2)
+
+/15 (D3 D2)q (G3 G2) (D3 D2) (G3 G2) (D3 D2) (G3 G2)
+/16 (C3 C2)q (F3 F2) (G3 G2) (C3 C2) (F3 F2) (G3 G2)
+
+/17 (C3 C2)q F2 (C3 C2) (F2 F1) (G2 G1) (A2 A1)e (Bb2 Bb1)
+/18 (A2 A1)q (Bb2 Bb1) (A2 A1) (G2 G1) (F2 F1) (G2 G1)
+
+/19 (F2 F1)q (G2 G1) (A2 A1)e (Bb2 Bb1) (A2 A1)q (Bb2 Bb1) (A2 A1)
+/20 (G2 G1)q (F2 F1) (G2 G1) (F2 F1) G3 F3
+
+/21 (C3 C2)q (F2 F1) (G2 G1) (F2 F1) (Eb3 Eb2) (F3 F2)
+/22 (D3 D2)q (C3 C2) (Bb2 Bb1) (A2 A1) (G2 G1) (G3 G2)
+
+/23 (C3 C2)q (E3 E2) (F3 F2) (Bb2 Bb1) (A2 A1) (G2 G1)
+/24 (F2 F1)q (Bb2 Bb1) (G3 G2) T90 (C3 C2) T80 (F3 F2) T35 (Bb3 Bb2)

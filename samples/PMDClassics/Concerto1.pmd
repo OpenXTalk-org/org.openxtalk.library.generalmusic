@@ -1,0 +1,172 @@
+//pmd,1.0,85,
+//c P.Tchaikovsky / Concerto for piano and orchestra 1
+//i Made by UDI with makeSMF
+//s 3/4
+
+$1V7 Z1 // (1)
+/1 Rh. R R R R
+/6 (F4 C# G#3 F C# G1 C#)q (F5 C# G#4 F C#3 G#2 C#)  (F7 C# G#6 F C# G#5 C#)
+/7 (F4 C# G#3 F C# G1 C#)q (F5 C# G#4 F C#3 G#2 C#) (F7 C# G#6 F C# G#5 C#)
+/8 (F4 C# G#3 F C# G1 C#)q (F5 C# G#4 F C#3 G#2 C#) (F7 C# G#6 F C# G#5 C#)
+/9 (F4 C# G#3 F C# G1 C#)q (F5 C# G#4 F C#3 G#2 C#) (F7 C# G#6 F C# G#5 C#)
+/10 (D#4 A#3 F# C# C#2 C#1) (D#5 A#4 F# D# A#3 F# D# A#2) (D#7 A#6 F# D# A#5 F# D# A#4)
+/11 (D#4 A#3 F# C# C#2 C#1) (D#5 A#4 F# D# A#3 F# D# A#2) (D#7 A#6 F# D# A#5 F# D# A#4)
+/12 (G#4 D# C G#3 C#2 G#1 C#) (G#5 D# C G#4 D# C G#3 D#) (G#7 D# C G#6 D# C G#5 D#)
+/13 (C#2 G#1 C#) (G#5 D# C G#4 D# C G#3 D#) (G#7 D# C G#6 D# C G#5 D#)
+/14 (F4 C# G#3 F C#2 G#1 C#) (F5 C# G#4 F C#3 G#2 C#) (F7 C# G#6 F C# G#5 C#)
+/15 (G#4 D# C G#3 G#2 G#1) (G#6 D# C G#5 D# C G#4 D#) (G#5 D# C G#4 D# C G#3 D#)
+/16 (F4 C# G#3 F C#2 G#1 C#) (F5 C# G#4 F C# G#3 C#) (F7 C# G#6 F C# G#5 C#)
+/17 (F4 C# G#3 F F2 F1) (F5 C# G#4 F C# G#3 C#) (F7 C# G#6 F C# G#5 C#)
+/18 (D#4 C# A#3 D# F#2 F#1) (D#5 C# A#4 D# A#3 F# D# A#2) (D#7 C# A#6 D# A#5 F# D# A#4) 
+/19 (F#4 C A#3 F# D#2 D#1) (F#5 D# A#4 F# C A#3 F# C) (F#7 D# A#6 F# C A#5 F# C)
+/20 (F3q C4q)x@9V (Fq Aq) (F5q Aq) (C6q) (Fq)es (A#3q D4q)x (G#4q A#q) (F5q G#q) (A#q) (F6q)es (D3q A#q)x (D#4q Gq) (D#5q Gq) (A#q) (D#6q)es
+/21 (G#3q C4q)x (G#q D#5q) (F#q) (G#5q) (D#6q)es (C#3q G#q)x (C#4q Fq) (C#5q Fq) (G#q) (C#6q)es (G2q C#3q)x (F3q A#q) (A#4q C#5q) (Fq) (A#q)es
+/22 (G#2q C#3q)x (Fq G#q) (G#4q C#5q) (Fq) (G#q)es (F4q G#q)x (C#5q) (Fq) (C#6q) (G#q)es (C#4q Fq)x (G#q) (C#5q) (Fq) (C#6q)es
+/23 (A#3q D#4q)x (Gq A#q) (D#5q Gq) (A#q) (D#6q)es (D#3q Gq)x (A#q D#4q) (Gq A#q ) (D#5q) (Gq)es (G#2q D#3q)x (G#q C4q) (F#q G#q) (D#5q) (F#q)es
+/24 (C#3q G#q)x (C#4q Fq) (G#q C#5q) (Fq)esx Rh
+/25 Rq Rs. (G#5 C# G#4 F C# G#3)t@V10 (G#5 C# G#4 F C# G#3)s. (F5 G#4 F C# G#3 F)t (F5 G#4 F C# G#3 F)s. (D#5 G#4 D# C# G#3 D#)t (D#5 G#4 D# C# G#3 D#)s. (C#5 G#4 F C# G# D#)t
+/26 (C#5 G#4 F C# G# D#)q (F6 C# G#5 F F4 C# G#3 F C#@5)q. (D#6 D#5 D#4 D#3)e
+/27 (F#6 C# G#5 F# F#4 C# G#3 F#)qs (E6 E5 E4 E3)s (C6 C5 C4 C3) (C#6 C#5 C#4 C#3) (D#6 D#5 D#4 D#3) (C#6 C#5 C#4 C#3) (C6 C5 C4 C3) (C#6 C#5 C#4 C#3)
+/28 (A#5 A#4 A#3 A#2)q@8 (D#6 A#5 F# D# D#4 A#3 A#2)q.@ (F6 F5 F4 F3)e
+/29 (A#5 F# D# A#4 A#3 F# D# A#2)qs. (D#6 A#5 F# D# D#4 A#3 F# D#)t (D#6 A#5 F# D# D#4 A#3 F# D#)s. (C6 F#5 D# C C4 F#3 D# C)t (C6 F#5 D# C C4 F#3 D# C)s. (A#5 F# D# A#4 A#3 F# D# A#2)t (A#5 F# D# A#4 A#3 F# D# A#2)s. (G#5 F# D# G#4 G#3 F# D# G#2)t
+/30 (G#5 F# D# G#4 G#3 F# D# G#2)q (D#6 C G#5 D# D#4 C G#3 D#)q. (F6 F5 F4 F3)e
+/31 (G#6 D# C G#5 G#4 D# C G#3)qe3 (D#6 D#5 D#4 D#3)e3 (D6 D5 D4 D3) (D#6 D#5 D#4 D#3) (F6 F5 F4 F3) (F#6 F#5 F#4 F#3)
+/32 (G#6 F C# G#5 G#4 F C# G#3)q. (F6 F5 F4 F3)e@9 (A#6 A#5 A#4 A#3) (G#6 G#5 G#4 G#3)
+/33 (D#6 D#5 D#4 D#3 D#2)h@ //33 :-)
+
+$74V7 // (2) Flute
+/1 Rh.
+/2 Rq (A#6 F)sV8 Rq..
+/3 Rq (A#6 F)s Rq..
+/4 Rq A#5V6 G#5 //4
+
+$61V9 Z1 // (6) French Horn
+/1 Rq. F4e@5 C# C 
+/2 A#3q@ (A#4 A#3)e@5 F4 C# C
+/3 A#3q@ (A#4 A#3)e@5 F4 C# C 
+/4 A#3q@ (A#4 A#3)V5 (G#4 G#3) //4
+
+$57V7 // (7) Trumpet
+/1 Rh.
+/2 Rq (F5 C#)sV9 Rq..
+/3 Rq (F C#)s Rq..
+/4 Rq (D#5 C)qV5 (C# G#4)
+/5 (C#5 A#4)q (C#5 A#4) (C5 G#4)
+/6 (C#5 F4)e@8V10 //6
+
+$58V7 // (8) Trombone
+/1 Rh.
+/2 Rq (F4 C# G#3)s Rq..
+/3 Rq (F4 C# G#3)s Rq..
+/4 Rq (D#4 C F#3)V7 (C#4 G#3 F)
+/5 (C#4 A#3 F)q (C#4 A#3 D#) (C4 G#3 G#2)
+/6 (C#4 F3 C#)e@8V9 //6
+
+$48V7 // (9) Timpani
+/1 Rh.
+/2 Rq G#2e R Rq
+/3 R C#3e R
+/4 Rq R C# G2
+/5 C#3q C# G#2
+/6 C#3e //6
+
+$49V7 Z1 // (11) Acoustic String Ensemble
+/1 Rh.
+/2 Rq (A#5 F C# A#4 F C#)sV9 Rq..
+/3 Rq (A#5 F C# A#4 F C#)s Rq..
+/4  Rq (A#5 D# C A#4)q@8V8 (G#5 F C# G#4 F C#)
+/5 (A#4 F# C# A#4 F# C#)qV9 (A#5 D# C# G4 D#) (C6 D#5 C G#4 D#)
+/6 (C#6 G#5 F C# G#4 F C#)e@8 R Rh //6
+/7 Rq Re G#4e@V8 F D#
+/8 C#4q F5q.V10 D#e
+/9 F#5q. Fe C C#
+/10 A#4q D#5q. Fe
+/11 A#4q. D#5e C A#4
+/12 G#4q D#5q. Fe
+/13 G#5q. D#e D# F
+/14 G#5q. Fe A# G#
+/15 D#5qe3 Ce3 A#4@5 G# F# D#@
+/16 C#4e Re F5q. D#e
+/17 F#q. Fe C & C#
+/18 A#4q D#5q. Fe
+/19 G#5q. F#e F F#
+/20 FV8 C F D D# A#4 
+/21 D#5e C C# F4 A# C5
+/22 G#4 A# C5 C# D# F
+/23 D#e F A#4q. C5e
+/24 C#e //24
+
+$46V4 // (11) Pizzicato Strings
+/1 Rh. R R R R R R R R R
+/11 Rh. R R R R R R R R
+/20 Rh. R R R
+/24 Rq (C#5 G4e F C#e)q (F5 C#e G#4 F4e)q //24
+
+$49V5 // (12) Acoustic String Ensemble
+/1 Rh.
+/2 Rq (A#4 C#)s@8 Rq..
+/3 Rq (A# C#)s Rq..
+/4 Rq (D#4 C)qV7 (F C#)
+/5 (F#4 A#3)q (G4 A#3) (G#4 C)
+/6 C#3x G#x (C#5 F4e)s C#5@7V5 //6
+
+$46V5 // (12) Pizzicato Strings
+/1 Rh. R R R R R
+/7 C#3q@6 R R /8 C# R R  /9 C# R R /10 C# R R
+/11 C#3q R R /12 C# R R /13 C# R R /14 C# R F
+/15 G#3q R R /16 C# R R /17 F# R R /18 D# R R
+/19 F R D# /20 R C# R
+/21 Rq R G#3 /22 D# R R /23 R G C#4 //23
+
+$49V7 Z1 // (13) Acoustic String Ensemble
+/1 Rh.
+/2 Rq G#3e@6V9 Re Rq
+/3 Rq G#3e@6 Re Rq
+/4 Rq F@V5 F
+/5 E3 D# G#
+/6 C#e Re Rh //6
+/7 Rq Re G#3V6 F D#
+/8 C#q F4q.V10 D#e
+/9 F#4q. Fe C C#
+/10 A#3q D#4q. Fe
+/11 A#3q. D#4e C A#3
+/12 G#q D#4q. Fe
+/13 G#4q. D#q Fe
+/14 G#q. Fe A# G#
+/15 D#4q Re3 C A#3 G# F# D#
+/16 C#e Re F4q. D#e
+/17 F#4q. Fe C C#
+/18 A#3q D#4q. Fe
+/19 G#4q. F#e F F#
+/20 FV8 C F D D# A#3
+/21 D#4e C C# F3 A# C4
+/22 G#3 A# C4 C# D# F
+/23 D#4e F A#3q. C4e
+/24 C#q@3V5 F3 G //24
+
+$49V9 // (14) Acoustic String Ensemble
+/1 Rh.
+/2 Rq G#2e@4V7 Rq.
+/3 Rq G#e@4 Rq.
+/4 Rq F#2@6 F
+/5 E D# G#
+/6 C#@4 R R //6
+/7 C#2q R R
+/8 C# R R
+/9 C#V8 R R
+/10 C# R R
+/11 C#2q R R
+/12 C# R R
+/13 C# R R
+/14 C#2@4 R F
+/15 G#2q F#1 R
+/16 C#2 R R
+/17 F R R
+/18 F# R R
+/19 D#2q R R
+/20 F A# D#
+/21 G# C# G1
+/22 G# R G#2
+/23 D#2q R G#
+/24 C# R R
+/25 C#sV13 //25
