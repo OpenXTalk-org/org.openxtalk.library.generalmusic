@@ -96,6 +96,17 @@ private command __Initialize
          end try
       end if
    end if
+   if the platform is "Windows" then
+      if "fluidsynth" is in the loadedExtensions then
+         try
+            if fsEnsureInitialize() then
+               fsMIDIPlayerInit
+               -- put "FluidSynth Initialized"
+               get fsLoadSoundFont(defaultSoundBank)
+            end if
+         end try
+      end if
+   end if
    put gsInstrumentNames(false,"list") into instrumentNames
 end __Initialize
 
@@ -2824,18 +2835,22 @@ function scanStdSoundBankDirectories
       set the folder to "/Library/Audio/Sounds/Banks/"
    else if the platform is "Win32" then
       if there is a file "C:\windows\system32\drivers\gm.dls" then
+         put "gm.dls" into tSoundBankFileNames
          put  "C:\windows\system32\drivers\gm.dls" into tPathList
          set the folder to "C:\Windows\system32\drivers\"
       else if there is a file "C:\Windows\SysWOW64\drivers\gm.dls" then
+         put "gm.dls" into tSoundBankFileNames
          put  "C:\windows\SysWOW64\drivers\gm.dls" into tPathList
          set the folder to "C:\Windows\SysWOW64\drivers\"
       end if
    else if the platform is "Linux" then
       if there is a file "/usr/share/sounds/sf2/FluidR3_GM.sf2" then
+         put "FluidR3_GM.sf2" into tSoundBankFileNames
          put  "/usr/share/sounds/sf2/FluidR3_GM.sf2" into tPathList
          -- Maybe also check for "GeneralUser.sf2"
          set the folder to "/usr/share/sounds/sf2/"
       else if there is a file "/usr/share/soundfonts/default.sf2" then
+         put "default.sf2" into tSoundBankFileNames
          put  "/usr/share/soundfonts/default.sf2" into tPathList
          set the folder to "/usr/share/soundfonts/"
       end if
