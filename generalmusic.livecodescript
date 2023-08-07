@@ -85,24 +85,15 @@ private command __Initialize
    if there is not a file selectedSoundBank then
       put GetHyperSoundsFont() into selectedSoundBank
    end if
-   if the platform is "Linux" then
+   if the platform is "Linux" or the platform is "Win32" then
       if "fluidsynth" is in the loadedExtensions then
          try
             if fsEnsureInitialize() then
+               fsSetGain 1.0
                fsMIDIPlayerInit
                -- put "FluidSynth Initialized"
                get fsLoadSoundFont(defaultSoundBank)
-            end if
-         end try
-      end if
-   end if
-   if the platform is "Windows" then
-      if "fluidsynth" is in the loadedExtensions then
-         try
-            if fsEnsureInitialize() then
-               fsMIDIPlayerInit
-               -- put "FluidSynth Initialized"
-               get fsLoadSoundFont(defaultSoundBank)
+               -- get fsProgramSelectBySoundfontName(Channel, SoundFont, tBankLSB, tProgramNum)
             end if
          end try
       end if
@@ -217,13 +208,24 @@ on playPMD pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
    put 0 into bankNum
    put 0 into instNum
    put 120 into playTempo
-   PUT empty into tNotes
+   if there is a file selectedSoundbank then 
+      put selectedSoundbank into soundBankFile
+   else if there is a file defaultSoundbank then 
+      put defaultSoundbank into soundBankFile
+   end if
+   put "" into tNotes
    if the paramCount > 1 then
       repeat with x = 1 to the paramCount
          -- put empty into tParam
          put param(x) into tParam
+         if x = 1  and tParam is a number and tParam > 0 and tParam <128  then
+            put  tParam into instNum
+            put line tParam of instrumentNames, tParam
+            next repeat
+         end if
          -- GeneralMusic lib fallback sounds (from HyperCard)
          if tParam is among the items of "Boing,HyperBoing,Flute,HyperFlute,Harpsichord,Hypsichord" then
+            -- put tParam
             put getHyperSoundsFont() into soundBankFile
             switch tParam
                case "Boing"
@@ -241,16 +243,30 @@ on playPMD pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
                   break
             end switch
             next repeat
+         else  if tParam is in instrumentNames then -- check if it's a General MiDI sound name
+            get lineoffset(tParam,instrumentNames,0)
+            if it <> 0 then
+               put it  into instNum
+               -- put line instNum of instrumentNames, instNum
+               put defaultSoundBank into soundBankFile
+               next repeat
+            else
+               put "Instrument "& it &" not found"
+               next repeat
+            end if
          else
-            if tParam is in instrumentNames then -- check if it's a General MiDI sound name
-               get lineoffset(tParam,instrumentNames,0)
-               if it <> 0 then
-                  put it - 1  into instNum
-                  next repeat
-               else
-                  -- put 0 into instNum
-                  next repeat
+            put gsInstrumentNames(drums,list) into tDrumBanks
+            if tParam is in tDrumBanks or tParam = "Analog Kit" or tParam = "SFX Kit" then
+               put 128 into bankNum
+               put defaultSoundBank into soundBankFile
+               -- set the wholeMatches to true
+               get itemOffset(tParam,"Standard Kit,Room Kit,Power Kit,Electronic Kit,Analog Kit,TR-808 Kit,Jazz Kit,Brush Kit,Orchestra Kit,SFX Kit,MT-32 Kit")
+               if it is not 0 then
+                  get item it of "16385,16393,16401,16409,16410,16410,16417,16425,16433,16441,16441"
+                  put it into instNum
+                  -- put tParam, instNum
                end if
+               next repeat
             end if
          end if
          if word 1 of tParam is "tempo" or word 1 of tParam is "Tempo" then
@@ -274,12 +290,61 @@ on playPMD pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
             next repeat
          end if
       end repeat
-   else
+   else --- ParamCount = 1 or 0
       if param(1) is not empty then
-         put param(1) into tNotes
-      else
-         put "C4q" into tNotes
+         if tParam is among the items of "Boing,HyperBoing,Flute,HyperFlute,Harpsichord,Hypsichord" then
+            switch  param(1)
+               case "Boing"
+               case "HyperBoing"
+                  put 3 into instNum
+                  break
+               case "Flute"
+               case "HyperFlute"
+                  put 2 into instNum
+                  break
+               case "Harpsichord"
+               case "Hypsichord"
+               default
+                  put 1 into instNum
+                  break
+            end switch
+            put "C4q" into tNotes
+            put getHyperSoundsFont() into soundBankFile
+         else if param(1) is in instrumentNames then -- check if it's a General MiDI sound name
+            get lineoffset(param(1),instrumentNames,0)
+            if it <> 0 then
+               put it into instNum
+               put defaultSoundBank into soundBankFile
+               --  put line it  of instrumentNames
+               put "C4q" into tNotes
+            end if
+         else  if param(1) is in gsInstrumentNames(drums,list) or tParam = "Analog Kit" or tParam = "SFX Kit" then
+            get itemOffset(param(1),"Standard Kit,Room Kit,Power Kit,Electronic Kit,Analog Kit,TR-808 Kit,Jazz Kit,Brush Kit,Orchestra Kit,SFX Kit,MT-32 Kit")
+            if it is not 0 then
+               get item it of "16385,16393,16401,16409,16410,16410,16417,16425,16433,16441,16441"
+               put it into instNum
+               put 128 into bankNum
+               put defaultSoundBank into soundBankFile
+               put "C4q" into tNotes
+            end if
+         else
+            --            if param(1) is a number and param(1) > 0 then 
+            --               put  param(1) into instNum
+            --               put defaultSoundBank into soundBankFile
+            --               put "C4q" into tNotes
+            --               put instNum
+            --            else
+            put param(1) into tNotes
+         end if
       end if
+      -- end if
+      --   else
+      --      -- put param(1) into tNotes
+      --      -- put "C4q" into tNotes
+      --      -- else
+      --      put param(1) into tNotes
+      --      -- put "C4q" into tNotes
+      --      -- end if
    end if
    if tNotes="" then put "C4q" into tNotes
    if ( midiAppName is NOT empty ) then
@@ -314,13 +379,13 @@ on playPMD pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
             end if
          end if
          break
-      case "iphone"
+      case "iphone" ---------------------------- iOS version of AVMIDIPlayer extension is untested ------------------------
          get the loadedExtensions
          if it contains "avmidiplay" then
             playPMD_AVMIDIPlayer tNotes, playTempo, instNum, soundBankFile
          end if
          break
-      case "android"
+      case "android" --------------------- Need to test and add the Android version of FluidSynth here ---------------------
          playPMD_videoClip tNotes, playTempo, instNum
          break
       case "Linux"
@@ -626,6 +691,7 @@ on playPMD_AVMIDIPlayer tNotes, playTempo, instNum, bankNum, soundBankFile
       if tNotes is "clear" then
          delete file tempFilePath
       end if
+      exit to top
       --setPlayBtn false
    else
       try
@@ -733,6 +799,9 @@ on playPMD_FluidSynth tNotes, playTempo, instNum, bankNum, soundBankFile
             get fsLoadSoundFont(soundBankFile)
             --  put it
          end if
+         if instNum <> empty then
+            -- get fsProgramChange(1, instNum) -get fsProgramSelectBySoundfontName(1,soundBankFile, bankNum, instNum)
+         end if
          fsLoadMIDIFile tempFilePath -- , soundBankFile
          fsMIDIPlayerPlay
          -- playPositionCheck
@@ -786,18 +855,18 @@ function playSentenceToMIDIData tNotes, playTempo, defInst
    set the cursor to watch
    --
    if line 1 of tNotes contains "//pmd" then
--- exist header
-put line 1 of tNotes into pmdHeader
-if item 3 of pmdHeader > 0 then
-   put item 3 of pmdHeader into playTempo
-end if
-if item 4 of pmdHeader > 0 then
-   put item 4 of pmdHeader into defInst
-end if
+      -- exist header
+      put line 1 of tNotes into pmdHeader
+      if item 3 of pmdHeader > 0 then
+         put item 3 of pmdHeader into playTempo
+      end if
+      if item 4 of pmdHeader > 0 then
+         put item 4 of pmdHeader into defInst
+      end if
    end if
    if playTempo is "" then put 100 into playTempo
    if defInst is "" then put 1 into defInst
-   --
+   ------------------------------------------------------------------------------------------------------------
    put getCopyrightBin( tNotes ) into midiEvents
    put getInfoBin( tNotes ) after midiEvents
    put getTimeSignBin( tNotes ) after midiEvents
@@ -816,7 +885,7 @@ end if
    return midiEvents
 end playSentenceToMIDIData
 
------------------------------------------------- MakeSMF ---------------------------------------------
+-------------------------------------------------- MakeSMF -----------------------------------------------
 ----------------makeSMF script by UDI 2002.12.06-------------
 -- makeSMF  tNotes , [ playTempo ], [ defInst ], savePath
 -- param Notes = Score string to play or make SMF.
@@ -867,7 +936,7 @@ on makeSMF notes, playTempo, defInst, savePath
    --
    set the itemDel to "."
    if last item of savePath is not "mid" then
-put ".mid" after savePath
+      put ".mid" after savePath
    end if
    --
    open file savePath for binary write
@@ -2869,39 +2938,41 @@ function scanStdSoundBankDirectories
          set cursor to busy
 
          if theLine <> empty then
-            put cr& "/Library/Audio/Sounds/Banks/" & theLine after tPathList
-         end if
-      end repeat
-   end if
+            if the platform is "MacOS" then
+               put cr& "/Library/Audio/Sounds/Banks/" & theLine after tPathList
+               end if
+            end if
+         end repeat
+      end if
 
-   put empty into tFileNames
-   put specialFolderPath("Home") & "/Library/Audio/Sounds/Banks/" into tWrkDir
-   --put tWrkDir
-   set the folder to tWrkDir
-   put the files into tFileNames
-   filter lines of tFileNames with "*.sf2" into tSF2Names
-   filter lines of tFileNames with "*.dls" into tDLSNames
-   if (tSF2Names & tDLSNames) <> empty then
-      --put cr after tPathList
-      put cr after tSoundBankFileNames
-   end if
-   put tSF2Names &cr& tDLSNames into tFileNames
-   if tFileNames<> empty then
-      put tFileNames after tSoundBankFileNames
-      repeat for each line theLine in tFileNames
-         set cursor to busy
-         if theLine <> empty then
-            put cr& tWrkDir & theLine after tPathList
-         end if
-      end repeat
-      -- put tPathList after msg
-   end if
-   filter lines of tSoundBankFileNames without empty
-   -- put tSoundBankFileNames into me
-   -- set the PathList of me to tPathList
-   return tPathList
-   -- put the PathList of me
-end scanStdSoundBankDirectories
+      put empty into tFileNames
+      put specialFolderPath("Home") & "/Library/Audio/Sounds/Banks/" into tWrkDir
+      --put tWrkDir
+      set the folder to tWrkDir
+      put the files into tFileNames
+      filter lines of tFileNames with "*.sf2" into tSF2Names
+      filter lines of tFileNames with "*.dls" into tDLSNames
+      if (tSF2Names & tDLSNames) <> empty then
+         --put cr after tPathList
+         put cr after tSoundBankFileNames
+      end if
+      put tSF2Names &cr& tDLSNames into tFileNames
+      if tFileNames<> empty then
+         put tFileNames after tSoundBankFileNames
+         repeat for each line theLine in tFileNames
+            set cursor to busy
+            if theLine <> empty then
+               put cr& tWrkDir & theLine after tPathList
+            end if
+         end repeat
+         -- put tPathList after msg
+      end if
+      filter lines of tSoundBankFileNames without empty
+      -- put tSoundBankFileNames into me
+      -- set the PathList of me to tPathList
+      return tPathList
+      -- put the PathList of me
+   end scanStdSoundBankDirectories
 
 /**
 Summary: Use isSF2orDLS to ensure that the given file contains a RIFF
