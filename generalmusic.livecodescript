@@ -208,9 +208,9 @@ on playPMD pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
    put 0 into bankNum
    put 0 into instNum
    put 120 into playTempo
-   if there is a file selectedSoundbank then 
+   if there is a file selectedSoundbank then
       put selectedSoundbank into soundBankFile
-   else if there is a file defaultSoundbank then 
+   else if there is a file defaultSoundbank then
       put defaultSoundbank into soundBankFile
    end if
    put "" into tNotes
@@ -292,24 +292,24 @@ on playPMD pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
       end repeat
    else --- ParamCount = 1 or 0
       if param(1) is not empty then
-         if tParam is among the items of "Boing,HyperBoing,Flute,HyperFlute,Harpsichord,Hypsichord" then
+         if param(1) is among the items of "Boing,HyperBoing,HyperFlute,Hypsichord" then
+            put "C4q" into tNotes
+            put getHyperSoundsFont() into soundBankFile
             switch  param(1)
                case "Boing"
                case "HyperBoing"
                   put 3 into instNum
                   break
-               case "Flute"
                case "HyperFlute"
                   put 2 into instNum
                   break
-               case "Harpsichord"
                case "Hypsichord"
                default
                   put 1 into instNum
                   break
             end switch
             put "C4q" into tNotes
-            put getHyperSoundsFont() into soundBankFile
+            -- put getHyperSoundsFont() into soundBankFile
          else if param(1) is in instrumentNames then -- check if it's a General MiDI sound name
             get lineoffset(param(1),instrumentNames,0)
             if it <> 0 then
@@ -328,7 +328,7 @@ on playPMD pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
                put "C4q" into tNotes
             end if
          else
-            --            if param(1) is a number and param(1) > 0 then 
+            --            if param(1) is a number and param(1) > 0 then
             --               put  param(1) into instNum
             --               put defaultSoundBank into soundBankFile
             --               put "C4q" into tNotes
@@ -357,7 +357,8 @@ on playPMD pParam1, pParam2, pParam3, pParam4, pParam5, pParam6
          put defaultSoundBank into soundBankFile
       end if
    end if
-   -- put tNotes, playTempo,instNum,bankNum, soundBankFile
+   put soundBankFile into selectedBankFile
+   -- put tNotes, playTempo,instNum, bankNum, soundBankFile
    switch platform()
       -- The possible values returned by the platform function are:
       -- "Win32" on any version of Windows
@@ -2484,7 +2485,7 @@ put binaryEncode("C",0) into bTimeSinceLastEvent -- 0 change to Delta Time (chor
    end if
    put bTimeSinceLastEvent & msgTypeByte after theMIDItrack --Delta Time & Message Type w/chan
    get word z of line lineCnt of theMIDIMsgList
-   put it after msg
+   -- put it after msg
    put binaryEncode("C",item 1 of it) & binaryEncode("C",item 2 of it) after theMIDItrack  -- note & velocity
 end repeat
 break
